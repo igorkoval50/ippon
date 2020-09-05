@@ -1,0 +1,1 @@
+UPDATE s_user SET validation = 'H' WHERE id = 1;

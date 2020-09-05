@@ -1,0 +1,9 @@
+{
+  "name": "netinventors/sw.ext.neti_foundation",
+  "description": "",
+  "minimum-stability": "RC",
+  "license": "proprietary",
+  "require-dev": {
+    "shopware/shopware": "~5.5"
+  }
+}

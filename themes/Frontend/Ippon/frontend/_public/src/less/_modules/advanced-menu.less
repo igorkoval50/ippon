@@ -1,0 +1,91 @@
+.advanced-menu {
+    max-width: none;
+    width: 100%;
+    .unitize(padding-top, @main-navigation--height * .25);
+    background: transparent;
+    .reset-box-shadow();
+
+    .button-container {
+        .unitize(margin-bottom, @content-padding * .5);
+
+        @media screen and (min-width: @tabletViewportWidth) {
+            .unitize(margin-bottom, @content-padding);
+        }
+
+        .button--category {
+            .unitize(font-size, @font-size-h4);
+            font-family: @font-headline-stack;
+            .unitize-padding(20, 50, 20 , 30);
+        }
+    }
+
+    .content--wrapper {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .menu--delimiter {
+        background: darken(@brand-secondary-dark, 10%);
+    }
+
+    .menu--container {
+        background: @brand-secondary;
+        color: contrast(@brand-secondary);
+
+        .unitize-padding(0, 0, @content-padding * .5, 0);
+
+        @media screen and (min-width: @tabletViewportWidth) {
+            .unitize-padding(0, 0, @content-padding, 0);
+        }
+    }
+
+    .item--level-0 {
+		.menu--list-item-link {
+            color: contrast(@brand-secondary);
+            .unitize(font-size, @font-size-h6);
+            font-weight: @font-bold-weight;
+            text-transform: uppercase;
+
+            &:hover {
+                color: contrast(@brand-secondary);
+                text-decoration: underline;
+            }
+		}
+    }
+
+    .item--level-1 {
+        .menu--list-item-link {
+            .unitize(font-size, @font-size-h6 - 1);
+            font-weight: @font-base-weight;
+        }
+    }
+
+    .menu--level-1 {
+        .unitize-margin(5, 0, 0, 0);
+    }
+}
+
+.navigation-main {
+    .navigation--list {
+        .navigation--entry {
+            &.is--hovered {
+                .reset-border-radius();
+                background: transparent;
+
+                .navigation--link {
+                    color: @text-color;
+                    background: transparent;
+
+                    &.is--highlighted {
+                        background: @brand-secondary;
+                        color: contrast(@brand-secondary);
+
+                        &::before {
+                            .unitize(height, 0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,263 @@
+.is--ctl-blog {
+    .blog--listing {
+        .listing--actions {
+            .listing--paging {
+                display: block;
+            }
+        }
+    }
+}
+
+.blog--content {
+    margin-top: 0;
+
+    .blog--listing {
+        width: auto;
+        .unitize-margin(@content-padding * -.5, @content-padding * -.5);
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and(min-width: @tabletViewportWidth) {
+            width: 78%;
+        }
+    }
+
+    .hero-unit {
+        .unitize-margin(@content-padding * .5, @content-padding * .5);
+    }
+
+    .blog--filter-btn {
+        width: 100%;
+        .unitize-margin(@content-padding * .5, @content-padding * .5);
+    }
+
+    .blog--box {
+        .unitize-padding(@content-padding * .5, @content-padding * .5);
+        .unitize-margin(0, 0);
+        width: 100%;
+        border: none;
+
+        @media screen and(min-width: @tabletLandscapeViewportWidth) {
+            width: 50%;
+        }
+
+        .box--inner {
+            position: relative;
+            height: 100%;
+            .transition(border 200ms ease);
+            background: #fff;
+            border: 1px solid transparent;
+
+            // hover state
+            &:hover {
+                border-color: @brand-secondary;
+            }
+        }
+
+        // Image
+        .blog--box-picture {
+            position: relative;
+            overflow: hidden;
+            .unitize(height, 360);
+            width: 100%;
+            float: none;
+
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                .transform(translate(-50%, -50%));
+                max-width: none;
+                max-height: none;
+                min-width: ~"calc(100% + 1px)"; // prevent chrome one pixel jitter
+            }
+        }
+
+        // Headline
+        .blog--box-headline {
+            .unitize(font-size, @font-size-h1);
+            .unitize(line-height, @line-height-headline);
+            .unitize-padding(@content-padding, 0, 0, 0);
+            .unitize-margin(0, @content-padding);
+        }
+
+        .blog--box-content {
+            .unitize-padding(@content-padding, @content-padding);
+        }
+
+        // Description
+        .blog--box-content .blog--box-description {
+            width: 100%;
+            float: none;
+
+            .blog--box-description-short {
+                .unitize-margin(0, 0);
+                text-align: justify;
+            }
+        }
+
+        // Read more
+        .blog--box-content .blog--box-readmore {
+            display: inline-block;
+            .unitize(margin-left, 10);
+
+            .is--primary {
+                position: relative;
+                background: transparent;
+                color: @text-color;
+                font-weight: @font-bold-weight;
+                padding: 0;
+
+                &::after {
+                    .transition();
+                    content: '';
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: @brand-primary;
+                    .unitize(height, 1);
+                    .transform(scaleX(0));
+                }
+
+                &:hover,
+                &:focus {
+                    color: @text-color-dark;
+
+                    &::after {
+                        .transform(scaleX(1));
+                    }
+                }
+            }
+        }
+
+        .blog--metadata-author {
+            font-style: italic;
+
+            &::before {
+                content: "\2014 \00A0";
+            }
+        }
+
+        .blog--box-metadata {
+            background: transparent;
+            border: none;
+            .unitize-padding(0, 0, @content-padding, 0);
+            .unitize-margin(0, @content-padding);
+        }
+    }
+}
+
+/*
+Blog Badges
+==========================================
+Creates a corner blog badge on a blog-box.
+```
+<div class="blog--box">
+    <div class="box--badges">
+        <div class="blog--badge badge--date">
+            <i class="icon--time"></i>
+        </div>
+    </div>
+</div>
+
+```
+*/
+.blog--box {
+    .blog--badges {
+        .unitize(top, 20);
+        .unitize(left, 0);
+        position: absolute;
+        z-index: @zindex-product-box-product-badge;
+
+        .blog--badge {
+            .unitize-padding(4, 10);
+            .unitize-margin(0, 0, 5, 0);
+            .unitize(font-size, @font-size-h4);
+            .unitize(line-height, 16);
+            display: block;
+            float: left;
+            position: relative;
+            text-align: center;
+            font-weight: @font-bold-weight;
+            font-family: @font-headline-stack;
+            clear: both;
+
+            &::after {
+                content: '';
+                border-top: 12px solid transparent;
+                border-right: 12px solid transparent;
+                position: absolute;
+                top: 0;
+                left: 100%;
+            }
+        }
+
+        // Discount Badge
+        .badge--date {
+            color: @badge-discount-color;
+            background: @badge-discount-bg;
+
+            &::after {
+                border-top-color: @badge-discount-bg;
+            }
+        }
+    }
+
+    .blog--box-metadata {
+        margin: 0;
+    }
+}
+
+// Blog Detail
+.blog--detail {
+    .unitize(max-width, 900);
+    margin: auto;
+    float: none;
+
+    .blog--detail-headline {
+        .unitize(font-size, @font-size-h1);
+    }
+
+    .blog--short-description {
+        display: inline-block;
+        font-weight: @font-bold-weight;
+        .unitize(margin-bottom, 20);
+        text-align: justify;
+        .unitize(line-height, 24);
+    }
+
+    .blog--detail-image-container {
+        width: 100%;
+        margin: auto;
+        float: none;
+    }
+
+    .blog--image {
+        width: auto;
+        max-width: 100%;
+    }
+
+    .blog--image,
+    .blog--thumbnail {
+        padding: 0;
+        border: none;
+    }
+    ul,
+    ol {
+        .unitize(line-height, 24);
+        li {
+            .unitize(line-height, 24);
+        }
+    }
+}
+
+// Blog listing actions
+.blog--listing {
+    .listing--actions {
+        width: 100%;
+        .listing--paging {
+            .unitize-padding(@content-padding * .5, @content-padding * .5);
+        }
+    }
+}

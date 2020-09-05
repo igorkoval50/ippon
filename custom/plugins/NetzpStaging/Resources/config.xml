@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+
+        <element type="boolean">
+            <name>netzpStagingShowInfo</name>
+            <label lang="de">Hinweis im Testserver anzeigen</label>
+            <label lang="en">Display a note in the test server</label>
+            <value>1</value>
+            <description lang="de">Zeigt im Back- und Frontend des Testservers einen Hinweis und den Namen an.</description>
+            <description lang="en">Displays a note and the name in the back- and frontend of the test server.</description>
+        </element>
+
+        <element type="select">
+            <name>netzpStagingCopyMethod</name>
+            <label lang="de">Kopiermethode</label>
+            <label lang="en">Copy method</label>
+            <value>0</value>
+            <description lang="de">Legt fest, über welche Methode die Dateien kopiert werden.</description>
+            <description lang="en">Specifies which method is used to copy the files.</description>
+            <store>
+                <option>
+                    <value>0</value>
+                    <label lang="de">Automatisch</label>
+                    <label lang="en">Automatic</label>
+                </option>
+                <option>
+                    <value>1</value>
+                    <label lang="de">PHP (langsam)</label>
+                    <label lang="en">PHP (slow)</label>
+                </option>
+            </store>
+        </element>
+
+        <element type="text">
+            <name>netzpStagingExcludeTables</name>
+            <label lang="de">Datenbank-Tabellen ausschließen</label>
+            <label lang="en">Exclude database tables</label>
+            <value></value>
+            <description lang="de">Schließt die angegebenen Datenbank-Tabellen aus (die Struktur wird kopiert, jedoch keine Inhalte). Mehrere mit Semikolon trennen.</description>
+            <description lang="en">Excludes the specified database tables (the structure is copied, but without contents). Separate multiple tables with semicolons.</description>
+        </element>
+
+        <element type="boolean">
+            <name>netzpStagingDebug</name>
+            <label lang="de">Debug-Log schreiben</label>
+            <label lang="en">Write debug log</label>
+            <value>0</value>
+            <description lang="de">Protokolliert die Ausgaben des Plugins zur einfacheren Fehlersuche.</description>
+            <description lang="en">Logs plugin output for easier troubleshooting.</description>
+        </element>
+    </elements>
+</config>

@@ -1,0 +1,21 @@
+.filter-panel {
+    background-image: none;
+    .reset-border-radius();
+    border-top: none;
+    border-left: none;
+    border-right: none;
+
+    &.is--collapsed {
+
+        .filter-panel--flyout {
+            .reset-border-radius();
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
+}
+
+.filter-panel--title {
+    .unitize(font-size, @font-size-base + 2);
+}

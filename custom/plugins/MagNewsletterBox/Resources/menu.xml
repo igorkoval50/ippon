@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/menu.xsd">
+
+    <entries>
+        <entry>
+            <name>MagNewsletterBox</name>
+            <label lang="en">Newsletter subscriptions (voucher codes)</label>
+            <label lang="de">Newsletter Anmeldungen (Gutscheincodes)</label>
+            <controller>MagNewsletterBox</controller>
+            <action>index</action>
+            <class>sprite-mail</class>
+            <parent identifiedBy="controller">Marketing</parent>
+        </entry>
+    </entries>
+</menu>

@@ -1,0 +1,9 @@
+.content-padding() {
+    .unitize(padding-left, @content-padding * .5);
+    .unitize(padding-right, @content-padding * .5);
+
+    @media screen and(min-width: @desktopViewportWidth) {
+        .unitize(padding-left, @content-padding);
+        .unitize(padding-right, @content-padding);
+    }
+}

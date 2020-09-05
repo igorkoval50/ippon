@@ -1,0 +1,30 @@
+{
+  "label": {
+    "de": "Varianten Listing Shopware 5",
+    "en": "Calculator with individual options"
+  },
+  "copyright": "2013-17(c) by Pixeleyes GmbH",
+  "license": "commercial",
+  "link": "http://www.pixeleyes.de",
+  "author": "Pixeleyes GmbH",
+  "deleteDB": "true",
+  "installDB": "true",
+  "currentVersion": "1.1.4",
+
+
+  "changelog": {
+    "de": {
+      "1.1.2": "Aktuelle Version Shopware 5"
+    },
+    "en": {
+      "1.1.2": "First Release Shopware 5"
+    }
+  },
+
+  "compatibility": {
+    "minimumVersion": "5",
+    "maximumVersion": null,
+    "blacklist": [
+    ]
+  }
+}

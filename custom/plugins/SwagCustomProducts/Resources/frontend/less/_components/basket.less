@@ -1,0 +1,258 @@
+.container--ajax-cart .ajax--cart .custom-product--cart-item .cart--item {
+    border: none;
+}
+
+.container--ajax-cart .ajax--cart .item--container > div:last-child {
+    border-bottom: 0;
+}
+
+.custom-products--basket-overview {
+    .unitize(top, -1);
+    .clearfix();
+    position: relative;
+    float: none;
+    clear: both;
+    border-top: 1px solid #fff;
+    padding-left: 25%;
+
+    .is--act-finish & {
+        padding-left: 27%;
+    }
+}
+
+.product--table .custom-products--basket-overview {
+    border-bottom: 1px solid @border-color;
+}
+
+.confirm--content .product--table .row--product.is--last-row + .custom-products--basket-overview,
+.finish--content .product--table .row--product.is--last-row + .custom-products--basket-overview {
+    border-bottom: none;
+}
+
+.custom-product--cart-item {
+    border-bottom: 1px solid @customizing-gray-dark;
+}
+
+.custom-product--overview-title {
+    .unitize(font-size, 14);
+    .unitize(padding-top, 10);
+    border-top: 1px solid @customizing-gray-dark;
+    color: @customizing-text-color;
+    margin: 0;
+    position: relative;
+
+    .custom-product--price-surcharges {
+        .unitize(font-size, 14);
+        .unitize(line-height, 21);
+        .unitize(top, 12);
+        display: block;
+        position: absolute;
+        right: 0;
+
+        .is--act-finish & {
+            right: 4%;
+        }
+    }
+}
+.custom-product--overview-list {
+    .unitize(font-size, 12);
+    .unitize(line-height, 18);
+    .unitize(margin-bottom, 20);
+    .unitize(padding-bottom, 10);
+    border-bottom: 1px solid @customizing-gray-dark;
+}
+.custom-product--overview-list-item {
+    .unitize(margin-bottom, 10);
+    display: block;
+    list-style: none;
+}
+.custom-product--overview-option-name {
+    display: block;
+}
+.custom-products--surcharges-total {
+    .unitize(font-size, 14);
+    .unitize(line-height, 21);
+    .unitize(margin-bottom, 20);
+    width: 100%;
+    font-weight: bold;
+    color: @customizing-text-color-dark;
+    text-align: right;
+
+    .surcharges-total--display {
+        color: @customizing-text-color;
+    }
+
+    .is--act-finish & {
+        padding-right: 4%;
+    }
+}
+
+/** Load configuration link */
+.custom-product--action-open-config {
+    .unitize(margin-bottom, 20);
+    width: 100%;
+
+    .custom-product--action-open-config-link:hover {
+        text-decoration: underline;
+    }
+
+    .icon--arrow-right {
+        .unitize(font-size, 10);
+    }
+}
+
+.custom-product--value-list {
+    list-style-type: none;
+}
+
+// AJAX offcanvas cart
+.ajax--cart {
+    .custom-products--basket-overview {
+        padding-left: 12%;
+    }
+
+    .custom-product--overview-title .custom-product--price-surcharges {
+        right: 8%;
+    }
+
+    .custom-products--surcharges-total {
+        padding-right: 8%;
+        width: 100%;
+    }
+
+    // Collapse cart - we have to use a deeper selector depth here cause we don't have an indicator other than a data
+    // attribute on the container element.
+    div[data-displaymode="offcanvas"] & {
+        .custom-products--basket-overview {
+            padding-left: 18%;
+        }
+
+        .custom-product--overview-title .custom-product--price-surcharges {
+            right: 0;
+        }
+
+        .custom-products--surcharges-total {
+            padding-right: 0;
+            width: 100%;
+        }
+    }
+}
+
+// modal box add product
+.modal--checkout-add-article {
+    .custom-products--basket-overview {
+        .unitize(padding-left, 115);
+        .unitize(padding-right, 80);
+        .unitize(margin-top, -15);
+
+        .custom-products--surcharges-total.block {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: @phoneLandscapeViewportWidth) {
+    .custom-products--basket-overview {
+        padding-left: 16%;
+
+        .is--act-finish & {
+            padding-left: 15%;
+        }
+    }
+
+    .custom-product--overview-title .custom-product--price-surcharges {
+        right: 2%;
+
+        .is--act-finish & {
+            right: 2.5%;
+        }
+    }
+
+    .custom-products--surcharges-total {
+        padding-right: 2%;
+
+        .is--act-finish & {
+            padding-right: 2.5%;
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (min-width: @tabletViewportWidth) {
+    .custom-products--basket-overview {
+        padding-left: 12%;
+
+        .is--act-confirm & {
+            padding-left: 11%;
+        }
+
+        .is--act-finish & {
+            padding-left: 12%;
+        }
+    }
+
+    .custom-product--overview-title .custom-product--price-surcharges {
+        right: 10%;
+
+        .is--act-finish & {
+            right: 0;
+        }
+    }
+
+    .custom-products--surcharges-total {
+        padding-right: 10%;
+
+        .is--act-finish & {
+            padding-right: 0;
+            width: 100%;
+        }
+    }
+
+    .custom-products--surcharges-total, .custom-product--action-open-config {
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: @tabletLandscapeViewportWidth) {
+    .custom-products--basket-overview {
+        padding-left: 12%;
+
+        .is--act-confirm & {
+            padding-left: 8.5%;
+        }
+
+        .is--act-finish & {
+            padding-left: 10%;
+        }
+    }
+}
+
+@media screen and (min-width: @desktopViewportWidth) {
+    .custom-products--basket-overview {
+        padding-left: 8.5%;
+
+        .is--act-confirm & {
+            padding-left: 7.5%;
+        }
+
+        .is--act-finish & {
+            padding-left: 8.5%;
+        }
+    }
+
+    .custom-product--overview-title .custom-product--price-surcharges {
+        right: 6%;
+
+        .is--act-confirm & {
+            right: 9.5%;
+        }
+    }
+
+    .custom-products--surcharges-total {
+        padding-right: 6%;
+
+        .is--act-confirm & {
+            padding-right: 9.5%;
+        }
+    }
+}

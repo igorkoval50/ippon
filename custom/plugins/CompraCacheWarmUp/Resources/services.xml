@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns="http://symfony.com/schema/dic/services"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+
+        <service class="CompraCacheWarmUp\Subscriber\Cronjob" id="compra_cache_warm_up.subscriber.cronjob">
+            <argument>%compra_cache_warm_up.plugin_dir%</argument>
+            <argument id="dbal_connection" type="service"/>
+            <argument id="http_cache_warmer" type="service"/>
+            <argument id="config" type="service"/>
+            <argument id="service_container" type="service"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+    </services>
+
+</container>

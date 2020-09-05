@@ -1,0 +1,121 @@
+.action--count-btn {
+    display: inline-flex;
+    height: 46px;
+    width: 95px;
+    align-items: center;
+    padding: 5px 10px;
+    flex: none;
+    text-align: center;
+    justify-content: center;
+    .mobile-wrapper,
+    .tablet-wrapper,
+    .tabletLandscape-wrapper {
+        &.is--active {
+            color: #000;
+        }
+    }
+    .mobile-wrapper {
+        display: flex;
+        .simple-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 15px;
+            background-image: url("../../img/icons/listing-count-1.svg");
+            background-size: cover;
+        }
+        .multiple-box {
+            width: 20px;
+            height: 20px;
+            background-image: url("../../img/icons/listing-count-2.svg");
+            background-size: cover;
+        }
+        @media screen and (min-width: @tabletViewportWidth) {
+            display: none;
+        }
+    }
+    .tablet-wrapper {
+        display: none;
+        @media screen and (min-width: @tabletViewportWidth) and (max-width: 1023px)  {
+            display: flex;
+            .simple-box {
+                width: 20px;
+                height: 20px;
+                margin-right: 15px;
+                background-image: url("../../img/icons/listing-count-2.svg");
+                background-size: cover;
+            }
+            .multiple-box {
+                width: 20px;
+                height: 20px;
+                background-image: url("../../img/icons/listing-count-3.svg");
+                background-size: cover;
+            }
+        }
+    }
+    .tabletLandscape-wrapper {
+        display: none;
+        @media screen and (min-width: @tabletLandscapeViewportWidth) {
+            display: flex;
+            .simple-box {
+                width: 20px;
+                height: 20px;
+                margin-right: 15px;
+                background-image: url("../../img/icons/listing-count-3.svg");
+                background-size: cover;
+            }
+            .multiple-box {
+                width: 20px;
+                height: 20px;
+                background-image: url("../../img/icons/listing-count-4.svg");
+                background-size: cover;
+            }
+        }
+    }
+}
+
+.listing {
+    @media screen and (max-width: 767px) {
+        &[data-mobile-count="1"] {
+            .box--minimal {
+                width: 100%;
+            }
+        }
+        &[data-mobile-count="2"] {
+            .box--minimal {
+                width: 50%;
+            }
+        }
+    }
+    @media screen and (min-width: @tabletViewportWidth) and ( max-width: 1023px) {
+        &[data-tablet-count="2"] {
+            .box--minimal {
+                width: 50%;
+            }
+        }
+
+        &[data-tablet-count="3"] {
+            .box--minimal {
+                width: 33%;
+            }
+        }
+    }
+    @media screen and (min-width: @tabletLandscapeViewportWidth) and ( max-width: 1259px) {
+        &[data-tabletLandscape-count="3"] {
+            .box--minimal {
+                width: 33%;
+            }
+        }
+
+        &[data-tabletLandscape-count="4"] {
+            .box--minimal {
+                width: 25%;
+            }
+        }
+    }
+}
+@media screen and (min-width: @tabletViewportWidth) {
+    .listing--actions .listing--paging {
+        display: none;
+    }
+}
+

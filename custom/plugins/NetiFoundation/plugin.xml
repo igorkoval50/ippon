@@ -1,0 +1,717 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.6/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">Foundation</label>
+    <label lang="en">Foundation</label>
+
+    <version>4.0.9</version>
+
+    <link>http://www.netinventors.de</link>
+    <author>Net Inventors GmbH</author>
+    
+    <compatibility minVersion="5.6.0" />
+
+    <changelog version="4.0.9">
+        <changes lang="de"><![CDATA[
+[#33907] Problem bei Deinstallation von Plugins behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#33907] Fixed problem at uninstalling plugins
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.8">
+        <changes lang="de"><![CDATA[
+[#33002] Problem mit nicht ausgeführten Update-Skripten behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#33002] Fixed problem with update scripts not being executed
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.7">
+        <changes lang="de"><![CDATA[
+[#32843] Problembehebung für fehlenden Completer beim E-Mail Editor
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32843] Fix for missing completer in e-mail editor
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.6">
+        <changes lang="de"><![CDATA[
+[#32826] Kompatibilität mit Plugins ohne plugin.xml
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32826] Compatibility with plugins without plugin.xml
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.5">
+        <changes lang="de"><![CDATA[
+[#32760] Technisches Problem bei NetInventors-Plugins ohne Plugin-Einstellungen behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32760] Technical problem with NetInventors plugins without plugin settings fixed
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.4">
+        <changes lang="de"><![CDATA[
+[#32686] Problem im Backendmodul behoben, wenn der Shop in einem Unterverzeichnis liegt
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32686] Fixed an issue in the backend module when a shop is installed in a subdirectory
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.3">
+        <changes lang="de"><![CDATA[
+[#32471] Potentielles Problem bei der Registrierung der Template-Pfade für Net Inventors Plugins behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32471] Fixed potential problem with the registration of template paths for Net Inventors plugins
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.2">
+        <changes lang="de"><![CDATA[
+[#32347] Potentieller Fehler beim Öffnen der Plugin-Einstellungen behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32347] Fixed a potential bug when opening the plugin settings
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.1">
+        <changes lang="de"><![CDATA[
+[#32276] Fehler im PluginManager-Service behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32276] Fixed an error in service PluginManager
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.0">
+        <changes lang="de"><![CDATA[
+[#32036] Anpassungen für SW5.6
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32036] Adjustments for SW5.6
+]]></changes>
+    </changelog>
+
+    <changelog version="3.2.3">
+        <changes lang="de"><![CDATA[
+[#32160] Vermeidung von Problemen durch doppelte EventListener-Priorität (Enlight_Controller_Action_PostDispatchSecure)
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32160] Avoidance of issues by duplicate event listener priorities (Enlight_Controller_Action_PostDispatchSecure)
+]]></changes>
+    </changelog>
+
+    <changelog version="3.2.2">
+        <changes lang="de"><![CDATA[
+[#32136] Caching-Mechanismus der Shopinstanzen im Shopservice verbessert
+[#32137] View-Autoloading angepasst
+[#31325] Eigenes Backend Icon für Menü "Net Inventors Plugins"
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32136] Improved caching mechanism for shop instances in the shop service
+[#32137] Adjusted view autoloading
+[#31325] Added custom icon for backend menu entry "Net Inventors Plugins"
+]]></changes>
+    </changelog>
+
+    <changelog version="3.2.1">
+        <changes lang="de"><![CDATA[
+[#31995] NetiPhpExcel für Exporte hinzugefügt
+[#31326] Update Jahreszahl in Footer
+[#31327] Entfernen von nicht Benutzten Dateien
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#31995] Added NetiPhpExcel for export
+[#31326] Update Year in Footer
+[#31327] Cleanup some unused files
+]]></changes>
+    </changelog>
+
+    <changelog version="3.2.0">
+        <changes lang="de"><![CDATA[
+[#30875] Before- und After-Update implementieren
+[#29650] Neue Backend-Ansicht über installierte Net Inventors Plugins, inklusive Integritätsprüfung der Plugin-Dateien
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30875] Implements before and after update
+[#29650] New Backend view for installed Net Inventors plugins, including integrity check for plugin files
+]]></changes>
+    </changelog>
+
+    <changelog version="3.1.1">
+        <changes lang="de"><![CDATA[
+[#31128] Problem im Plugin-Config-Reader behoben, das bei der Abfrage deaktivierten/deinstallierten Plugins auftrat
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#31128] Problem solved in the plugin config reader, that occurred, when inactive/uninstalled plugins were requested
+]]></changes>
+    </changelog>
+
+    <changelog version="3.1.0">
+        <changes lang="de"><![CDATA[
+[#30875] Before- und After-Update implementieren
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30875] Implements before and after update
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.6">
+        <changes lang="de"><![CDATA[
+[#30828] Kompatibilität netipagingcombobox
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30818] Compatibility netipagingcombobox
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.5">
+        <changes lang="de"><![CDATA[
+[#30774] Altcode entfernt, der Probleme unter SW5.5.5+ verurchsachte.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30774] Removed stale code that caused problems in SW5.5.5+
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.4">
+        <changes lang="de"><![CDATA[
+[#30659] Erweiterung des Basket-Services um Möglichkeit der Aufsplittung nach Steuersätzen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30659] Extension of the basket service with the possibility of splitting up by tax rates
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.3">
+        <changes lang="de"><![CDATA[
+[#30300] Ein Fehler unter PHP < 7.0 wurde behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30300] Fixed an error in PHP < 7.0
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.2">
+        <changes lang="de"><![CDATA[
+[#30293] Optimierung der Template-Vererbung
+[#30291] Mailtemplates können nun mit Bestell- oder Zahl-Status verknüpft werden
+[#30292] Text-Indizes können nun angelegt werden
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30293] Template inheritance optimized
+[#30291] Mail templates can now be linked to order or payment statuses
+[#30292] Text indexes can now be created
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.1">
+        <changes lang="de"><![CDATA[
+[#30115] Umbenennung des Shop-Aliases
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30115] Rename of shop alias
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.0">
+        <changes lang="de"><![CDATA[
+[#29632] Eigener Lizenzmechanismus entfernt
+[#29633] Frontend-Controller wurde entfernt
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#29632] Removed custom license check
+[#29633] Removed frontend controller
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.9">
+        <changes lang="de"><![CDATA[
+Rollback von "[#29564] Probleme mit dem "Infinite Scrolling" im Produktivmodus behoben"
+]]></changes>
+        <changes lang="en"><![CDATA[
+Roll back "[#29564] Fix errors with "Infinite Scrolling" in production mode"
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.8">
+        <changes lang="de"><![CDATA[
+Rollback von "[#29545] Text-Indizes können nun angelegt werden".
+]]></changes>
+        <changes lang="en"><![CDATA[
+Roll back "[#29545] Text indexes can now be created".
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.7">
+        <changes lang="de"><![CDATA[
+[#29564] Probleme mit dem "Infinite Scrolling" im Produktivmodus behoben
+[#29545] Text-Indizes können nun angelegt werden.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#29564] Fix errors with "Infinite Scrolling" in production mode
+[#29545] Text indexes can now be created.
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.6">
+        <changes lang="de"><![CDATA[
+[#29490] Kompatibilitäts-Anpassung für das "Amazon Pay"-Plugin
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#29490] Compatibility adjustment for the "Amazon Pay" plugins
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.5">
+        <changes lang="de"><![CDATA[
+[#29062] Umstellung auf PostDispatchSecure events
+[#29045] Datenbereinigung im MailTemplateData-Struct hinzugefügt
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#29062] Switch to PostDispatchSecure events
+[#29045] Added data sanitation to MailTemplateData struct.
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.4">
+        <changes lang="de"><![CDATA[
+[#28893] Kleine Anpassungen für OrderAmountHandler (https://github.com/NetInventors/sw.ext.neti_order_amount_handler/)
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28893] Minor adjustments for OrderAmountHandler (https://github.com/NetInventors/sw.ext.neti_order_amount_handler/)
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.3">
+        <changes lang="de"><![CDATA[
+[#28696] Löst ein weiteres Session Problem
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28696] Fix another session problem
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.2">
+        <changes lang="de"><![CDATA[
+[#28688] Löst Probleme mit Sessions, wenn diese zu früh instanziiert werden
+[#28689] Verhindert einen Fehler bei Mailversand im Backend oder der API
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28688] Fixes an error in the session if it instantiated too early
+[#28689] Prevent exception when trying to send mail from backend/API
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.1">
+        <changes lang="de"><![CDATA[
+[#28636] Backendsession für api aufrufe benutzen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28636] Use backendsession on api requests
+]]></changes>
+    </changelog>
+
+    <changelog version="2.4.0">
+        <changes lang="de"><![CDATA[
+[#28562] Kompatibilitäts-Anpassung für Shopware 5.4 bzgl. entfernter SecureShop-Konfiguration
+[#28179] Mailheader und -Footer werden bei Installation an Plaintext-Mailtemplates angehängt (betrifft nur Net Inventors Plugins)
+[#28358] Mail Templates aus dem Resources Ordner wurden beim Plugin Update nicht aktualisiert
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28562] Compatibility adjustments für Shopware 5.4 concernig removed secure shop configuration
+[#28179] Mail header and footer will now be added to plain text mail templates on installation (applies only to Net Inventors plugins)
+[#28358] Mail templates from the Resources folder were not updated in the Plugin Update
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.10">
+        <changes lang="de"><![CDATA[
+[#28538] Löst Probleme mit Sessions in anderen Net Inventors Plugins
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28538] Fixed some session-related issues in other Net Inventors plugins
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.9">
+        <changes lang="de"><![CDATA[
+[#28397] Verbessert das Lizenzhandling
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28397] Enhance license check
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.8">
+        <changes lang="de"><![CDATA[
+[#28183] Templates von Neti-Plugins werden nun automatisch registriert, um Smarty-Security-Problemen vorzubeugen.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28183] Templates of Neti plugins are now automatically registered to prevent any smarty security mode issues.
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.7">
+        <changes lang="de"><![CDATA[
+[#28188] Warnung bei Lizenzprüfung verhindern, wenn ein Plugin keine license.php hat
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28188] Prevent warning on license check if a plugin has no license.php
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.6">
+        <changes lang="de"><![CDATA[
+[#27965] Perfomanceoptimierungen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27965] Performance improvements
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.5">
+        <changes lang="de"><![CDATA[
+[#27521] Hinzufügen eines Steuerkalkulationsservice
+[#27635] ExtJs Attribute speichern - Callback hinzugefügt
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27521] Adding a tax service
+[#27635] ExtJs Attribute save - add callback
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.4">
+        <changes lang="de"><![CDATA[
+[#27277] Optimierungen am Mailer-Service
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27277] Optimizations of the mailer service
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.3">
+        <changes lang="de"><![CDATA[
+[#27159] Verbesserungen am Support Mail Handling
+[#27133] Verbesserung im Lizenzhandling
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27159] Improve support mail handler
+[#27133] Improve license handling
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.2">
+        <changes lang="de"><![CDATA[
+[#27069] Ersetzen des veralteten Foundation-Services "Helper"
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27069] Replace usage of the deprecated foundation service "Helper"
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.1">
+        <changes lang="de"><![CDATA[
+[#27100] Fehlerkorrektur
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27100] Bugfix
+]]></changes>
+    </changelog>
+
+    <changelog version="2.3.0">
+        <changes lang="de"><![CDATA[
+[#27034][#26580] Verbesserung der Kompatibilität zu Shopware 5.3
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27034][#26580] Improve Shopware 5.3 compatibility
+]]></changes>
+    </changelog>
+
+    <changelog version="2.2.2">
+        <changes lang="de"><![CDATA[
+[#27067] Mails können nun mit Bcc-Empfängern verschickt werden
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27067] Emails can now be sent with bcc recipients
+]]></changes>
+    </changelog>
+
+    <changelog version="2.2.1">
+        <changes lang="de"><![CDATA[
+[#27020] Interne Anpassungen
+[#27056] Problem mit Email-Versand in Cronjobs behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27020] Internal changes
+[#27056] Fixed a problem with sending emails in cronjobs
+]]></changes>
+    </changelog>
+
+    <changelog version="2.2.0">
+        <changes lang="de"><![CDATA[
+[#26578] Modularisierung des Helper-Services
+[#26550] ModelEntity: setCreateDate() wurde von __construct() nach onPrePersist() verschoben. setChangeDate() wurde aus onPrePersist() entfernt
+[#26833] Fehler bei der Validierung des optionalen Feldes behoben
+[#25883] JavaScript Klasse für Cookie Handling implementiert
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26578] Modularisation of the helper service
+[#26550] ModelEntity: setCreateDate() moved from __construct() to onPrePersist(). setChangeDate() was removed from onPrePersist()
+[#26833] Fixed an issue with the optional field
+[#25883] Implement class to handle cookies
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.10">
+        <changes lang="de"><![CDATA[
+[#26721] Behebt ein Problem beim Deaktivieren von unlizensierten Plugins
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26721] Fixed a problem when trying to deactivate an unlicensed plugin
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.9">
+        <changes lang="de"><![CDATA[
+[#26310] Bestätigungs Meldung zum Association Grid hinzugefügt
+[#26491] Individuelle interne Anpassung
+[#26338] Löschung des Doctrine-Model-Caches bei Plugin-Updates und -Installationen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26310] Add confirm Message to grid association
+[#26491] Individual internal adjustment
+[#26338] Deletion of the Doctrine model cache on plugin installation and update
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.8">
+        <changes lang="de"><![CDATA[
+[#26306] Anpassungen für Shopware.grid.Association
+[#26307] Unterbinden von "Duplicate foreign key constraint name"
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26306] Extends Shopware.grid.Association
+[#26307] Prevent "Duplicate foreign key constraint name"
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.7">
+        <changes lang="de"><![CDATA[
+[#26286] Schema-Unterstützung für Fremdschlüssel aus nicht Plugin-Entitäten hinzufügen
+[#26268] Neues ExtJS Grid Field, das mehrere Objekte beinhalten kann
+Optimierung des Mailer-Services
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26286] Add schema support for foreign keys from not plugin entities
+[#26268] New ExtJS grid field, that can contain multiple ocjects
+Optimizations in the mailer service
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.6">
+        <changes lang="de"><![CDATA[
+[#26256] Support Mail angepasst
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26256] Support Mail changed
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.5">
+        <changes lang="de"><![CDATA[
+[#26207] Fehler bei der Rückgabe der Werte, wenn die Medien-Auswahl als Attribut geladen werden
+[#26124] Backend View: Nur Baum-Endpunkte (Artikel) selektierbar
+[#26097] Fieldset Initialisierung im Shopware Container angepasst
+[#25925] Zusätzlich das Verzeichnis "Resources/mails" auf Mail-Konfigurationen überprüfen
+[#26063] Weitere Kundendaten zum Mail-Context hinzufügen
+[#26096] Autoload vom Store zur pagingcombobox hinzugefügt
+[#26210] Erweiterung des SendMailTemplate-Services, Hinzufügen von Anhängen nun möglich
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26207] Fix getValue if media selection is loaded as attribute
+[#26124] Backend View: Only Tree-Leaves (articles) selectable
+[#26097] Modify fieldset init at shopware container
+[#25925] Additionally scan "Resources/mails" for mail config
+[#26063] Add further customer data to mail context
+[#26096] Add autoload to pagingcombobox
+[#26210] Extension of the SendMailTemplate service, new possibility to add attachments
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.4">
+        <changes lang="de"><![CDATA[
+[#25726][#25870] Export-Funktionalitäten zum Controller und ExtJS view hinzugefügt
+[#25988] Übersetzung für support/help Text der Attribute implementiert
+[#25914] Optimierung der Verfügbarkeits-Prüfung anderer NetInventors-Plugins
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#25720][#25870] Add export action to controller and ExtJS view
+[#25988] Translate support/help text for attributes
+[#25914] Optimization of the availability check of other NetInventors plugins
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.3">
+        <changes lang="de"><![CDATA[
+        Kompatibilitäts-Anpassung für Shopware >= 5.2.15
+        [#25725] Korrektur im Plugin-eigenen Mailformular (Backend)
+]]></changes>
+        <changes lang="en"><![CDATA[
+        Compatibility adjustment for Shopware >= 5.2.15
+        [#25725] Correction in the plugins mail form (backend)
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.2">
+        <changes lang="de"><![CDATA[
+        [#25720] Fehler beim Handling der Unterlemente vom Menü für SW 5.2.13 - 5.2.14 behoben
+]]></changes>
+        <changes lang="en"><![CDATA[
+        [#25720] Fix menu children for SW 5.2.13 - 5.2.14
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.1">
+        <changes lang="de"><![CDATA[Fehler in plugin.xml behoben]]></changes>
+        <changes lang="en"><![CDATA[Bugfix in the plugin.xml]]></changes>
+    </changelog>
+
+    <changelog version="2.1.0">
+        <changes lang="de"><![CDATA[
+Reverse Implementierung von SW-16671, SW-16038, und SW-16203 (betrifft nur NetInventors Plugins) um Abwährtskompatibilität zu gewährleisten.
+[#25656] Mail-Vorlagenauswahl und MailSend-Dienst hinzufügen
+[#25657] Erweiterung für Shopware Components hinzufügen
+[#25703] Helper zum auslesen der PluginConfig hinzufügen
+[#25648] Hinzufügen von Ereignissen zum Anwendungscontroller für eine bessere Filterung
+[#25637] Fix für Unterelemente in Backend-Menüs
+[#25710] Bereitstellung von Request-Daten im Frontend-View
+[#25672] Helper hinzugefügt, um Daten für die Artikelerstellung zu erhalten
+]]></changes>
+        <changes lang="en"><![CDATA[
+Backporting SW-16671, SW-16038, und SW-16203 (applies only to NetInventors Plugins) to ensure backwards compatibility.
+[#25656] Add Mail Template Selection and MailSend service
+[#25657] Add extension for Shopware Components
+[#25703] Add Helper for PluginConfig reader
+[#25648] Add events to application controller for better filtering
+[#25637] Fix for backend menu children
+[#25710] Assign request data to the frontend view
+[#25672] Added Helper for get data for article creation
+]]></changes>
+    </changelog>
+
+    <changelog version="2.0.16">
+        <changes lang="de"><![CDATA[
+[#25561] ExtJs: DateTimeField
+Interne Optimierungen und Erweiterungen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#25561] ExtJs: DateTimeField
+Internal optimizations and extensions
+]]></changes>
+    </changelog>
+
+    <changelog version="2.0.15">
+        <changes lang="de"><![CDATA[
+[#25344] CLI Helper getActiveShop
+[#25202] new functions ins helper service
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#25344] CLI Helper getActiveShop
+[#25202] new functions ins helper service
+]]></changes>
+    </changelog>
+
+    <changelog version="2.0.14">
+        <changes lang="de"><![CDATA[Interne Anpassung]]></changes>
+        <changes lang="en"><![CDATA[Internal adjustment]]></changes>
+    </changelog>
+
+    <changelog version="2.0.13">
+        <changes lang="de"><![CDATA[Interne Korrekturen]]></changes>
+        <changes lang="en"><![CDATA[Internal corrections]]></changes>
+    </changelog>
+
+    <changelog version="2.0.12">
+        <changes lang="de"><![CDATA[[#25151] Interne Korrekturen]]></changes>
+        <changes lang="en"><![CDATA[[#25151] Internal corrections]]></changes>
+    </changelog>
+
+    <changelog version="2.0.11">
+        <changes lang="de"><![CDATA[Interne Korrekturen]]></changes>
+        <changes lang="en"><![CDATA[Internal corrections]]></changes>
+    </changelog>
+
+    <changelog version="2.0.10">
+        <changes lang="de"><![CDATA[Interne Anpassungen]]></changes>
+        <changes lang="en"><![CDATA[Internal adjustments]]></changes>
+    </changelog>
+
+    <changelog version="2.0.9">
+        <changes lang="de"><![CDATA[
+        Optimierungen in der Cronjob-Registrierung
+        Interfaces für Services angelegt
+        Neuer Helper-Service für interne, wiederkehrende Funktionen
+]]></changes>
+        <changes lang="en"><![CDATA[
+        Optimizations in the registration of cronjobs
+        Created interfaces for Services
+        New helper service for recurrent functions
+]]></changes>
+    </changelog>
+
+    <changelog version="2.0.8">
+        <changes lang="de"><![CDATA[REST-API-Problem bei Verwendung von Pickware behoben]]></changes>
+        <changes lang="en"><![CDATA[REST API issue in connection with Pickware solved]]></changes>
+    </changelog>
+
+    <changelog version="2.0.7">
+        <changes lang="de"><![CDATA[[#24787] Interne Sicherheits-Optimierungen]]></changes>
+        <changes lang="en"><![CDATA[[#24787] Internal security improvements]]></changes>
+    </changelog>
+
+    <changelog version="2.0.6">
+        <changes lang="de"><![CDATA[[#24760] Interne Sicherheits-Optimierungen]]></changes>
+        <changes lang="en"><![CDATA[[#24760] Internal security improvements]]></changes>
+    </changelog>
+
+    <changelog version="2.0.5">
+        <changes lang="de"><![CDATA[[#24730] Lizenz-Handling im Backend optimiert]]></changes>
+        <changes lang="en"><![CDATA[[#24730] Optimized license handling in the backend]]></changes>
+    </changelog>
+
+    <changelog version="2.0.4">
+        <changes lang="de"><![CDATA[[#24671] Funktionskonflikt behoben]]></changes>
+        <changes lang="en"><![CDATA[[#24671] Functional conflict solved]]></changes>
+    </changelog>
+
+    <changelog version="2.0.3">
+        <changes lang="de"><![CDATA[[#24596] Diverse interne Anpassungen]]></changes>
+        <changes lang="en"><![CDATA[[#24596] Various internal adjustments]]></changes>
+    </changelog>
+
+    <changelog version="2.0.2">
+        <changes lang="de"><![CDATA[[#24590] Korrektur in Cronjob-Installationsroutine]]></changes>
+        <changes lang="en"><![CDATA[[#24590] Correction in the install routine for cronjobs]]></changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes lang="de"><![CDATA[[#24560] Lizenz-Probleme behoben, diverse kleine Optimierungen]]></changes>
+        <changes lang="en"><![CDATA[[#24560] Lizense issues solved, various optimizations]]></changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes lang="de">SW 5.2.6</changes>
+        <changes lang="en">SW 5.2.6</changes>
+    </changelog>
+</plugin>

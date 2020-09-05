@@ -1,0 +1,203 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <imports>
+        <import resource="services/commands.xml"/>
+        <import resource="services/converter.xml"/>
+        <import resource="services/elastic_search.xml"/>
+        <import resource="services/search_bundle.xml"/>
+        <import resource="services/subscriber.xml"/>
+    </imports>
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="custom_products.service"
+                 class="SwagCustomProducts\Components\Services\CustomProductsService">
+            <argument type="service" id="service_container"/>
+            <argument type="service" id="custom_products.template_service"/>
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="custom_products.custom_products_option_repository"/>
+            <argument type="service" id="custom_products.product_price_getter"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+        </service>
+
+        <service id="custom_products.type_factory" class="SwagCustomProducts\Components\Types\TypeFactory">
+            <argument type="service" id="events"/>
+        </service>
+
+        <service id="custom_products.translation_service"
+                 class="SwagCustomProducts\Components\Services\TranslationService">
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="translation"/>
+        </service>
+
+        <service id="custom_products.garbage_collection.garbage_collector_service"
+                 class="SwagCustomProducts\Components\GarbageCollection\GarbageCollector">
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+            <argument type="service" id="models"/>
+            <argument>%swag_custom_products.plugin_name%</argument>
+        </service>
+
+        <service id="custom_products.template_service" class="SwagCustomProducts\Components\Services\TemplateService">
+            <argument type="service" id="shopware_storefront.media_service"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="custom_products.dependency_provider"/>
+        </service>
+
+        <service id="custom_products.basket_manager" class="SwagCustomProducts\Components\Services\BasketManager">
+            <argument type="service" id="session"/>
+            <argument type="service" id="custom_products.date_time_service"/>
+            <argument type="service" id="custom_products.template_service"/>
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="custom_products.hash_manager"/>
+            <argument type="service" id="custom_products.service"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="custom_products.product_price_getter"/>
+            <argument type="service" id="custom_products.live_shopping_helper"/>
+            <argument type="service" id="custom_products.dependency_provider"/>
+        </service>
+
+        <service id="custom_products.date_time_service" class="SwagCustomProducts\Components\Services\DateTimeService"/>
+
+        <service id="custom_products.inquiry.values_strategy"
+                 class="SwagCustomProducts\Components\Inquiry\Strategy\ValuesStrategy">
+            <argument type="service" id="snippets"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="custom_products.dependency_provider"/>
+        </service>
+
+        <service id="custom_products.inquiry.selected_value_strategy"
+                 class="SwagCustomProducts\Components\Inquiry\Strategy\SelectedValueStrategy">
+            <argument type="service" id="snippets"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="custom_products.dependency_provider"/>
+        </service>
+
+        <service id="custom_products.inquiry.inquiry_service"
+                 class="SwagCustomProducts\Components\Inquiry\InquiryService">
+            <argument type="service" id="custom_products.inquiry.selected_value_strategy"/>
+            <argument type="service" id="custom_products.inquiry.values_strategy"/>
+        </service>
+
+        <service id="custom_products.data_converter.registry"
+                 class="SwagCustomProducts\Components\DataConverter\Registry">
+            <argument type="tagged" tag="swag_custom_products.converter_type"/>
+        </service>
+
+        <service id="custom_products.post_data_value_converter"
+                 class="SwagCustomProducts\Components\Services\PostDataValueConverter">
+            <argument type="service" id="custom_products.data_converter.registry"/>
+        </service>
+
+        <service id="custom_products.hash_manager" class="SwagCustomProducts\Components\Services\HashManager">
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="custom_products.date_time_service"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+        </service>
+
+        <service id="custom_products.file_upload.uploader" class="SwagCustomProducts\Components\FileUpload\Uploader">
+            <argument type="service" id="models"/>
+            <argument type="service" id="custom_products.file_upload.file_type_whitelist"/>
+            <argument type="service" id="thumbnail_manager"/>
+        </service>
+
+        <service id="custom_products.file_upload.file_size_formatter"
+                 class="SwagCustomProducts\Components\FileUpload\FileSizeFormatter"/>
+
+        <service id="custom_products.file_upload.file_type_whitelist"
+                 class="SwagCustomProducts\Components\FileUpload\FileTypeWhitelist"/>
+
+        <service id="custom_products.file_upload.file_upload_service"
+                 class="SwagCustomProducts\Components\FileUpload\FileUploadService">
+            <argument type="service" id="validator"/>
+            <argument type="service" id="snippets"/>
+            <argument type="service" id="custom_products.file_upload.uploader"/>
+            <argument type="service" id="custom_products.file_upload.file_size_formatter"/>
+            <argument type="service" id="custom_products.file_upload.file_type_whitelist"/>
+        </service>
+
+        <service id="custom_products.order_number.validation_service"
+                 class="SwagCustomProducts\Components\OrderNumberValidation\OrderNumberValidationService">
+            <argument type="service" id="dbal_connection"/>
+        </service>
+
+        <service id="custom_products.migration" class="SwagCustomProducts\Components\Services\Migration">
+            <argument type="service" id="service_container"/>
+        </service>
+
+        <service id="custom_products.price_factory" class="SwagCustomProducts\Components\Services\PriceFactory">
+            <argument type="service" id="service_container"/>
+        </service>
+
+        <service id="custom_products.document_extender"
+                 class="SwagCustomProducts\Components\Services\DocumentValueExtender">
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="custom_products.hash_manager"/>
+        </service>
+
+        <service id="custom_products.custom_products_option_repository"
+                 class="SwagCustomProducts\Components\CustomProductsOptionRepository">
+            <argument type="service" id="dbal_connection"/>
+        </service>
+
+        <service id="custom_products.zip_service" class="SwagCustomProducts\Components\Services\ZipService">
+            <argument>%shopware.app%</argument>
+        </service>
+
+        <service id="custom_products.product_price_getter"
+                 class="SwagCustomProducts\Components\Services\ProductPriceGetter">
+            <argument type="service" id="shopware_storefront.list_product_service"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="models"/>
+            <argument type="service" id="service_container"/>
+        </service>
+
+        <service id="custom_products.live_shopping_helper"
+                 class="SwagCustomProducts\Components\Services\LiveShoppingHelper">
+        </service>
+
+        <service id="custom_products.list_product_service_decorator"
+                 class="SwagCustomProducts\Bundle\StoreFrontBundle\ListProductService"
+                 decorates="shopware_storefront.list_product_service"
+                 public="false">
+            <argument type="service" id="custom_products.list_product_service_decorator.inner"/>
+            <argument type="service" id="dbal_connection"/>
+        </service>
+
+        <service id="custom_products.dependency_provider"
+                 class="SwagCustomProducts\Components\Services\DependencyProvider">
+            <argument type="service" id="service_container"/>
+        </service>
+
+        <service id="custom_products.basket_query_helper_decorator"
+                 class="SwagCustomProducts\Components\Cart\BasketQueryHelperDecorator"
+                 decorates="shopware.cart.basket_query_helper"
+                 public="false">
+            <argument type="service" id="custom_products.basket_query_helper_decorator.inner"/>
+        </service>
+
+        <service id="custom_products.cart_persist_service_decorator"
+                 class="SwagCustomProducts\Components\Cart\CartPersistServiceDecorator"
+                 decorates="Shopware\Components\Cart\CartPersistServiceInterface"
+                 public="false">
+            <argument type="service" id="custom_products.cart_persist_service_decorator.inner"/>
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="session"/>
+        </service>
+
+        <service id="custom_products.cart_migration_decorator"
+                 class="SwagCustomProducts\Components\Cart\CartMigrationDecorator"
+                 decorates="shopware.components.cart.cart_migration"
+                 public="false">
+            <argument type="service" id="custom_products.cart_migration_decorator.inner"/>
+            <argument type="expression">container.get('modules').Basket()</argument>
+            <argument type="service" id="session"/>
+            <argument type="service" id="dbal_connection"/>
+        </service>
+
+    </services>
+</container>

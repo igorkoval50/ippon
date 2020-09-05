@@ -1,0 +1,58 @@
+// inquiry
+.inquiry-banner {
+    .unitize-padding(@content-padding * .25, @content-padding * .25);
+    background: @brand-primary;
+    color: contrast(@brand-primary);
+    .unitize-margin(50,0);
+
+    @media screen and (min-width: @tabletViewportWidth) {
+        .unitize-padding(@content-padding * .5, @content-padding * .5);
+    }
+
+    @media screen and (min-width: @tabletLandscapeViewportWidth) {
+        .is--ctl-index & {
+            .unitize-padding(@content-padding, @content-padding);
+        }
+    }
+
+    .is--ctl-listing & {
+        .unitize-margin(20,0);
+    }
+
+    .inquiry--text {
+        .unitize(font-size, 36);
+        .unitize(line-height, 40);
+        float: left;
+        font-weight: @font-bold-weight;
+
+        @media screen and (min-width: @tabletViewportWidth) {
+            width: 75%;
+        }
+
+        .is--ctl-listing & {
+            .unitize(font-size, @font-size-h2);
+            .unitize(line-height, 30);
+        }
+    }
+
+    .inquiry--button {
+        float: right;
+        text-align: right;
+
+        @media screen and (min-width: @tabletViewportWidth) {
+            width: 25%;
+        }
+
+        .btn {
+            color: @brand-primary;
+            .unitize(font-size, @font-size-h5);
+            border-color: transparent;
+            .unitize(margin-top, 20);
+            font-weight: @font-bold-weight;
+
+            .is--ctl-listing & {
+                .unitize(margin-top, 8);
+            }
+        }
+    }
+}

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.6/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">LanguageDetector</label>
+    <label lang="en">LanguageDetector</label>
+
+    <version>5.1.5</version>
+    <link>http://www.netinventors.de</link>
+    <author>Net Inventors GmbH</author>
+    <compatibility minVersion="5.6.0" />
+
+    <changelog version="5.1.5">
+        <changes lang="de"><![CDATA[
+[#33651] Prüfung auf Search-Bots eingebaut, bevor der AJAX-Request ausgeführt wird.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#33651] Check for search bots before ajax request is executed.
+]]></changes>
+    </changelog>
+
+    <changelog version="5.1.4">
+        <changes lang="de"><![CDATA[
+[#33552] Kompatibilität mit Shopware Cookie Consent Tool
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#33552] Compatibility with Shopware Cookie Consent tool
+]]></changes>
+    </changelog>
+
+    <changelog version="5.1.3">
+        <changes lang="de"><![CDATA[
+[#33244] Backend-Bugfix
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#33244] Backend bugfix
+]]></changes>
+    </changelog>
+
+    <changelog version="5.1.2">
+        <changes lang="de"><![CDATA[
+[#33089] Fehlerkorrektur beim Auslesen der Shopwährungen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#33089] Bugfix for reading the shop currencies
+]]></changes>
+    </changelog>
+
+    <changelog version="5.1.1">
+        <changes lang="de"><![CDATA[
+[#32709] Verhindern des Aufrufens im Checkout
+[#33019] Aktualisierung der ip2location Tabelle
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32709] Stop call on checkout
+[#33019] Update of the ip2location table
+]]></changes>
+    </changelog>
+
+    <changelog version="5.1.0">
+        <changes lang="de"><![CDATA[
+[#32525] Debug-Mode implementiert
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32525] Implement debug mode
+]]></changes>
+    </changelog>
+
+    <changelog version="5.0.1">
+        <changes lang="de"><![CDATA[
+[#32428] Wechsel zu einer im Subshop nicht verfügbaren Währung unterbunden
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32428] Suppress switch to a currency not available in the subshop
+]]></changes>
+    </changelog>
+
+    <changelog version="5.0.0">
+        <changes lang="de"><![CDATA[
+[#32196] Shopware 5.6 Anpassungen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#32196] Shopware 5.6 adjustments
+]]></changes>
+    </changelog>
+
+    <changelog version="4.3.0">
+        <changes lang="de"><![CDATA[
+[#31543] Übernahme der aufgerufenen Request Uri bei Umleitung
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#31543] Use of the requested request uri during redirection
+]]></changes>
+    </changelog>
+
+    <changelog version="4.2.0">
+        <changes lang="de"><![CDATA[
+[#30972] Smarty-Blöcke für Modalbox ergänzt
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30972] Add smarty blocks at modalbox
+]]></changes>
+    </changelog>
+
+    <changelog version="4.1.0">
+        <changes lang="de"><![CDATA[
+[#30220] Erweiterte Steuerung Subshopübergreifender Suche (Neue Plugin-Einstellung "Subshop-übergreifende Suche vor Fallback auf "default"")
+[#30126] Fehler aus fehlerhafter Refaktorierung beheben
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#30220] Extended control of searching across subshops (New plugin setting "Search inside other subshops before falling back to default")
+[#30126] Fix errors from incorrect refactoring
+]]></changes>
+    </changelog>
+
+    <changelog version="4.0.0">
+        <changes lang="de"><![CDATA[
+[#29969] Lizenzprüfung entfernen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#29969] Remove license check
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.5">
+        <changes lang="de"><![CDATA[
+[#28974] "Unified Session Service" aus Foundation implementieren
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28974] Implement "Unified Session Service" from Foundation
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.4">
+        <changes lang="de"><![CDATA[
+[#28568] SW5.4-Kompatibilität: Getter für Secure-Host entfernen
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28568] SW5.4 compatibility: remove getter for secure host
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.3">
+        <changes lang="de"><![CDATA[
+[#28157] Lizenzprüfung auslagern
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#28157] License check outsourced
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.2">
+        <changes lang="de"><![CDATA[
+[#27954] Fehler behoben, der unter SW5.3 beim synchronen Laden der Javascript-Dateien auftrat.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27954] Fixed an error that occurred when loading JavaScript files synchronously in SW5.3.
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.1">
+        <changes lang="de"><![CDATA[
+[#27583] Weiterleitung funktioniert nun auch, wenn der "__shop" parameter gesetzt ist.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#27583] Redirect now works when the "__shop" parameter is set.
+]]></changes>
+    </changelog>
+
+    <changelog version="3.0.0">
+        <changes lang="de"><![CDATA[
+[#26892] Anpassungen für Shopware 5.3
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26892] Adjustments for Shopware 5.3
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.3">
+        <changes lang="de"><![CDATA[
+[#26560] Korrektur der Redirect-URL bei Umleitung ohne Rückfrage für Sprachshops
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26560] Fix of the redirect url for redirects without confirmation for language shops
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.2">
+        <changes lang="de"><![CDATA[
+[#26546] Optimierung der Redirect-URL bei Umleitung ohne Rückfrage
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26546] Optimization of the redirect url for redirects without confirmation
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.1">
+        <changes lang="de"><![CDATA[
+[#26528] Optimierung der Suche nach einem passendem Shop.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#26528] Optimization of the search for a proper shop.
+]]></changes>
+    </changelog>
+
+    <changelog version="2.1.0">
+        <changes lang="de"><![CDATA[
+[#25748] Cookie kann für bestimmte IP-Adressen deaktiviert werden, sodass das Modal bei jedem Seitenaufruf angezeigt wird.
+[#25576] Primär wird nun nur noch im aktuellen Subshop nach passenden Ländershops gesucht. In den Plugin-Einstellungen kann jedeoch eine Subshop-übergreifende Suche aktiviert werden.
+]]></changes>
+        <changes lang="en"><![CDATA[
+[#25748] Cookie can be deactivated for specific IP addresses, so the modal will appear on every refresh of the site.
+[#25576] Primary the plugin will only search for fitting language shops in the current subshops. But there is a new option in the plugin configuration, that activates a search over all subshops.
+]]></changes>
+    </changelog>
+
+    <changelog version="2.0.3">
+        <changes lang="de"><![CDATA[[#26482] Entfernung des ShopContext aus dem Redirect-Service]]></changes>
+        <changes lang="en"><![CDATA[[#26482] Removal of the shop context from the redirect service]]></changes>
+    </changelog>
+
+    <changelog version="2.0.2">
+        <changes lang="de"><![CDATA[[#26350] Wiederherstellung notwendiger Ausstiegspunkte]]></changes>
+        <changes lang="en"><![CDATA[[#26350] Restore important exit points]]></changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes lang="de"><![CDATA[[#26071] Erkennung der Browser-Sprache optimiert]]></changes>
+        <changes lang="en"><![CDATA[[#26071] Optimization of the browser langugage detection]]></changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes lang="de">
+            <![CDATA[[#24240] Refaktorierung für das neue Plugin-System, verfügbar ab Shopware 5.2.6]]></changes>
+        <changes lang="en">
+            <![CDATA[[#24240] Refactoring for the new plugin system, available since Shopware 5.2.6]]></changes>
+    </changelog>
+
+    <requiredPlugins>
+        <requiredPlugin pluginName="NetiFoundation" minVersion="4.0.8"/>
+    </requiredPlugins>
+</plugin>

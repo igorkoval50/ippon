@@ -1,0 +1,310 @@
+  .ctl_detail #listing-1col .artbox .inner {
+  height: 145px;
+  width: 558px !important;
+}
+
+.ajax_pixvariantlistingform_result {
+  float: left;
+  margin-top: 0.9rem !important;
+  width: 100%;
+}
+.pixel-variant-listing-batchdetail table tr:nth-child(2n) td {
+  background: #fff none repeat scroll 0 0;
+}
+
+
+
+#pixvariantlistingform  table{
+   width: 100%; border: none;
+}
+
+#pixvariantlistingform  table td{
+   padding: 3px; vertical-align: top;
+}
+
+#pixvariantlistingform .table_head {
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #DFDFDF;
+   border-top: 1px solid #DFDFDF;
+  font-weight: 700;
+    height: 15px;
+    padding: 10px 0;
+}
+
+#pixvariantlistingform .table_head td {
+   
+    height: 15px;
+    padding: 10px 3px;
+}
+
+
+ 
+
+
+#pixelvariantlisting-list {
+  float: left;
+  width: 100%;padding: 1.875rem;
+}
+.basketform {
+  display: block;
+  float: left;
+  padding: 10px;
+  width: 20%;
+}
+
+#pixelvariantlisting-list .product--image {
+  display: block;
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+#pixelvariantlisting-list .image--element {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+#pixelvariantlisting-list .title  {
+   
+min-height: 40px;
+}
+
+#pixelvariantlisting-list .title, #pixelvariantlisting-list .price , #pixelvariantlisting-list .desc {
+  float: left;
+  text-align: center;
+  width: 100%;
+}
+
+#pixelvariantlisting-list .js--fancy-select {
+  width: 100%;
+}
+
+#pixelvariantlisting-list .actions > label {
+  display: none;
+  line-height: 2.5rem;
+}
+
+#pixelvariantlisting-list .buynow {
+  width: 100%;
+}
+
+
+#pixvariantlistingform .artbox {
+  float: left;
+  
+}
+
+
+
+.pixel-variant-listing-batch .container {
+  float: left;
+}
+
+
+
+
+
+.tgrid3 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+.tgrid2 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+.tgrid1 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.tgrid14 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.tgrid5 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+ 
+.tab-floating {
+  
+  margin-bottom: 1.875rem !important;
+   
+}
+
+ 
+
+
+.pixel-variant-listing-batch .gesamtview {
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px ;
+  text-align: center;
+   float: left;
+ 
+  width: 100%;  
+}
+
+.pixel-variant-listing-batch #basketBatchButton  {
+  width: 100%; float: left;
+} 
+
+@media screen and (min-width: 30em) {
+
+#pixvariantlistingform .artbox {
+  
+  width: 100%; 
+} 
+ .tab-floating { float: none;} 
+
+
+
+.tgrid3 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+.tgrid2 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+.tgrid1 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.tgrid14 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.tgrid5 {
+    display: block;
+    float: left;
+    width: 100%;
+}
+
+.pixel-variant-listing-batch .gesamtview {
+  
+  
+  width: 100%; float: left;
+}
+
+.pixel-variant-listing-batch #basketBatchButton  {
+  width: 100%; float: left;
+}
+
+}
+@media screen and (min-width: 48em) {
+
+#pixvariantlistingform .artbox {
+   
+  width: 50%;
+}
+  .tab-floating { float: left; width: 100%;}
+
+.tgrid5 { width: 50%; }
+.tgrid4 { width: 40%; }
+.tgrid3 { width: 30%; }
+.tgrid2 { width: 20%; }
+.tgrid1 { width: 10%; }
+
+.pixel-variant-listing-batch .gesamtview {
+  
+  
+  width: 100%; float: left; font-size: 14px;
+}
+
+.pixel-variant-listing-batch #basketBatchButton  {
+  width: 100%; float: left;
+}
+
+}
+@media screen and (min-width: 64em) {
+
+#pixvariantlistingform .artbox {
+  
+  width: 33.33%;
+}
+ .tab-floating { float: left; width: 100%;} 
+
+.tgrid5 { width: 50%; }
+.tgrid4 { width: 40%; }
+.tgrid3 { width: 30%; }
+.tgrid2 { width: 20%; }
+.tgrid1 { width: 10%; }
+
+.pixel-variant-listing-batch .gesamtview {
+  
+  
+  width: 50%; float: left; font-size: 14px; padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.pixel-variant-listing-batch #basketBatchButton   {
+  width: 50%; float: left;
+}
+
+}
+@media screen and (min-width: 78.75em) {
+
+#pixvariantlistingform .artbox {
+   
+  width: 25%;
+}
+  .tab-floating { float: left; width: 100%;}
+
+.tgrid5 { width: 50%; }
+.tgrid4 { width: 40%; }
+.tgrid3 { width: 30%; }
+.tgrid2 { width: 20%; }
+.tgrid1 { width: 10%; }
+
+.pixel-variant-listing-batch .gesamtview {
+  
+  
+  width: 50%; float: left; font-size: 14px; padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.pixel-variant-listing-batch #basketBatchButton   {
+  width: 50%; float: left;
+}
+
+}
+@media screen and (min-width: 100em) {
+#pixvariantlistingform .artbox {
+   
+  width: 20%;
+}
+
+ .tab-floating { float: left; width: 100%;}
+
+.tgrid5 { width: 50%; }
+.tgrid4 { width: 40%; }
+.tgrid3 { width: 30%; }
+.tgrid2 { width: 20%; }
+.tgrid1 { width: 10%; }
+
+.pixel-variant-listing-batch .gesamtview {
+  
+  
+  width: 50%; float: left; font-size: 14px; padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.pixel-variant-listing-batch #basketBatchButton  {
+  width: 50%; float: left;
+}
+
+}

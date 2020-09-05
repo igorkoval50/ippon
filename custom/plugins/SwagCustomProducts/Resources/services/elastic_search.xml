@@ -1,0 +1,39 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="swag_custom_products.search_bundle_es.condition_handler"
+                 class="SwagCustomProducts\Bundle\SearchBundleES\CustomProductsConditionHandler">
+            <tag name="shopware_search_es.search_handler"/>
+        </service>
+
+        <service id="swag_custom_products.search_bundle_es.facet_handler"
+                 class="SwagCustomProducts\Bundle\SearchBundleES\CustomProductsFacetHandler">
+            <argument type="service" id="snippets"/>
+            <tag name="shopware_search_es.search_handler"/>
+        </service>
+
+        <service id="swag_custom_products.search_bundle_es.sorting_handler"
+                 class="SwagCustomProducts\Bundle\SearchBundleES\CustomProductsSortingHandler">
+            <tag name="shopware_search_es.search_handler"/>
+        </service>
+
+        <service id="swag_custom_products.search_bundle_es.product_mapping_decorator"
+                 class="SwagCustomProducts\Bundle\ESIndexingBundle\ProductMapping"
+                 decorates="shopware_elastic_search.product_mapping"
+                 public="false">
+            <argument type="service" id="swag_custom_products.search_bundle_es.product_mapping_decorator.inner"/>
+        </service>
+
+        <service id="swag_custom_products.search_bundle_es.product_provider"
+                 class="SwagCustomProducts\Bundle\ESIndexingBundle\ProductProvider"
+                 decorates="shopware_elastic_search.product_provider"
+                 public="false">
+            <argument type="service" id="swag_custom_products.search_bundle_es.product_provider.inner"/>
+            <argument type="service" id="dbal_connection"/>
+        </service>
+    </services>
+</container>

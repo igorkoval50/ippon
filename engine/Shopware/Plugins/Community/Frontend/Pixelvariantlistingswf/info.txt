@@ -1,0 +1,6 @@
+Mit diesem Plugin ist es Ihnen möglich, die Varianten ihres Artikels auf der Detailseite als Liste anzeigen zu lassen. Die Liste wird in einem separaten Tabreiter angezeigt. Sie können im Adminbereich diese Anzeige je Artikel aktivieren. Unter den Plugineinstellungen haben Sie auch die Möglichkeit festzulegen ob die Varianten einzeln oder nach Auswahl der Menge je Variante dann in den Warenkorb gelegt werden sollen. Als zusätzliche Einstellung können SIe auch festlegen ob die Liste dann als Tabelle angezeigt wird.<br><br><a href="hhttp://dev5.pixeleyes.de/mi-pants-medola-150"><b>Zur Demo​</b></a><br><br><br><br><b>Wichtig:
+Vor jedem Update empfehlen wir immer ein Backup des Plugin Ordners 
+sowie der Datenbank zu erstellen, da Shopware beim Update den 
+Pluginordner mit dem Inhalt des Update Pakets überschreibt und somit 
+Anpassungen z.B. an den templates des Plugins verloren gehen.
+​​</b><br>

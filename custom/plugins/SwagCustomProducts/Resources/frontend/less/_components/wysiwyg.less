@@ -1,0 +1,18 @@
+/** Component: WYSIWYG */
+.custom-products--wysiwyg {
+
+    .trumbowyg-box, .trumbowyg-editor {
+        .unitize-min-height(125);
+        border-color: @customizing-input-border;
+        margin: 0;
+
+        &.trumbowyg-reset-css {
+            background: #fff !important; // We need to force the color cause the editor styles are using an important too
+        }
+    }
+
+    .trumbowyg-button-pane {
+        background-color: @customizing-input-bg;
+        border-color: darken(@customizing-input-border, 5%);
+    }
+}

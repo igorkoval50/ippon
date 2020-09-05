@@ -1,0 +1,58 @@
+.footer--benefit {
+  .benefit--text {
+    .unitize-margin(-10, -10);
+  }
+
+  i {
+    display: inline-block;
+    float: left;
+    .unitize(height, 40);
+    .unitize(line-height, 40);
+    background: @brand-secondary;
+    color: contrast(@brand-secondary);
+    .unitize-margin(10, 10);
+    .unitize-padding(0, 10);
+    text-align: center;
+    .unitize(font-size, @font-size-h2);
+  }
+
+  i.custom {
+    .unitize(font-size, @font-size-h6);
+    font-style: normal;
+    font-weight: @font-bold-weight;
+    text-transform: uppercase;
+  }
+}
+
+.is--act-shippingpayment {
+  .product--table .panel--body {
+    .unitize-padding(20, 20);
+  }
+}
+
+.product--table {
+
+  @media screen and (min-width: @phoneLandscapeViewportWidth) {
+    .basket_change_quantity_form {
+      text-align: left;
+    }
+  }
+
+  .table--aggregation,
+  .aggregation--list {
+    margin: 0;
+  }
+
+}
+
+// premium-product--product
+.premium-product--product {
+
+  .product--inner .product--image {
+    border-width: 0px;
+
+    @media screen and(min-width: @phoneLandscapeViewportWidth) {
+      border-width: 1px;
+    }
+  }
+}

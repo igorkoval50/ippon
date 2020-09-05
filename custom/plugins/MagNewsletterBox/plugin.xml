@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">Overlay für Newsletter-Registrierung</label>
+    <label lang="en">Overlay for newsletter registration</label>
+
+    <version>2.2.3</version>
+    <copyright>(c) by magnolia4</copyright>
+    <license>MIT</license>
+    <link>https://www.magnolia4.de</link>
+    <author>magnolia4 GmbH</author>
+    <compatibility minVersion="5.6.3"/>
+
+    <description>
+        <![CDATA[
+            With this plugin, you integrate an overlay for newsletter registration in your online shop that automatically appears when you visit your online shop. Registrations are saved directly under "Marketing"> "Newsletter"> "Administration"> "Recipients".
+        ]]>
+    </description>
+    <description lang="de">
+        <![CDATA[
+            Mit diesem Plugin binden Sie ein Overlay zur Newsletter-Registrierung in Ihren Onlineshop ein, dass sich beim Besuch Ihres Onlineshops automatisch einblendet. Die Anmeldungen werden direkt unter "Marketing" > "Newsletter" > "Verwaltung" > "Empfänger" gespeichert.
+        ]]>
+    </description>
+
+    <changelog version="2.2.1">
+        <changes lang="de">
+            <![CDATA[
+            - Neue Plugin-Struktur
+            - Neue Smarty Blöcke
+            - Kompatibilität mit Cookie Consent Manager
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            - New plugin structure
+            - New smarty blocks
+            - Compatibility with cookie consent manager
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="2.2.2">
+        <changes lang="de">
+            <![CDATA[
+            - Bugfix: Problem mit falsche Sprachausgabe bei Sprach-Shops wurde behoben
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            - Bugfix: Problem with wrong language output on language shops has been fixed
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="2.2.3">
+        <changes lang="de">
+            <![CDATA[
+            - <b>Neu</b>: Reservierte Gutscheincodes können jetzt unter "Marketing" > "Newsletter Anmeldungen (Gutscheincodes)" eingesehen oder gelöscht werden
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            - <b>New</b>: Reserved voucher codes can now be viewed or deleted under "Marketing" > "Newsletter subscriptions (voucher codes)"
+            ]]>
+        </changes>
+    </changelog>
+</plugin>

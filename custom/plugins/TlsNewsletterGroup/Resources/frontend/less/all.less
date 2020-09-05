@@ -1,0 +1,94 @@
+@tls_white: #fff;
+
+.tls-newsletter-group-list {
+    .list--checkbox {
+        max-height: 88px;
+        overflow: auto;
+        & > div {
+            line-height: 18px;
+        }
+    }
+    .tls-newsletter-group-wrapper {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid @tls_white;
+    }
+    label {
+        color: @tls_white;
+    }
+}
+.footer--marketing .footer--newsletter {
+    .newsletter--form {
+        .tls-newsletter-group-list {
+            clear: left;
+            margin-bottom: 0;
+            max-height: 0;
+            overflow: hidden;
+            .transition();
+        }
+
+        .privacy-information {
+            clear: left;
+            margin-bottom: 0;
+            max-height: 0;
+            overflow: hidden;
+            .transition();
+            line-height: 18px;
+
+            label {
+                color: contrast(@brand-primary-dark);
+            }
+        }
+    }
+    &:hover {
+        .tls-newsletter-group-list {
+            max-height: 117px;
+        }
+    }
+}
+
+.newsletterbox--modal {
+    .newsletterbox--wrapper--inner {
+        .newsletterbox--wrapper--inner--content {
+            .newsletterbox--wrapper--inner--content--form {
+                #newsletterbox_email {
+                    float: none;
+                }
+            }
+        }
+    }
+    .tls-newsletter-group-list-popup {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin: 10px 0;
+        span {
+            margin-bottom: 5px;
+        }
+        .list--checkbox {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            &> div {
+                margin-right: 15px;
+                display: -webkit-inline-box;
+                display: -ms-inline-flexbox;
+                display: inline-flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                input {
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+}
+

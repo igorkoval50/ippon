@@ -1,0 +1,69 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="mbdus_seo_url.subscriber.mbdusseourlimportexportcontroller"
+                 class="MbdusSeoUrl\Subscriber\MbdusSeoUrlImportExportController">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.backendarticle"
+                 class="MbdusSeoUrl\Subscriber\BackendArticle">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.backendblog"
+                 class="MbdusSeoUrl\Subscriber\BackendBlog">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.backendcategory"
+                 class="MbdusSeoUrl\Subscriber\BackendCategory">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.backendemotion"
+                 class="MbdusSeoUrl\Subscriber\BackendEmotion">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.backendform"
+                 class="MbdusSeoUrl\Subscriber\BackendForm">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.backendsite"
+                 class="MbdusSeoUrl\Subscriber\BackendSite">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.backendsupplier"
+                 class="MbdusSeoUrl\Subscriber\BackendSupplier">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        
+        <service id="mbdus_seo_url.subscriber.rewritetable"
+                 class="MbdusSeoUrl\Subscriber\RewriteTable">
+            <argument type="service" id="service_container"/>
+            <argument>%mbdus_seo_url.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,27 @@
+Copyright (c) Borucinski Grafix, Inhaber Konrad Borucinski, info@bogx.de, http://bogx.de
+
+Dieses Plugin, sein Quellcode, zugehörige Dokumentation und alle damit verbundenen Komponenten
+unterliegen dem deutschen Urheberrecht und Leistungsschutzrecht.
+
+Der Lizenzgeber und seine Zulieferer sind Inhaber der vollständigen Rechte am Quellcode-Produkt,
+inklusive aller diesbezüglichen Urheberrechte, Patente, Geschäftsgeheimnisse, Marken und anderer
+Rechte zum Schutze geistigen Eigentums. Ihnen ist bekannt, dass der Besitz, die Installation oder die
+Benutzung der Software (des Quellcodes) keinerlei Ansprüche auf das geistige Eigentum an der Software
+begründet, und dass Sie keinerlei Ansprüche an der Software ausser den in der Lizenzvereinbarung 
+explizit eingeräumten erwerben. Sie stellt sicher, dass alle eventuell angefertigten Kopien der Software
+und der zugehörigen Dokumentation die entsprechenden Hinweise wie im Originalprodukt enthalten. 
+
+Jede Art der Vervielfältigung, Bearbeitung, Verbreitung, Einspeicherung und jede
+Art der Verwertung außerhalb der Grenzen des Urheberrechts bedarf der vorherigen
+schriftlichen Zustimmung des Rechteinhabers.
+
+Das geistige Eigentum, die Urheberrechte an dieser Software liegen bei dem Lizenzgeber:
+Borucinski Grafix, Inhaber Konrad Borucinski, info@bogx.de, http://bogx.de
+
+Das unerlaubte Kopieren/Speichern, Weitergeben oder Verkaufen dieser Software
+und aller damit verbundenen Komponenten (auch auszugsweise) ist nicht gestattet und strafbar.
+Ausgenommen davon sind alle Standard-Komponenten der Software-Umgebung, deren Urherberrechte
+bei der Firma Shopware AG oder anderen Software-Herstellern liegen.
+
+Der Lizenznehmer darf das Plugin (seine Quellcodes) ausschliesslich für die eigenen Projektzwecke,
+auf einer Domain und nur innerhalb seines Unternehmens uneingeschränkt jedoch nicht exklusiv nutzen.

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+
+    <elements>
+        <element type="boolean" scope="shop">
+            <name>plugin_state</name>
+            <label>Plugin aktivieren</label>
+            <value>1</value>
+        </element>
+		
+        <element type="textarea" required="true" scope="shop">
+            <name>zopimsource</name>
+            <label>Zopim Widget-Code</label>
+            <value></value>
+        </element>
+
+        <element type="text" required="true" scope="shop">
+            <name>agenttitle</name>
+            <label>Name des Agents</label>
+            <value>Live Support</value>
+			<description>Dieser Name wird dem Kunden angezeigt, der/die ihm antwortet.</description>
+        </element>
+
+        <element type="text" required="true" scope="shop">
+            <name>agenttext</name>
+            <label>Byline</label>
+            <value>Schreiben Sie uns...</value>
+			<description>Kurze Nachricht, um das Interesse des Besuchers zu wecken.</description>
+        </element>
+
+        <element type="mediaselection" scope="shop">
+            <name>agentimage</name>
+            <label>Avatarbild des Agents</label>
+            <value></value>
+			<description>Dieses Bild wird dem Kunden angezeigt, der/die ihm antwortet.</description>
+        </element>	
+		
+        <element type="text" required="true" scope="shop">
+            <name>title</name>
+            <label>Title in der Titelleiste</label>
+            <value>Sie haben eine Frage?</value>
+			<description>Kurze Nachricht, um das Interesse des Besuchers zu wecken.</description>
+        </element>
+
+        <element type="color" required="true" scope="shop">
+            <name>color</name>
+            <label>Designfarbe</label>
+            <value>#fa5d27</value>
+        </element>
+		
+        <element type="select" scope="shop">
+            <name>position</name>
+            <label>Position des Widgets</label>
+            <value>2</value>
+			<store>
+				<option>
+					<value>1</value>
+					<label>Unten links</label>
+				</option>
+				<option>
+					<value>2</value>
+					<label>Unten rechts</label>
+				</option>
+			</store>				
+        </element>
+
+        <element type="select" scope="shop">
+            <name>positionmobile</name>
+            <label>Position des Widgets (Mobile)</label>
+            <value>2</value>
+			<store>
+				<option>
+					<value>1</value>
+					<label>Unten links</label>
+				</option>
+				<option>
+					<value>2</value>
+					<label>Unten rechts</label>
+				</option>
+			</store>				
+        </element>
+		
+        <element type="boolean" scope="shop">
+            <name>setuserdata</name>
+            <label>Name und E-Mail im Chat-Fenster</label>
+            <value>1</value>
+			<description>Name und E-Mail des Kunden werden automatisch im Chat-Fenster angezeigt, sodass diese der Kunde nicht eingeben muss. Hierfür muss der Kunde angemeldet sein.</description>
+        </element>	
+
+        <element type="boolean" scope="shop">
+            <name>pagehome</name>
+            <label>Widget auf Homepage anzeigen</label>
+            <value>1</value>
+        </element>				
+	</elements>
+
+</config>

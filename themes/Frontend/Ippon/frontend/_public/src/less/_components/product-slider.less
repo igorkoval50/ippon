@@ -1,0 +1,112 @@
+
+.emotion--product-slider {
+    .product-slider--arrow {
+        margin: 0;
+    }
+}
+
+.product-slider--item {
+    padding: 0;
+}
+
+.product-slider--container {
+    .unitize-margin(@product-box-padding * -1, @product-box-padding * -1); // extra negative margin beacuse of shadow
+    width: auto;
+    text-align: center;
+
+    &.is--horizontal {
+        .product-slider--item {
+            vertical-align: top;
+        }
+    }
+    &.is--vertical {
+        .unitize-margin(0, 0);
+    }
+}
+
+// Emotion--Product-slider Arrow
+.product-slider {
+    .product-slider--arrow.is--horizontal {
+        &:extend(.is--rounded);
+        .unitize(top, 20);
+        .unitize(bottom, 20);
+        .transition();
+        width: auto;
+        .unitize(height, 100);
+        overflow: hidden;
+        color: @text-color;
+        background: transparent;
+        border: none;
+        z-index: 8000;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        &.arrow--next {
+            right: 0;
+            left: 100%;
+            width: 0;
+            cursor: e-resize;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+
+            &::before {
+                .unitize(font-size, 20);
+                .transform(translateY(-50%));
+                position: absolute;
+                top: 50%;
+                right: 0;
+                left: 0;
+            }
+        }
+
+        &.arrow--prev {
+            right: 100%;
+            left: 0;
+            width: 0;
+            cursor: w-resize;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &::before {
+                .unitize(font-size, 20);
+                .transform(translateY(-50%));
+                position: absolute;
+                top: 50%;
+                right: 0;
+                left: 0;
+            }
+        }
+    }
+
+    &:hover {
+        .product-slider--arrow.is--horizontal {
+            &.arrow--prev {
+                .unitize(width, 40);
+                .unitize(margin-right, -40);
+                right: 100%;
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    .content-main:not(.is--fullscreen) & {
+                        .unitize(left, -40);
+                        right: 100%;
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            &.arrow--next {
+                .unitize(width, 40);
+                .unitize(margin-left, -40);
+                left: 100%;
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    .content-main:not(.is--fullscreen) & {
+                        .unitize(left, 40);
+                        left: 100%;
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

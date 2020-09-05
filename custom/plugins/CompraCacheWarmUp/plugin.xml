@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">Cache automatisch aufwärmen</label>
+    <version>2.0.2</version>
+    <supplier>COMPRA GmbH</supplier>
+    <author>COMPRA GmbH</author>
+    <copyright>COMPRA GmbH 2018</copyright>
+    <support>COMPRA GmbH</support>
+    <link>https://www.compra.de/</link>
+
+    <description lang="de">
+        <![CDATA[
+        <style type="text/css">
+
+            .pluginCacheWarmUp_LanguageHeader {
+            width: 100%;
+            background-color: #44546A;
+            color: white;
+            font-family: Arial;
+            font-size: 20px;
+            padding: 5px;
+            }
+        </style>
+
+        <a name="top"></a>
+        <div id="pluginCacheWarmUp">
+            <a href="#CacheWarmUpPluginDescription_DE">deutsch</a> | <a href="#CacheWarmUpPluginDescription_EN">english</a>
+            <hr/>
+            <a name="CacheWarmUpPluginDescription_DE"><div class="pluginCacheWarmUp_LanguageHeader">Deutsch</div></a><br />
+            <h1>Aufwärmen des Caches mit einem Cronjob</h1>
+
+            <h2>Ausführungszeit des Cronjobs</h2>
+            <small>
+                Der Cronjob zum Aufwärmen des Caches sollte immer direkt nach dem Löschen des Caches ausgeführt werden,
+                damit die Performance des Shops nicht beeinträchtigt wird. Daher wird dies bei der Installation automatisch eingestellt.
+                Zusätzlich empfehlen wir, den Cache nachts zu löschen und wiederaufzubauen, da nachts die wenigsten Zugriffe auf den Shop erfolgen.
+            </small>
+
+            <h2>Intervall des Cronjobs</h2>
+            <small>
+                Grundsätzlich gilt, dass der Cache nur oft geleert und aufgewärmt werden sollte, wenn oft Änderungen an Artikeln oder anderem
+                Inhalt des Shops vorgenommen werden. Wird dies nicht oft gemacht, muss auch der Cache nicht oft gelöscht werden.
+                Wir empfehlen für die Durchführung des Cronjobs ein Intervall von einem Tag, welches man in Shopware mit 86400 Sekunden hinterlegen muss.
+            </small>
+            <a href="#top">Nach Oben</a><br/>
+        </div>
+        <hr/>
+        <b>Copyright 2018 <a href="http://www.compra.de/" target="_blank">COMPRA GmbH</a></b><br/>
+    </description>
+
+    <description lang="en">
+
+        <style type="text/css">
+        .pluginCacheWarmUp_LanguageHeader {
+        width: 100%;
+        background-color: #44546A;
+        color: white;
+        font-family: Arial;
+        font-size: 20px;
+        padding: 5px;
+        }
+        </style>
+
+        <div id="pluginCacheWarmUp">
+            <hr/>
+            <a name="CacheWarmUpPluginDescription_EN"><div class="pluginCacheWarmUp_LanguageHeader">English</div></a><br />
+            <h1>Warming up the cache with a cronjob</h1>
+
+            <h2>Recommendation for the execution time of the cronjob</h2>
+
+            <small>
+                The cronjob to warm up the cache should always run directly after the cache was deleted, so that the performance of
+                the shop is not affected. Therefore this setting will be made after the installation.
+                Additionally, we recommend to delete and warm up the cache at night, because at that time the shop has the least requests.
+            </small>
+
+            <h2>Interval of the cronjob</h2>
+            <small>
+                Generally, the cache just needs to be deleted and warmed up a lot, if there are a lot of changes on articles or other content
+                of the shop system. If that is not the case, also the cache doesn’t need to be deleted often.
+                We recommend an interval of a day for the execution of the cronjob, which has to be set with 86400 seconds in Shopware.
+            </small>
+            <a href="#top">to the top</a><br/>
+
+            <hr/>
+            <b>Copyright 2018 <a href="http://www.compra.de/" target="_blank">COMPRA GmbH</a></b><br/>
+        </div>
+        ]]>
+    </description>
+
+    <changelog version="2.0.2">
+        <changes lang="de">Verwendet den CLI Command</changes>
+        <changes lang="en">Uses the CLI command</changes>
+    </changelog>
+    <changelog version="1.2.4">
+        <changes lang="de">Für Shopware Versionen ab 5.2</changes>
+        <changes lang="en">For Shopware versions 5.2 and upwards</changes>
+    </changelog>
+    <changelog version="1.0.1">
+        <changes lang="de">Für Shopware Versionen vor 5.2</changes>
+        <changes lang="en">For Shopware versions before 5.2</changes>
+    </changelog>
+
+</plugin>

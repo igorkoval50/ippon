@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.6/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element scope="shop" type="boolean">
+            <name>showDebug</name>
+            <label lang="en">Show debug output</label>
+            <label lang="de">Zeige Debugausgaben an</label>
+            <value>0</value>
+            <description lang="en">
+                <![CDATA[ Overwrite "Ups, es ist ein Fehler aufgetreten..." with the real message. ]]>
+            </description>
+            <description lang="de">
+                <![CDATA[ Überschreibe "Ups, es ist ein Fehler aufgetreten..." mit der richtigen Fehlermeldung. ]]>
+            </description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>fileLogging</name>
+            <label lang="en">Enable file logging</label>
+            <label lang="de">Schreiben von Logfiles aktivieren</label>
+            <value>0</value>
+            <description lang="en">
+                <![CDATA[Net Inventors Plugins will write additional Logfiles in the shopware installation's log directory.]]>
+            </description>
+            <description lang="de">
+                <![CDATA[Net Inventors Plugins schreiben zusätzliche Log-Files in das Shopware-Logverzeichnis.]]>
+            </description>
+        </element>
+    </elements>
+</config>

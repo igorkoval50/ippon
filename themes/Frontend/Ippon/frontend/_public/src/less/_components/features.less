@@ -1,0 +1,93 @@
+.header--features {
+    .unitize-padding(0, @content-padding);
+    background: @gray;
+
+    .features--slider {
+        .unitize(max-width, 400);
+        .unitize-height(@features-height);
+        margin: auto;
+
+        @media screen and(min-width: @tabletViewportWidth) {
+            .unitize(max-width, 600);
+        }
+
+        .features-slider--container {
+            .unitize(margin-top, 0);
+            .unitize(margin-bottom, 0);
+        }
+
+        .features--item {
+            .unitize-height(@features-height);
+            vertical-align: middle;
+            width: 100%;
+        }
+
+        .features--item-inner {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            -webkit-justify-content: center;
+            white-space: initial;
+            .unitize-height(@features-height);
+        }
+
+        .feature--title {
+            width: 25%;
+            flex-grow: 1;
+            font-family: @font-headline-stack;
+            font-weight: @font-bold-weight;
+            .unitize(font-size, @font-size-h4);
+            line-height: 1;
+            text-transform: uppercase;
+            white-space: normal;
+        }
+
+        .feature--description {
+            display: none;
+            flex-grow: 1;
+            white-space: normal;
+
+            @media screen and(min-width: @tabletViewportWidth) {
+                display: block;
+                width: 50%;
+                .unitize(font-size, 10);
+            }
+        }
+
+        .feature--button {
+            width: 25%;
+            flex-grow: 1;
+            white-space: normal;
+
+            a {
+                color: @text-color;
+                font-weight: @font-bold-weight;
+                .unitize(font-size, 10);
+                text-decoration: underline;
+                text-transform: uppercase;
+            }
+        }
+
+        // Arrow
+        .product-slider--arrow {
+            .unitize-height(@features-height);
+        }
+    }
+}
+
+.features--slider {
+    &:hover {
+        .product-slider--arrow.is--horizontal {
+            &.arrow--prev {
+                .unitize(margin-right, 0);
+                .unitize(left, -40);
+            }
+
+            &.arrow--next {
+                .unitize(margin-left, 0);
+                .unitize(right, -40);
+            }
+        }
+    }
+}

@@ -1,0 +1,209 @@
+.custom-products--data-wrapper {
+    .unitize(margin-top, 20);
+    .unitize(margin-bottom, 20);
+
+    .panel--footer {
+        .unitize(padding, 20);
+        background: @customizing-gray;
+        border-top: 1px solid @customizing-gray-dark;
+
+        .custom-products--checkbox-label {
+            .unitize(font-size, 12);
+        }
+
+        .checkbox {
+            background: #fff;
+        }
+    }
+}
+
+.is--firefox .custom-products--image-selection-display {
+    pointer-events: auto;
+}
+
+.custom-products--image-selection-display {
+    pointer-events: none;
+}
+
+.custom-products--checkbox-label,
+.custom-products--radio-label {
+    cursor: pointer;
+
+    &:hover {
+        color: @customizing-brand-primary;
+
+        .checkbox {
+            border-color: @customizing-brand-primary;
+        }
+
+        .filter-panel--radio {
+            border-color: @customizing-brand-primary;
+        }
+    }
+}
+
+.custom-products--checkbox-value {
+    .unitize(line-height, 24);
+}
+
+.custom-product--modal-content {
+    .unitize(padding, 20);
+}
+
+.custom-products--label {
+    .unitize(padding-right, 20);
+    font-weight: bold;
+    display: block;
+    cursor: pointer;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    /** We don't have a mixin for this */
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.custom-products--checkbox-label .checkbox {
+    .unitize(margin-right, 8);
+}
+
+.custom-products--template-picture img {
+    .unitize-margin(10, 0);
+    width: 100%;
+    max-height: none;
+}
+
+.custom-products--required-field-info {
+    .unitize-margin(5, 0, 0);
+}
+
+.custom-products--actions .btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.custom-products--required-field-info {
+    .unitize(font-size, 12);
+}
+
+.custom-products--options {
+    border-top: 0 none;
+}
+
+.custom-products--description + .custom-products--options {
+    border-top: 1px solid @customizing-border-color;
+}
+
+/** Option wrapper */
+.custom-products--option {
+    .unitize-padding(10, 0, 10, 0);
+    border-top: 1px solid @customizing-border-color;
+    position: relative;
+
+    &.is--first {
+        border-top: 0 none;
+    }
+
+    &.is--last {
+        border-bottom: 1px solid @customizing-border-color;
+    }
+
+    .custom-product--option-wrapper {
+        .unitize-margin(15, 0, 10, 0);
+        display: none;
+    }
+
+    .custom-products--toggle-btn {
+        .unitize(top, 12);
+        .transition(all 0.15s linear);
+        .transform(rotate(0deg));
+
+        // We have to work with a "pixel" value here, cause icons doesn't scale well with "rem" values
+        font-size: 7px;
+        color: @customizing-text-color;
+        position: absolute;
+        right: 0;
+    }
+
+    &.is--active .custom-products--toggle-btn {
+        .transform(rotate(180deg));
+    }
+}
+
+/** Option actions */
+.custom-products--option-actions {
+    float: left;
+}
+
+.custom-products--option-reset-all {
+    .unitize(margin-top, 20);
+    .clearfix();
+}
+
+.custom-products--option-actions,
+.custom-products--option-reset-all {
+    // Reset button
+    .filter--active {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+
+    .custom-products--option-surcharges {
+        .unitize(font-size, 13);
+        .unitize(line-height, 26);
+        cursor: pointer;
+        color: @customizing-brand-primary;
+        display: block;
+        float: right;
+
+        .icon--help {
+            .unitize(margin-left, 5);
+            vertical-align: middle;
+        }
+    }
+}
+
+.custom-products--option-description {
+    .unitize(padding, 15)
+}
+
+.custom-products--option-description-link {
+    color: @customizing-brand-primary;
+    cursor: pointer;
+    float: right;
+}
+
+.custom-product--interactive-bar {
+    .unitize(margin-top, 20);
+    .unitize(margin-bottom, 10);
+    .clearfix();
+}
+
+/** Reset button */
+.custom-products--global-reset {
+    color: @customizing-brand-primary;
+    border-color: @customizing-brand-primary;
+
+    .filter--active-icon {
+        color: @customizing-brand-primary;
+    }
+}
+
+/* hint if custom products needs configuration */
+.custom-products--configuration-hint {
+    .unitize(margin-top, 20);
+}
+
+// hint for the quick view
+.quick-view--custom-product-hint {
+    .unitize(margin-top, 10);
+    float: left;
+    width: 100%;
+
+    .alert.is--info {
+        margin: 0;
+    }
+}

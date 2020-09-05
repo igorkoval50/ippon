@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<phpunit bootstrap="./Tests/Functional/Bootstrap.php"
+         colors="true"
+         backupGlobals="false"
+         processIsolation="true"
+         backupStaticAttributes="false"
+>
+    <testsuites>
+        <testsuite name="functional">
+            <directory>Tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>disable</group>
+        </exclude>
+    </groups>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./</directory>
+            <exclude>
+                <directory suffix=".php">./Tests</directory>
+                <directory suffix=".php">./vendor</directory>
+                <directory suffix=".php">./Bootstrap</directory>
+                <directory suffix=".php">./Models</directory>
+                <file>SwagFuzzy.php</file>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

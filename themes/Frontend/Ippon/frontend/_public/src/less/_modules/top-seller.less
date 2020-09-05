@@ -1,0 +1,33 @@
+.topseller {
+    background: transparent;
+    .unitize(padding-bottom, @content-padding);
+    .unitize(margin-bottom, @content-padding);
+
+    &.has--border {
+        border: none;
+        border-bottom: 1px solid @border-color;
+    }
+
+    .topseller--title {
+        .unitize(font-size, @font-size-h1);
+        margin: 0;
+        padding-top: 0;
+        .unitize(padding-bottom, @content-padding);
+    }
+
+    .topseller--content {
+        .unitize-padding(0, 0);
+    }
+}
+
+.topseller {
+    .product-slider--arrow {
+        &.arrow--next {
+            right: 0;
+        }
+
+        &.arrow--prev {
+            left: 0;
+        }
+    }
+}

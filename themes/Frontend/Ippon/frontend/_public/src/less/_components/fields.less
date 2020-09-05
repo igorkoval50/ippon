@@ -1,0 +1,35 @@
+textarea,
+input[type="text"],
+input[type="search"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+input[type="tel"] {
+    .reset-box-shadow();
+    .reset-border-radius();
+    background: @input-bg;
+}
+
+.select-field {
+
+    &:hover {
+        color: @input-focus-color;
+    }
+
+    select {
+        .reset-box-shadow();
+        background: @input-bg;
+        border: 1px solid @input-border;
+        .reset-border-radius();
+
+        &:hover {
+            color: @input-focus-color;
+            border-color: @input-focus-border;
+            background: @input-focus-bg;
+        }
+    }
+
+    &::after {
+        border-left: none;
+    }
+}

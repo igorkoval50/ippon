@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <imports>
+        <import resource="services/subscriber.xml"/>
+        <import resource="services/searchbundle.xml"/>
+    </imports>
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="swag_fuzzy.cologne_phonetic" class="SwagFuzzy\Components\ColognePhonetic">
+        </service>
+
+        <service id="swag_fuzzy.metaphone" class="SwagFuzzy\Components\Metaphone">
+        </service>
+
+        <service id="swag_fuzzy.settings_service" class="SwagFuzzy\Components\SettingsService">
+            <argument type="service" id="models"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+        </service>
+
+        <service id="swag_fuzzy.similar_results_service" class="SwagFuzzy\Components\SimilarResultsService">
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="shopware_searchdbal.search_term_helper"/>
+            <argument type="service" id="swag_fuzzy.settings_service"/>
+        </service>
+
+        <service id="swag_fuzzy.synonym_service" class="SwagFuzzy\Components\SynonymService">
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="shopware_storefront.media_service"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+        </service>
+
+        <service id="swag_fuzzy.algorithm_service" class="SwagFuzzy\Components\AlgorithmService">
+            <argument type="service" id="swag_fuzzy.settings_service"/>
+        </service>
+
+        <service id="swag_fuzzy.debug_search_query_builder_dbal"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\SearchTerm\DebugSearchTermQueryBuilder">
+            <argument type="service" id="shopware_searchdbal.search_query_builder_dbal"/>
+        </service>
+
+        <service id="swag_fuzzy.statistics_service" class="SwagFuzzy\Components\StatisticsService">
+            <argument type="service" id="dbal_connection"/>
+        </service>
+    </services>
+</container>

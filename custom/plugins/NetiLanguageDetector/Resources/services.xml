@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Synthetics -->
+        <service id="shop" class="Shopware\Models\Shop\Shop" synthetic="true"/>
+
+        <!-- Custom Services -->
+        <service id="neti_language_detector.service.redirect" class="NetiLanguageDetector\Service\Redirect">
+            <argument type="service" id="neti_foundation.plugin_manager_config" />
+            <argument type="service" id="db" />
+            <argument type="service" id="models" />
+            <argument type="service" id="neti_foundation.session" />
+            <argument type="service" id="application" /> <!-- Please do not try to inject the "shop" service directly, since this will break the backend! -->
+            <argument type="service" id="snippets" />
+            <argument type="service" id="neti_language_detector.service.url_helper" />
+            <argument type="service" id="neti_language_detector.service.debug" />
+        </service>
+
+        <service class="NetiLanguageDetector\Service\Location" id="neti_language_detector.service.location">
+            <argument id="neti_foundation.plugin_manager_config" type="service"/>
+            <argument id="db" type="service"/>
+            <argument type="service" id="neti_language_detector.service.debug" />
+        </service>
+
+        <service class="NetiLanguageDetector\Service\Debug" id="neti_language_detector.service.debug">
+            <argument type="service" id="neti_language_detector.logger" />
+            <argument type="service" id="debuglogger" />
+            <argument type="service" id="neti_foundation.plugin_manager_config" />
+        </service>
+
+        <service class="NetiLanguageDetector\Service\UrlHelper" id="neti_language_detector.service.url_helper">
+        </service>
+
+        <!-- Event Subscriber -->
+        <service id="neti_language_detector.subscriber.frontend" class="NetiLanguageDetector\Subscriber\Frontend">
+            <argument type="service" id="models" />
+            <argument type="service" id="neti_foundation.plugin_manager_config" />
+            <argument type="service" id="shop" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="neti_language_detector.subscriber.request" class="NetiLanguageDetector\Subscriber\Request">
+            <argument type="service" id="neti_foundation.session" />
+            <argument type="service" id="neti_foundation.plugin_manager_config" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+    </services>
+</container>
+
+

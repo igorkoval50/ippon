@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+   <elements>
+        <element required="true" type="boolean">
+            <name>categoryinherit</name>
+            <label lang="de">Kategorie Seo-Urls vererben?</label>
+            <label lang="en">Inherit category seo urls?</label>
+            <value>true</value>
+        </element>
+        <element required="true" type="boolean">
+            <name>siteinherit</name>
+            <label lang="de">Shopseiten Seo-Urls vererben?</label>
+            <label lang="en">Inherit site seo urls?</label>
+            <value>true</value>
+        </element>
+        <element required="true" type="boolean">
+            <name>formularinherit</name>
+            <label lang="de">Formular Seo-Urls vererben?</label>
+            <label lang="en">Inherit form seo urls?</label>
+            <value>true</value>
+        </element>
+        <element required="true" type="boolean">
+            <name>rewritevowels</name>
+            <label lang="de">Umlaute umschreiben (ä->ae)</label>
+            <label lang="en">rewrite german vowels (ä->ae)</label>
+            <value>false</value>
+        </element>
+    </elements>
+</config>

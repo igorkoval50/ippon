@@ -1,0 +1,194 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Custom Services -->
+        <service class="NetiFoundation\Service\PluginIntegrityCheck"
+                 id="neti_foundation.service.plugin_integrity_check">
+            <argument type="string">%shopware.plugin_directories.ShopwarePlugins%</argument>
+            <argument type="service" id="shopware.plugin_xml_plugin_info_reader" />
+        </service>
+
+        <service class="NetiFoundation\Service\SendMailTemplate" id="neti_foundation.service.send_mail_template">
+            <argument type="service" id="models" />
+            <argument type="service" id="templatemail" />
+            <argument type="service" id="mail" />
+            <argument type="service" id="config" />
+            <argument type="service" id="neti_foundation.service.shop" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_base" class="NetiFoundation\Service\PluginManager\Base">
+            <argument type="service" id="models" />
+            <argument type="service" id="db" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_schema" class="NetiFoundation\Service\PluginManager\Schema">
+            <argument type="service" id="models" />
+            <argument type="service" id="dbal_connection" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_cron" class="NetiFoundation\Service\PluginManager\Cron">
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="neti_foundation.logging_service" />
+            <argument type="service" id="models" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_attributes" class="NetiFoundation\Service\PluginManager\Attributes">
+            <argument type="service" id="models" />
+            <argument type="service" id="shopware_attribute.crud_service" />
+            <argument type="service" id="shopware_attribute.type_mapping" />
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="neti_foundation.logging_service" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_indexes" class="NetiFoundation\Service\PluginManager\Indexes">
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="neti_foundation.logging_service" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_acl" class="NetiFoundation\Service\PluginManager\Acl">
+            <argument type="service" id="models" />
+            <argument type="service" id="acl" />
+            <argument type="service" id="neti_foundation.logging_service" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_mail_templates"
+                 class="NetiFoundation\Service\PluginManager\MailTemplates">
+            <argument type="service" id="models" />
+            <argument type="service" id="neti_foundation.logging_service" />
+            <argument type="service" id="translation" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_form" class="NetiFoundation\Service\PluginManager\Form">
+            <argument type="service" id="models" />
+            <argument type="service" id="neti_foundation.plugin_manager_base" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_menu" class="NetiFoundation\Service\PluginManager\Menu">
+            <argument type="service" id="models" />
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="neti_foundation.logging_service" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_media" class="NetiFoundation\Service\PluginManager\Media">
+            <argument type="service" id="models" />
+            <argument type="service" id="neti_foundation.logging_service" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager_config" class="NetiFoundation\Service\PluginManager\Config">
+            <argument type="service" id="models" />
+            <argument type="service" id="neti_foundation.plugin_manager_base" />
+            <argument type="service" id="shopware.plugin.cached_config_reader" />
+            <argument type="service" id="neti_foundation.service.shop" />
+        </service>
+
+        <service id="neti_foundation.plugin_manager" class="NetiFoundation\Service\PluginManager">
+            <argument type="service" id="models" />
+            <argument type="service" id="service_container" />
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="neti_foundation.plugin_manager_schema" />
+            <argument type="service" id="neti_foundation.plugin_manager_attributes" />
+            <argument type="service" id="neti_foundation.plugin_manager_indexes" />
+            <argument type="service" id="neti_foundation.plugin_manager_acl" />
+            <argument type="service" id="neti_foundation.plugin_manager_mail_templates" />
+            <argument type="service" id="neti_foundation.plugin_manager_form" />
+            <argument type="service" id="neti_foundation.plugin_manager_menu" />
+            <argument type="service" id="neti_foundation.plugin_manager_media" />
+            <argument type="service" id="neti_foundation.logging_service" />
+            <argument type="service" id="neti_foundation.plugin_manager_cron" />
+            <argument type="service" id="neti_foundation.plugin_manager_config" />
+            <argument type="service" id="shopware.plugin_xml_plugin_info_reader" />
+            <argument type="service" id="db" />
+        </service>
+
+        <service id="neti_foundation.logging_service" class="NetiFoundation\Service\Logging\FileLoggingService">
+            <argument type="service" id="neti_foundation.plugin_manager_config" />
+            <argument>%kernel.logs_dir%</argument>
+            <argument>%neti_foundation.logger%</argument>
+        </service>
+
+        <service id="neti_foundation.service.file_hash_validator" class="NetiFoundation\Service\FileHashValidator">
+            <argument type="service" id="neti_foundation.plugin_manager_base" />
+        </service>
+
+        <service id="neti_foundation.service.shop" class="NetiFoundation\Service\Shop">
+            <argument type="service" id="models" />
+            <argument type="service" id="shopware_storefront.context_service" />
+            <argument type="service" id="front" />
+        </service>
+
+        <service id="neti_foundation.service.application" class="NetiFoundation\Service\Application">
+            <argument type="service" id="config" />
+        </service>
+
+        <service id="neti_foundation.service.string_operation" class="NetiFoundation\Service\StringOperation" />
+
+        <service id="neti_foundation.service.basket" class="NetiFoundation\Service\Basket">
+            <argument type="service" id="db" />
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="neti_foundation.service.theme" class="NetiFoundation\Service\Theme">
+            <argument type="service" id="neti_foundation.service.shop" />
+            <argument type="service" id="template" />
+            <argument type="service" id="theme_inheritance" />
+        </service>
+
+        <service id="neti_foundation.service.article" class="NetiFoundation\Service\Article">
+            <argument type="service" id="config" />
+            <argument type="service" id="db" />
+        </service>
+
+        <service class="NetiFoundation\Service\Tax" id="neti_foundation.service.tax" />
+
+        <service class="NetiFoundation\Service\LazyLoadingSession" id="neti_foundation.session">
+            <argument type="service" id="front" />
+            <argument type="service" id="service_container" />
+        </service>
+
+        <!-- Decorations -->
+        <service decorates="shopware_attribute.crud_service" id="neti_foundation.attribute.crud_service"
+                 class="NetiFoundation\Service\Decorations\Attribute\CrudService"
+                 decoration-inner-name="neti_foundation.attribute.crud_service.inner">
+            <argument type="service" id="models" />
+            <argument type="service" id="shopware_attribute.schema_operator" />
+            <argument type="service" id="shopware_attribute.table_mapping" />
+            <argument type="service" id="shopware_attribute.type_mapping" />
+            <argument type="service" id="neti_foundation.attribute.crud_service.inner" />
+            <argument type="service" id="template" />
+        </service>
+
+        <!-- Event Subscriber -->
+        <service id="neti_foundation.subscriber.plugin_manager" class="NetiFoundation\Subscriber\PluginManager">
+            <argument type="service" id="neti_foundation.plugin_manager" />
+            <argument type="service" id="models" />
+            <argument type="service" id="neti_foundation.plugin_manager_base" />
+            <argument type="service" id="neti_foundation.plugin_manager_form" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="neti_foundation.subscriber.backend" class="NetiFoundation\Subscriber\Backend">
+            <argument type="service" id="template" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="neti_foundation.subscriber.controller" class="NetiFoundation\Subscriber\Controller">
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="neti_foundation.subscriber.frontend" class="NetiFoundation\Subscriber\Frontend">
+            <argument type="service" id="neti_foundation.plugin_manager_config" />
+            <argument type="service" id="front" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="neti_foundation.subscriber.plugin_installer" class="NetiFoundation\Subscriber\PluginInstaller">
+            <argument type="service" id="neti_foundation.plugin_manager" />
+            <argument type="service" id="neti_foundation.plugin_manager_base" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+    </services>
+</container>

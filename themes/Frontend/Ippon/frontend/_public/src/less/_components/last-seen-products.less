@@ -1,0 +1,54 @@
+.last-seen-products {
+    .content-padding();
+    .unitize(margin-left, @content-padding * -.5);
+    .unitize(margin-right, @content-padding * -.5);
+
+    @media screen and(min-width: @desktopViewportWidth) {
+        .unitize(margin-left, @content-padding * -1);
+        .unitize(margin-right, @content-padding * -1);
+    }
+
+    .last-seen-products--title {
+        font-family: @font-headline-stack;
+        font-weight: @font-bold-weight;
+        .unitize(font-size, @font-size-h1);
+        text-transform: uppercase;
+        border-bottom: none;
+        text-align: center;
+        .unitize(margin-top, @content-padding);
+        .unitize-padding(0, 0);
+    }
+
+    .last-seen-products--item {
+        .last-seen-products-item--image {
+            .transition(border 200ms ease);
+            background: #fff;
+            margin: 0;
+            outline: none;
+            border: 1px solid @border-color;
+            padding-bottom: 137%;
+            overflow: hidden; // needed because of chrome jitte bugfix whre images get size + 1
+        }
+
+        .last-seen-products-item--title {
+            .transition(border 200ms ease);
+            background: #fff;
+            .unitize-padding(20, 20);
+            .unitize(height, 80);
+            border-bottom: 1px solid transparent;
+            border-left: 1px solid transparent;
+            border-right: 1px solid transparent;
+        }
+
+        &:hover {
+            .last-seen-products-item--title,
+            .last-seen-products-item--image {
+                border-color: @brand-secondary;
+            }
+
+            .last-seen-products-item--image {
+                border-bottom-color: transparent;
+            }
+        }
+    }
+}

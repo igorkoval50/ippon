@@ -1,0 +1,177 @@
+.navigation-main {
+    .unitize(height, @main-navigation--height);
+    position: relative;
+    border-bottom: none;
+    width: 100%;
+    display: none;
+    @media screen and (min-width: @tabletViewportWidth) {
+        .navigation-main {
+            display: block;
+        }
+    }
+    @media screen and(min-width: @desktopViewportWidth) {
+        display: inline-block;
+        padding-left: 20%;
+    }
+
+    @media screen and(min-width: @tabletLandscapeViewportWidth) {
+        padding-left: 15%;
+    }
+
+    @media screen and(min-width: @desktopViewportWidth) {
+        .unitize(margin-top, @main-navigation--margin);
+        padding-right: 15%;
+    }
+
+    > .container {
+        padding: 0;
+        .unitize-margin(@main-navigation--height * .25, 0);
+    }
+
+    .navigation--list-wrapper {
+        .unitize(height, @main-navigation--height * .5);
+    }
+
+    .navigation--list {
+        padding: 0;
+        font-size: 0;
+        text-align: center;
+    }
+
+    .navigation--entry {
+        display: inline-block;
+        text-align: center;
+
+        &.is--separated {
+            @media screen and(min-width: @desktopViewportWidth) {
+                border-left: 1px solid @border-color;
+                .unitize(margin-left, 10);
+            }
+
+            @media screen and(min-width: @tabletLandscapeViewportWidth) {
+                .unitize(margin-left, 15);
+            }
+
+            @media screen and(min-width: @desktopViewportWidth) {
+                .unitize(margin-left, 20);
+            }
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .navigation--link {
+        .transition();
+        font-family: @font-headline-stack;
+        font-weight: @font-bold-weight;
+        .unitize(height, @main-navigation--height * .5);
+        .unitize(line-height, @main-navigation--height * .5);
+        .unitize(font-size, 18);
+        .unitize-padding(0, 10);
+        .reset-border-radius();
+        color: @text-color;
+        background: transparent;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+        text-align:center;
+        vertical-align: middle;
+
+        @media screen and(min-width: @tabletLandscapeViewportWidth) {
+            .unitize-padding(0, 15);
+        }
+
+        @media screen and(min-width: @desktopViewportWidth) {
+            .unitize-padding(0, 20);
+        }
+
+        &::before {
+            content: '';
+            .transition();
+            display: block;
+            .unitize(height, 0);
+            width: auto;
+            position: absolute;
+            .unitize(right, 10);
+            .unitize(left, 10);
+            bottom: 0;
+            background: @brand-primary;
+
+            @media screen and(min-width: @tabletLandscapeViewportWidth) {
+                .unitize(left, 15);
+                .unitize(right, 15);
+            }
+
+            @media screen and(min-width: @desktopViewportWidth) {
+                .unitize(left, 20);
+                .unitize(right, 20);
+            }
+        }
+
+        &:hover {
+            background: transparent;
+            color: @text-color;
+
+            &::before {
+                .unitize(height, 2);
+            }
+        }
+
+        &::after {
+            display: block;
+            content: attr(title);
+            font-weight: @font-bold-weight;
+            height: 0;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        i {
+            .unitize(font-size, 16);
+            .unitize(line-height, @main-navigation--height - 24);
+            .unitize(padding-right, 10);
+            vertical-align: middle;
+        }
+
+        .icon--arrow-down {
+            .unitize(font-size, 6);
+            .unitize(padding-right, 0);
+            .unitize(padding-left, 2);
+        }
+
+        &.is--highlighted {
+            background: @brand-primary;
+            color: contrast(@brand-primary);
+
+            &:hover {
+                background: @brand-secondary;
+                color: contrast(@brand-secondary);
+
+                &::before {
+                    .unitize(height, 0);
+                }
+            }
+        }
+    }
+
+    .is--active {
+        .navigation--link {
+            background: transparent;
+            color: @text-color;
+
+            &::before {
+                .unitize(height, 2);
+            }
+
+            &:hover {
+                color: @brand-primary;
+            }
+        }
+    }
+}

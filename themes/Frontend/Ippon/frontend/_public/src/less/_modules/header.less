@@ -1,0 +1,526 @@
+.header-main {
+    padding: 0;
+    border: none;
+
+    .header--navigation {
+        padding: 0;
+        position: relative;
+    }
+
+    .top--navigation {
+        @media screen and (min-width: @desktopViewportWidth) {
+            background: @brand-secondary;
+            .unitize(height, @shop-navigation--height * .5);
+        }
+
+        .navigation-top--inner {
+            position: relative; // needed für search Positioning
+        }
+    }
+
+    // Top Bar
+    .top-bar {
+        padding: 0;
+        margin: 0;
+        float: right;
+        .unitize(height, @shop-navigation--height);
+        @media screen and (min-width: @tabletViewportWidth) {
+            display: none;
+        }
+        @media screen and (min-width: @desktopViewportWidth) {
+            display: block;
+            .unitize(height, @shop-navigation--height * .5);
+        }
+
+        .container {
+            max-width: none;
+            padding: 0;
+        }
+
+        // navigation
+        .top-bar--navigation {
+            width: 100%;
+            float: left;
+
+            .navigation--entry {
+                .transition();
+                text-align: center;
+                color: @text-color;
+                .unitize(height, @shop-navigation--height);
+                .unitize(line-height, @shop-navigation--height);
+                .unitize(font-size, @font-size-base - 3);
+                text-transform: uppercase;
+                font-weight: @font-bold-weight;
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    color: contrast(@brand-secondary);
+                    .unitize(height, @shop-navigation--height * .5);
+                    .unitize(line-height, @shop-navigation--height * .5);
+                }
+
+                &:hover,
+                &:active {
+                    color: @brand-primary;
+                    background: transparent;
+                }
+
+                > i {
+                    .unitize(font-size, 20);
+                    .unitize(line-height, @shop-navigation--height);
+                    vertical-align: -4px;
+
+                    @media screen and (min-width: @desktopViewportWidth) {
+                        .unitize(line-height, @shop-navigation--height * .5);
+                    }
+                }
+
+                &:last-child {
+                    .unitize-padding(0, 15);
+                }
+            }
+
+            .service--list {
+                .unitize(top, @shop-navigation--height + 8);
+                border-color: @brand-secondary;
+                background: @brand-secondary;
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    .unitize(top, @shop-navigation--height * .5 + 8);
+                }
+
+                &::after {
+                    border-color: @brand-secondary;
+                    background: @brand-secondary;
+                }
+
+                .service--link {
+                    font-weight: @font-base-weight;
+                    text-transform: none;
+                    color: contrast(@brand-secondary);
+
+                    &:hover {
+                        color: contrast(@brand-secondary);
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+            .field--select,
+            .select-field,
+            .select-field::after {
+                .unitize(height, @shop-navigation--height);
+                .unitize(line-height, @shop-navigation--height);
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    .unitize(height, @shop-navigation--height * .5);
+                    .unitize(line-height, @shop-navigation--height * .5);
+                }
+            }
+
+            .select-field:hover {
+                &::after {
+                    color: contrast(@brand-secondary);
+                }
+            }
+        }
+    }
+
+    // Logo
+    .header-logo--inner {
+        position: relative;
+    }
+
+    .logo-main {
+        width: 100%;
+        .unitize(height, @header--height * .75);
+        .unitize-padding(10, 10);
+
+        @media screen and (min-width: @phoneLandscapeViewportWidth) {
+            .unitize(height, @header--height * .75);
+        }
+
+        @media screen and (min-width: @desktopViewportWidth) {
+            z-index: 1;
+            position: absolute;
+            .unitize(top, @shop-navigation--height * .5);
+            margin-right: auto;
+            .unitize-padding(10, @content-padding, 10, 0);
+            width: 20%;
+            .unitize(height, @header--height - @main-navigation--margin);
+        }
+
+        @media screen and (min-width: @desktopViewportWidth) {
+            width: 15%;
+        }
+
+        @media screen and (min-width: @desktopViewportWidth) {
+            .unitize(height, @header--height);
+
+        }
+
+        .logo--shop {
+            float: none;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            text-align: center;
+
+            .logo--link {
+                .transition();
+                position: relative;
+                width: 100%;
+                height: 100%;
+
+                img {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    margin: auto;
+
+                    @media screen and (min-width: @desktopViewportWidth) {
+                        margin: auto 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .shop--navigation {
+        float: right;
+        .unitize(height, @shop-navigation--height);
+        width: 100%;
+
+        @media screen and (min-width: @desktopViewportWidth) {
+            position: static; // beacause of search width
+            width: auto;
+            .unitize(height, @shop-navigation--height * .5);
+        }
+        @media screen and (min-width: @tabletViewportWidth) {
+            .entry--menu-left {
+                display: block;
+            }
+        }
+        @media screen and (min-width: @desktopViewportWidth) {
+            .entry--menu-left {
+                display: none;
+            }
+        }
+        > .navigation--list {
+            font-size: 0;
+
+            > .navigation--entry {
+                .reset-border-radius();
+                .unitize(font-size, @font-size-base);
+                margin: 0;
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    float: left;
+                }
+
+                > .btn {
+                    .reset-border-radius();
+                    .unitize-padding(0, 15);
+                    .transition(all .4s ease);
+                    .transition();
+                    .unitize(height, @shop-navigation--height);
+                    .unitize(line-height, @shop-navigation--height);
+                    width: auto;
+                    .unitize(font-size, @font-size-base - 3);
+                    color: @text-color;
+                    font-weight: @font-bold-weight;
+                    text-transform: uppercase;
+                    background: none;
+                    border: none;
+
+                    @media screen and (min-width: @desktopViewportWidth) {
+                        .unitize(height, @shop-navigation--height * .5);
+                        .unitize(line-height, @shop-navigation--height * .5);
+                        width: 100%;
+                        text-align: center;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: contrast(@brand-secondary);
+                    }
+
+                    &:hover,
+                    &:active {
+                        color: @brand-primary;
+                        background: transparent;
+                    }
+
+                    > i {
+                        .unitize(font-size, 24);
+                        .unitize(line-height, @shop-navigation--height);
+                        position: relative;
+                        top: 0;
+                        left: 0;
+                        display: inline;
+                        vertical-align: middle;
+
+                        @media screen and (min-width: @desktopViewportWidth) {
+                            .unitize(font-size, 20);
+                            .unitize(line-height, @shop-navigation--height * .5);
+                        }
+                    }
+
+                    > [class*="--display"],
+                    .cart--amount {
+                        display: none;
+                        .unitize(line-height, @shop-navigation--height);
+                        .unitize(font-size, @font-size-base - 3);
+                        text-transform: uppercase;
+                        font-weight: @font-bold-weight;
+                        vertical-align: middle;
+
+                        @media screen and (min-width: @desktopViewportWidth) {
+                            display: inline-block;
+                        }
+
+                        @media screen and (min-width: @desktopViewportWidth) {
+                            .unitize(line-height, @shop-navigation--height * .5);
+                        }
+                    }
+                }
+
+                &.entry--account {
+                    .account--display {
+                        @media screen and (min-width: @desktopViewportWidth) {
+                            &.navigation--personalized {
+                                .unitize(line-height, 10);
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+
+                &.entry--cart {
+
+                    .cart--display {
+                        display: none;
+                    }
+
+                    .cart--amount {
+                        .transition();
+                        color: contrast(@brand-secondary);
+                    }
+
+                    &:hover {
+                        .cart--amount {
+                            color: @brand-primary;
+                        }
+                    }
+                }
+
+                &.entry--trigger.is--icon-left {
+                    .unitize(font-size, 16);
+                    .unitize(padding-left, 0);
+                    padding: 0;
+                    font-weight: 400;
+                    color: contrast(@brand-secondary);
+                    text-transform: uppercase;
+                }
+
+                // account badge
+                .account--link {
+                    &.account--user-loggedin::after {
+                        .unitize(font-size, 8);
+                        .border-radius(50%);
+                        content: @sw-icon-check;
+                        display: inline-block;
+                        position: absolute;
+                        background: @highlight-success;
+                        font-family: @sw-icon-fontname;
+                        color: @text-color;
+                        .unitize-width(20);
+                        .unitize-height(20);
+                        .unitize(line-height, 20);
+                        .unitize(top, 5);
+                        .transform(translateX(-50%));
+                        .unitize(left, 35);
+                        right: auto;
+
+                        @media screen and (min-width: @desktopViewportWidth) {
+                            position: static;
+                            .transform(translateX(0%));
+                        }
+
+                    }
+                }
+            }
+        }
+
+        /* Quantity Badge */
+        .cart--quantity,
+        .notes--quantity {
+            .unitize(top, 5);
+            .transform(translateX(-50%));
+            .unitize-padding(0, 5);
+            .unitize(left, 35);
+            right: auto;
+
+            @media screen and (min-width: @desktopViewportWidth) {
+                position: static;
+                .transform(translateX(0%));
+            }
+        }
+    }
+    .icon--heart {
+        font-family: @sw-icon-fontname !important;
+        margin-right: 0;
+        font-size: 16px !important;
+        &:before {
+            content: "\e60a";
+        }
+    }
+}
+
+// Header Padding
+.header-main {
+    min-height: 140px;
+    &.is--active-searchfield {
+        .unitize(padding-bottom, @search-height + 20); // additional padding
+    }
+}
+
+// account menu
+.account--menu.is--personalized {
+    .navigation--link.navigation--personalized {
+        display: inline-block;
+        width: 100%;
+
+        &:hover,
+        &:focus {
+            color: @brand-primary;
+            box-shadow: none;
+        }
+    }
+}
+
+@media screen and(min-width: @desktopViewportWidth) {
+    // Drowdown menu for account navigation
+    .account--dropdown-navigation {
+        .unitize(top, @shop-navigation--height * .5 + 6);
+    }
+}
+
+// Header Minimal
+.is--ctl-checkout.is--minimal-header,
+.is--ctl-register.is--minimal-header,
+.is--ctl-register.is--minimal-header.is--target-checkout {
+    .header-main {
+        .reset-box-shadow();
+        padding: 0;
+        border-bottom: none;
+
+        .header--logo {
+            .logo-main {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
+        .logo-main {
+            height: auto;
+            border: none;
+            position: static;
+            .content-padding();
+            padding-top: 0;
+
+            @media screen and (min-width: @desktopViewportWidth) {
+                padding-bottom: 0;
+            }
+
+            .logo--shop {
+                float: left;
+                margin: 0;
+                width: 100%;
+                .unitize(height, @header--height * .75);
+                .unitize-margin(@header--height * .125, 0);
+
+                @media screen and (min-width: @phoneLandscapeViewportWidth) {
+                    .unitize(height, @header--height * .75);
+                }
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    width: 46%;
+                    .unitize(height, @header--height);
+                    .unitize-margin(0, 0);
+                    .unitize-padding(10, 0);
+                }
+
+                @media screen and (min-width: @desktopViewportWidth) {
+                    width: 30%;
+                }
+            }
+
+            .logo--link {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .logo--supportinfo {
+            color: @text-color;
+            text-align: center;
+
+            @media screen and(min-width: @desktopViewportWidth) {
+                .unitize(height, @header--height * .5);
+                .unitize-padding(@content-padding * .25, @content-padding * .5);
+                .unitize-margin(@header--height * .25, 0);
+                width: 29%;
+            }
+
+            @media screen and(min-width: @desktopViewportWidth) {
+                width: 40%;
+            }
+        }
+
+        .btn--back-top-shop {
+            display: block;
+            .reset-border-radius();
+            .unitize(height, @shop-navigation--height);
+            .unitize(line-height, @shop-navigation--height);
+            border: none;
+            .unitize-padding(0, @content-padding);
+            .transition();
+            width: 100%;
+            .unitize(max-width, 210);
+            margin: auto;
+            text-align: center;
+            background: @brand-secondary;
+            color: contrast(@brand-secondary);
+            float: none;
+
+            @media screen and(min-width: @desktopViewportWidth) {
+                .unitize(height, @header--height * .5);
+                .unitize(line-height, @header--height * .5);
+                .unitize-margin(@header--height * .25, 0);
+                width: 25%;
+                border: none;
+                float: right;
+            }
+
+            @media screen and(min-width: @desktopViewportWidth) {
+                width: 30%;
+            }
+
+            &:hover {
+                color: contrast(@brand-primary);
+                background: @brand-primary;
+            }
+        }
+    }
+}
+
+// Header Business Essentials
+.is--ctl-privatelogin,
+.is--ctl-error,
+.is--ctl-account.is--minimal-view {
+    .header-main {
+        .logo-main {
+            position: static;
+        }
+    }
+}

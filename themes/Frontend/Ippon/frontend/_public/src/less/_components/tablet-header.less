@@ -1,0 +1,169 @@
+@media screen and (min-width: @tabletViewportWidth) {
+    .is--no-sidebar {
+        .listing--sidebar {
+            display: block;
+        }
+    }
+
+    .sidebar-main {
+        .sidebar--categories-wrapper {
+            display: block;
+        }
+
+        .is--ctl-blog &,
+        .is--ctl-note &,
+        .is--ctl-note.is--user.is--one-time-account &,
+        .is--ctl-index &,
+        .is--ctl-detail &,
+        .is--ctl-search &,
+        .is--ctl-checkout &,
+        .is--ctl-register &,
+        .is--ctl-campaign &,
+        .is--ctl-account.is--act-logout &,
+        .is--ctl-account.is--act-abort &,
+        .is--ctl-account.is--act-password &,
+        .is--ctl-account.is--act-resetpassword &,
+        .is--ctl-listing.is--no-sidebar & {
+            display: none;
+
+            & + .content--wrapper {
+                margin: 0;
+            }
+        }
+        .mobile--switches,
+        .filter--container,
+        .navigation--smartphone {
+            display: block;
+        }
+    }
+    .offcanvas--overlay {
+        display: block;
+    }
+
+    .sidebar--navigation {
+        .border-radius();
+        background: #fff;
+        border: 1px solid @border-color;
+        border-radius: 0;
+        margin: 0;
+        border-left: 0;
+        border-right: 0;
+
+        .navigation--entry {
+            margin: 0;
+            border-bottom: 1px solid @border-color;
+
+            &:last-child {
+                border-bottom: 0 none;
+            }
+        }
+        .navigation--link {
+            color: @text-color;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            .is--icon-right {
+                display: block;
+            }
+        }
+
+    }
+}
+
+@media screen and (min-width: @desktopViewportWidth) {
+    .is--no-sidebar {
+        .listing--sidebar {
+            display: none;
+        }
+    }
+    .offcanvas--overlay {
+        display: none;
+    }
+    .sidebar-main {
+        .sidebar--categories-wrapper {
+            display: none;
+        }
+        .is--ctl-blog &,
+        .is--ctl-note &,
+        .is--ctl-note.is--user.is--one-time-account &,
+        .is--ctl-index &,
+        .is--ctl-detail &,
+        .is--ctl-search &,
+        .is--ctl-checkout &,
+        .is--ctl-register &,
+        .is--ctl-campaign &,
+        .is--ctl-account.is--act-logout &,
+        .is--ctl-account.is--act-abort &,
+        .is--ctl-account.is--act-password &,
+        .is--ctl-account.is--act-resetpassword &,
+        .is--ctl-listing.is--no-sidebar & {
+            display: none;
+
+            & + .content--wrapper {
+                margin: 0;
+            }
+        }
+        .mobile--switches,
+        .filter--container,
+        .navigation--smartphone {
+            display: none;
+        }
+    }
+    .sidebar--navigation {
+        .reset-border-radius();
+        background: #fff;
+        border: none;
+
+        // Indent sub-categories 10 pixels
+        ul.sidebar--navigation {
+            .navigation--entry {
+                .unitize-margin(0, 0, 0, 20);
+            }
+        }
+
+        .navigation--entry {
+            margin: 0;
+            border-bottom: none;
+
+            .navigation--link {
+                .unitize-margin(0, 0);
+                .unitize-padding(5, 0);
+                .unitize(font-size, @font-size-base + 2);
+                font-weight: @font-base-weight;
+                font-family: @font-base-stack;
+                color: @text-color;
+                .transition();
+                width: auto;
+                position: relative;
+                display: inline;
+                .unitize(line-height, 32);
+                box-shadow: inset 0 0px 0 0px transparent;
+
+                &:hover,
+                &:focus {
+                    color: @text-color-dark;
+                    box-shadow: inset 0 -2px 0 0px @brand-primary;
+                }
+
+                &.is--active {
+                    font-weight: @font-bold-weight;
+                }
+                .is--icon-right {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .sidebar-main {
+        .sidebar--categories-wrapper {
+            display: block;
+        }
+        .shop-sites--container {
+            display: none;
+        }
+    }
+
+}
+
+
+

@@ -1,0 +1,43 @@
+{
+    "label": {
+        "de": "Facebook Pixel einbinden",
+        "en": "Embed Facebook Pixel"
+    },
+    "copyright": "media:meets GmbH",
+    "license": "proprietary",
+    "link": "https://www.mediameets.de",
+    "author": "media:meets GmbH",
+    "currentVersion": "3.0.1",
+    "changelog": {
+        "en": {
+            "1.0.0": "Initial Release",
+            "1.1.0": "Restructuring templates for more compatibility with individual themes ($injectBeforePlugins = false)",
+            "1.2.0": "Optimizations; Preparations for switching to the new plug-in system and new features for Shopware 5.3",
+            "1.2.1": "Bug fixed (Asynchronous loading of events for Shopware >= 5.3)",
+            "1.3.0": "Configurable privacy options (opt-in & opt-out) added; Advanced matching added; AddToCart without active JavaScript added",
+            "1.3.1": "Plugin compatibility improved (Klarna Checkout plugin overwrites sBasket incomplete)",
+            "1.4.0": "Performance optimization by outsourcing the tracking in JavaScript; Permanently save the Opt-In / Opt-Out option in the browser's HTML Web Storage; Activation / deactivation of tracking via link added; Transfer of prices as numbers (previously text); noscript tracking removed; Text modules migrated to new namespace",
+            "1.4.1": "Escaping some values (article name, category name ..) to avoid JavaScript syntax errors",
+            "1.4.2": "Added custom event on manufacturer page (ViewManufacturer with name & id)",
+            "1.5.0": "Added configuration of additional Pixel IDs; Added compatibility with Shopware version 5.5",
+            "2.0.0": "Leap version for Shopware version 5.5",
+            "2.0.1": "Fixed PHP error in FacebookPixelData controller",
+            "2.0.2": "Changed template registration; Removed referrer event parameter",
+            "2.0.3": "Templates in the FacebookPixelPrivacy controller explicitly loaded; Added configuration for the transfer of button clicks and metadata",
+            "2.0.4": "Changed template registration; Fixed bug with missing billing address and Advanced Matching; Search engines excluded on Opt-In / Opt-Out status pages",
+            "2.0.5": "Fixed bug with variant selection and facebookPixelData controller",
+            "2.0.6": "Added configuration option to transfer customer streams to Facebook; Added configuration option to enable / disable the plugin for each subshop",
+            "2.1.0": "Added backward compatibility until Shopware 5.3.0; Added new privacy mode (Use Shopware cookie mode)",
+            "2.1.1": "Fixed bug in relation to privacy mode 'Pixel active, no hint for the user'",
+            "2.2.0": "Added compatibility to new Shopware Cookie Consent Tool",
+            "2.2.1": "Fixed bug in relation to the new plugin of the Shopware Cookie Consent Tool <= 5.6.3 for using a wrong class namespace",
+            "3.0.0": "IMPORTANT: Changed blocks in Views/frontend/index/index.tpl! Added product identifier option (id / odernumber), Added price mode option (net / gross), Added shipping costs option (include / exclude)",
+            "3.0.1": "Fixed bug in relation to a non-array sBasket template variable"
+        }
+    },
+    "compatibility": {
+        "minimumVersion": "5.3.0",
+        "maximumVersion": null,
+        "blacklist": []
+    }
+}

@@ -1,0 +1,21 @@
+.product--delivery-addition {
+    .delivery--icon {
+        .unitize-margin(0, 5, 0, 0);
+        display: inline-block;
+        .unitize(font-size, 22);
+        vertical-align: middle;
+    }
+
+    .delivery--info {
+        color: @gray-dark;
+        .unitize-margin(0, 0, 0, 5);
+        display: inline-block;
+        .unitize(font-size, 16);
+        vertical-align: middle;
+
+        &.tooltip:hover::after,
+        &.tooltip:hover::before {
+            .transition-delay(0s);
+        }
+    }
+}

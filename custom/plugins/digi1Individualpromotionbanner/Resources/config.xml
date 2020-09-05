@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element required="true" scope="shop" type="select">
+            <name>plugin_active</name>
+            <label lang="de">Plugin aktiv</label>
+            <label lang="en">Plugin active</label>
+            <value>0</value>
+            <description lang="de">Bei dieser Auswahl haben Sie die Möglichkeit, das Plugin zu aktivieren oder zu deaktivieren</description>
+            <description lang="en">This selection allows you to enable or disable the plugin</description>
+            <store>
+                <option>
+                    <value>0</value>
+                    <label lang="de">Ja</label>
+                    <label lang="en">Yes</label>
+                </option>
+                <option>
+                    <value>1</value>
+                    <label lang="de">Nein</label>
+                    <label lang="en">No</label>
+                </option>
+            </store>
+        </element>
+        <element required="true" scope="shop" type="number">
+            <name>promotionbanner_modalbox_width</name>
+            <label lang="de">Breite der Modalbox in Pixeln</label>
+            <label lang="en">Width of the modalbox in pixels</label>
+            <value>800</value>
+            <description lang="de">Hier kann die Breite der Modalbox in Pixeln festgelegt werden</description>
+            <description lang="en">Here the width of the modalbox in pixels can be set up</description>
+            <options>
+                <minValue>1</minValue>
+                <maxValue>10000</maxValue>   
+            </options>
+        </element>
+        <element required="false" scope="shop" type="color">
+            <name>promotionbanner_modalbox_closeicon_backgroundcolor</name>
+            <label lang="de">Hintergrundfarbe des Schließen - Icons der Modalbox</label>
+            <label lang="en">Background color from the close icon of the modalbox</label>
+            <value>#000000</value>
+            <description lang="de">Hier kann die Hintergrundfarbe des Schließen - Icons der Modalbox festgelegt werden</description>
+            <description lang="en">Here you can set the background color from the close icon of the modalbox</description>
+        </element>
+        <element required="false" scope="shop" type="color">
+            <name>promotionbanner_modalbox_closeicon_fontcolor</name>
+            <label lang="de">Schriftfarbe des Schließen - Icons der Modalbox</label>
+            <label lang="en">Font color from the close icon of the modalbox</label>
+            <value>#FFFFFF</value>
+            <description lang="de">Hier kann die Schriftfarbe des Schließen - Icons der Modalbox festgelegt werden</description>
+            <description lang="en">Here you can set the font color from the close icon of the modalbox</description>
+        </element>
+        <element required="false" scope="shop" type="color">
+            <name>promotionbanner_backgroundcolor_collapseicon</name>
+            <label lang="de">Hintergrundfarbe des Aufklapp - Icons beim zugeklappten und ausgeblendeten Promotionbanner</label>
+            <label lang="en">Background color from the collapse icon when the promotion banner is collapsed and hidden</label>
+            <value>#5f7285</value>
+            <description lang="de">Hier kann die Hintergrundfarbe des Aufklapp - Icons beim zugeklappten und ausgeblendeten Promotionbanner festgelegt werden</description>
+            <description lang="en">Here you can set the background color from the collapse icon when the promotion banner is collapsed and hidden</description>
+        </element>
+        <element required="false" scope="shop" type="color">
+            <name>promotionbanner_fontcolor_collapseicon</name>
+            <label lang="de">Schriftfarbe des Aufklapp - Icons beim zugeklappten und ausgeblendeten Promotionbanner</label>
+            <label lang="en">Font color from the collapse icon when the promotion banner is collapsed and hidden</label>
+            <value>#FFFFFF</value>
+            <description lang="de">Hier kann die Schriftfarbe des Aufklapp - Icons beim zugeklappten und ausgeblendeten Promotionbanner festgelegt werden</description>
+            <description lang="en">Here you can set the font color from the collapse icon when the promotion banner is collapsed and hidden</description>
+        </element>
+        <element required="true" scope="shop" type="select">
+            <name>promotionbanner_cookie_permissioncheck</name>
+            <label lang="de">Erlaubnis des Setzens der Plugin - Cookies prüfen über</label>
+            <label lang="en">Check permission of setting the plugin cookies over</label>
+            <value>1</value>
+            <description lang="de">Bei dieser Auswahl haben Sie die Möglichkeit die Prüfung der Erlaubnis des Setzens der Plugin - Cookies auszuwählen</description>
+            <description lang="en">This selection allows you to select the check of the permission of setting the plugin cookies</description>
+            <store>
+                <option>
+                    <value>0</value>
+                    <label lang="de">das Vorhandensein eines Cookies für einen Cookie-Hinweis</label>
+                    <label lang="en">the existence of a cookie for a cookie note</label>
+                </option>
+                <option>
+                    <value>1</value>
+                    <label lang="de">das Cookie Consent Tool von Shopware</label>
+                    <label lang="en">the cookie consent tool from shopware</label>
+                </option>
+            </store>
+        </element>
+        <element required="false" scope="shop" type="text">
+            <name>promotionbanner_namecookiecookienote</name>
+            <label lang="de">Name des Cookies für den Cookie-Hinweis</label>
+            <label lang="en">Name of the cookie for the cookie note</label>
+            <value>allowCookie</value>
+            <description lang="de">Hier kann der Name des Cookies für den Cookie-Hinweis festgelegt werden</description>
+            <description lang="en">Here the name of the cookie for the cookie note can be set</description>
+         </element>
+         <element required="true" scope="shop" type="select">
+            <name>promotionbanner_cookie_group</name>
+            <label lang="de">Cookie-Gruppe</label>
+            <label lang="en">cookie group</label>
+            <value>1</value>
+            <description lang="de">Bei dieser Auswahl haben Sie die Möglichkeit die Cookie-Gruppe auszuwählen</description>
+            <description lang="en">This selection allows you to select the cookie group</description>
+            <store>
+                <option>
+                    <value>0</value>
+                    <label lang="de">Technisch erforderlich</label>
+                    <label lang="en">Technically required</label>
+                </option>
+                <option>
+                    <value>1</value>
+                    <label lang="de">Komfort Funktionen</label>
+                    <label lang="en">Comfort functions</label>
+                </option>
+                <option>
+                    <value>2</value>
+                    <label lang="de">Personalisierung</label>
+                    <label lang="en">Personalization</label>
+                </option>
+                <option>
+                    <value>3</value>
+                    <label lang="de">Statistik und Tracking</label>
+                    <label lang="en">Statistics and Tracking</label>
+                </option>
+                <option>
+                    <value>4</value>
+                    <label lang="de">Sonstige</label>
+                    <label lang="en">Others</label>
+                </option>
+            </store>
+        </element>
+    </elements>
+</config>

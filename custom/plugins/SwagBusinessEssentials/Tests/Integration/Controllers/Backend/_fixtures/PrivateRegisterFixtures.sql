@@ -1,0 +1,1 @@
+INSERT INTO `s_core_plugins_b2b_cgsettings` VALUES (1001,'H',0,1,'EK','','sREGISTERCONFIRMATION','sORDER');

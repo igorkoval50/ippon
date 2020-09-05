@@ -1,0 +1,18 @@
+{
+  "name": "shopware/swag-business-essentials",
+  "type": "shopware-plugin",
+  "description": "Design your shop individually for different customer groups in terms of price, presentation etc.",
+  "license": "proprietary",
+  "extra": {
+    "installer-name": "SwagBusinessEssentials"
+  },
+  "require-dev": {
+    "shopware/plugin-dev-tools": "master-dev"
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/shopwareLabs/plugin-dev-tools"
+    }
+  ]
+}

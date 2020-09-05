@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element scope="shop" type="boolean">
+            <name>wbmTagManagerActive</name>
+            <label lang="de">Aktiv</label>
+            <label lang="en">Active</label>
+            <value>1</value>
+        </element>
+        <element scope="shop" type="text">
+            <name>wbmTagManagerContainer</name>
+            <label lang="de">Container ID</label>
+            <label lang="en">Container ID</label>
+            <value/>
+        </element>
+        <element scope="shop" type="boolean">
+            <name>wbmTagManagerCookieConsent</name>
+            <label lang="de">Cookie Consent Unterstützung</label>
+            <label lang="en">Cookie consent support</label>
+            <value>0</value>
+        </element>
+        <element scope="shop" type="boolean">
+            <name>wbmTagManagerJsonPrettyPrint</name>
+            <label lang="de">Ausgabe formatieren</label>
+            <label lang="en">Format Output</label>
+            <value>0</value>
+        </element>
+        <element scope="shop" type="textarea">
+            <name>wbmTagManagerJsBefore</name>
+            <label lang="de">Inline JavaScript vor GTM Snippet</label>
+            <label lang="en">Inline JavaScript before GTM snippet</label>
+            <value/>
+            <options>
+                <xtype>codemirror</xtype>
+                <mode>javascript</mode>
+                <height>300</height>
+            </options>
+        </element>
+        <element scope="shop" type="textarea">
+            <name>wbmTagManagerJsAfter</name>
+            <label lang="de">Inline JavaScript nach GTM Snippet</label>
+            <label lang="en">Inline JavaScript after GTM snippet</label>
+            <value/>
+            <options>
+                <xtype>codemirror</xtype>
+                <mode>javascript</mode>
+                <height>300</height>
+            </options>
+        </element>
+        <element scope="shop" type="textarea">
+            <name>wbmSessionParameters</name>
+            <label lang="de">URL Parameter zwischenspeichern</label>
+            <label lang="en">Temporary saved URL parameters</label>
+            <value/>
+            <description lang="de"><![CDATA[
+                Kommaseparierte Liste von GET Parametern die in der Session zwischengespeichert werden sollen.
+                Die Parameter können dann in der dataLayer Konfiguration aus der Session gelesen werden:
+                {$smarty.session.Shopware .wbmTagManager.nameDesParameters}
+            ]]></description>
+            <description lang="en"><![CDATA[
+                Comma separated list of GET parameters that will be saved in the session temporary.
+                The parameters can then be used in the dataLayer configuration by reading the session:
+                {$smarty.session.Shopware .wbmTagManager.nameOfTheParameter}
+            ]]></description>
+        </element>
+    </elements>
+</config>

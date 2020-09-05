@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/config.xsd">
+
+    <elements>
+        <element required="true" type="number" scope="locale">
+            <name>configurationAvailabilityDays</name>
+            <label lang="de">Gültigkeit der Custom Products Konfigurationen</label>
+            <label lang="en">Durability of the Custom Products configurations</label>
+            <value>30</value>
+            <description lang="de">Die Anzahl der Tage, nach dem Custom Products Konfigurationen ungültig werden.</description>
+            <description lang="en">The amount of days after the Custom Products hashes should expire</description>
+        </element>
+
+        <element required="true" type="boolean" scope="locale">
+            <name>doNotShowMigrationButton</name>
+            <label lang="de">Migrations - Schaltfläche ausblenden</label>
+            <label lang="en">Hide the migration button</label>
+            <value>false</value>
+            <description lang="de">Wenn das alte Customizing Plugin installiert ist, ist es möglich, den Content zu migrieren. Nur in diesem Fall wird diese Einstellung berücksichtigt.</description>
+            <description lang="en">If the old Customizing plugin is installed, you can migrate the content. This setting is only taken into account when the plugin is installed.</description>
+        </element>
+    </elements>
+</config>

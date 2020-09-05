@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="combo" scope="shop">
+            <name>groups</name>
+            <label lang="de">Groups</label>
+            <label lang="en">Groups</label>
+            <description lang="de"></description>
+            <description lang="en"></description>
+            <store><![CDATA[Ext.define('YourPrefix.YourName.Form', {
+    extend: 'Ext.data.Store',
+    fields: [
+        { name:'id', type: 'int' },
+        { name:'name', type: 'string' }
+    ],
+    autoLoad: true,
+    pageSize: 1000,
+    remoteFilter: false,
+    proxy: {
+        type: 'ajax',
+        url: window.location.href.substr(0, window.location.href.indexOf('backend')) + 'backend/TlsNewsletterGroup/getGroupList',
+        reader: {
+            type: 'json',
+            root: 'data',
+            totalProperty: 'total'
+        }
+    }
+    }).create();//new ]]>
+            </store>
+            <options>
+                <valueField>id</valueField>
+                <displayField>name</displayField>
+                <isCustomStore>true</isCustomStore>
+                <multiSelect>true</multiSelect>
+            </options>
+        </element>
+    </elements>
+</config>

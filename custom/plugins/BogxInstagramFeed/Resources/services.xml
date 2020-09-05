@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+<services>
+    <!-- Add emotion component auto loader -->
+    <service id="bogx_instagram_feed.emotion_view_subscriber" class="Shopware\Components\Emotion\EmotionComponentViewSubscriber">
+        <argument>%bogx_instagram_feed.plugin_dir%</argument>
+        <tag name="shopware.event_subscriber" />
+    </service>
+
+    <service id="bogx_instagram_feed.subscriber.bogx_subscriber" class="BogxInstagramFeed\Subscriber\BogxSubscriber">
+        <argument>%bogx_instagram_feed.plugin_dir%</argument>
+    <!-- <argument type="service" id="bogx_instagram_feed.instagram_feed_service"/> -->
+     <tag name="shopware.event_subscriber"/>
+ </service>
+
+ <service id="bogx_instagram_feed.subscriber.template_registration" class="BogxInstagramFeed\Subscriber\TemplateRegistration">
+     <argument>%bogx_instagram_feed.plugin_dir%</argument>
+     <argument type="service" id="template"/>
+     <tag name="shopware.event_subscriber"/>
+ </service>
+ <!--
+     <service id="bogx_instagram_feed.instagram_feed_service" class="BogxInstagramFeed\Services\InstagramFeedService">
+     </service>
+ -->
+    </services>
+    </container>

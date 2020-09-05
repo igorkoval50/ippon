@@ -1,0 +1,117 @@
+body {
+	background: @body-bg;
+}
+
+.content-main {
+    position: relative;
+    .unitize(margin-top, 0);
+    .unitize(margin-bottom, @content-padding);
+    .reset-box-shadow();
+    background: none;
+    .content-padding();
+
+    &.is--fullscreen {
+        .content-padding();
+
+        .content {
+            .unitize(margin-top, @content-margin-top);
+        }
+    }
+}
+
+.content-main--inner {
+	padding: 0;
+    //.unitize(margin-top, @content-margin-top - 20);
+
+    // manufacturer
+    .is--act-manufacturer &,
+    .is--ctl-privatelogin & {
+        .unitize(margin-top, @content-padding);
+    }
+}
+
+// Affix Sticky Header
+.header-wrap {
+    .navigation-main {
+        top: 0;
+    }
+}
+
+body {
+	&.fixed-header {
+        .main--navigation {
+            @media screen and (min-width: @desktopLandscapeViewportWidth){
+                .unitize(height, 110);
+            }
+        }
+        .advanced-menu {
+            .unitize(padding-top, 10);
+        }
+		.navigation-main {
+            @navigation-height: @main-navigation--height + @main-navigation--margin;
+
+			position: fixed;
+            width: 100%;
+			left: 0;
+			right: 0;
+			z-index: @zindex-overlay - 2;
+            .unitize(top, @navigation-height * -1);
+            .unitize(margin-top, @navigation-height);
+            .unitize(padding-left, @navigation-height);
+            transition: margin-top .5s ease;
+            transition-delay: 1s;
+            .unitize-height(@main-navigation--height * .75);
+            background: @brand-secondary;
+
+            > .container {
+                .unitize-margin(@main-navigation--height * .125,0);
+            }
+
+            .navigation--link {
+                color: contrast(@brand-secondary);
+
+                &:hover {
+                    background: transparent;
+                    color: contrast(@brand-secondary);
+                }
+            }
+
+            .navigation--entry {
+                &.is--hovered {
+                    .navigation--link {
+                        color: contrast(@brand-secondary);
+                    }
+                }
+            }
+		}
+
+	}
+}
+
+.is--rounded {
+    .reset-border-radius();
+}
+
+h1 {
+    .unitize-margin(0, 0, @content-padding, 0);
+    .unitize(line-height, @line-height-headline);
+}
+
+
+.responsive-video {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-video iframe,
+.responsive-video object,
+.responsive-video embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}

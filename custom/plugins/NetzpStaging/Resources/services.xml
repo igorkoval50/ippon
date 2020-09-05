@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="netzp_staging.emotion_view_subscriber" class="Shopware\Components\Emotion\EmotionComponentViewSubscriber">
+            <argument>%netzp_staging.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="netzp_staging.commands.staging_list_command"
+            class="NetzpStaging\Commands\StagingListCommand">
+            <tag name="console.command" command="staging:list"/>
+        </service>
+
+        <service id="netzp_staging.commands.staging_create_command"
+            class="NetzpStaging\Commands\StagingCreateCommand">
+            <tag name="console.command" command="staging:create"/>
+        </service>
+
+        <service id="netzp_staging.commands.staging_delete_command"
+            class="NetzpStaging\Commands\StagingDeleteCommand">
+            <tag name="console.command" command="staging:delete"/>
+        </service>
+    </services>
+</container>

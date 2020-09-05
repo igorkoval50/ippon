@@ -1,0 +1,1282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Kickbyte GmbH - All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  -->
+
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">Vorschau von Varianten im Listing</label>
+    <label lang="en">Variant-Preview in Listing</label>
+
+    <version>2.3.17</version>
+    <link>https://kickbyte.atlassian.net/wiki/x/eQA2AQ</link>
+    <author>Kickbyte GmbH</author>
+    <copyright>Kickbyte GmbH</copyright>
+    <compatibility minVersion="5.2.0"/>
+
+    <changelog version="1.0.0">
+        <changes lang="de">Veröffentlichung</changes>
+        <changes lang="en">Release</changes>
+    </changelog>
+
+    <changelog version="1.0.2">
+        <changes lang="de">Fehler behoben beim ausführen von Cronjobs über Kommandozeile</changes>
+        <changes lang="en">Fix bug on running cronjobs over CLI</changes>
+    </changelog>
+
+    <changelog version="1.0.3">
+        <changes lang="de">Fehler behoben der eine unvollständige anzeige zur Folge hatte</changes>
+        <changes lang="en">Fix bug that causes an incomplete view of variants</changes>
+    </changelog>
+
+    <changelog version="1.1.0">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Alternative Darstellung für Desktop-Viewports
+            &lt;/li&gt;
+            &lt;li&gt;
+            Darstellungsfehler des "More"-Icons behoben
+            &lt;/li&gt;
+            &lt;li&gt;
+            Kleinere Bugfixes
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            View alternative for desktop viewports
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix style issue on "More"-icon
+            &lt;/li&gt;
+            &lt;li&gt;
+            Several small bug fixes
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.1">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Plugin-Struktur
+            &lt;/li&gt;
+            &lt;li&gt;
+            Ungewollter Zoom-Effekt beim Bildwechsel behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Plugin-Structure
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix thumbnail sizes to avoid zoom effects on hover
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.2">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            HTML-Escape Link-Titel
+            &lt;/li&gt;
+            &lt;li&gt;
+            Optische Verbesserungen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Escape link title
+            &lt;/li&gt;
+            &lt;li&gt;
+            Style improvements
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.3">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Kompatibilität mit Suchergebnis-Template
+            &lt;/li&gt;
+            &lt;li&gt;
+            Bug behoben der Variante auch bei nur einer möglichen Variante angezeigt hat
+            &lt;/li&gt;
+            &lt;li&gt;
+            Bug behoben der Variate auch bei deaktivierter oder nicht mehr verfügbaren Variante angezeigt hat
+            &lt;/li&gt;
+            &lt;li&gt;
+            Konfigurationsparamter hinzugefügt um deaktivierte Varianten als deaktivert anzuzeigen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Compatibility with search result template
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix bug that shows variant even if there is only one variant
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix bug that shows variant even if variant is deactivated or out of stock
+            &lt;/li&gt;
+            &lt;li&gt;
+            Add config parameter to show deactivated or out of stock variants as deactivated
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.4">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Kompatibilität mit Einkaufswelt-Elementen
+            &lt;/li&gt;
+            &lt;li&gt;
+            Bei Produkten ohne Varianten wird ein größeres Bild angezeigt
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Compatibility with emotion-world components
+            &lt;/li&gt;
+            &lt;li&gt;
+            Products without variants are displayed with a larger product cover
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.5">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Bug behoben der das Plugin auf Startseiten-Einkaufswelten nicht initialisiert
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fixes bug that don't initializes the plugin for emotion world components on the home page
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.1.6">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behebt Fehldarstellung im Suchergebnis-Template
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fixes bug in search result template
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.2.0">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Möglichkeit die Anzeige von Varianten pro Kategorie zu aktivieren
+            &lt;/li&gt;
+            &lt;li&gt;
+            Möglichkeit das Anzeigen von Varianten bei Mouseover pro Kategorie zu aktivieren
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Possibility to enable the displaying of variants per category
+            &lt;/li&gt;
+            &lt;li&gt;
+            Possibility to enable the displaying of variants on hover per category
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.2.1">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Kompatibilität mit Cross-Selling Artikeln im Produkt-Detail
+            &lt;/li&gt;
+            &lt;li&gt;
+            Darstellungs-Fehler behoben wenn "Inaktive Varianten anzeigen"-Option deaktviert war
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Compatibility with cross-selling articles in the product-detail view
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix bug when option "show inactive variants" was deactivated
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.2.2">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler behoben wenn Attribute nicht geladen werden konnten
+            &lt;/li&gt;
+            &lt;li&gt;
+            Darstellungs-Fehler bei deaktivierten Varianten
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix Null-Pointer-Exception if attributes are not available
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix bug in template view if variants are disabled
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.2.3">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Varianten auf der Hersteller-Seite wurden nicht angezeigt
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Variants are not shown on initial supplier page
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.3.0">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Unterstützung für Title-Fallback bei Bild-Konfiguratoren
+            &lt;/li&gt;
+            &lt;li&gt;
+            Unterstützung für Text-Darstellung von Varianten
+            &lt;/li&gt;
+            &lt;li&gt;
+            Darstellungstiefe für Varianten-Konfiguratoren einstellbar
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Support for Title-Fallback with Image-Configurators
+            &lt;/li&gt;
+            &lt;li&gt;
+            Support for variants with textual configurators
+            &lt;/li&gt;
+            &lt;li&gt;
+            Adjustable View-Level of variant configurator groups
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.3.1">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler bei inaktiven Kategorien behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bugs on inactive categories
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.3.2">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Anzeige pro Bereich konfigurierbar
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Display of variants configurable per area
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="1.3.3">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Artikel mit Varianten werden gekennzeichnet bei aktiver Slideout-Funktion
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fehler behoben der das Produkt-Bild zu klein darstellt bei aktiver Slideout-Funktion
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Mark articles with variants if slideout-functionality is enabled
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix bug that downsizes the product-image if slideout-functionality is enabled
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler in Darstellung bei Listings ohne Sidebar behoben
+            &lt;/li&gt;
+            &lt;li&gt;
+            Anzahl von dargestellten Varianten ist jetzt unbegrenzt
+            &lt;/li&gt;
+            &lt;li&gt;
+            Option zum ein/ausschalten von vergrößerten Produkt-Covern bei Produkten ohne Varianten
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bug in view of listings without sidebar
+            &lt;/li&gt;
+            &lt;li&gt;
+            Amount of displayed variants is now unlimited
+            &lt;/li&gt;
+            &lt;li&gt;
+            Add option to en/disable zoomed covers for products without variants
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler behoben in Image-Slider Modifikation
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bug modified image-slider
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.2">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Race-Condition bei Verwendung mit Firefox behoben
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fehler behoben der ungewollten Bildwechsel zur Folge hatte
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix Race-Condition in use with Firefox
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix bug that causes unwanted cover-switching behaviour
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.3">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Bild-Mapping wird beim Konfigurator-Typ "Bild" jetzt berücksichtigt
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Image-Mapping is now recognized in connection with configurator-type "Image"
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.4">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Bug beim berücksichtigen des Bild-Mappings behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bug on recognizing image-mapping
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.5">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler in Darstellung bei Listings ohne Sidebar behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bug in view of listings without sidebar
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.6">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Kompatibilität verbessert
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Improved compatibility
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.0">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler bei Verwendung von Ajax-Filtern (SW 5.3) behoben
+            &lt;/li&gt;
+            &lt;li&gt;
+            Globale Einstellungen für Kategorien verwenden
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bug in connection with Ajax-Filters (SW 5.3)
+            &lt;/li&gt;
+            &lt;li&gt;
+            Add global settings for categories
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.1">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler beim behandlen von globalen Einstellungen, bei Verwendung von Ajax-Filtern (SW 5.3), behoben
+            &lt;/li&gt;
+            &lt;li&gt;
+            Darstellungsfehler bei Verwendung von Ajax-Filtern (SW 5.3) behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bug with handling of global settings in connection with Ajax-Filters (SW 5.3)
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix bug in view in connection with Ajax-Filters (SW 5.3)
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.2">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Kompatibilität für angepasste SW 5.2 Ajax-Listings wiederhergestellt
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Restore compatibility for customized SW 5.2 Ajax-Listings
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.3">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Anzeige von Title-Fallback bei aktiven Varianten gefixt
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix Title-Fallback on active variants
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.4">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Möglichkeit die verwendete Thumbnail-Größe zu bestimmen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Possibility to adjust the Thumbnail-Size
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.5">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Varianten-Vorschau fehlt in Einkaufswelt-Elementen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fixed: Variant-Preview not shown in emotion components
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.6">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Mindestanzahl von Variaten bis zur Anzeige festlegen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Configure min amount of variants
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.7">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Mindestanzahl von Variaten bis zur Anzeige festlegen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Configure min amount of variants
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.8">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Inkompatibilität mit Digital Publishing behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Fix incompatibility with Digital Publishing
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.9">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Z-Index konfigurierbar
+            &lt;/li&gt;
+            &lt;li&gt;
+            Behoben: Mouseover-Funktion hat im Zusammenhang mit Text-Varianten nicht immer funktioniert
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Configurable Z-Index
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix: Mouseover functionality was not displayed in connection with text variants, in some cases
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.10">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: JavaScript-Fehler im Zusammenhang mit zoomen in der Lightbox
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Fix JavaScript-Error in connection with zooming in the Lightbox
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.1.11">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Smarty-Security Error
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Smarty-Security Error
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.0">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Möglichkeit Produkt-Cover in Abhängigkeit von Filter zu setzen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Ability to set product cover depending on filters
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.1">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Smarty Security-Error bei Verwendung im Blog
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Smarty Security-Error when using with blog
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.3">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Zuordnung in Filter-Mapping
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Fix mapping in filter-mapping
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.4">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: JavaScript-Fehler im Zusammenhang mit Digital-Publishing und Story-Telling
+            &lt;/li&gt;
+            &lt;li&gt;
+            Feature: Anzahl der Varianten pro Slide konfigurierbar
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: JavaScript-Exception in connection with Digital-Publishing and Story-Telling
+            &lt;/li&gt;
+            &lt;li&gt;
+            Feature: Adjustable number of variants per slide
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.5">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Varianten-Slider wurde initial nicht geladen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: The variant-slider was not loaded initially
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.6">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Template-Blöcke für Erweiterungen hinzugefügt
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Add additional template blocks for extensions
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.7">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Fehler beim ausführen von Cronjobs über CLI
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Exception on executing cronjobs over CLI
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.8">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Darstellungsfehler in der Emotion Produkt-Box
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Style error in the emotion product-box
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.9">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Darstellungsfehler in der Slider Produkt-Box
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Style error in the slider product-box
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.10">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Darstellungsfehler in der Emotion Produkt-Box
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Style error in the emotion product-box
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.0">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Darstellung als Dropdown möglich
+            &lt;/li&gt;
+            &lt;li&gt;
+            Feature: Separate Varianten-Vorschau wählbar
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Variant preview as dropdown
+            &lt;/li&gt;
+            &lt;li&gt;
+            Feature: Forced variant preview
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.1">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Dropdown-Links wurde nicht gefolgt
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Prevented link behaviour of dropdown links
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.2">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Dropdown Usability auf mobilen Geräten
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Improve dropdown usability on mobile devices
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.3">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Javascript-Fehler beim ändern der Fenstergröße
+            &lt;/li&gt;
+            &lt;li&gt;
+            Behoben: Slider-Steuerelemente können die Quickview auslösen
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: JS-Error on resizing window
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix: Slider-Arrows trigger quickview
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.4">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: offene Dropdowns werden geschlossen wenn ein anderes geöffnet wird
+            &lt;/li&gt;
+            &lt;li&gt;
+            Behoben: bei nicht vorhandenen Kategorie-Einstellungen wird die globale Einstellung verwendet
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: opened dropdowns will be closed on opening another dropdown
+            &lt;/li&gt;
+            &lt;li&gt;
+            Fix: if no category settings were set the plugin settings wil be used
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.5">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Coverwechsel bei Mouseover kann deaktiviert werden
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: cover switching on mouseover could be disabled
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.6">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Lightbox-Zoom ohne Funktion
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Lightbox-Zoom without functionality
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.7">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Scrollbar im Dropdown immer anzeigen (MacOS)
+            &lt;/li&gt;
+            &lt;li&gt;
+            Feature: Kompatibilität für Shopware 5.5
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Feature: Display the scrollbar in the dropdown immediately by default
+            &lt;/li&gt;
+            &lt;li&gt;
+            Feature: Compatibility for Shopware 5.5
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.8">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Behoben: Service/Hilfe-Dropdown defekt (Firefox)
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix: Dropdown behavior prevented (Firefox)
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.9">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fehler in Darstellung von Suchergebnissen wegen vergrößerten Produkt-Covern
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix bug in view of search results with zoomed covers
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.10">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Unterstützung für QuickView, angeklickte Variante wird geöffnet
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Support for QuickView, clicked variant will be opened
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.11">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Unterstützung für Artikel-Slider im Blog
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Support for article slider in blog
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.12">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Bessere Kompatibilität für IE
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Better compatibility for IE
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.13">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Darstellungsfehler behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix display error
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.14">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Kompatibilität zu TabtenListingHover
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Compatibility for TabtenListingHover
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.15">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Darstellungsfehler beim ändern der Größe des Browserfensters
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix display error on resizing browser
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.16">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Vertikale Positionierung bei Textvarianten behoben
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Fix vertical align of text-variants
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <changelog version="2.3.17">
+        <changes lang="de">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Kompatibilität zu anderen Plugins verbessert
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+        <changes lang="en">
+            &lt;ul&gt;
+            &lt;li&gt;
+            Improved compatibility for other plugins
+            &lt;/li&gt;
+            &lt;/ul&gt;
+        </changes>
+    </changelog>
+
+    <description lang="de">
+        &lt;div style=&quot;padding-bottom:12px;color:999;&quot;&gt;
+        &lt;strong style=&quot;font-weight:bold&quot;&gt;Vorschau von Varianten im Listing&lt;/strong&gt;
+        &lt;p&gt;Dieses Plugin bietet Ihren Kunden die M&#246;glichkeit Varianten bereits im Listing betrachten
+        zu k&#246;nnen ohne ins Produktdetail wechseln zu m&#252;ssen. Das spart Zeit bei der Produktwahl und
+        verbessert die Usability erheblich. Weiterhin kann Ihr Kunde direkt in das Produktdetail
+        der gew&#252;nschten Variante navigieren.
+        Das Plugin erstellt innerhalb der Produktvorschau im Listing kleine Fotos (Thumbnails) oder Text mit dem
+        Options-Namen
+        von den m&#246;glichen Varianten Ihres Artikels. Diese werden unterhalb des Hauptbildes
+        (erste Variante) angezeigt. Anhand dieser kleinen Fotos oder Text-Darstellungen, der weiteren Varianten,
+        kann Ihr Kunde ohne Aufwand seine weiteren M&#246;glichkeiten einsehen.&lt;/p&gt;
+        &lt;div&gt;
+        &lt;strong&gt;Features&lt;/strong&gt;
+        &lt;ul&gt;
+        &lt;li&gt;Vorschau weiterer Varianten im Listing&lt;/li&gt;
+        &lt;li&gt;gr&#246;&#223;ere Darstellung per Mouseover (Hauptbild)&lt;/li&gt;
+        &lt;li&gt;Optimierte Mouseover-Zeit um ruhiges und angenehmes Shoppen zu gew&#228;hrleisten&lt;/li&gt;
+        &lt;li&gt;Direkter Einsprung zur gew&#252;nschten Variante per Klick&lt;/li&gt;
+        &lt;li&gt;Produkt-Cover in Abh&#228;ngigkeit des Filters steuern&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    </description>
+    <description lang="en">
+        &lt;div style=&quot;padding-bottom:12px;color:999;&quot;&gt;
+        &lt;strong style=&quot;font-weight:bold&quot;&gt;Variant-Preview in Listing&lt;/strong&gt;
+        &lt;p&gt;This plugin offers the possibility to your customers to discover the available variants of
+        a product already in the product listing. Time saving and a better usability are the advantages.
+        Furthermore the customer is able to switch quickly to the desired variant by clicking on the
+        according thumbnail. The variant thumbnails or text-options are placed below the product main image.
+        With the help of this thumbnails or text-options, your customers are able to see the possibilities quickly
+        and without effort.&lt;/p&gt;
+        &lt;div&gt;
+        &lt;strong&gt;Features&lt;/strong&gt;
+        &lt;ul&gt;
+        &lt;li&gt;Preview of variants in the product listing&lt;/li&gt;
+        &lt;li&gt;Bigger preview by hovering the variant thumbnail&lt;/li&gt;
+        &lt;li&gt;Adjustable hover delay&lt;/li&gt;
+        &lt;li&gt;Direct link (Deep Link) to the desired variant on click&lt;/li&gt;
+        &lt;li&gt;Ability to set product-cover depending on filters&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+    </description>
+</plugin>

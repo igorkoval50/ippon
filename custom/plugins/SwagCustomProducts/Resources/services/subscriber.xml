@@ -1,0 +1,79 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="swag_custom_products.subscriber.account"
+                 class="SwagCustomProducts\Subscriber\Account">
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.backend"
+                 class="SwagCustomProducts\Subscriber\Backend">
+            <argument type="service" id="service_container"/>
+            <argument>%swag_custom_products.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.basket"
+                 class="SwagCustomProducts\Subscriber\Basket">
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.checkout"
+                 class="SwagCustomProducts\Subscriber\Checkout">
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.cron"
+                 class="SwagCustomProducts\Subscriber\Cron">
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.document" class="SwagCustomProducts\Subscriber\Document">
+            <argument type="service" id="custom_products.document_extender"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.frontend"
+                 class="SwagCustomProducts\Subscriber\Frontend">
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.inquiry_basket"
+                 class="SwagCustomProducts\Subscriber\InquiryBasket">
+            <argument type="service" id="service_container"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.mail"
+                 class="SwagCustomProducts\Subscriber\Mail">
+            <argument type="service" id="custom_products.document_extender"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.order_api_subscriber"
+                 class="SwagCustomProducts\Subscriber\OrderApiSubscriber">
+            <argument id="dbal_connection" type="service"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.template"
+                 class="SwagCustomProducts\Subscriber\Template">
+            <argument>%swag_custom_products.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="swag_custom_products.subscriber.media_garbage_collector"
+                 class="SwagCustomProducts\Subscriber\MediaGarbageCollector">
+            <tag name="shopware.event_subscriber"/>
+        </service>
+    </services>
+</container>

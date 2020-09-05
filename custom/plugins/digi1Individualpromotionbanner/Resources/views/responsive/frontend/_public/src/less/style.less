@@ -1,0 +1,1282 @@
+.promotionbanner-modalbox-outer {
+    display: none;
+}
+
+.promotionbanner-outer {
+    position: relative;
+    
+    &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        z-index: -1;
+    }
+    
+    &.promotionbanner-bottom-screen {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 3001;
+    }
+    
+    .promotionbanner-collapse--header {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        .unitize-width(50);
+        margin: auto;
+        text-align: center;
+        background: @promotionbanner_backgroundcolor_collapseicon;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 3px;
+        border-bottom-left-radius: 3px;
+        background-clip: padding-box;
+        box-shadow: 0 0 0 transparent;
+        z-index: 1;
+
+        .promotionbanner-collapse--toggler {
+            position: relative;
+            .unitize(top, -2);
+            pointer-events: none;
+            color: @promotionbanner_fontcolor_collapseicon;
+            .unitize(font-size, 6);
+            font-weight: @font-base-weight;
+            font-family: @sw-icon-fontname;
+        }
+        
+        &.collapse-is-open {
+            .promotionbanner-collapse--toggler {
+                &::before {
+                    content: "\e610";
+                }
+            }
+        }
+        
+        &.collapse-is-closed {
+            .promotionbanner-collapse--toggler {
+                &::before {
+                    content: "\e612";
+                }
+            }
+        }
+        
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    
+    &.promotionbanner-bottom-screen {
+        .promotionbanner-collapse--header {
+            bottom: 100%;
+            top: auto;
+            
+            &.collapse-is-open {
+                .promotionbanner-collapse--toggler {
+                    &::before {
+                        content: "\e612";
+                    }
+                }
+            }
+
+            &.collapse-is-closed {
+                .promotionbanner-collapse--toggler {
+                    &::before {
+                        content: "\e610";
+                    }
+                }
+            }
+        }
+    }
+
+    &.hide-collapseicon {   
+        .promotionbanner-collapse--header {
+            display: none;
+        }
+    }
+    
+    .container {
+        background: transparent;
+        
+        .promotionbanner {
+            position: relative;
+            
+            .promotionbanner-content {
+                .promotionbanner-content-inner {
+                    .promotionbanner-content-inner-sale {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .unitize(padding-left, 10);
+                        .unitize(padding-right, 10);
+                        
+                        &.align-left {
+                            text-align: left;
+                        }
+
+                        &.align-center {
+                            text-align: center;
+                        }
+
+                        &.align-right {
+                            text-align: right;
+                        }
+                    }
+
+                    .promotionbanner-content-inner-information {
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+                        flex-wrap: wrap;
+                        width: 100%;
+                        .unitize(padding-right, 10);
+
+                        .promotionbanner-content-inner-information-headline {
+                            font-weight: bold;
+                            
+                            &.align-left {
+                                text-align: left;
+                            }
+
+                            &.align-center {
+                                text-align: center;
+                            }
+
+                            &.align-right {
+                                text-align: right;
+                            }
+                        }
+
+                        .promotionbanner-content-inner-information-text {
+                            &.align-left {
+                                text-align: left;
+                            }
+
+                            &.align-center {
+                                text-align: center;
+                            }
+
+                            &.align-right {
+                                text-align: right;
+                            }
+                        }
+
+                        .promotionbanner-content-inner-information-btn {
+                            &.align-left {
+                                text-align: left;
+                            }
+
+                            &.align-center {
+                                text-align: center;
+                            }
+
+                            &.align-right {
+                                text-align: right;
+                            }
+                        }
+                    }
+                    
+                    .promotionbanner-content-inner-btn-outer {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .unitize(padding-left, 10);
+                        .unitize(padding-right, 10);
+                        
+                        &.align-left {
+                            text-align: left;
+                        }
+
+                        &.align-center {
+                            text-align: center;
+                        }
+
+                        &.align-right {
+                            text-align: right;
+                        }
+                    }
+                }
+            }
+            
+            .promotionbanner-content-complete-linking {
+                color: inherit;
+                display: block;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 200;
+                text-indent: 200%;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+    
+    &.promotionbanner-offcanvas {
+        .unitize(margin-top, 16);
+        .unitize(margin-bottom, 16);
+        
+        .container {
+            .promotionbanner {
+                .promotionbanner-content {
+                    .promotionbanner-content-inner {
+                        display: flex;
+                        
+                        .promotionbanner-content-inner-sale {
+                            padding-top: 0;
+                            padding-bottom: 0;
+                            
+                            &.width-auto {
+                                width: auto;
+                            }
+                            
+                            &.width-5 {
+                                width: 5%;
+                            }
+
+                            &.width-10 {
+                                width: 10%;
+                            }
+
+                            &.width-15 {
+                                width: 15%;
+                            }
+
+                            &.width-20 {
+                                width: 20%;
+                            }
+
+                            &.width-25 {
+                                width: 25%;
+                            }
+
+                            &.width-30 {
+                                width: 30%;
+                            }
+
+                            &.width-33 {
+                                width: 33%;
+                            }
+
+                            &.width-35 {
+                                width: 35%;
+                            }
+
+                            &.width-40 {
+                                width: 40%;
+                            }
+
+                            &.width-45 {
+                                width: 45%;
+                            }
+
+                            &.width-50 {
+                                width: 50%;
+                            }
+
+                            &.width-55 {
+                                width: 55%;
+                            }
+
+                            &.width-60 {
+                                width: 60%;
+                            }
+
+                            &.width-65 {
+                                width: 65%;
+                            }
+
+                            &.width-66 {
+                                width: 66%;
+                            }
+
+                            &.width-70 {
+                                width: 70%;
+                            }
+
+                            &.width-75 {
+                                width: 75%;
+                            }
+
+                            &.width-80 {
+                                width: 80%;
+                            }
+
+                            &.width-85 {
+                                width: 85%;
+                            }
+
+                            &.width-90 {
+                                width: 90%;
+                            }
+
+                            &.width-95 {
+                                width: 95%;
+                            }
+                            
+                            &.width-100 {
+                                width: 100%;
+                            }
+                        }
+
+                        .promotionbanner-content-inner-information {                            
+                            .promotionbanner-content-inner-information-headline {
+                                &.width-auto {
+                                    width: auto;
+                                }
+
+                                &.width-5 {
+                                    width: 5%;
+                                }
+
+                                &.width-10 {
+                                    width: 10%;
+                                }
+
+                                &.width-15 {
+                                    width: 15%;
+                                }
+
+                                &.width-20 {
+                                    width: 20%;
+                                }
+
+                                &.width-25 {
+                                    width: 25%;
+                                }
+
+                                &.width-30 {
+                                    width: 30%;
+                                }
+
+                                &.width-33 {
+                                    width: 33%;
+                                }
+
+                                &.width-35 {
+                                    width: 35%;
+                                }
+
+                                &.width-40 {
+                                    width: 40%;
+                                }
+
+                                &.width-45 {
+                                    width: 45%;
+                                }
+
+                                &.width-50 {
+                                    width: 50%;
+                                }
+
+                                &.width-55 {
+                                    width: 55%;
+                                }
+
+                                &.width-60 {
+                                    width: 60%;
+                                }
+
+                                &.width-65 {
+                                    width: 65%;
+                                }
+
+                                &.width-66 {
+                                    width: 66%;
+                                }
+
+                                &.width-70 {
+                                    width: 70%;
+                                }
+
+                                &.width-75 {
+                                    width: 75%;
+                                }
+
+                                &.width-80 {
+                                    width: 80%;
+                                }
+
+                                &.width-85 {
+                                    width: 85%;
+                                }
+
+                                &.width-90 {
+                                    width: 90%;
+                                }
+
+                                &.width-95 {
+                                    width: 95%;
+                                }
+
+                                &.width-100 {
+                                    width: 100%;
+                                }
+                            }
+
+                            .promotionbanner-content-inner-information-text {
+                                &.width-auto {
+                                    width: auto;
+                                }
+
+                                &.width-5 {
+                                    width: 5%;
+                                }
+
+                                &.width-10 {
+                                    width: 10%;
+                                }
+
+                                &.width-15 {
+                                    width: 15%;
+                                }
+
+                                &.width-20 {
+                                    width: 20%;
+                                }
+
+                                &.width-25 {
+                                    width: 25%;
+                                }
+
+                                &.width-30 {
+                                    width: 30%;
+                                }
+
+                                &.width-33 {
+                                    width: 33%;
+                                }
+
+                                &.width-35 {
+                                    width: 35%;
+                                }
+
+                                &.width-40 {
+                                    width: 40%;
+                                }
+
+                                &.width-45 {
+                                    width: 45%;
+                                }
+
+                                &.width-50 {
+                                    width: 50%;
+                                }
+
+                                &.width-55 {
+                                    width: 55%;
+                                }
+
+                                &.width-60 {
+                                    width: 60%;
+                                }
+
+                                &.width-65 {
+                                    width: 65%;
+                                }
+
+                                &.width-66 {
+                                    width: 66%;
+                                }
+
+                                &.width-70 {
+                                    width: 70%;
+                                }
+
+                                &.width-75 {
+                                    width: 75%;
+                                }
+
+                                &.width-80 {
+                                    width: 80%;
+                                }
+
+                                &.width-85 {
+                                    width: 85%;
+                                }
+
+                                &.width-90 {
+                                    width: 90%;
+                                }
+
+                                &.width-95 {
+                                    width: 95%;
+                                }
+
+                                &.width-100 {
+                                    width: 100%;
+                                }
+                            }
+
+                            .promotionbanner-content-inner-information-btn {
+                                &.width-auto {
+                                    width: auto;
+                                }
+
+                                &.width-5 {
+                                    width: 5%;
+                                }
+
+                                &.width-10 {
+                                    width: 10%;
+                                }
+
+                                &.width-15 {
+                                    width: 15%;
+                                }
+
+                                &.width-20 {
+                                    width: 20%;
+                                }
+
+                                &.width-25 {
+                                    width: 25%;
+                                }
+
+                                &.width-30 {
+                                    width: 30%;
+                                }
+
+                                &.width-33 {
+                                    width: 33%;
+                                }
+
+                                &.width-35 {
+                                    width: 35%;
+                                }
+
+                                &.width-40 {
+                                    width: 40%;
+                                }
+
+                                &.width-45 {
+                                    width: 45%;
+                                }
+
+                                &.width-50 {
+                                    width: 50%;
+                                }
+
+                                &.width-55 {
+                                    width: 55%;
+                                }
+
+                                &.width-60 {
+                                    width: 60%;
+                                }
+
+                                &.width-65 {
+                                    width: 65%;
+                                }
+
+                                &.width-66 {
+                                    width: 66%;
+                                }
+
+                                &.width-70 {
+                                    width: 70%;
+                                }
+
+                                &.width-75 {
+                                    width: 75%;
+                                }
+
+                                &.width-80 {
+                                    width: 80%;
+                                }
+
+                                &.width-85 {
+                                    width: 85%;
+                                }
+
+                                &.width-90 {
+                                    width: 90%;
+                                }
+
+                                &.width-95 {
+                                    width: 95%;
+                                }
+
+                                &.width-100 {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .promotionbanner-content-inner-btn-outer {
+                            &.width-auto {
+                                width: auto;
+                            }
+
+                            &.width-5 {
+                                width: 5%;
+                            }
+
+                            &.width-10 {
+                                width: 10%;
+                            }
+
+                            &.width-15 {
+                                width: 15%;
+                            }
+
+                            &.width-20 {
+                                width: 20%;
+                            }
+
+                            &.width-25 {
+                                width: 25%;
+                            }
+
+                            &.width-30 {
+                                width: 30%;
+                            }
+
+                            &.width-33 {
+                                width: 33%;
+                            }
+
+                            &.width-35 {
+                                width: 35%;
+                            }
+
+                            &.width-40 {
+                                width: 40%;
+                            }
+
+                            &.width-45 {
+                                width: 45%;
+                            }
+
+                            &.width-50 {
+                                width: 50%;
+                            }
+
+                            &.width-55 {
+                                width: 55%;
+                            }
+
+                            &.width-60 {
+                                width: 60%;
+                            }
+
+                            &.width-65 {
+                                width: 65%;
+                            }
+
+                            &.width-66 {
+                                width: 66%;
+                            }
+
+                            &.width-70 {
+                                width: 70%;
+                            }
+
+                            &.width-75 {
+                                width: 75%;
+                            }
+
+                            &.width-80 {
+                                width: 80%;
+                            }
+
+                            &.width-85 {
+                                width: 85%;
+                            }
+
+                            &.width-90 {
+                                width: 90%;
+                            }
+
+                            &.width-95 {
+                                width: 95%;
+                            }
+
+                            &.width-100 {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@modalboxwidth: ~"@{promotionbanner_modalbox_width}px";
+@modalboxwidthdistance: calc(~'@{modalboxwidth} + 90px');
+
+.js--modal {
+    &.promotionbanner--modal {
+        overflow: visible;
+
+        .content {
+          z-index: 100;
+        }
+
+        .btn {
+            &.modal--close {
+                .unitize(top, -20);
+                .unitize(right, -20);
+                background-color: @promotionbanner_modalbox_closeicon_backgroundcolor;
+                background-image: none;
+                color: @promotionbanner_modalbox_closeicon_fontcolor;
+                .unitize-height(40);
+                .unitize-width(40);
+                .unitize(border-radius, 20);
+                border: 0;
+                z-index: 101;
+
+                &:before {
+                    .unitize(font-size, 16);
+                    position: relative;
+                    .unitize(top, 5);
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: @modalboxwidthdistance) {
+    .js--modal {
+        &.promotionbanner--modal {
+            max-width: 88%;
+            overflow-y: scroll;
+            
+            .btn {
+                &.modal--close {
+                    .unitize(top, 10);
+                    .unitize(right, 10);
+                    background-color: @promotionbanner_modalbox_closeicon_backgroundcolor;
+                    background-image: none;
+                    color: @promotionbanner_modalbox_closeicon_fontcolor;
+                    .unitize-height(40);
+                    .unitize-width(40);
+                    .unitize(border-radius, 20);
+                    border: 0;
+                    z-index: 101;
+
+                    &:before {
+                        .unitize(font-size, 16);
+                        position: relative;
+                        .unitize(top, 5);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: @phoneLandscapeViewportWidth) {
+    .promotionbanner-outer {
+        .container {
+            .promotionbanner {
+                .promotionbanner-content {
+                    .promotionbanner-content-inner {                        
+                        .promotionbanner-content-inner-sale {
+                            .unitize(padding-top, 10);
+                            .unitize(padding-bottom, 10);
+                        }   
+                            
+                        .promotionbanner-content-inner-information {
+                            .unitize(padding-top, 10);
+                            .unitize(padding-bottom, 10);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: @phoneLandscapeViewportWidth) {
+    .promotionbanner-outer {
+        .container {
+            .promotionbanner {
+                .promotionbanner-content {
+                    .promotionbanner-content-inner {
+                        display: flex;
+                        
+                        .promotionbanner-content-inner-sale {                            
+                            &.width-auto {
+                                width: auto;
+                            }
+                            
+                            &.width-5 {
+                                width: 5%;
+                            }
+
+                            &.width-10 {
+                                width: 10%;
+                            }
+
+                            &.width-15 {
+                                width: 15%;
+                            }
+
+                            &.width-20 {
+                                width: 20%;
+                            }
+
+                            &.width-25 {
+                                width: 25%;
+                            }
+
+                            &.width-30 {
+                                width: 30%;
+                            }
+
+                            &.width-33 {
+                                width: 33%;
+                            }
+
+                            &.width-35 {
+                                width: 35%;
+                            }
+
+                            &.width-40 {
+                                width: 40%;
+                            }
+
+                            &.width-45 {
+                                width: 45%;
+                            }
+
+                            &.width-50 {
+                                width: 50%;
+                            }
+
+                            &.width-55 {
+                                width: 55%;
+                            }
+
+                            &.width-60 {
+                                width: 60%;
+                            }
+
+                            &.width-65 {
+                                width: 65%;
+                            }
+
+                            &.width-66 {
+                                width: 66%;
+                            }
+
+                            &.width-70 {
+                                width: 70%;
+                            }
+
+                            &.width-75 {
+                                width: 75%;
+                            }
+
+                            &.width-80 {
+                                width: 80%;
+                            }
+
+                            &.width-85 {
+                                width: 85%;
+                            }
+
+                            &.width-90 {
+                                width: 90%;
+                            }
+
+                            &.width-95 {
+                                width: 95%;
+                            }
+                            
+                            &.width-100 {
+                                width: 100%;
+                            }
+                        }
+
+                        .promotionbanner-content-inner-information {                            
+                            .promotionbanner-content-inner-information-headline {
+                                &.width-auto {
+                                    width: auto;
+                                }
+
+                                &.width-5 {
+                                    width: 5%;
+                                }
+
+                                &.width-10 {
+                                    width: 10%;
+                                }
+
+                                &.width-15 {
+                                    width: 15%;
+                                }
+
+                                &.width-20 {
+                                    width: 20%;
+                                }
+
+                                &.width-25 {
+                                    width: 25%;
+                                }
+
+                                &.width-30 {
+                                    width: 30%;
+                                }
+
+                                &.width-33 {
+                                    width: 33%;
+                                }
+
+                                &.width-35 {
+                                    width: 35%;
+                                }
+
+                                &.width-40 {
+                                    width: 40%;
+                                }
+
+                                &.width-45 {
+                                    width: 45%;
+                                }
+
+                                &.width-50 {
+                                    width: 50%;
+                                }
+
+                                &.width-55 {
+                                    width: 55%;
+                                }
+
+                                &.width-60 {
+                                    width: 60%;
+                                }
+
+                                &.width-65 {
+                                    width: 65%;
+                                }
+
+                                &.width-66 {
+                                    width: 66%;
+                                }
+
+                                &.width-70 {
+                                    width: 70%;
+                                }
+
+                                &.width-75 {
+                                    width: 75%;
+                                }
+
+                                &.width-80 {
+                                    width: 80%;
+                                }
+
+                                &.width-85 {
+                                    width: 85%;
+                                }
+
+                                &.width-90 {
+                                    width: 90%;
+                                }
+
+                                &.width-95 {
+                                    width: 95%;
+                                }
+
+                                &.width-100 {
+                                    width: 100%;
+                                }
+                            }
+
+                            .promotionbanner-content-inner-information-text {
+                                &.width-auto {
+                                    width: auto;
+                                }
+
+                                &.width-5 {
+                                    width: 5%;
+                                }
+
+                                &.width-10 {
+                                    width: 10%;
+                                }
+
+                                &.width-15 {
+                                    width: 15%;
+                                }
+
+                                &.width-20 {
+                                    width: 20%;
+                                }
+
+                                &.width-25 {
+                                    width: 25%;
+                                }
+
+                                &.width-30 {
+                                    width: 30%;
+                                }
+
+                                &.width-33 {
+                                    width: 33%;
+                                }
+
+                                &.width-35 {
+                                    width: 35%;
+                                }
+
+                                &.width-40 {
+                                    width: 40%;
+                                }
+
+                                &.width-45 {
+                                    width: 45%;
+                                }
+
+                                &.width-50 {
+                                    width: 50%;
+                                }
+
+                                &.width-55 {
+                                    width: 55%;
+                                }
+
+                                &.width-60 {
+                                    width: 60%;
+                                }
+
+                                &.width-65 {
+                                    width: 65%;
+                                }
+
+                                &.width-66 {
+                                    width: 66%;
+                                }
+
+                                &.width-70 {
+                                    width: 70%;
+                                }
+
+                                &.width-75 {
+                                    width: 75%;
+                                }
+
+                                &.width-80 {
+                                    width: 80%;
+                                }
+
+                                &.width-85 {
+                                    width: 85%;
+                                }
+
+                                &.width-90 {
+                                    width: 90%;
+                                }
+
+                                &.width-95 {
+                                    width: 95%;
+                                }
+
+                                &.width-100 {
+                                    width: 100%;
+                                }
+                            }
+
+                            .promotionbanner-content-inner-information-btn {
+                                &.width-auto {
+                                    width: auto;
+                                }
+
+                                &.width-5 {
+                                    width: 5%;
+                                }
+
+                                &.width-10 {
+                                    width: 10%;
+                                }
+
+                                &.width-15 {
+                                    width: 15%;
+                                }
+
+                                &.width-20 {
+                                    width: 20%;
+                                }
+
+                                &.width-25 {
+                                    width: 25%;
+                                }
+
+                                &.width-30 {
+                                    width: 30%;
+                                }
+
+                                &.width-33 {
+                                    width: 33%;
+                                }
+
+                                &.width-35 {
+                                    width: 35%;
+                                }
+
+                                &.width-40 {
+                                    width: 40%;
+                                }
+
+                                &.width-45 {
+                                    width: 45%;
+                                }
+
+                                &.width-50 {
+                                    width: 50%;
+                                }
+
+                                &.width-55 {
+                                    width: 55%;
+                                }
+
+                                &.width-60 {
+                                    width: 60%;
+                                }
+
+                                &.width-65 {
+                                    width: 65%;
+                                }
+
+                                &.width-66 {
+                                    width: 66%;
+                                }
+
+                                &.width-70 {
+                                    width: 70%;
+                                }
+
+                                &.width-75 {
+                                    width: 75%;
+                                }
+
+                                &.width-80 {
+                                    width: 80%;
+                                }
+
+                                &.width-85 {
+                                    width: 85%;
+                                }
+
+                                &.width-90 {
+                                    width: 90%;
+                                }
+
+                                &.width-95 {
+                                    width: 95%;
+                                }
+
+                                &.width-100 {
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .promotionbanner-content-inner-btn-outer {
+                            &.width-auto {
+                                width: auto;
+                            }
+
+                            &.width-5 {
+                                width: 5%;
+                            }
+
+                            &.width-10 {
+                                width: 10%;
+                            }
+
+                            &.width-15 {
+                                width: 15%;
+                            }
+
+                            &.width-20 {
+                                width: 20%;
+                            }
+
+                            &.width-25 {
+                                width: 25%;
+                            }
+
+                            &.width-30 {
+                                width: 30%;
+                            }
+
+                            &.width-33 {
+                                width: 33%;
+                            }
+
+                            &.width-35 {
+                                width: 35%;
+                            }
+
+                            &.width-40 {
+                                width: 40%;
+                            }
+
+                            &.width-45 {
+                                width: 45%;
+                            }
+
+                            &.width-50 {
+                                width: 50%;
+                            }
+
+                            &.width-55 {
+                                width: 55%;
+                            }
+
+                            &.width-60 {
+                                width: 60%;
+                            }
+
+                            &.width-65 {
+                                width: 65%;
+                            }
+
+                            &.width-66 {
+                                width: 66%;
+                            }
+
+                            &.width-70 {
+                                width: 70%;
+                            }
+
+                            &.width-75 {
+                                width: 75%;
+                            }
+
+                            &.width-80 {
+                                width: 80%;
+                            }
+
+                            &.width-85 {
+                                width: 85%;
+                            }
+
+                            &.width-90 {
+                                width: 90%;
+                            }
+
+                            &.width-95 {
+                                width: 95%;
+                            }
+
+                            &.width-100 {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

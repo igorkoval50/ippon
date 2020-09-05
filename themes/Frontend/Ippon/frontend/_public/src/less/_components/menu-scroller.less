@@ -1,0 +1,23 @@
+.navigation-main {
+    .js--menu-scroller--arrow {
+        background: @brand-secondary;
+        color: contrast(@brand-secondary);
+        border: none;
+        .unitize(height, @main-navigation--height * .5);
+        .unitize(line-height, @main-navigation--height * .5);
+        .unitize(top, 0);
+        .unitize(bottom, 0);
+
+        &.right--arrow {
+            .reset-border-radius();
+            border: none;
+            .unitize(right, 0);
+        }
+
+        &.left--arrow {
+            .reset-border-radius();
+            border: none;
+            .unitize(left, 0);
+        }
+    }
+}

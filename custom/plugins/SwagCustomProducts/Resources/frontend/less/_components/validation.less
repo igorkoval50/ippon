@@ -1,0 +1,24 @@
+.custom-product--option-wrapper .alert {
+    .unitize(margin-bottom, 25);
+}
+.custom-products--label.has--validation-error {
+    color: @customizing-highlight-error
+}
+.custom-products--global-error-overview {
+    .unitize(padding-top, 20);
+    display: none;
+}
+.custom-products--error-list {
+    .unitize(margin-left, 10);
+
+    .error-list--item {
+        .unitize(line-height, 21);
+        .unitize(margin-left, 15);
+        .unitize(margin-bottom, 10);
+        list-style: disc outside;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

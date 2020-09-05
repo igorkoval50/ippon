@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="boolean" scope="shop">
+            <name>shownewsletterbox</name>
+            <label lang="de">Newsletter-Overlay aktivieren</label>
+            <label lang="en">Activate newsletter overlay</label>
+            <value>1</value>
+        </element>
+        <element type="text" scope="shop">
+            <name>headline</name>
+            <label lang="de">Überschrift</label>
+            <label lang="en">Headline</label>
+            <value>Jetzt zum Newsletter anmelden!</value>
+        </element>
+        <element type="html" scope="shop">
+            <name>text</name>
+            <label lang="de">Inhalt</label>
+            <label lang="en">Content</label>
+            <value>Abonnieren Sie jetzt unseren kostenlosen Newsletter und verpassen Sie keine Aktionen und Neuigkeiten mehr.</value>
+        </element>
+        <element type="boolean" scope="shop">
+            <name>showimage</name>
+            <label lang="de">Bild anzeigen</label>
+            <label lang="en">Show image</label>
+            <value>0</value>
+        </element>
+        <element type="mediaselection" scope="shop">
+            <name>image</name>
+            <label lang="de">Bild auswählen</label>
+            <label lang="en">Choose image</label>
+            <value></value>
+        </element>
+        <element type="number" scope="shop">
+            <name>displaytime</name>
+            <label lang="de">Overlay zeitverzögert anzeigen (in Sekunden)</label>
+            <label lang="en">Show overlay with delay (in seconds)</label>
+            <value>5</value>
+            <description lang="de">
+                <![CDATA[
+                    Zeit nach dem Aufruf der Seite, wann das Overlay angezeigt werden soll.
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Time after the page is called and the overlay should be displayed.
+                ]]>
+            </description>
+            <options>
+                <minValue>0</minValue>
+            </options>
+        </element>
+        <element type="boolean" scope="shop">
+            <name>autohide</name>
+            <label lang="de">Overlay automatisch ausblenden</label>
+            <label lang="en">Hide overlay automatically</label>
+            <value>1</value>
+            <description lang="de">
+                <![CDATA[
+                    Aktivieren Sie diese Option, wenn nach der Newsletter-Anmeldung das Overlay nach 4 Sek. automatisch ausgeblendet werden soll.
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Activate this option if you want the overlay to be automatically hidden after 4 seconds after you have subscribed to the newsletter.
+                ]]>
+            </description>
+        </element>
+        <element type="number" scope="shop">
+            <name>cookielife</name>
+            <label lang="de">Cookie-Lebensdauer (in Tagen)</label>
+            <label lang="en">Cookie lifetime (in days)</label>
+            <value>30</value>
+            <description lang="de">
+                <![CDATA[
+                    Anzahl der Tage, nachdem der Cookie abläuft und das Fenster bei einem erneuten Shopbesuch wieder angezeigt werden soll. Wenn Sie den Wert "0" setzen, dann werden keine Cookies gesetzt.
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Number of days after the cookie expires. If you set the value "0", no cookies are set.
+                ]]>
+            </description>
+            <options>
+                <minValue>0</minValue>
+            </options>
+        </element>
+        <element type="boolean" scope="shop">
+            <name>hideafterregistration</name>
+            <label lang="de">Overlay nicht mehr nach Anmeldung anzeigen</label>
+            <label lang="en">Don't show overlay after newsletter subscription</label>
+            <value>1</value>
+            <description lang="de">
+                <![CDATA[
+                    Das Overlay wird nicht mehr angezeigt und ignoriert die Cookie-Lebensdauer.
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    The overlay is no longer displayed and ignores the cookie lifetime.
+                ]]>
+            </description>
+        </element>
+        <element type="text" scope="shop">
+            <name>controller</name>
+            <label lang="de">Anzeigen auf folgenden Controllern</label>
+            <label lang="en">Display on followings controller</label>
+            <value>index, detail, listing, search, custom, blog</value>
+            <description lang="de">
+                <![CDATA[
+                    Nur ändern, wenn diese bekannt sind.
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Only change if they are known.
+                ]]>
+            </description>
+        </element>
+        <element type="number" scope="shop">
+            <name>maxwidth</name>
+            <label lang="de">Maximale Overlay-Breite</label>
+            <label lang="en">Maximum overlay width</label>
+            <value>600</value>
+            <description lang="de">
+                <![CDATA[
+                    Maximale Breite in PX
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Maximum width in PX
+                ]]>
+            </description>
+        </element>
+        <element type="number" scope="shop">
+            <name>privacyid</name>
+            <label lang="de">Datenschutz Seiten-ID</label>
+            <label lang="en">Privacy page ID</label>
+            <value></value>
+            <description lang="de">
+                <![CDATA[
+                    Tragen Sie hier die ID der Shopseite ein, die zu Ihren Datenschutzbestimmungen führt.
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Enter the ID of the shop page that leads to your privacy policy.
+                ]]>
+            </description>
+        </element>
+        <element type="boolean" scope="shop">
+            <name>mobile</name>
+            <label lang="de">Auf mobilen Geräten anzeigen</label>
+            <label lang="en">Show on mobile devices</label>
+            <value>1</value>
+        </element>
+        <element type="combo" scope="shop">
+            <name>voucherset</name>
+            <label lang="de">Gutschein-Set (nur individuelle Codes)</label>
+            <label lang="en">Voucher set (individual codes only)</label>
+            <value>1</value>
+            <description lang="de">
+                <![CDATA[
+                    Hier können Sie ein verfügbares individuelles Gutschein-Set auswählen, das Sie mittels der Variable {$sVoucher} in der E-Mail-Vorlage "sNEWSLETTERCONFIRMATION" ausgeben können. Bitte beachten Sie, dass falls keine Codes mehr verfügbar sind, die Variable leer bleibt. Um die Anzeige der verfügbaren Codes zu aktualisieren, bitte beim Plugin auf "Neu installieren" klicken.
+                ]]>
+            </description>
+            <description lang="en">
+                <![CDATA[
+                    Here you can select an available individual voucher set, which you can output using the variable {$sVoucher} in the "sNEWSLETTERCONFIRMATION" email template. Please note that if no more codes are available, the variable remains empty. To update the display of the available codes, please click on "reinstall" at the plugin.
+                ]]>
+            </description>
+            <store>Shopware.apps.Voucher.store.List</store>
+            <options>
+                <multiSelect>false</multiSelect>
+                <valueField>id</valueField>
+                <displayField>description</displayField>
+            </options>
+        </element>
+    </elements>
+</config>

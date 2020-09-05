@@ -1,0 +1,25 @@
+.header-main {
+	.logo--shop {
+		&.logo--print {
+			display: none;
+		}
+	}
+}
+
+@media print {
+	.header-main {
+		background: none !important;
+
+		.header--navigation {
+			height: auto;
+		}
+
+		.logo--shop {
+			display: none;
+
+			&.logo--print {
+				display: block;
+			}
+		}
+	}
+}

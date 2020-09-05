@@ -1,0 +1,19 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="mag_newsletter_box.view_dir">%mag_newsletter_box.plugin_dir%/Resources</parameter>
+    </parameters>
+	
+    <services>
+        <!-- Register FrontendSubscriber subscriber -->
+        <service id="mag_newsletter_box.subscriber.frontend_subscriber" class="MagNewsletterBox\Subscriber\FrontendSubscriber">
+            <argument type="string">%mag_newsletter_box.plugin_dir%</argument>
+			<argument>%mag_newsletter_box.plugin_name%</argument>
+            <argument type="service" id="template"/>
+			<argument type="service" id="shopware.plugin.cached_config_reader" />
+            <tag name="shopware.event_subscriber"/>
+        </service>	
+    </services>
+</container>

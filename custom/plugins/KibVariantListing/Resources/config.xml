@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Kickbyte GmbH - All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element required="true" type="boolean" scope="shop">
+            <name>enableVariantsListing</name>
+            <label lang="de">Varianten-Vorschau im Listing aktivieren</label>
+            <label lang="en">Show variant preview in listing</label>
+            <value>1</value>
+            <description lang="de">
+                <![CDATA[Diese Einstellung kann durch die Einstellung der Kategorien überschrieben werden]]>
+            </description>
+            <description lang="en">
+                <![CDATA[This setting could be overwritten by category settings]]>
+            </description>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>enableVariantsTopseller</name>
+            <label lang="de">Varianten-Vorschau in Topsellern aktivieren</label>
+            <label lang="en">Show variant preview in top sellers</label>
+            <value>1</value>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>enableVariantsEmotion</name>
+            <label lang="de">Varianten-Vorschau in Einkaufswelten aktivieren</label>
+            <label lang="en">Show variant preview in emotion worlds</label>
+            <value>1</value>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>enableVariantsSearch</name>
+            <label lang="de">Varianten-Vorschau in den Suchergebnissen aktivieren</label>
+            <label lang="en">Show variant preview in search results</label>
+            <value>1</value>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>enableVariantsManufacturer</name>
+            <label lang="de">Varianten-Vorschau in den Hersteller-Listings aktivieren</label>
+            <label lang="en">Show variant preview in manufacturer listings</label>
+            <value>1</value>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>enableVariantsDetail</name>
+            <label lang="de">Varianten-Vorschau im Artikel-Detail aktivieren</label>
+            <label lang="en">Show variant preview in article detail</label>
+            <value>1</value>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>viewDropdown</name>
+            <label lang="de">Als Dropdown anzeigen</label>
+            <label lang="en">Show as dropdown</label>
+            <value>0</value>
+            <description lang="de">
+                <![CDATA[<ul>
+                            <li>ja - Varianten werden in einem Dropdown angezeigt</li>
+                            <li>nein - Varianten werden in einem Slider angezeigt</li>
+                </ul>]]>
+            </description>
+            <description lang="en">
+                <![CDATA[<ul>
+                            <li>yes - variants are shown in a dropdown</li>
+                            <li>no - variants are shown in a slider</li>
+                </ul>]]>
+            </description>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>showInactive</name>
+            <label lang="de">Inaktive Varianten anzeigen</label>
+            <label lang="en">Show inactive variants</label>
+            <value>1</value>
+            <description lang="de">
+                <![CDATA[<ul>
+                            <li>ja - inaktive Varianten (deaktiviert, abverkauft) werden im Listing angezeigt, sind jedoch nicht klickbar und ausgegraut</li>
+                            <li>nein - inaktive Varianten werden nicht im Listing angezeigt</li>
+                </ul>]]>
+            </description>
+            <description lang="en">
+                <![CDATA[<ul>
+                            <li>yes - inactive variants (deactivated, out-of-stock) will be displayed in listing, but not clickable and greyed out</li>
+                            <li>no - inactive variants will not be displayed in listing</li>
+                </ul>]]>
+            </description>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>textVariants</name>
+            <label lang="de">Varianten mit Textauswahl anzeigen</label>
+            <label lang="en">Show variants with text-options</label>
+            <value>0</value>
+            <description lang="de">
+                <![CDATA[<ul>
+                            <li>ja - Varianten ohne Bild-Konfigurator werden in der Vorschau angezeigt</li>
+                            <li>nein - nur Varianten mit Bild-Konfigurator werden in der Vorschau angezeigt</li>
+                </ul>
+                <span>Diese Einstellung kann durch die Einstellung der Kategorien überschrieben werden</span>]]>
+            </description>
+            <description lang="en">
+                <![CDATA[<ul>
+                            <li>yes - variants without configurator "Picture" will also be displayed</li>
+                            <li>no - only variants with configurator "Picture" will be displayed</li>
+                </ul>
+                <span>This setting could be overwritten by category settings</span>]]>
+            </description>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>variantSlideout</name>
+            <label lang="de">Varianten-Vorschau bei Mouseover anzeigen</label>
+            <label lang="en">Show variants on hover</label>
+            <value>0</value>
+            <description lang="de">
+                <![CDATA[<ul>
+                            <li>ja - Varianten sind zunächst ausgeblendet und werden bei Mouseover über die jeweilige Produktbox angezeigt</li>
+                            <li>nein - Varianten werden sofort angezeigt</li>
+                </ul>
+                <span>Nur für Produkt-Box Layout "box--minimal" und "box--image" verfügbar</span>
+                <span>Diese Einstellung kann durch die Einstellung der Kategorien überschrieben werden</span>]]>
+            </description>
+            <description lang="en">
+                <![CDATA[<ul>
+                            <li>yes - first variants are hidden and only displayed when hovering the product</li>
+                            <li>no - variants are displayed initially</li>
+                </ul>
+                <span>Only available for product-box layout "box--minimal" and "box--image"</span>
+                <span>This setting could be overwritten by category settings</span>]]>
+            </description>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>titleFallback</name>
+            <label lang="de">Mit Title-Fallback</label>
+            <label lang="en">With Title-Fallback</label>
+            <value>0</value>
+            <description lang="de">
+                <![CDATA[<ul>
+                            <li>ja - Varianten mit Bild-Konfigurator, ohne zugeordnetem Bild, werden stattdessen durch ihren Optionsnamen in der Vorschau dargestellt</li>
+                            <li>nein - Varianten mit Bild-Konfigurator werden nur in der Vorschau angezeigt wenn ihnen ein Bild zugewiesen ist</li>
+                </ul>]]>
+            </description>
+            <description lang="en">
+                <![CDATA[<ul>
+                            <li>yes - variants with configurator "Picture", without mapped images, will be display with their option name instead</li>
+                            <li>no - variants with configurator "Picture" will only be displayed if there are mapped images</li>
+                </ul>]]>
+            </description>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>maxConfiguratorLevel</name>
+            <label lang="de">Bis zur Konfigurator-Ebene</label>
+            <label lang="en">Up to configurator level</label>
+            <value>1</value>
+            <options>
+                <minValue>1</minValue>
+            </options>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>variantCoverDelay</name>
+            <label lang="de">Verzögerung für Coverwechsel</label>
+            <label lang="en">Delay for switching covers</label>
+            <value>300</value>
+            <description lang="de"><![CDATA[Einstellung der Verzögerung bei Mouseover in Millisekunden (-1 deaktviert den Coverwechsel)]]></description>
+            <description lang="en"><![CDATA[Delay for switching product covers in milliseconds (-1 disables the switching of product covers)]]></description>
+            <options>
+                <minValue>-1</minValue>
+            </options>
+        </element>
+        <element required="true" type="boolean" scope="shop">
+            <name>zoomCover</name>
+            <label lang="de">Bei Produkten ohne Varianten Vorschau vergrößern</label>
+            <label lang="en">Zoom covers of products without variants</label>
+            <value>0</value>
+            <description lang="de">
+                <![CDATA[<ul>
+                            <li>ja - Wenn ein Produkt keine Varianten besitzt, wird der für die Varianten-Vorschau vorgesehene Platz verwendet, um das Produkt-Cover größer darzustellen</li>
+                            <li>nein - alle Produkt-Cover werden gleich groß angezeigt</li>
+                </ul>
+                <span>Diese Einstellung kann durch die Einstellung der Kategorien überschrieben werden</span>]]>
+            </description>
+            <description lang="en">
+                <![CDATA[<ul>
+                            <li>yes - if a product has no variants, the space provided for the variant-preview, will be used to enlarge the product-cover</li>
+                            <li>no - all product-covers will have the same size</li>
+                </ul>
+                <span>This setting could be overwritten by category settings</span>]]>
+            </description>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>numberOfVariants</name>
+            <label lang="de">Anzahl der anzuzeigenden Varianten</label>
+            <label lang="en">Number of variants to show</label>
+            <value>3</value>
+            <description lang="de">
+                <![CDATA[Die Anzahl der Varianten die in der Vorschau angezeigt werden sollen, bis das "Mehr"-Icon (+) angezeigt werden soll]]>
+            </description>
+            <description lang="en">
+                <![CDATA[The number of variants to be shown till the "More"-Icon (+) will be displayed]]>
+            </description>
+            <options>
+                <minValue>-1</minValue>
+            </options>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>minVariants</name>
+            <label lang="de">Mindestanzahl von Varianten</label>
+            <label lang="en">Min number of variants</label>
+            <value>1</value>
+            <description lang="de">
+                <![CDATA[Die minimale Anzahl von Varianten bis eine Varianten-Vorschau dargestellt werden soll]]>
+            </description>
+            <description lang="en">
+                <![CDATA[The minimum number of variants till a variant-preview will be shown]]>
+            </description>
+            <options>
+                <minValue>1</minValue>
+            </options>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>slideVariants</name>
+            <label lang="de">Varianten pro Slide</label>
+            <label lang="en">Variants per Slide</label>
+            <value>4</value>
+            <description lang="de"><![CDATA[Nach Änderung muss das Theme neu kompiliert werden]]></description>
+            <description lang="en"><![CDATA[After changing this value the theme must be recompiled]]></description>
+            <options>
+                <minValue>4</minValue>
+            </options>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>thumbnailRef</name>
+            <label lang="de">Nr. der Thumbnail-Größe</label>
+            <label lang="en">Reference-Number of the Thumbnail-Size</label>
+            <value>0</value>
+            <options>
+                <minValue>0</minValue>
+            </options>
+        </element>
+        <element required="true" type="number" scope="shop">
+            <name>zindex</name>
+            <label lang="de">Z-Index</label>
+            <label lang="en">Z-Index</label>
+            <value>800</value>
+        </element>
+    </elements>
+</config>

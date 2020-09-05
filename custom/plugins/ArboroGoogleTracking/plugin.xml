@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">arboro Google Tracking</label>
+    <label lang="en">arboro Google Tracking</label>
+
+    <version>3.1.5</version>
+    <copyright>(c) 2017 by arboro GmbH</copyright>
+    <license>proprietary</license>
+    <link>https://www.arboro.de</link>
+    <author>arboro GmbH</author>
+
+    <description lang="de">
+        <![CDATA[
+            <div style="width:100%; height:200px; background: url(https://www.arboro.de/images/arboro-banner-plugin-store.png); background-size:contain; background-repeat:no-repeat;"></div>
+            <div style="text-align:center;">Unsere Qualität ist zertifiziert:</div>
+            <div style="width:100%; height:100px; background: url(https://www.arboro.de/images/arboro-cert-banner-plugin-store.png); background-size:contain; background-repeat:no-repeat;"></div>
+            <h1>arboro Google Tracking</h1>
+            <p>Steigern Sie die Umsätze Ihres Shops durch eine professionelle und effektive Messung aller relevanten Parameter mit Hilfe von Google Analytics. Das hauseigene Analyseprogramm des Suchmaschinenriesen bietet Ihnen zahlreiche Möglichkeiten die Besucherströme Ihres Shops zu erfassen (Tracking) und nach verschiedenen Indikatoren zu analysieren (Anzahl der Besucher Ihres Shops, Verweildauer, Absprungrate, etc.)</p>
+            <h2 style="margin-top:20px;">Kompatibilität</h2>
+            <ul>
+                <li>Shopware Shops ab 5.2.17</li>
+                <li>Parallelbetrieb zum Shopware Standard Google Plugin (SwagGoogle) <strong>nicht</strong> möglich</li>
+                <li>Parallelbetrieb zum veralteten arboro Google Analytics Plugin <strong>nicht</strong> möglich</li>
+            </ul>
+            <h2 style="margin-top:20px;">Funktionen</h2>
+            <ul>
+                <li>Gesondertes Google AdWords gclid Parameter Tracking mit konfigurierbarer Dimension</li>
+                <li>Integration von Google Tag Manager oder Google Analytics</li>
+                <li>Positionierung des Trackings im Code bestimmen</li>
+                <li>Asynchrones Laden des Trackings</li>
+                <li>Cookie Hinweis als Layer zur Wahrung der EU-Cookie-Richtlinien</li>
+                <li>Verschiedene Themes und Positionen für den Cookie Hinweis</li>
+                <li>Tracking Verbieten Funktion für Ihre Besucher</li>
+                <li>Multishop-fähig</li>
+                <li>(enhanced) eCommerce Tracking</li>
+                <li>Dynamisches Remarketing</li>
+                <li>Registrierte Kunden Identifizieren</li>
+                <li>Anonymisierung der IP-Adressen</li>
+                <li>Messen von: Detailseiten, Kategorie Seiten, Warenkorb Interaktionen, Checkout, Crosselling Artikel, Suchanfragen</li>
+                <li>Google Webmaster Tools Site Verification</li>
+            </ul>
+            <h2 style="margin-top:20px;">Plugin Support</h2>
+            <p>Bei eventuellen Fragen oder Problemen in Bezug auf unsere Plugins stehen wir Ihnen gerne direkt über unseren Support Button in der Plugin Konfiguration zur Verfügung.<br/>Alternativ können Sie uns über das Shopware Support System oder via einer E-Mail an support@arboro.de erreichen.</p>
+            <h2 style="margin-top:20px;">arboro GmbH - Shopware Solution Partner</h2>
+            <p style="margin-bottom:10px;">Wir sind Shopware Solution Partner seit der ersten Stunde und konnten bereits mehr als 100 Shopware Shops erfolgreich in der e-Commerce Branche platzieren. Unser Leistungsspektrum reicht von der Beratung, Konzeptionierung und Erstellung Ihres neuen Shops bis hin zur Wartung Ihres vorhandenen Shopware Systems.</p>
+            <p style="margin-bottom:10px;">Zusätzlich bieten wir exklusiv für Shopware Kunden eine professionelle und nachhaltige Suchmaschinenoptimierung (SEO), Suchmaschinenmarketing (Google AdWords) und die Optimierung und Messung von Preisportalen an.</p>
+            <p style="margin-bottom:10px;">Gerne bieten wir Ihnen eine Full-Service Betreuung für Ihren Shopware Shop an.</p>
+            <p>arboro GmbH • Heilbronner Str. 34 • D-74193 Schwaigern<br/>Telefon: +49 7138 81288-0 • Fax: +49 7138 81288-29<br/>Mail: info@arboro.de • Web: www.arboro.de</p>
+        ]]>
+    </description>
+    <description lang="en">
+        <![CDATA[
+            <div style="width:100%; height:200px; background: url(https://www.arboro.de/images/arboro-banner-plugin-store.png); background-size:contain; background-repeat:no-repeat;"></div>
+            <div style="text-align:center;">Our quality is certified:</div>
+            <div style="width:100%; height:100px; background: url(https://www.arboro.de/images/arboro-cert-banner-plugin-store.png); background-size:contain; background-repeat:no-repeat;"></div>
+            <h1>arboro Google Tracking</h1>
+            <p>Increase the turnover of your shop by a professional and effective measurement of all relevant parameters with the help of Google Analytics. The in-house analysis program of the search engine giant offers you numerous possibilities to record the visitor flows of your shop (tracking) and to analyse them according to various indicators (number of visitors of your shop, length of stay, bounce rate, etc.).</p>
+            <h2 style="margin-top:20px;">Compatibility</h2>
+            <ul>
+                <li>Shopware Shops from 5.2.17</li>
+                <li>Parallel running with the shopware standard Google plugin (SwagGoogle) <strong>not</strong> possible</li>
+                <li>Parallel running with the old arboro Google Analytics plugin <strong>not</strong> possible</li>
+            </ul>
+            <h2 style="margin-top:20px;">Features</h2>
+            <ul>
+                <li>Separate Google AdWords gclid parameter tracking with configurable dimension</li>
+                <li>Integration of Google Tag Manager or Google Analytics</li>
+                <li>Positioning of the tracking in the code</li>
+                <li>Asynchronous loading of the tracking</li>
+                <li>Cookie notice as a layer to comply with EU cookie guidelines</li>
+                <li>Different Themes and positions for the cookie notice</li>
+                <li>Tracking disallow function for your visitors</li>
+                <li>Multishop-capable</li>
+                <li>(enhanced) eCommerce Tracking</li>
+                <li>Dynamic remarketing</li>
+                <li>Identify registered customers</li>
+                <li>Anonymization of IP addresses</li>
+                <li>Tracking of: Detail pages, category pages, shopping cart interactions, checkout, cross selling articles, search queries</li>
+                <li>Google Webmaster Tools Site Verification</li>
+            </ul>
+            <h2 style="margin-top:20px;">Plugin support</h2>
+            <p>If you have any questions or problems regarding our plugins, please do not hesitate to contact us directly via our support button in the plugin configuration. <br/>Alternatively, you can contact us via the Shopware support system or via e-mail to support@arboro.de.</p>
+            <h2 style="margin-top:20px;">arboro GmbH - Shopware Solution Partner</h2>
+            <p style="margin-bottom:10px;">We have been a Shopware Solution Partner since the very beginning and have already successfully placed more than 100 Shopware Shops in the e-commerce sector. Our range of services extends from consulting, conceptual design and creation of your new shop to the maintenance of your existing shopware system.</p>
+            <p style="margin-bottom:10px;">In addition, we offer exclusively for Shopware customers a professional and sustainable search engine optimization (SEO), search engine marketing (Google AdWords) and the optimization and measurement of price portals.</p>
+            <p style="margin-bottom:10px;">We are happy to offer you a full-service support for your shopware shop.</p>
+            <p>arboro GmbH • Heilbronner Str. 34 • D-74193 Schwaigern<br/>Telefon: +49 7138 81288-0 • Fax: +49 7138 81288-29<br/>Mail: info@arboro.de • Web: www.arboro.de</p>
+        ]]>
+    </description>
+
+    <compatibility minVersion="5.2.17"/>
+
+    <changelog version="2.0.0">
+        <changes lang="de">Vollständige Überarbeitung des gesamten Plugins; Feature-Erweiterungen</changes>
+        <changes lang="en">Complete overhaul of the entire plugin; feature enhancements</changes>
+    </changelog>
+    <changelog version="2.0.1">
+        <changes lang="de">Kleinere Fehlerbehebungen mit den Google Conversion IDs</changes>
+        <changes lang="en">Minor bug fixes with the Google Conversion IDs</changes>
+    </changelog>
+    <changelog version="2.0.2">
+        <changes lang="de">Kleinere Fehlerbehebungen</changes>
+        <changes lang="en">Minor bug fixes</changes>
+    </changelog>
+    <changelog version="2.0.3">
+        <changes lang="de">Fehlerbehebungen mit Google Remarketing Tags</changes>
+        <changes lang="en">Fixes with Google Remarketing Tags</changes>
+    </changelog>
+    <changelog version="2.0.4">
+        <changes lang="de">Kompatibilität mit Shopware 5.0.x hergestellt</changes>
+        <changes lang="en">Compatibility with Shopware 5.0.x implemented</changes>
+    </changelog>
+    <changelog version="2.0.5">
+        <changes lang="de">Erstellung eines neuen Store Plugins</changes>
+        <changes lang="en">Creating a new store plugin</changes>
+    </changelog>
+    <changelog version="2.0.6">
+        <changes lang="de">Fehlerbehebung mit UUID Komponente; Rechtschreibfehlerkorrektur</changes>
+        <changes lang="en">Troubleshooting with UUID component; spelling error correction</changes>
+    </changelog>
+    <changelog version="2.0.7">
+        <changes lang="de">Kompatibilität mit Shopware 4.3.2 wiederhergestellt</changes>
+        <changes lang="en">Compatibility with Shopware 4.3.2 restored</changes>
+    </changelog>
+    <changelog version="2.0.8">
+        <changes lang="de">Fehlerbehebung bei fehlenden Template-Dateien</changes>
+        <changes lang="en">Troubleshooting missing template files</changes>
+    </changelog>
+    <changelog version="2.0.9">
+        <changes lang="de">Gesondertes Tracking des Google AdWords gclid Parameters hinzugefügt</changes>
+        <changes lang="en">Separate tracking of Google AdWords gclid parameter added</changes>
+    </changelog>
+    <changelog version="2.1.0">
+        <changes lang="de">Fehlerbehebung von 404 Fehlern</changes>
+        <changes lang="en">Troubleshooting of 404 errors</changes>
+    </changelog>
+    <changelog version="2.1.1">
+        <changes lang="de">Fehlerbehebung im Conversion Tracking</changes>
+        <changes lang="en">Troubleshooting Conversion Tracking</changes>
+    </changelog>
+    <changelog version="2.1.2">
+        <changes lang="de">Allgemeine Fehlerbehebung und Leistungsverbesserung</changes>
+        <changes lang="en">General troubleshooting and performance improvement</changes>
+    </changelog>
+    <changelog version="2.1.3">
+        <changes lang="de">Marken nicht tracken Feature und Leistungsverbesserung</changes>
+        <changes lang="en">Trademarks do not track feature and performance improvement</changes>
+    </changelog>
+    <changelog version="2.1.4">
+        <changes lang="de">Google Analytics Events hinzugefügt um das enhanced eCommerce Tracking zu verbessern</changes>
+        <changes lang="en">Google Analytics Events added to improve enhanced eCommerce tracking</changes>
+    </changelog>
+    <changelog version="3.0.0">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>Neuimplementierung des gesamten Plugins auf Basis des Shopware Plugin Systems (5.2)</li>
+                <li>Kompatibilität mit Shopware 5.3.x hergestellt</li>
+                <li>Mindest-Shopware-Version auf 5.2.17 erhöht</li>
+                <li>Support & Kompatibilität für Shopware 4 eingestellt</li>
+                <li>Shopware 4 Templates wurden entfernt</li>
+                <li>Rechtschreibfehler wurden korrigiert</li>
+                <li>Plugin Konfiguration wurde überarbeitet</li>
+                <li>Bezeichnungen in der Plugin Konfiguration wurde überarbeitet</li>
+                <li>Plugin Konfiguration wurde mehrsprachig übersetzt</li>
+                <li>Benennung der Variablen Namen überarbeitet</li>
+                <li>Plugin Icon wurde erneuert</li>
+                <li>Fehlende Fehlermeldungen während des Installationsprozesses behoben</li>
+                <li>Pluginbeschreibung wurde erweitert</li>
+                <li>JavaScript Fehlerbehebung bei Artikelvarianten wurde behoben</li>
+                <li>Kompatibilität zu SWKWeb "Artikel Konfigurator für Sets / Bundles"</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>Re-implementation of the entire plug-in based on the Shopware Plugin System (5.2)</li>
+                <li>Compatibility with Shopware 5.3. x established</li>
+                <li>Minimum shopware version increased to 5.2.17</li>
+                <li>Support & compatibility for Shopware 4 stopped</li>
+                <li>Shopware 4 templates have been removed</li>
+                <li>Spelling errors were corrected</li>
+                <li>Plugin configuration has been reworked</li>
+                <li>names in the plugin configuration have been reworked</li>
+                <li>Plugin configuration has been translated into multiple languages</li>
+                <li>naming of the variable names revised</li>
+                <li>Plugin icon has been updated</li>
+                <li>Missing error messages during the installation process fixed</li>
+                <li>Plugin description has been extended</li>
+                <li>JavaScript error correction for article variants fixed</li>
+                <li>Compatibility with SWKWeb "Article Configurator for sets / bundles"</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.1">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>Kleinere Fehlerbehebungen</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>Small bugfixes</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.2">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-13 Behebt einen Fehler in der Verwendung mit mehreren Subshops</li>
+                <li>AGT-7 Behebt einen JavaScript Fehler wenn der Shop sowohl mit SSL als auch ohne SSL betrieben wird.</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-13 Fixes a bug in the use with multiple subshops</li>
+                <li>AGT-7 Fixes a JavaScript error when the shop is running with both SSL and without SSL.</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.3">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-14 Behebt einen Fehler bei dem die Zahl 0 im Template ausgegeben wird</li>
+                <li>Behebt einen Fehler im Ajax Listing Template</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-14 Fixes an error where the number 0 is displayed in the templates</li>
+                <li>Clears an error in the Ajax Listing Template</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.4">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-1 Google Remarketing Tags auf der Bestellbestätigungsseite hinzugefügt</li>
+                <li>AGT-2 Google Remarketing Tags im Warenkorb hinzugefügt</li>
+                <li>AGT-17 Google Remarketing Tags auf der Startseite hinzugefügt</li>
+                <li>AGT-18 Zugriff auf Plugin Konfiguration einheitlich geändert um Fehler in manchen Shopware Shops zu vermeiden</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-1 Google Remarketing Tags added to order confirmation page</li>
+                <li>AGT-2 Google Remarketing Tags added to shopping cart</li>
+                <li>AGT-17 Google Remarketing Tags added to the home page</li>
+                <li>AGT-18 Access to plugin configuration changed to avoid errors in some shops</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.5">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-19 Zugriff auf Plugin Konfiguration einheitlich geändert um Fehler in manchen Shopware Shops zu vermeiden</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-19 Access to plugin configuration changed to avoid errors in some shops</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.6">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-23 Kompatibilität mit dem Shopware Premium Plugin Bundles wieder hergestellt</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-23 compatibility with Shopware Premium Plugin Bundles restored</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.7">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-24 Fehlerbehebung bei fehlender Tracking-ID (Plugin greift nur noch bei eingetragener Tracking-ID)</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-24 Bugfix with missing Tracking-ID (Plugin will only be applied with entered Tracking-ID)</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.8">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-25 Bereitstellung der Javascript-Funktion für den Google Analytics Widerspruch</li>
+                <li>->Funktion kann über &lt;a href="javascript:arboroTracking.gaOptout()"&gt;Klick Mich&lt;/a&gt; aufgerufen werden</li>
+                <li>->Der Text "Klick Mich" ist hierbei individuell wählbar</li>
+                <li>->Dieser Link kann anschließend an einer beliebigen Stelle (z.B. Datenschutz) eingebunden werden</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-25 Implementation of Javascript-Function for Google Analytics opposition</li>
+                <li>->Function can be called with following Link: &lt;a href="javascript:arboroTracking.gaOptout()"&gt;Click Me&lt;/a&gt;</li>
+                <li>->The text "Click Me" is individual</li>
+                <li>->This link can then be placed anywhere you want (e.g. Privacy Policy)</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.0.9">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-26 Behebung eines Javascript-Fehlers</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-26 Bugfix of a Javascript error</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.1.0">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-27 Integration von Google Optimize</li>
+                <li>AGT-27 Fehlerbehebung bei Google Tag Manager</li>
+                <li>AGT-27 Integration der normalen gaOptout-Funktion (arboroTracking.gaOptout() ist weiterhin verfügbar)</li>
+                <li>AGT-27 gaOptout-Fehlerbehebung für Shopware Versionen unter 5.3</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>AGT-27 Integration of Google Optimize</li>
+                <li>AGT-27 Bugfix for Google Tag Manager</li>
+                <li>AGT-27 Integration of the normal gaOptout function (arboroTracking.gaOptout() is still useable)</li>
+                <li>AGT-27 gaOptout bugfix for Shopware versions under 5.3</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.1.1">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-28 Codeaktualisierung der Conversion-Übertragung</li>
+                <li>AGT-28 Fehlerbehebung bei der Absprungrate</li>
+                <li>AGT-28 <strong>Implementierung eines zusätzlichen Checkout-Steps</strong> (Step1 = Warenkorb, Step2 = Registrierung, Step3 = Zahlung und Versand, Step4 = Kasse, Step5 = Bestellabschluss)</li>
+                <li>AGT-28 Fehlerbehebung bei Google Optimize</li>
+                <li>AGT-28 Verbesserung des Google Tag Managers</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                    <li>AGT-28 Code refactoring for conversion transfer</li>
+                    <li>AGT-28 Bugfix for bounce rate</li>
+                    <li>AGT-28 <strong>Implementation of an additional checkout-step</strong> (step1 = cart, step2 = registration, step3 = payment and shipping, step4 = confirm, Stept = finish)</li>
+                    <li>AGT-28 Bugfix for Google Optimize</li>
+                    <li>AGT-28 Improvement for Google Tag Manager</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.1.2">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>AGT-28 Fehlerbehebung bei der Conversion Übertragung</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                    <li>AGT-28 Bugfix for conversion transfer</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.1.3">
+        <changes lang="de">
+            <![CDATA[
+                <p style="color:red;">Achtung: Möglicherweise müssen Einstellungen und Texte zum Cookie Banner angepasst werden!</p>
+                <ul>
+                <li>Cookie Opt-In/Opt-Out</li>
+                <li>Nutzer hat die Möglichkeit, die Cookie Einstellungen später noch über ein Menü im Frontend zu ändern (standardmäßig falls aktiv ganz unten im Footer)</li>
+                <li>Möglichkeit, eine eigene ID zu definieren, um die Cookie Einstellungen an einer anderen Stelle einzubinden</li>
+                <li>Neuer Remarketing Tag</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <p style="color:red;">Attention: It may be possible that you have to configure the settings and texts for the cookie banner!</p>
+                <ul>
+                <li>Cookie Opt-In/Opt-Out</li>
+                <li>User has the possibility to change the cookie settings later by a menu in the frontend (by default if active, it is placed at the bottom of the footer)</li>
+                <li>Possibility to define an own ID to include the cookie settings menu somewhere else</li>
+                <li>New remarketing tag</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.1.4">
+        <changes lang="de">
+            <![CDATA[
+                <p style="color:red;">Achtung: Möglicherweise müssen Einstellungen und Texte zum Cookie Banner angepasst werden!</p>
+                <ul>
+                <li>Kompatibilität mit dem Shopware Cookie Consent Tool (in den Plugineinstellungen einstellbar)</li>
+                <li>Google Optimize Anti-Flackern Snippet kann über die Plugineinstellungen eingebunden werden</li>
+                <li>Neue Einstellungsmöglichkeit für den Cookie Banner: Ablehnen-Button in Text verschieben</li>
+                <li>Neue Einstellungsmöglichkeit für den Shopware Cookie Banner: Optimierte Darstellung</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <p style="color:red;">Attention: It may be possible that you have to configure the settings and texts for the cookie banner!</p>
+                <ul>
+                <li>Compatibility with the Shopware Cookie Consent Tool (can be set by the plugin settings)</li>
+                <li>Google Optimize Anti-Flicker Snippet can now be included by the plugin settings</li>
+                <li>New configuration for the cookie banner: Display the deny-button in the message text</li>
+                <li>New configuration for the Shopware cookie banner: optimized view</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+    <changelog version="3.1.5">
+        <changes lang="de">
+            <![CDATA[
+                <ul>
+                <li>Fehlerbehebung: Conversions werden nicht unter Umständen nicht getracked</li>
+                <li>Neue Einstellungsmöglichkeit: Wenn im Frontend keine Mengenauswahl verfügbar, wird die Menge dieser Einstellung übertragen</li>
+                </ul>
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+                <ul>
+                <li>Bugfix: conversions are not tracked unter certain circumstances</li>
+                <li>New configuration: If no quantity select is available in the frontend, the quantity of this setting will be transfered</li>
+                </ul>
+            ]]>
+        </changes>
+    </changelog>
+</plugin>

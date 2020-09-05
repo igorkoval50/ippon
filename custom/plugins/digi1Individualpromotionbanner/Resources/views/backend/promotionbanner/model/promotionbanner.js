@@ -1,0 +1,82 @@
+Ext.define('Shopware.apps.Promotionbanner.model.Promotionbanner', {
+    extend: 'Shopware.data.Model',
+
+    configure: function() {
+        return {
+            controller: 'Promotionbanner',
+            detail: 'Shopware.apps.Promotionbanner.view.detail.Promotionbanner'
+        };
+    },
+    fields: [
+        { name : 'id' },
+        { name : 'active', type: 'boolean' },
+        { name : 'positionnumber', type: 'integer' },
+        { name : 'label', type: 'string' },
+        { name : 'backgroundimage', type: 'string' },
+        { name : 'backgroundposition', type: 'integer' },
+        { name : 'backgroundsize', type: 'integer' },
+        { name : 'backgroundcolor', type: 'string' },
+        { name : 'backgroundopacity', type: 'integer' },
+        { name : 'collapsible', type: 'boolean' },
+        { name : 'collapsiblecookielifetime', type: 'integer' },
+        { name : 'hidecollapseicon', type: 'boolean' },
+        { name : 'collapseiconbackgroundcolor', type: 'string' },
+        { name : 'collapseiconfontcolor', type: 'string' },
+        { name : 'position', type: 'integer' },
+        { name : 'shop_id', type: 'string' },
+        { name : 'showinallshops', type: 'boolean' },
+        { name : 'showoncontroller', type: 'integer' },
+        { name : 'cssclass', type: 'string' },
+        { name : 'modalboxtimedelay', type: 'integer' },
+        { name : 'percentagebackgroundcolor', type: 'string' },
+        { name : 'percentagefontcolor', type: 'string' },
+        { name : 'percentagecssclass', type: 'string' },
+        { name : 'percentagealignment', type: 'integer' },
+        { name : 'percentagewidth', type: 'integer' },
+        { name : 'percentagepadding', type: 'string' },
+        { name : 'percentage', type: 'string' },
+        { name : 'contentbackgroundcolor', type: 'string' },
+        { name : 'contentpadding', type: 'string' },
+        { name : 'contentcssclass', type: 'string' },
+        { name : 'headlinefontcolor', type: 'string' },
+        { name : 'headlinealignment', type: 'integer' },
+        { name : 'headlinewidth', type: 'integer' },
+        { name : 'headline', type: 'string' },
+        { name : 'txtfontcolor', type: 'string' },
+        { name : 'txtalignment', type: 'integer' },
+        { name : 'txtwidth', type: 'integer' },
+        { name : 'txt', type: 'string' },
+        { name : 'completelinking', type: 'boolean' },
+        { name : 'linkbelowcontent', type: 'boolean' },
+        { name : 'linkbackgroundcolor', type: 'string' },
+        { name : 'linkpadding', type: 'string' },
+        { name : 'target', type: 'boolean' },
+        { name : 'link', type: 'string' },
+        { name : 'linkcssclass', type: 'string' },
+        { name : 'linktransparent', type: 'boolean' },
+        { name : 'linkbgcolor', type: 'string' },
+        { name : 'linkfontcolor', type: 'string' },
+        { name : 'linkbordercolor', type: 'string' },
+        { name : 'linktext', type: 'string' },
+        { name : 'linkalignment', type: 'integer' },
+        { name : 'linkwidth', type: 'integer' },
+        { name : 'displaydatefrom', type: 'date', format: 'Y-m-d'},
+        { name : 'displaydateto', type: 'date', format: 'Y-m-d'},
+        { name : 'hideinsmartphoneportrait', type: 'boolean' },
+        { name : 'hideinsmartphonelandscape', type: 'boolean' },
+        { name : 'hideintabletportrait', type: 'boolean' },
+        { name : 'hideintabletlandscape', type: 'boolean' },
+        { name : 'hideindesktop', type: 'boolean' }
+    ],
+    associations: [
+        {
+            relation: 'ManyToOne',
+            field: 'shop_id',
+
+            type: 'hasMany',
+            model: 'Shopware.apps.Base.model.Shop',
+            name: 'getName',
+            associationKey: 'shop'
+        }
+    ]
+});

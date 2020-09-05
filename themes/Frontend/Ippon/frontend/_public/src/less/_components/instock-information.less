@@ -1,0 +1,98 @@
+/*
+Delivery information
+=========================================
+Defines the instock status for products (e.g. detail page, note).
+
+The styling includes the base styling and the instock states.
+
+
+```
+<div class="product--instock">
+    <p class="instock--information">
+        <span class="instock--text instock--text-available">
+            <i class="instock--status-icon instock--status-available"></i>
+            instock--text-available
+        </span>
+    </p>
+</div>
+
+<div class="product--instock">
+    <p class="instock--information">
+        <span class="instock--text instock--text-more-is-coming">
+            <i class="instock--status-icon instock--status-more-is-coming"></i>
+            instock--text-more-is-coming
+        </span>
+    </p>
+</div>
+
+<div class="product--instock">
+    <p class="instock--information">
+        <span class="instock--text instock--text-shipping-free">
+            <i class="instock--status-icon instock--status-shipping-free"></i>
+            instock--text-shipping-free
+        </span>
+    </p>
+</div>
+
+<div class="product--instock">
+    <p class="instock--information">
+        <span class="instock--text instock--text-not-available">
+            <i class="instock--status-icon instock--status-not-available"></i>
+            instock--text-not-available
+        </span>
+    </p>
+</div>
+```
+*/
+
+.product--instock {
+    .unitize(font-size, 14);
+
+    p { margin: 0; }
+
+    // Base class for the icon
+    .instock--status-icon {
+        .unitize-variable(9); // returns the variable "emValue"
+        .border-radius(~"@{emValue}rem");
+        .unitize-margin(0, 5, 0, 0);
+        .unitize-width(9);
+        .unitize-height(9);
+        .unitize(line-height, 10);
+        display: inline-block;
+        position: relative;
+    }
+
+    .instock--status-shipping-free {
+        background: @highlight-info;
+    }
+    .instock--text-shipping-free {
+        color: @highlight-info;
+    }
+
+    .instock--status-available {
+        background: @highlight-success
+    }
+    .instock--text-available {
+        color: @highlight-success;
+    }
+
+    .instock--status-more-is-coming {
+        background: @highlight-notice;
+    }
+    .instock--text-more-is-coming {
+        color: @highlight-notice;
+    }
+
+    .instock--status-not-available {
+        background: @highlight-error;
+    }
+
+    .instock--text-not-available {
+        color: @highlight-error;
+    }
+
+    .instock--text {
+        margin: 0;
+        display: inline-block;
+    }
+}

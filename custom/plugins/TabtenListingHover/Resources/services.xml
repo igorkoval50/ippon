@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="tabten_listing_hover.subscriber.route" class="TabtenListingHover\Subscriber\Frontend">
+            <argument type="service" id="service_container"/>
+            <argument>%tabten_listing_hover.plugin_name%</argument>
+            <argument>%tabten_listing_hover.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="tabten_listing_hover.subscriber.theme" class="TabtenListingHover\Subscriber\Theme">
+            <argument>%tabten_listing_hover.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="tabten_listing_hover.search_decorator"
+                 class="TabtenListingHover\Decorator\SearchResultHoverImageDecorator"
+                 decorates="shopware_storefront.list_product_service"
+                 public="false">
+
+            <argument type="service" id="tabten_listing_hover.search_decorator.inner"/>
+            <argument type="service" id="shopware_storefront.media_service"/>
+        </service>
+    </services>
+</container>

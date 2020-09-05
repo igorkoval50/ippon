@@ -1,0 +1,31 @@
+.top-bar--navigation {
+    .entry--compare {
+        .compare--quantity {
+            color: @brand-primary;
+        }
+    }
+
+    .compare--list {
+        @media screen and (min-width: @tabletViewportWidth) {
+            .unitize(top, @shop-navigation--height * .5 + 8);
+            background: @brand-secondary;
+            border-color: @brand-secondary-light;
+            color: contrast(@brand-secondary, @text-color, #fff, 65%);
+            left: 0;
+        }
+
+        &::after {
+            margin: auto;
+            left: 0;
+            right: 0;
+            background: @brand-secondary;
+            border-color: @brand-secondary-light;
+        }
+    }
+
+    .js--is--dropdown-active .compare--list {
+        .compare--link {
+            color: contrast(@brand-secondary, @text-color, #fff, 65%);
+        }
+    }
+}

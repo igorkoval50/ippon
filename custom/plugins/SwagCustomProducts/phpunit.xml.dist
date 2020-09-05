@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit
+        backupGlobals="false"
+        backupStaticAttributes="false"
+        processIsolation="true"
+        bootstrap="./tests/Functional/Bootstrap.php"
+>
+    <testsuite name="customProductTests">
+        <directory>./tests</directory>
+    </testsuite>
+
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./</directory>
+            <exclude>
+                <directory suffix=".php">./tests</directory>
+                <directory suffix=".php">./vendor</directory>
+
+                <file>SwagCustomProducts.php</file>
+                <directory suffix=".php">./Bootstrap</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>

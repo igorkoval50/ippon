@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service class="TlsNewsletterGroup\Subscriber\ControllerPath" id="tls_newsletter_group.subscriber.controller_path">
+            <argument>%tls_newsletter_group.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service class="TlsNewsletterGroup\Components\PluginConfig" id="tls_newsletter_group.components.plugin_config">
+            <argument>%tls_newsletter_group.plugin_name%</argument>
+            <argument id="shopware.plugin.config_reader" type="service"/>
+            <argument id="models" type="service"/>
+            <argument id="service_container" type="service"/>
+        </service>
+
+        <service class="TlsNewsletterGroup\Subscriber\Frontend" id="tls_newsletter_group.subscriber.frontend">
+            <argument>%tls_newsletter_group.plugin_dir%</argument>
+            <argument id="tls_newsletter_group.components.group_service" type="service"/>
+            <argument id="front" type="service"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service class="TlsNewsletterGroup\Components\GroupService" id="tls_newsletter_group.components.group_service">
+            <argument id="tls_newsletter_group.components.plugin_config" type="service"/>
+            <argument id="models" type="service"/>
+        </service>
+    </services>
+</container>

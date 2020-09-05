@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element required="true" type="number" scope="locale">
+            <name>stacksize</name>
+            <label lang="de">Stapelgröße (ab Shopware 5.5)</label>
+            <label lang="en">Stacksize (from Shopware 5.5)</label>
+            <value>10</value>
+            <description lang="de">Wie viele Datensätze sollen in einem Request bearbeitet werden? Kann Auswirkungen auf die Dauer des Prozesses haben. Wichtig: Wird erst ab Shopware Version 5.5 oder höher berücksichtigt</description>
+            <description lang="en">How many datasets should be loaded per request? May affect total completion time. Important: Only considered from Shopware Version 5.5 or higher</description>
+        </element>
+    </elements>
+</config>

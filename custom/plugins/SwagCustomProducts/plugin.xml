@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">Custom Products</label>
+    <label lang="en">Custom Products</label>
+    <version>4.7.0</version>
+    <copyright>(c) by shopware AG</copyright>
+    <license>proprietary</license>
+    <link>http://store.shopware.com</link>
+    <author>shopware AG</author>
+    <compatibility minVersion="5.6.0" maxVersion="5.99.99"/>
+
+    <changelog version="4.7.0">
+        <changes lang="de">
+            PT-10792 - Custom Products Konfiguration wird nun auch im persistenten Warenkorb mit gespeichert;
+            PT-11335 - Elasticsearch Kompatibilität verbessert;
+            PT-11354 - PHP 7 Kompatibilität verbessert;
+        </changes>
+        <changes lang="en">
+            PT-10792 - Custom Products configuration is now saved in the persistent cart;
+            PT-11335 - Improved Elasticsearch compatibility;
+            PT-11354 - Improved PHP 7 compatibility;
+        </changes>
+    </changelog>
+
+    <changelog version="4.6.4">
+        <changes lang="de">
+            PT-11130 - Kompatibilität zur Enterprise-Search wiederhergestellt;
+            PT-11178 - Emojis werden nicht mehr aus Texteingaben gefiltert;
+            PT-11207 - Media-Handling im Garbage-Collector verbessert;
+        </changes>
+        <changes lang="en">
+            PT-11130 - Restored Enterprise Search compatibility;
+            PT-11178 - Emojis are no longer filtered from text input;
+            PT-11207 - Improved media handling in the garbage collector;
+        </changes>
+    </changelog>
+
+    <changelog version="4.6.3">
+        <changes lang="de">
+            PT-10551 - Berücksichtigt nun die Mindestabnahmemenge bei der Preisberechnung;
+            PT-10922 - Emojis werden nun aus Texteingaben herausgefiltert;
+            PT-11090 - Handlebars-Abhängigkeit aktualisiert;
+        </changes>
+        <changes lang="en">
+            PT-10551 - Considers the minimum purchase quantity correctly when calculating the price;
+            PT-10922 - Emojis are now filtered out of text entries;
+            PT-11090 - Updated Handlebar dependency;
+        </changes>
+    </changelog>
+
+    <changelog version="4.6.2">
+        <changes lang="de">PT-10767 - Einmal-Preise werden wieder korrekt angezeigt;</changes>
+        <changes lang="en">PT-10767 - One-time surcharges are displayed correctly again;</changes>
+    </changelog>
+
+    <changelog version="4.6.1">
+        <changes lang="de">PT-10635 - Behebt ein Problem bei Speichern des Custom Products und korrigiert Styling;</changes>
+        <changes lang="en">PT-10635 - Fixes saving custom products and corrects styling;</changes>
+    </changelog>
+
+    <changelog version="4.6.0">
+        <changes lang="de">PT-8884 - Erlaubt die Platzierung der Varianten über oder unterhalb der Custom Products Optionen;</changes>
+        <changes lang="en">PT-8884 - Allows display of product variants above or under Custom Products options;</changes>
+    </changelog>
+
+    <changelog version="4.5.0">
+        <changes lang="de">PT-10417 - Shopware 5.6 Kompatibilität;</changes>
+        <changes lang="en">PT-10417 - Shopware 5.6 compatibility;</changes>
+    </changelog>
+
+    <changelog version="4.4.1">
+        <changes lang="de">
+            PT-10205 - Behebt ein Problem bei der Validierung von Eingabefeldern;
+            PT-10466 - Behebt ein Problem bei der Anzeige von Pflichtfeldern;
+        </changes>
+        <changes lang="en">
+            PT-10205 - Fixed validation of input fields;
+            PT-10466 - Fixed display of required fields;
+        </changes>
+    </changelog>
+
+    <changelog version="4.4.0">
+        <changes lang="de">NTR - Update der externen Bibliotheken</changes>
+        <changes lang="en">NTR - Update external libraries</changes>
+    </changelog>
+
+    <changelog version="4.3.1">
+        <changes lang="de">PT-10155 - Behebt ein Problem bei der Anzeige von Aufschlägen;</changes>
+        <changes lang="en">PT-10155 - Solves an issue displaying surcharges;</changes>
+    </changelog>
+
+    <changelog version="4.3.0">
+        <changes lang="de">
+            PT-10190 - Optimiert die Performance im Warenkorb;
+            PT-10168 - Optimiert die Performance beim Aufholen der Warenkorbdaten;
+        </changes>
+        <changes lang="en">
+            PT-10190 - Optimizes performance in basket;
+            PT-10168 - Optimizes performance when fetching basket data;
+        </changes>
+    </changelog>
+
+    <changelog version="4.2.6">
+        <changes lang="de">
+            PT-9859 - Problem mit leeren Attributen von anderen Plugins behoben;
+            PT-9868 - Beim Speichern der Konfiguration wird jetzt der Shop-Context korrekt berücksichtigt;
+        </changes>
+        <changes lang="en">
+            PT-9859 - Fixed problem with empty attributes of other plugins;
+            PT-9868 - When saving the configuration, the shop context is now correctly considered;
+        </changes>
+    </changelog>
+
+    <changelog version="4.2.5">
+        <changes lang="de">PT-9802 - Behebt Fehler bei Benutzung des Wizards unter Firefox;</changes>
+        <changes lang="en">PT-9802 - Fixes a bug when using the wizard with Firefox;</changes>
+    </changelog>
+
+    <changelog version="4.2.4">
+        <changes lang="de">
+            PT-9683 - Anzeige von Einmal-Aufschlägen verbessert;
+            PT-9803 - Im Step by Step Wizard werden jetzt bei einer Konfigurationsänderung die Aufschläge neu berechnet;
+            PT-9712 - Staffelpreise für Optionen werden korrekt berechnet;
+        </changes>
+        <changes lang="en">
+            PT-9683 - Improved displaying of one-time surcharges;
+            PT-9803 - The Step by Step Wizard now recalculates the surcharges if the configuration is changed;
+            PT-9712 - Graduated prices for options are calculated correctly;
+        </changes>
+    </changelog>
+
+    <changelog version="4.2.3">
+        <changes lang="de">PT-8423 - Select-Boxen verlieren nicht mehr ihr Styling nach einem Variantenwechsel;</changes>
+        <changes lang="en">PT-8423 - Select boxes no longer lose their styling after a variant change;</changes>
+    </changelog>
+
+    <changelog version="4.2.2">
+        <changes lang="de">PT-9381 - Behebt ein Problem mit dem Speichern der Konfiguration im Warenkorb;</changes>
+        <changes lang="en">PT-9381 - Solves an issue saving the configuration in basket;</changes>
+    </changelog>
+
+    <changelog version="4.2.1">
+        <changes lang="de">
+            PT-9273 - Zeilenumbrüche im Textarea Element sind nun wieder möglich;
+            PT-9647 - Performance nach Variantenwechseln erhöht;
+        </changes>
+        <changes lang="en">
+            PT-9273 - Line breaks in the textarea element are now possible again;
+            PT-9647 - Performance increased after variant changes;
+        </changes>
+    </changelog>
+
+    <changelog version="4.2.0">
+        <changes lang="de">PT-9169 - Shopware 5.5 Kompatibilität</changes>
+        <changes lang="en">PT-9169 - Shopware 5.5 compatibility</changes>
+    </changelog>
+
+    <changelog version="4.1.4">
+        <changes lang="de">
+            PT-9063 - Irreführendes Stift-Symbol im Artikel-Mapping entfernt;
+            PT-9125 - Zusätzliche Smarty-Blöcke hinzugefügt;
+        </changes>
+        <changes lang="en">
+            PT-9063 - Removed misleading icon in product mapping;
+            PT-9125 - Add additional Smarty blocks;
+        </changes>
+    </changelog>
+
+    <changelog version="4.1.3">
+        <changes lang="de">PT-9127 - Aufschläge pro Stück nutzen nun die korrekten Artikelpreiseinheiten;</changes>
+        <changes lang="en">PT-9127 - Surcharges per unit now use the correct product price unit;</changes>
+    </changelog>
+
+    <changelog version="4.1.2">
+        <changes lang="de">
+            PT-9037, PT-9117 - Kompatibilität zu anderen Plugins verbessert;
+            PT-8942 - Fälschliches Abschicken des Formulars in Textfeldern behoben;
+        </changes>
+        <changes lang="en">
+            PT-9037, PT-9117 - Improve compatibility to other plugins;
+            PT-8942 - Fix wrong sending of form via text fields;
+        </changes>
+    </changelog>
+
+    <changelog version="4.1.1">
+        <changes lang="de">PT-8966 - Deaktiviere Custom Facet beim Deinstallieren und Deaktivieren des Plugins;</changes>
+        <changes lang="en">PT-8966 - Deactivate custom facet if plugin is uninstalled or deactivated;</changes>
+    </changelog>
+
+    <changelog version="4.1.0">
+        <changes lang="de">PT-8810 - Shopware 5.4 Kompatibilität</changes>
+        <changes lang="en">PT-8810 - Shopware 5.4 compatibility</changes>
+    </changelog>
+
+    <changelog version="4.0.2">
+        <changes lang="de">
+            PT-7239 - MediaGarbageCollector Kompatibilität;
+            PT-8825, PT-8872 - Kompatibilität zu LiveShopping verbessert;
+            PT-8622 - Product Stream Kompatibilität;
+        </changes>
+        <changes lang="en">
+            PT-7239 - MediaGarbageCollector compatibility;
+            PT-8825, PT-8872 - Improve compatibility with LiveShopping;
+            PT-8622 - Product Stream compatibility;
+        </changes>
+    </changelog>
+
+    <changelog version="4.0.1">
+        <changes lang="de">PT-8494 - Fehler beim Öffnen der Grundeinstellungen behoben</changes>
+        <changes lang="en">PT-8494 - Fix problem on opening the basic settings</changes>
+    </changelog>
+
+    <changelog version="4.0.0">
+        <changes lang="de">PT-8125 - Migration auf das Shopware 5.2 Plugin System;</changes>
+        <changes lang="en">PT-8125 - Migration to the Shopware 5.2 plugin system;</changes>
+    </changelog>
+
+    <changelog version="3.1.0">
+        <changes lang="de">
+            PT-6635 - Prozentualer Aufschlag für Optionen und Werte;
+            PT-6778 - Interval erlaubt nun Dezimalzahlen;
+            PT-6981 - Artikel mit leeren Custom Product Optionen werden nun korrekt in den Warenkorb gelegt;
+            PT-7101 - Behebt Probleme mit der Browser History;
+            PT-7390 - Fehlerbehebung beim Ausführen des GC Cronjobs über die Shopware CLI;
+            PT-7864 - Behebt Fehler beim Variantenwechsel;
+            PT-7919 - Benutze Interface statt Klasse für den ContextService;
+            PT-7939 - Darstellung Dokumenten- und E-Mail-Vorlagen verbessert;
+            PT-7948, PT-7955 - Shopware 5.3 Kompatibilität;
+        </changes>
+        <changes lang="en">
+            PT-6635 - Percentage surcharge for options and values;
+            PT-6778 - Interval allows decimal numbers;
+            PT-6981 - Products are put correctly into the cart with empty Custom Products options;
+            PT-7101 - Fix problem with browser history;
+            PT-7390 - Fix error on executing GC cronjobs via Shopware CLI;
+            PT-7864 - Fix error on variant change;
+            PT-7919 - Use interface instead of class for ContextService;
+            PT-7939 - Improve displaying of documents and email templates;
+            PT-7948, PT-7955 - Shopware 5.3 compatibility;
+        </changes>
+    </changelog>
+
+    <changelog version="3.0.0">
+        <changes lang="de">PT-7627 - Shopware 5.3 Kompatibilität;</changes>
+        <changes lang="en">PT-7627 - Shopware 5.3 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes lang="de">PT-7910 - Problem mit ElasticSearch Kompatibilität behoben;</changes>
+        <changes lang="en">PT-7910 - Fixed problem with ElasticSearch compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes lang="de">
+            SW-16633 - Feature: Filtern und Sortieren nach Custom Products (benötigt teilweise Shopware 5.3);
+            PT-7471 - Bugfix: Möglicher CSRF-Tokenfehler auf der Detailseite;
+            PT-7322 - Bugfix: SchemaTool entfernt;
+            PT-7783 - Bugfix: SVGs werden nur noch über den Fileupload erlaubt;
+            SW-16697 - Feature: Shopware 5.3 Kompatibilität;
+        </changes>
+        <changes lang="en">
+            -16633 - Feature: Filter and sort for Custom Products (needs Shopware 5.3 in parts);
+            PT-7471 - Bugfix: Possible CSRF token error on detail page;
+            PT-7322 - Bugfix: Remove SchemaTool;
+            PT-7783 - Bugfix: Allow upload of SVGs only via file upload;
+            SW-16697 - Feature: Shopware 5.3 compatibility;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.7">
+        <changes lang="de">
+            SW-16690 - Feature: Shopware 5.3 Kompatibilität;
+            PT-6662 - Bugfix: Upload bestimmter Bilddateien wie .svg .tiff .eps .ai;
+            PT-6721 - Bugfix: Bildauswahl im Internet Explorer;
+            PT-6855 - Bugfix: Kaufenbutton weiterhin deaktiviert, wenn keine Variante ausgewählt ist;
+            PT-6975 - Bugfix: Download von hochgeladenen Bildern im Mediamanager;
+            PT-7061 - Bugfix: Übersetzungen für Optionen und Werte im Warenkorb;
+        </changes>
+        <changes lang="en">
+            SW-16690 - Feature: Shopware 5.3 compatibility;
+            PT-6662 - Bugfix: Upload of several image files like .svg .tiff .eps .ai;
+            PT-6721 - Bugfix: Bildauswahl im Internet Explorer;
+            PT-6855 - Bugfix: Buy button still deactivated, if no variant is selected;
+            PT-6975 - Bugfix: Download of uploaded images in media manager;
+            PT-7061 - Bugfix: Translations for options and values in cart;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.6">
+        <changes lang="de">
+            PT-6411 - Sortierung der Optionen und Werte funktioniert wieder;
+            PT-6840 - Doppeltes speichern verhindert;
+            PT-6539 - Implode Values mit einem komma;
+            PT-6173 - Aufschläge werden bei der Versandkostenstaffe nach Preis berücksichtigt;
+        </changes>
+        <changes lang="en">
+            PT-6411 - Fixed sorting of options and values;
+            PT-6840 - Prevent double saving;
+            PT-6539 - Implode values with a comma;
+            PT-6173 - Add CustomProductSurcharges to the shippingCosts calculation;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.5">
+        <changes lang="de">
+            PT-6411 - Bugfix: Sortierung der Optionen;
+            PT-6450 - Bugfix: Variantentext im Warenkorb;
+            PT-6452 - Bugfix: Fehler beim Öffnen eines CustomProducts in der Bestellübersicht;
+            PT-6536 - Bugfix: SSL Kompatibilität; PT-6655 - Feature: Implementierung von Interfaces für Erweiterbarkeit;
+            PT-6691, PT-6692, PT-6369 - Bugfix: Handling des Warenkorbs verbessert;
+        </changes>
+        <changes lang="en">
+            PT-6411 - Bugfix: Sorting of options;
+            PT-6450 - Bugfix: Variant text in cart;
+            PT-6452 - Bugfix: Error on opening a custom product in the order overview;
+            PT-6536 - Bugfix: SSL compatibility; PT-6655 - Feature: Implement interfaces for extensibility;
+            PT-6691, PT-6692, PT-6369 - Bugfix: Improve handling of cart;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.4">
+        <changes lang="de">
+            PT-6286 - Bugfix: Vereinfachte Ausgabe der Optionen auf E-Mail Vorlage;
+            PT-6292 - Bugfix: Optionsfilter im Backend Modul;
+            PT-6297 - Bugfix: Validierung der Bestellnummern von Optionen;
+            PT-6451 - Bugfix: Berechnung prozentualer Gutscheine;
+        </changes>
+        <changes lang="en">
+            PT-6286 - Bugfix: Simplify displaying of options on email template;
+            PT-6292 - Bugfix: Option filter in backend module;
+            PT-6297 - Bugfix: Validation of option order number;
+            PT-6451 - Bugfix: Calculation of percentage vouchers;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.3">
+        <changes lang="de">PT-6427 - Bugfix: Eingegebene Werte auf Rechnung bei doppelten Optionen;</changes>
+        <changes lang="en">PT-6247 - Bugfix: Inserted values on invoice at doubled values;</changes>
+    </changelog>
+
+    <changelog version="1.0.2">
+        <changes lang="de">
+            PT-6102 - Bugfix: Zugewiesene Artikel werden im Backend Modul separat geladen;
+            PT-6146 - Bugfix: Bestellungen wiederholen Button ausblenden;
+            PT-6210, PT-6377 - Bugfix: Custom Products Artikel in den Warenkorb legen;
+            PT-6247 - Bugfix: Eingegebene Werte auf Rechnung;
+            PT-6338 - Bugfix: Custom Products Modul vom Artikel Modul aus öffnen;
+        </changes>
+        <changes lang="en">
+            PT-6102 - Bugfix: Assigned products are loaded separately in the backend module;
+            PT-6146 - Bugfix: Hide repeat order button;
+            PT-6210, PT-6377 - Bugfix: Add Custom Products item to basket;
+            PT-6247 - Bugfix: Inserted values on invoice;
+            PT-6338 - Bugfix: Open Custom Products module from product module;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.1">
+        <changes lang="de">
+            Bugfix: PT-6188 - Fehlerbehebung bei leeren Bestellnummern;
+            Bugfix: PT-6164 - Designfixes im StepByStep-Modus;
+            Bugfix: PT-6170, PT-6174 - Migrations-Probleme behoben;
+            Bugfix: PT-6193 - Options-Übersetzungen in die Preis-Übersicht eingefügt;
+            Bugfix: PT-6194 - Öffnen von zwei Vorlagen gleichzeitig verhindert;
+            Bugfix: PT-6216 - Zurücksetzen von Optionen funktioniert nun korrekt mit der Preisübersicht;
+            Bugfix: PT-6249 - Versehentliches Löschen einer Vorlage lässt sich nun korrekt abbrechen;
+            Bugfix: PT-6241 - Staffelpreise und Mindestabnahme in Preisübersicht berücksichtigt;
+        </changes>
+        <changes lang="en">
+            Bugfix: PT-6188 - Fixed empty option ordernumbers;
+            Bugfix: PT-6164 - Designfixes for the step-by-step mode;
+            Bugfix: PT-6170, PT-6174 - Fixed migration-issues;
+            Bugfix: PT-6193 - Inserted option translations into price-overview;
+            Bugfix: PT-6194 - Prevented opening more than one template at a time;
+            Bugfix: PT-6216 - Resetting an option works properly with price-overview now;
+            Bugfix: PT-6249 - Accidentally deleting a template is now properly cancelable;
+            Bugfix: PT-6241 - Bulk prices and minimum purchase quantity are considered in price-overview now;
+        </changes>
+    </changelog>
+
+    <changelog version="1.0.0">
+        <changes lang="de">Erstveröffentlichung</changes>
+        <changes lang="en">First release</changes>
+    </changelog>
+</plugin>

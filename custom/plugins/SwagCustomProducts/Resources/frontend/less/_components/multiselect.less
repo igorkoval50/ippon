@@ -1,0 +1,28 @@
+/** Component: Multiselect */
+.custom-products--multiselect select {
+    .appearance(none);
+    .border-radius();
+    .box-sizing();
+    .unitize(line-height, 19);
+    .unitize(font-size, @customizing-input-font-size);
+    .unitize-padding(10, 10, 9, 10);
+    .box-shadow(inset 0 1px 1px @customizing-gray-dark);
+    background: @customizing-input-bg;
+    border: 1px solid @customizing-input-border;
+    border-top-color: darken(@customizing-input-border, 5%);
+    color: lighten(@customizing-text-color, 15%);
+
+    &:focus {
+        .box-shadow(0 0 0 transparent);
+        outline: none;
+        border-color: @customizing-brand-primary;
+        background: #fff;
+        color: @customizing-text-color;
+    }
+
+    &.has--error {
+        color: @customizing-input-error-color;
+        background: @customizing-input-error-bg;
+        border-color: @customizing-input-error-border;
+    }
+}

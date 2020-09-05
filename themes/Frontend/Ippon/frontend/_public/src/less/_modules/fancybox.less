@@ -1,0 +1,157 @@
+.fancybox-active {
+  .fancybox-button--arrow_left, .fancybox-button--arrow_right   {
+    div {
+      position: relative;
+      display: block;
+      transition: all .2s;
+      &:before {
+        content: '';
+        width: 75%;
+        height: 75%;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transform: translate(-50%, -50%);
+        background-image: url("../../img/icons/next.svg");
+      }
+      &:hover {
+        &:before {
+          background-image: url("../../img/icons/next-red.svg");
+        }
+      }
+    }
+  }
+  .fancybox-button--arrow_left {
+    div {
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .fancybox-button--arrow_left div svg, .fancybox-button--arrow_right div svg {
+    display: none;
+  }
+  .fancybox-thumbs a {
+    background-color: #fff;
+    background-size: contain ;
+  }
+  .fancybox-button--play {
+    display: none;
+  }
+  .fancybox-button--thumbs {
+    display: none;
+  }
+  .fancybox-thumbs {
+    top: auto;
+    width: auto;
+    bottom: 0;
+    left: 0;
+    right : 0;
+    height: 95px;
+    padding: 10px 10px 5px 10px;
+    box-sizing: border-box;
+    background: #fff;
+  }
+  .fancybox-thumbs__list a:before {
+    border: 2px solid #ff5268;
+  }
+
+  .fancybox-button {
+    height: 50px;
+    width: 50px;
+  }
+
+  .fancybox-show-toolbar .fancybox-toolbar {
+    opacity: 1;
+    transition: opacity .25s ease 0s, visibility 0s ease 0s;
+    visibility: visible;
+  }
+
+  .fancybox-show-nav .fancybox-button--arrow_right {
+    right: 0 !important;
+    transition: all .3s;
+  }
+  .fancybox-navigation .fancybox-button--arrow_right {
+    right: -50px;
+    transition: all .3s;
+  }
+
+  .fancybox-show-nav .fancybox-button--arrow_left {
+    left: 0 !important;
+    transition: all .3s;
+  }
+  .fancybox-navigation .fancybox-button--arrow_left {
+    left: -50px;
+    transition: all .3s;
+  }
+
+  .fancybox-show-thumbs .fancybox-inner {
+    right: 0;
+    bottom: 95px;
+  }
+  .image-slider--container .arrow:hover {
+    color: #e20612;
+    border-color: rgba(226,6,18,0.5);
+  }
+  .fancybox-button {
+    background-color: transparent;
+  }
+  .fancybox-toolbar {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  .fancybox-button, .fancybox-button:link, .fancybox-button:visited {
+    color: #000;
+  }
+  .fancybox-button:hover, .fancybox-button:link:hover {
+    color: #e20612;
+  }
+  .fancybox-bg {
+    background-color: #fff;
+    opacity: 1 !important;
+  }
+  .fancybox-overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+    /*    z-index: 9999;*/
+    background: url('fancybox_overlay.png');
+  }
+  .fancybox-navigation .fancybox-button {
+    top: 50%;
+  }
+  .fancybox-button[disabled], .fancybox-button[disabled]:hover {
+    display: none;
+  }
+  .fancybox-navigation .fancybox-button {
+    top: 50%;
+  }
+}
+
+.zoom {
+  display:inline-block;
+  position: relative;
+}
+
+/* magnifying glass icon */
+.zoom:after {
+  content:'';
+  display:block;
+  width:33px;
+  height:33px;
+  position:absolute;
+  top:0;
+  right:0;
+  background:url(icon.png);
+}
+
+.zoom img {
+  display: block;
+}
+
+.zoom img::selection { background-color: transparent; }

@@ -1,0 +1,403 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+
+# Https config for the backend
+RewriteCond %{HTTPS} off
+#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^admin - [F,L]
+
+RewriteRule shopware.dll shopware.php
+RewriteRule files/documents/.* engine [NC,L]
+RewriteRule backend/media/(.*) media/$1 [NC,L]
+
+RewriteCond %{REQUEST_URI} !(\/(engine|files|templates|themes|web)\/)
+RewriteCond %{REQUEST_URI} !(\/media\/(archive|banner|image|music|pdf|unknown|video)\/)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ shopware.php [PT,L,QSA]
+
+# Fix missing authorization-header on fast_cgi installations
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization},L]
+</IfModule>
+
+<IfModule mod_alias.c>
+    # Restrict access to VCS directories
+    RedirectMatch 404 /\\.(svn|git|hg|bzr|cvs)(/|$)
+
+    # Restrict access to root folder files
+    RedirectMatch 404 /(autoload\.php|composer\.(json|lock|phar)|README\.md|UPGRADE-(.*)\.md|CONTRIBUTING\.md|eula.*\.txt|\.gitignore|.*\.dist|\.env.*)$
+
+    # Restrict access to shop configs files
+    RedirectMatch 404 /(web\/cache\/(config_\d+\.json|all.less))$
+
+    # Restrict access to theme configurations
+    RedirectMatch 404 /themes/(.*)(.*\.lock|package\.json|\.gitignore|Gruntfile\.js|all\.less|node_modules\/.*)$
+</IfModule>
+
+# Staging environment
+#SetEnvIf Host "staging.test.shopware.in" SHOPWARE_ENV=staging
+
+# Development environment
+#SetEnvIf Host "dev.shopware.in" SHOPWARE_ENV=dev
+#SetEnv SHOPWARE_ENV dev
+
+DirectoryIndex index.html
+DirectoryIndex index.php
+DirectoryIndex shopware.php
+
+# Disables download of configuration
+<Files ~ "\.(tpl|yml|ini)$">
+    # Deny all requests from Apache 2.4+.
+    <IfModule mod_authz_core.c>
+          Require all denied
+    </IfModule>
+
+    # Deny all requests from Apache 2.0-2.2.
+    <IfModule !mod_authz_core.c>
+        Deny from all
+    </IfModule>
+</Files>
+
+# Enable gzip compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/xml text/plain text/css text/javascript application/javascript application/json application/font-woff application/font-woff2 image/svg+xml
+</IfModule>
+
+<Files ~ "\.(jpe?g|png|gif|css|js|woff|woff2|ttf|svg|eot)$">
+    <IfModule mod_expires.c>
+        ExpiresActive on
+        ExpiresDefault "access plus 1 month"
+    </IfModule>
+
+    <IfModule mod_headers.c>
+        Header append Cache-Control "public"
+        Header unset ETag
+    </IfModule>
+
+    FileETag None
+</Files>
+
+# Match generated files like:
+# 1429684458_t22_s1.css
+# 1429684458_t22_s1.js
+<FilesMatch "([0-9]{10})_(.+)\.(js|css)$">
+    <ifModule mod_headers.c>
+        Header set Cache-Control "max-age=31536000, public"
+    </ifModule>
+
+    <IfModule mod_expires.c>
+        ExpiresActive on
+        ExpiresDefault "access plus 1 year"
+    </IfModule>
+</FilesMatch>
+
+# Disables auto directory index
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+<IfModule mod_php5.c>
+#  php_value memory_limit 256M
+#  php_value max_execution_time 120
+#  php_value upload_max_filesize 20M
+   php_flag phar.readonly off
+   php_flag magic_quotes_gpc off
+   php_flag session.auto_start off
+   php_flag suhosin.session.cryptua off
+   php_flag zend.ze1_compatibility_mode off
+   php_value always_populate_raw_post_data -1
+</IfModule>
+
+#   AddType x-mapp-php5 .php
+#   AddHandler x-mapp-php5 .php
+
+<IfModule mod_headers.c>
+    Header append X-Frame-Options SAMEORIGIN
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    Redirect 301 /de/sportarten/judo-adidas.html /judo/?p=1
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas.html /judo/ausruestung/judoanzuege/
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/judoanzug-kinder-einsteiger-adidas.html /judo/ausruestung/judoanzuege/kinder-und-einsteiger/
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/judoanzug-fortgeschrittene.html /judo/ausruestung/judoanzuege/jugend-und-breitensport/
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/judoanzug-wettkampf-adidas.html /judo/ausruestung/judoanzuege/wettkaempfer/
+    Redirect 301 /de/sportarten/judo-adidas/jacken.html /judo/ausruestung/judojacken/
+    Redirect 301 /de/sportarten/judo-adidas/judohosen-adidas.html /judo/ausruestung/judohosen/
+    Redirect 301 /de/sportarten/judo-adidas/judoguertel-adidas.html /judo/ausruestung/judoguertel/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas.html /judo/accessoires/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas/judo-accessoires-adidas.html /judo/accessoires/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas/adidas-judo-sportswear.html /judo/textilien/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas/judo-schuetzer-adidas.html /judo/ausruestung/schutzausruestung/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas/judo-taschen-adidas.html /judo/accessoires/taschen-rucksaecke/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas/judo-trainingsgeraete-adidas.html /judo/accessoires/trainingsgeraete/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas/leukotape.html /judo/accessoires/tapes/
+    Redirect 301 /de/sportarten/judo-adidas/zubehor-judo-adidas/judo-cap.html /judo/textilien/caps/
+    Redirect 301 /de/sportarten/judo-adidas/mix-match.html /judo/ausruestung/judoanzuege/
+    Redirect 301 /de/sportarten/judo-adidas/adidas-judo-sale.html /sale/judo/
+    Redirect 301 /de/sportarten/judo-adidas/adidas-judo-sale/judoanzuge.html /sale/judo/judoanzuege/
+    Redirect 301 /de/sportarten/judo-adidas/adidas-judo-sale/sportswear.html /sale/judo/textilien/
+    Redirect 301 /de/sportarten/judo-adidas/adidas-judo-sale/taschen-rucksacke.html /sale/accessoires/taschen-rucksaecke/
+    Redirect 301 /de/sportarten/adidas-karate.html /karate/
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas.html /karate/ausruestung/karateanzuege/
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas/einsteiger-karateanzug-adidas.html /karate/ausruestung/karateanzuege/kinder-und-einsteiger/
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas/kata-karateanzug-adidas.html /karate/ausruestung/karateanzuege/kata/
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas/kumite-karateanzug-adidas.html /karate/ausruestung/karateanzuege/kumite/
+    Redirect 301 /de/sportarten/adidas-karate/karateguertel-adidas.html /karate/ausruestung/karateguertel/
+    Redirect 301 /de/sportarten/adidas-karate/karate-schutzausrustung-adidas.html /karate/ausruestung/schutzausruestung/
+    Redirect 301 /de/sportarten/adidas-karate/karate-schutzausrustung-adidas/zahnschutz-karate-addias.html /karate/ausruestung/schutzausruestung/zahnschuetzer/
+    Redirect 301 /de/sportarten/adidas-karate/karate-schutzausrustung-adidas/karate-faustschutz-adidas.html /karate/ausruestung/schutzausruestung/faustschuetzer/
+    Redirect 301 /de/sportarten/adidas-karate/karate-schutzausrustung-adidas/karate-koerperschutz-adidas.html /karate/ausruestung/schutzausruestung/koerperschuetzer/
+    Redirect 301 /de/sportarten/adidas-karate/karate-schutzausrustung-adidas/karate-tiefschutz-adidas.html /karate/ausruestung/schutzausruestung/tiefschuetzer/
+    Redirect 301 /de/sportarten/adidas-karate/karate-schutzausrustung-adidas/karate-schienbeinschutz-adidas.html /karate/ausruestung/schutzausruestung/schienbeinschuetzer/
+    Redirect 301 /de/sportarten/adidas-karate/karate-schutzausrustung-adidas/karate-fussschutz-adidas.html /karate/ausruestung/schutzausruestung/fussschuetzer/
+    Redirect 301 /de/sportarten/adidas-karate/karate-zubehoer-adidas.html /karate/accessoires/
+    Redirect 301 /de/sportarten/adidas-karate/karate-zubehoer-adidas/accessoires-karate-adidas.html /karate/accessoires/
+    Redirect 301 /de/sportarten/adidas-karate/karate-zubehoer-adidas/karate-taschen-adidas.html /karate/accessoires/taschen-rucksaecke/
+    Redirect 301 /de/sportarten/adidas-karate/karate-zubehoer-adidas/leukotape.html /karate/accessoires/tapes/
+    Redirect 301 /de/sportarten/adidas-karate/karate-zubehoer-adidas/adidas-karate-sportswear.html /karate/textilien/
+    Redirect 301 /de/sportarten/adidas-karate/karate-zubehoer-adidas/caps.html /karate/textilien/caps/
+    Redirect 301 /de/sportarten/adidas-karate/karate-sale-adidas.html /sale/karate/
+    Redirect 301 /de/sportarten/adidas-karate/karate-sale-adidas/anzuge.html /sale/karate/karateanzuege/
+    Redirect 301 /de/sportarten/adidas-karate/karate-sale-adidas/sportswear.html /sale/karate/textilien/
+    Redirect 301 /de/sportarten/adidas-karate/karate-sale-adidas/taschen-rucksacke.html /sale/accessoires/taschen-rucksaecke/
+    Redirect 301 /de/sportarten/adidas-karate/karate-sale-adidas/schutzausrustung.html /sale/karate/schutzausruestung/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas.html /bjj/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas.html /bjj/ausruestung/bjj-anzuege/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/kinder-einsteiger-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/kinder-und-einsteiger/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fortgeschrittene-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/wettkampf-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/wettkaempfer/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-rashguards.html /bjj/ausruestung/rashguards/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-shorts-grappling.html /bjj/ausruestung/shorts/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-gurtel-adidas.html /bjj/ausruestung/bjj-guertel/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-schutzausrustung-adidas.html /bjj/ausruestung/schutzsausruestung/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-schutzausrustung-adidas/zahnschutz-bjj-adidas.html /bjj/ausruestung/schutzsausruestung/zahnschuetzer/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-schutzausrustung-adidas/bjj-tiefschutz-adidas.html /bjj/ausruestung/schutzsausruestung/tiefschuetzer/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-schutzausrustung-adidas/schienbeinschutz-bjj-adidas.html /bjj/ausruestung/schutzsausruestung/schienbeinschuetzer/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-zubehor-adidas.html /bjj/accessoires/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-zubehor-adidas/accessoires-bjj-adidas.html /bjj/accessoires/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-zubehor-adidas/bjj-taschen-adidas.html /bjj/accessoires/taschen-rucksaecke/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-zubehor-adidas/leukotape.html /bjj/accessoires/tapes/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-zubehor-adidas/adidas-bjj-kleidung.html /bjj/textilien/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-zubehor-adidas/caps.html /bjj/textilien/caps/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale.html /sale/bjj/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/anzuge.html /sale/bjj/bjj-anzuege/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/rashguards.html /sale/bjj/rashguards/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/shorts.html /sale/bjj/shorts/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/taschen-rucksacke.html /sale/accessoires/taschen-rucksaecke/
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/sportswear.html /sale/textilien/
+    Redirect 301 /de/im-fokus/taschen-adidas.html /judo/accessoires/taschen-rucksaecke/
+    Redirect 301 /de/im-fokus/trainingsgerate.html /judo/accessoires/trainingsgeraete/
+    Redirect 301 /de/im-fokus/tapes.html  /judo/accessoires/tapes/
+    Redirect 301 /de/im-fokus/snapback-caps.html /sportswear/alle-textilien/caps/
+    Redirect 301 /de/im-fokus/adidas-community-line.html /sportswear/alle-textilien/
+    Redirect 301 /de/im-fokus/sale.html /sale/
+    Redirect 301 /de/sportswear.html /sportswear/
+    Redirect 301 /de/sportswear/manner/techfit.html /sportswear/alle-textilien/funktionswaesche/
+    Redirect 301 /de/sportswear/manner/t-shirts.html /sportswear/alle-textilien/t-shirts/
+    Redirect 301 /de/sportswear/manner/longsleeves.html /sportswear/alle-textilien/sweatshirts/
+    Redirect 301 /de/sportswear/manner/sweatshirts.html /sportswear/alle-textilien/sweatshirts/
+    Redirect 301 /de/sportswear/manner/jacken.html /sportswear/alle-textilien/jacken/
+    Redirect 301 /de/sportswear/manner/kampfrichterhemden.html /judo/textilien/kampfrichterhemden/
+    Redirect 301 /de/sportswear/manner/schuhe.html /judo/textilien/schuhe/
+    Redirect 301 /de/sportswear/manner/judo-caps.html /sportswear/alle-textilien/caps/
+    Redirect 301 /de/fuji-mats-facility-design.html /marken/fuji-sports/
+    Redirect 301 /de/fuji-mats-facility-design/anleitungen-faq.html /matten/fuji-mats-facility-design/anleitungen-faq/
+    Redirect 301 /de/kampfsportmatten/marke/fuji-mats.html /matten/fuji-mats-facility-design/alle-fuji-mats/
+    Redirect 301 /de/progame-tatami-by-trocellen.html /matten/progame-tatami-by-trocellen/
+    Redirect 301 /de/progame-tatami-by-trocellen/technologien.html /matten/progame-tatami-by-trocellen/technologien/
+    Redirect 301 /de/progame-tatami-by-trocellen/partner.html /matten/progame-tatami-by-trocellen/partner/
+    Redirect 301 /de/kampfsportmatten/marke/trocellen.html /matten/progame-tatami-by-trocellen/alle-progame-puzzlematten/
+    Redirect 301 /de/kampfsportmatten.html /matten/alle-kampfsportmatten/
+    Redirect 301 /de/kampfsportmatten/karatematten.html /matten/alle-kampfsportmatten/karatematten/
+    Redirect 301 /de/kampfsportmatten/judomatten.html /matten/alle-kampfsportmatten/judomatten/
+    Redirect 301 /de/kampfsportmatten/bjj-matten.html /matten/alle-kampfsportmatten/bjj-matten/
+    Redirect 301 /de/kampfsportmatten/mma-matten.html /matten/alle-kampfsportmatten/mma-matten/
+    Redirect 301 /de/kampfsportmatten/taekwondo-matten.html /matten/alle-kampfsportmatten/taekwondo-matten/
+    Redirect 301 /de/kampfsportmatten/kickboxing-matte.html /matten/alle-kampfsportmatten/kickboxing-matten/
+    Redirect 301 /de/kampfsportmatten/yoga-boden.html /matten/alle-kampfsportmatten/yoga-boeden/
+    Redirect 301 /de/mehr/ippon-gear/die-marke.html /marken/ippon-gear/
+    Redirect 301 /de/mehr/veredelung.html /we-love-clubs/
+    Redirect 301 /de/mehr/veredelung.html /we-love-clubs/
+    Redirect 301 /de/mehr/guertelbestickungen.html /we-love-clubs/
+    Redirect 301 /de/mehr/logo-stick.html /we-love-clubs/
+    Redirect 301 /de/mehr/event-marketing.html /we-love-clubs/
+    Redirect 301 /de/ippon-gear-legend-ijf-judojacke.html /judo/ausruestung/judoanzuege/wettkaempfer/161/ippon-gear-legend-ijf-judojacke?number=JJ690W-145&c=1231
+    Redirect 301 /de/ippon-gear.html /marken/ippon-gear/
+    Redirect 301 /de/adidas-champion-2-ijf.html /judo/ausruestung/judoanzuege/wettkaempfer/176/adidas-champion-2-ijf-judoanzug?number=J-IJF-W-150
+    Redirect 301 /de/sportarten/judo-adidas.html /adidas/
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas.html /sale/judo/judoanzuege/
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas.html /judo/ausruestung/judoanzuege/
+    Redirect 301 /de/datenschutz.html /datenschutz
+    Redirect 301 /de/agb.html /agb
+    Redirect 301 /de/impressum.html /impressum
+    Redirect 301 /de/14-taegiges-widerrufsrecht.html /widerrufsbelehrung
+    Redirect 301 /de/laenderspezifische-widerrufsregeln.html /widerrufsbelehrung
+    Redirect 301 /de/zahlung-und-versand.html /zahlung-und-versand
+    Redirect 301 /de/we-love-clubs/vereinsservice/unser-service.html /we-love-clubs/
+    Redirect 301 /de/fragen-und-antworten.html /haeufig-gestellte-fragen
+    Redirect 301 /de/kontakt.html /kontaktformular
+    Redirect 301 /de/sitemap.html /sitemap
+    Redirect 301 /de/magazin.html /magazin/
+    Redirect 301 /de/adidas-T16-teamwear.html /sportswear/ippon-gear-teamwear/teamline-basic/
+    Redirect 301 /de/we-love-clubs/vereinsservice/unser-service.html /we-love-clubs/
+    Redirect 301 /de/we-love-clubs/vereinsservice/sonderpreise-fuer-vereine.html /we-love-clubs/
+    Redirect 301 /de/we-love-clubs/vereinsservice/individuelle-produkte.html /we-love-clubs/
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/ippon-gear-legend-ijf-judojacke-blau.html /judo/ausruestung/judoanzuege/wettkaempfer/161/ippon-gear-legend-ijf-judojacke?number=JJ690B-145&c=1231
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/ippon-gear-legend-judohose.html /judo/ausruestung/judohosen/162/ippon-gear-legend-ijf-judohose?number=JP282W-145&c=1223
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/ippon-gear-legend-slimfit-ijf-judojacke-white.html /judo/ausruestung/judoanzuege/wettkaempfer/159/ippon-gear-legend-slim-fit-ijf-judojacke?number=JJ690SW-145&c=1231
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/ippon-gear-legend-slimfit-ijf-judojacke-blau.html /judo/ausruestung/judoanzuege/wettkaempfer/159/ippon-gear-legend-slim-fit-ijf-judojacke?number=JJ690SW-145&c=1231
+    Redirect 301 /de/sportarten/judo-adidas/judoanzug-adidas/adidas-champion-2-slim-fit.html /judo/ausruestung/judoanzuege/wettkaempfer/175/adidas-champion-2-ijf-slim-fit-judoanzug?number=J-IJFS-W-150&c=1231
+    Redirect 301 /de/sportarten/judo-adidas/judoguertel-adidas.html /judo/ausruestung/judoguertel/
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas/adidas-k201-adistart.html /karate/ausruestung/karateanzuege/kinder-und-einsteiger/165/adidas-k201-adistart-karateanzug?number=K201-100&c=1522
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas/adidas-k220c-club-karateanzug.html /karate/ausruestung/karateanzuege/kinder-und-einsteiger/166/adidas-k220c-club-karateanzug?number=K220C-110&c=1522
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas/adidas-karateanzug-k888j-kigai.html /karate/ausruestung/karateanzuege/kata/169/adidas-kigai-kata-karateanzug-japanischer-schnitt?number=K888J-150&c=1522
+    Redirect 301 /de/sportarten/adidas-karate/karateanzug-adidas/adidas-karatenanzug-k380t-elite.html /karate/ausruestung/karateanzuege/kata/179/adidas-elite-karateanzug-traditioneller-schnitt?number=K380T-150&c=1522
+    Redirect 301 /de/sportarten/judo-adidas/judoguertel-adidas/ippon-gear-legend-ijf-judogurtel.html /judo/ausruestung/judoguertel/185/ippon-gear-legend-ijf-judoguertel?number=JIBIJF-240&c=1224
+    Redirect 301 /de/sportarten/judo-adidas/judoguertel-adidas/adidas-elite-gurtel-ijf.html /judo/ausruestung/judoguertel/187/adidas-elite-ijf-judoguertel?number=ADIB240-IJF-S-240&c=1224
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/adidas-bjj-anzug-response-kids.html /bjj/ausruestung/bjj-anzuege/kinder-und-einsteiger/197/adidas-response-bjj-anzug?number=JJ280W-M0&c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/adidas-jj350-challenger-bjj-anzug-11708.html /bjj/ausruestung/bjj-anzuege/kinder-und-einsteiger/199/adidas-challenge-bjj-anzug?number=JJ350W-M0&c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/adidas-bjj-anzug-contest-gi-blau.html /bjj/ausruestung/bjj-anzuege/wettkaempfer/242/adidas-contest-gi-2.0-bjj-anzug?number=JJ430W-A0&c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/adidas-bjj-anzug-ibjjf-champion-gi-weiss.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/201/adidas-champion-bjj-anzug?number=JJ601W-A1&c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/adidas-bjj-anzug-quest-gi-schwarz.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/202/adidas-bjj-quest-anzug?number=JJ600W-A1&c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-all-around-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/kinder-und-einsteiger/292/fuji-all-around-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-all-around-bjj-anzug-pink.html /bjj/ausruestung/bjj-anzuege/kinder-und-einsteiger/291/fuji-all-around-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-blossom-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/293/fuji-pink-blossom-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-blue-blossom-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/293/fuji-pink-blossom-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-sekai-2-0-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/296/fuji-sekai-2.0-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-sekai-2-0-bjj-anzug-blau.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/296/fuji-sekai-2.0-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-sekai-2-0-bjj-anzug-schwarz.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/296/fuji-sekai-2.0-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-superaito-bjj-anzug.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/295/fuji-superaito-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-superaito-bjj-anzug-blau.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/295/fuji-superaito-bjj-anzug?c=1487
+    Redirect 301 /de/sportarten/brazilian-jiu-jitsu-adidas/bjj-anzug-adidas/fuji-superaito-bjj-anzug-schwarz.html /bjj/ausruestung/bjj-anzuege/fortgeschrittene/295/fuji-superaito-bjj-anzug?c=1487
+    Redirect 301 /en/sportarten.html /en/
+    Redirect 301 /en/sportarten/judo-adidas.html /en/judo/#emotion--start
+    Redirect 301 /en/sportarten/judo-adidas/uniforms.html /en/judo/equipment/judo-uniforms/
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/judo-uniform-kids-beginners-adidas.html /en/judo/equipment/judo-uniforms/kids-beginners/
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/judo-uniform-amateurs-adidas.html /en/judo/equipment/judo-uniforms/youth-amateurs/
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/judo-uniform-professional-adidas.html /en/judo/equipment/judo-uniforms/competitors/
+    Redirect 301 /en/sportarten/judo-adidas/jackets.html /en/judo/equipment/judo-jackets/
+    Redirect 301 /en/sportarten/judo-adidas/belts.html /en/judo/equipment/judo-belts/
+    Redirect 301 /en/sportarten/judo-adidas/accessories.html /en/judo/accessories/
+    Redirect 301 /en/sportarten/judo-adidas/accessories/judo-accessoires-adidas.html /en/judo/accessoires/
+    Redirect 301 /en/sportarten/judo-adidas/accessories/adidas-judo-sportswear.html /en/judo/textiles/
+    Redirect 301 /en/sportarten/judo-adidas/accessories/adidas-protectors.html /en/judo/equipment/protectors/
+    Redirect 301 /en/sportarten/judo-adidas/accessories/adidas-bags.html /en/judo/accessoires/bags-backpacks/
+    Redirect 301 /en/sportarten/judo-adidas/accessories/adidas-gym-equipment.html /en/judo/accessoires/training-tools/
+    Redirect 301 /en/sportarten/judo-adidas/accessories/leukotape.html /en/judo/accessoires/tapes/
+    Redirect 301 /en/sportarten/judo-adidas/accessories/judo-cap.html /en/judo/textiles/caps/
+    Redirect 301 /en/sportarten/judo-adidas/mix-match.html /en/judo/equipment/judo-uniforms/
+    Redirect 301 /en/sportarten/judo-adidas/adidas-judo-sale.html /en/sale/judo/
+    Redirect 301 /en/sportarten/judo-adidas/adidas-judo-sale/sportswear.html /en/sale/judo/textiles/
+    Redirect 301 /en/sportarten/judo-adidas/adidas-judo-sale/bags-backpacks.html /en/sale/accessoires/bags-backpacks/
+    Redirect 301 /en/sportarten/adidas-karate.html /en/karate/
+    Redirect 301 /en/sportarten/adidas-karate/uniforms.html /en/karate/equipment/karate-uniforms/
+    Redirect 301 /en/sportarten/adidas-karate/uniforms/karate-uniform-kids-beginners-adidas.html /en/karate/equipment/karate-uniforms/kids-beginners/
+    Redirect 301 /en/sportarten/adidas-karate/uniforms/kata-karate-uniform-adidas.html /en/karate/equipment/karate-uniforms/kata/
+    Redirect 301 /en/sportarten/adidas-karate/belts.html /en/karate/equipment/karate-belts/
+    Redirect 301 /en/sportarten/adidas-karate/protection.html /en/karate/equipment/protectors/
+    Redirect 301 /en/sportarten/adidas-karate/protection/mouth-guard.html /en/karate/equipment/protectors/mouth-guards/
+    Redirect 301 /en/sportarten/adidas-karate/protection/hand-protection.html /en/karate/equipment/protectors/karate-mitts/
+    Redirect 301 /en/sportarten/adidas-karate/protection/body-protection.html /en/karate/equipment/protectors/body-guards/
+    Redirect 301 /en/sportarten/adidas-karate/protection/groin-guard.html /en/karate/equipment/protectors/groin-guards/
+    Redirect 301 /en/sportarten/adidas-karate/protection/shin-insteps.html /en/karate/equipment/protectors/shin-pads/
+    Redirect 301 /en/sportarten/adidas-karate/protection/foot-protection.html /en/karate/equipment/protectors/foot-protectors/
+    Redirect 301 /en/sportarten/adidas-karate/accessories.html /en/karate/accessories/
+    Redirect 301 /en/sportarten/adidas-karate/accessories/accessoires-karate-adidas.html /en/karate/accessories/
+    Redirect 301 /en/sportarten/adidas-karate/accessories/adidas-bags.html /en/karate/accessoires/bags-backpacks/
+    Redirect 301 /en/sportarten/adidas-karate/accessories/leukotape.html /en/karate/accessoires/tapes/
+    Redirect 301 /en/sportarten/adidas-karate/accessories/adidas-karate-sportswear.html /en/karate/textiles/
+    Redirect 301 /en/sportarten/adidas-karate/accessories/caps.html /en/karate/textiles/caps/
+    Redirect 301 /en/sportarten/adidas-karate/karate-sale-adidas.html /en/sale/karate/
+    Redirect 301 /en/sportarten/adidas-karate/karate-sale-adidas/uniforms.html /en/sale/karate/karate-uniforms/
+    Redirect 301 /en/sportarten/adidas-karate/karate-sale-adidas/bags-backpacks.html /en/sale/accessoires/bags-backpacks/
+    Redirect 301 /en/sportarten/adidas-karate/karate-sale-adidas/sportswear.html /en/sale/karate/textiles/
+    Redirect 301 /en/sportarten/adidas-karate/karate-sale-adidas/protection.html /en/sale/karate/protectors/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas.html /en/bjj/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms.html /en/bjj/equipment/bjj-uniforms/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-rashguards.html /en/bjj/equipment/rashguards/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/bjj-uniform-kids.html /en/bjj/equipment/bjj-uniforms/kids-beginners/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/bjj-uniform-advanced.html /en/bjj/equipment/bjj-uniforms/advanced/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/bjj-uniform-professional.html /en/bjj/equipment/bjj-uniforms/competitiors/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/belts.html /en/bjj/equipment/bjj-belts/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-shorts-grappling.html /en/bjj/equipment/shorts/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/protection.html /en/bjj/equipment/protectors/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/protection.html /en/bjj/equipment/protectors/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/protection/mouth-guard.html /en/bjj/equipment/protectors/mouth-guards/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/protection/groin-guard.html /en/bjj/equipment/protectors/groin-guards/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/protection/shin-insteps.html /en/bjj/equipment/protectors/shin-pads/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/accessories.html /en/bjj/accessories/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/accessories/bjj-bags-adidas.html /en/bjj/accessories/bags-backpacks/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/accessories/leukotape.html /en/bjj/accessories/tapes/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/accessories/adidas-bjj-wear.html /en/bjj/textiles/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/accessories/bjj-gym-equipment-adidas.html /en/bjj/accessories/training-tools/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/accessories/caps.html /en/bjj/textiles/caps/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale.html /en/sale/bjj/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/anzuge.html /en/sale/bjj/bjj-uniforms/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/rashguards.html /en/sale/bjj/rashguards/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/shorts.html /en/sale/bjj/shorts/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/sportswear.html /en/sale/textiles/
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/adidas-bjj-sale/taschen-rucksacke.html /en/sale/accessoires/bags-backpacks/
+    Redirect 301 /en/featured/gym-equipment.html/en/featured/gym-equipment.html /en/bjj/accessories/training-tools/
+    Redirect 301 /en/featured/tapes.html /en/judo/accessories/tapes/
+    Redirect 301 /en/featured/adidas-community-line.html /en/judo/textiles/
+    Redirect 301 /en/featured/snapback-caps.html /en/sportswear/all-textiles/caps/
+    Redirect 301 /en/featured/sale.html /en/sale/
+    Redirect 301 /en/featured/sale/judo.html /en/sale/judo/
+    Redirect 301 /en/featured/sale/judo/sportswear.html /en/sale/judo/textiles/
+    Redirect 301 /en/featured/sale/judo/bags-backpacks.html /en/sale/accessoires/bags-backpacks/
+    Redirect 301 /en/featured/sale/judo/uniforms.html /en/sale/judo/judo-uniforms/
+    Redirect 301 /en/featured/sale/karate/uniforms.html /en/sale/karate/karate-uniforms/
+    Redirect 301 /en/featured/sale/karate.html /en/sale/karate/
+    Redirect 301 /en/featured/sale/karate/sportswear.html /en/sale/karate/textiles/
+    Redirect 301 /en/featured/sale/karate/bags-backpacks.html /en/sale/accessoires/bags-backpacks/
+    Redirect 301 /en/featured/sale/karate/protection.html /en/sale/karate/protectors/
+    Redirect 301 /en/featured/sale/bjj/uniforms.html /en/sale/bjj/bjj-uniforms/
+    Redirect 301 /en/featured/sale/bjj.html /en/sale/bjj/
+    Redirect 301 /en/featured/sale/bjj/rashguards.html /en/sale/bjj/rashguards/
+    Redirect 301 /en/featured/sale/bjj/shorts.html /en/sale/bjj/shorts/
+    Redirect 301 /en/featured/sale/bjj/bags-backpacks.html /en/sale/accessoires/bags-backpacks/
+    Redirect 301 /en/featured/sale/bjj/sportswear.html /en/sale/textiles/
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/ippon-gear-legend-ijf-judojacke-blau.html /en/judo/equipment/judo-uniforms/competitors/161/ippon-gear-legend-ijf-judo-jacket?number=JJ690W-145&c=1593
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/ippon-gear-legend-ijf-judojacke.html /en/judo/equipment/judo-uniforms/competitors/161/ippon-gear-legend-ijf-judo-jacket?number=JJ690W-145&c=1593
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/ippon-gear-legend-slimfit-ijf-judojacke-white.html /en/judo/equipment/judo-uniforms/competitors/159/ippon-gear-legend-slim-fit-ijf-judo-jacket?number=JJ690SW-145&c=1593
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/ippon-gear-legend-slimfit-ijf-judojacke-blau.html  /en/judo/equipment/judo-uniforms/competitors/159/ippon-gear-legend-slim-fit-ijf-judo-jacket?number=JJ690SW-145&c=1593
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/adidas-champion-2-slim-fit.html /en/judo/equipment/judo-uniforms/competitors/175/adidas-champion-2-ijf-slim-fit-judo-uniform?number=J-IJFS-W-150&c=1593
+    Redirect 301 /en/sportarten/judo-adidas/uniforms/adidas-champion-2-ijf.html /en/judo/equipment/judo-uniforms/competitors/175/adidas-champion-2-ijf-slim-fit-judo-uniform?number=J-IJFS-W-150&c=1593
+    Redirect 301 /en/sportarten/judo-adidas/pants/ippon-gear-legend-judo-pant-12461.html /en/judo/equipment/judo-pants/162/ippon-gear-legend-ijf-judo-pant?number=JP282W-145&c=1585
+    Redirect 301 /en/sportarten/adidas-karate/uniforms/adidas-k201-adistart.html /en/karate/equipment/karate-uniforms/kids-beginners/165/adidas-k201-adistart-karate-uniform?number=K201-100&c=1884
+    Redirect 301 /en/sportarten/adidas-karate/uniforms/adidas-k220c-club-karateanzug.html /en/karate/equipment/karate-uniforms/kids-beginners/166/adidas-k220c-club-karate-uniform?number=K220C-110&c=1884
+    Redirect 301 /en/sportarten/adidas-karate/uniforms/adidas-karateanzug-k888j-kigai.html /en/karate/equipment/karate-uniforms/kata/169/adidas-kigai-kata-karate-uniform-japanese-cut?number=K888J-150&c=1884
+    Redirect 301 /en/sportarten/adidas-karate/uniforms/adidas-karatenanzug-k380t-elite.html /en/karate/equipment/karate-uniforms/kata/179/adidas-elite-karate-uniform-traditional-cut?number=K380T-150&c=1884
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/adidas-bjj-anzug-response-kids.html /en/bjj/equipment/bjj-uniforms/kids-beginners/197/adidas-response-bjj-uniform?number=JJ280W-M0&c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/adidas-jj350-challenger-bjj-anzug-11708.html /en/bjj/equipment/bjj-uniforms/kids-beginners/199/adidas-challenge-bjj-uniform?number=JJ350W-M0&c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/adidas-bjj-anzug-contest-gi-blau.html /en/bjj/equipment/bjj-uniforms/competitiors/242/adidas-contest-gi-2.0-bjj-uniform?number=JJ430W-A0&c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/adidas-bjj-anzug-ibjjf-champion-gi-weiss.html /en/bjj/equipment/bjj-uniforms/advanced/201/adidas-champion-bjj-uniform?number=JJ601W-A1&c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/adidas-bjj-anzug-quest-gi-schwarz.html /en/bjj/equipment/bjj-uniforms/advanced/202/adidas-bjj-quest-uniform?number=JJ600W-A1&c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/fuji-all-around-bjj-anzug.html /en/bjj/equipment/bjj-uniforms/kids-beginners/292/fuji-all-around-bjj-uniform?c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/fuji-all-around-bjj-uniform-12621.html /en/bjj/equipment/bjj-uniforms/kids-beginners/291/fuji-all-around-bjj-uniform?c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/fuji-sekai-2-0-bjj-anzug.html /en/bjj/equipment/bjj-uniforms/advanced/296/fuji-sekai-2.0-bjj-uniform?c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/fuji-blue-blossom-bjj-uniform.html /en/bjj/equipment/bjj-uniforms/advanced/293/fuji-pink-blossom-bjj-uniform?c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/fuji-pink-blossom-bjj-uniform.html /en/bjj/equipment/bjj-uniforms/advanced/293/fuji-pink-blossom-bjj-uniform?c=1849
+    Redirect 301 /en/sportarten/brazilian-jiu-jitsu-adidas/uniforms/fuji-superaito-bjj-uniform.html /en/bjj/equipment/bjj-uniforms/advanced/295/fuji-superaito-bjj-uniform?c=1849
+    Redirect 301 /en/sportarten/judo-adidas/belts/ippon-gear-legend-ijf-judo-belt.html /en/judo/equipment/judo-belts/185/ippon-gear-legend-ijf-judo-belt?number=JIBIJF-240&c=1586
+    Redirect 301 /en/sportarten/judo-adidas/belts/adidas-elite-gurtel-ijf.html /en/judo/equipment/judo-belts/187/adidas-elite-ijf-judo-belt?number=ADIB240-IJF-S-240&c=1586
+    Redirect 301 /en/payment-and-delivery.html /en/payment-and-delivery
+    Redirect 301 /en/14-day-withdrawal.html /en/custom/index/sCustom/8
+    Redirect 301 /en/frequently-asked-questions.html /en/faq
+    Redirect 301 /en/we-love-clubs/club-service/our-service.html /en/we-love-clubs/
+    Redirect 301 /en/mag.html /en/mag/
+    Redirect 301 /en/fuji-mats-facility-design.html /en/mats/fuji-mats-facility-design/
+    Redirect 301 /en/progame-tatami-by-trocellen.html /en/mats/progame-tatami-by-trocellen/
+    Redirect 301 /en/sitemap.html /en/sitemap
+    Redirect 301 /en/about-us.html /en/brands/ippon-gear/about-ippon-gear/
+    Redirect 301 /en/imprint.html /en/custom/index/sCustom/3
+    Redirect 301 /en/terms-and-conditions.html /en/terms-conditions
+    Redirect 301 /en/privacy-policy.html /en/custom/index/sCustom/7
+</IfModule>

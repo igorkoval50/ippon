@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+	<label>Variants everywhere</label>
+	<label lang="de">Varianten in Listings</label>
+	<version>1.0.28</version>
+	<copyright>LENZ eBusiness GmbH</copyright>
+	<license>proprietary</license>
+	<link>https://lenz-ebusiness.de/</link>
+	<author>LENZ eBusiness GmbH</author>
+	<compatibility minVersion="5.2.0" />
+	<changelog version="1.0.0">
+		<changes>
+			<![CDATA[
+			Bugfix: Product navigation on detail page is working again with enabled plugin.
+			]]>
+		</changes>
+		<changes lang="de">
+			<![CDATA[
+			Bugfix: Die Produktnavigation auf der Produktdetailseite funktioniert nun wieder.
+			]]>
+		</changes>
+	</changelog>
+	<description>
+		<![CDATA[
+	   <b>Variants everywhere</b>
+	   <p>Show variants in listings and search. <a href="https://store.shopware.com/en/?sSearch=lenz229165305397">Plugin in Shopware Community Store</a></p>
+	   ]]>
+	</description>
+	<description lang="de">
+		<![CDATA[
+	   <b>Varianten in Listings</b>
+	   <p>Das Plugin zeigt Varianten in Listings und der Suche. <a href="https://store.shopware.com/?sSearch=lenz229165305397">Plugin im Shopware Community Store</a></p>
+	   ]]>
+	</description>
+</plugin>

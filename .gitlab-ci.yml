@@ -1,0 +1,24 @@
+deploy_to_dev_server:
+     variables:
+       TARGET_HOST: 176.9.173.158
+       WEB_SERVER_ROOT: /var/www/ippon-shop.dev50.de/public_html/
+       WEB_SERVER_USER: ipponshop
+       WEB_SERVER_GROUP: ipponshop
+     stage: deploy
+     script:
+       - ansible-playbook /home/gitlab-runner/playbooks/copy-to-dev-ssh.yml
+     only:
+       - master
+
+deploy_to_stage_server:
+     variables:
+       TARGET_HOST: 94.130.162.114
+       WEB_SERVER_ROOT: /var/www/ippon/htdocs/shopware/staging/
+       WEB_SERVER_USER: ippon
+       WEB_SERVER_GROUP: ippon
+     stage: deploy
+     script:
+       - ansible-playbook /home/gitlab-runner/playbooks/copy-to-dev-ssh.yml
+     only:
+       - stage
+

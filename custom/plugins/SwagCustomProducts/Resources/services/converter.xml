@@ -1,0 +1,38 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="swag_custom_products.converter.default_converter"
+                 class="SwagCustomProducts\Components\DataConverter\Converter\DefaultConverter">
+            <tag name="swag_custom_products.converter_type"/>
+        </service>
+
+        <service id="swag_custom_products.converter.wysiwyg_converter"
+                 class="SwagCustomProducts\Components\DataConverter\Converter\WysiwygConverter">
+            <tag name="swag_custom_products.converter_type"/>
+        </service>
+
+        <service id="swag_custom_products.converter.file_upload_converter"
+                 class="SwagCustomProducts\Components\DataConverter\Converter\FileUploadConverter">
+            <tag name="swag_custom_products.converter_type"/>
+        </service>
+
+        <service id="swag_custom_products.converter.image_upload_converter"
+                 class="SwagCustomProducts\Components\DataConverter\Converter\ImageUploadConverter">
+            <tag name="swag_custom_products.converter_type"/>
+        </service>
+
+        <service id="swag_custom_products.converter.text_field_converter"
+                 class="SwagCustomProducts\Components\DataConverter\Converter\TextConverter">
+            <tag name="swag_custom_products.converter_type"/>
+        </service>
+
+        <service id="swag_custom_products.converter.text_area_converter"
+                 class="SwagCustomProducts\Components\DataConverter\Converter\TextConverter">
+            <tag name="swag_custom_products.converter_type"/>
+        </service>
+    </services>
+</container>

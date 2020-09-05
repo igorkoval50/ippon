@@ -1,0 +1,66 @@
+.js--tab-menu {
+  .tab--navigation {
+    text-align: center;
+    margin-bottom: 18px;
+    @media screen and(min-width: @tabletLandscapeViewportWidth) {
+      margin-bottom: 13px;
+    }
+
+    .tab--link {
+      top: 0;
+      color: #505050;
+      background: transparent;
+      font-size: 14px;
+      font-weight: @font-bold-weight;
+      border-color: transparent;
+      .reset-border-radius();
+      .unitize-padding(2, 0, 3, 0);
+      .unitize-margin(0, 6);
+      @media screen and(min-width: @tabletLandscapeViewportWidth) {
+        font-family: @font-headline-stack;
+        font-size: 24px;
+        padding-bottom: 7px;
+      }
+
+      .tab-menu--cross-selling {
+        .unitize(font-size, @font-size-h1);
+      }
+
+      &::after {
+        .transition();
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: @text-color-light;
+        .unitize(height, 1);
+        .transform(scaleX(0));
+      }
+
+      &:hover,
+      &:focus,
+      &.is--active {
+        background: transparent;
+        color: @text-color-dark;
+
+        &::after {
+          .transform(scaleX(1));
+        }
+      }
+    }
+  }
+
+  .tab--container-list {
+    .tab--container {
+      border: none;
+      .unitize(margin-bottom, 23);
+    }
+  }
+}
+
+.tab-menu--product {
+  .tab--container {
+    background: #fff;
+  }
+}

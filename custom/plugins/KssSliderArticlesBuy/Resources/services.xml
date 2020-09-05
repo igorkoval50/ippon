@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service class="KssSliderArticlesBuy\Subscriber\RegistrTemplateDirectory" id="kss_slider_articles_buy.subscriber.registr_template_directory">
+            <argument>%kss_slider_articles_buy.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+        <service id="kss_slider_articles_buy.list_product_service"
+                 class="KssSliderArticlesBuy\Subscriber\Service\ListProductService"
+                 decorates="shopware_storefront.list_product_service"
+                 public="false">
+            <argument type="service" id="kss_slider_articles_buy.list_product_service.inner"/>
+            <argument type="service" id="shopware_storefront.configurator_service"/>
+            <argument type="service" id="legacy_struct_converter"/>
+            <argument type="service" id="front"/>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,24 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="SwagPromotion\Bundle\SearchBundleES\ConditionHandler\OrderNumberConditionHandler">
+            <tag name="shopware_search_es.search_handler"/>
+        </service>
+
+        <service id="SwagPromotion\Bundle\SearchBundleDBAL\ConditionHandler\OrderNumberConditionHandler">
+            <tag name="condition_handler_dbal"/>
+        </service>
+
+        <service id="SwagPromotion\Components\Services\ProductSearchDecorator"
+                 decorates="shopware_search.product_search"
+                 public="false">
+            <argument type="service" id="SwagPromotion\Components\Services\ProductSearchDecorator.inner"/>
+            <argument type="service" id="config"/>
+            <argument type="service" id="front" />
+        </service>
+    </services>
+</container>

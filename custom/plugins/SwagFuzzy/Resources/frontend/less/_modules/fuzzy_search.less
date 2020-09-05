@@ -1,0 +1,91 @@
+.fuzzy--synonym-banner,
+.fuzzy--headline {
+    .unitize(line-height, 20);
+    .unitize-padding(0, 0, 10, 0);
+}
+
+.fuzzy--synonym-media {
+    margin: 0 auto;
+}
+
+.fuzzy--label {
+    .unitize(margin-right, 12);
+    .unitize(line-height, 20);
+    .unitize-padding(5, 0, 10, 0);
+    display: inline-block;
+}
+
+.fuzzy--similar-requests {
+    .unitize-margin(5, 0);
+}
+
+.fuzzy--related-terms {
+    .unitize-margin(5, 0, 40, 0);
+}
+
+.ajax-search--fuzzy-highlighting {
+    color: @brand-primary;
+}
+
+.alert + .fuzzy--emotion-container {
+    .unitize-margin(20, 0);
+}
+
+.ajax-search--fuzzy-similar-requests-label {
+    .unitize(font-size, 12);
+    color: @brand-secondary;
+    font-weight: bold;
+}
+
+.fuzzy--similar-entry {
+    .unitize(line-height, 20);
+    .unitize-padding(5, 0, 10);
+    border-bottom: none;
+    list-style: none;
+
+    &.fuzzy--similar-label {
+        padding-top: 0;
+        .unitize(padding-bottom, 6);
+    }
+
+    &.fuzzy--is-last-item {
+        .unitize(padding-bottom, 15);
+        border-bottom: 1px solid @border-color;
+    }
+
+    .search-result--link {
+        padding: 0;
+    }
+
+    &.is--active,
+    :hover {
+        color: @link-color;
+
+        .fuzzy--entry-name {
+            color: @link-color;
+        }
+    }
+}
+
+.fuzzy--entry-name {
+    width: 60%;
+    color: @text-color;
+
+    // CSS truncating
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fuzzy--listing-headline {
+    .unitize(margin-bottom, 20);
+}
+
+.fuzzy--listing-label {
+    .unitize(margin-right, 12);
+    display: inline-block;
+}
+
+.fuzzy--listing-similar-requests {
+    .unitize-margin(5, 0);
+}

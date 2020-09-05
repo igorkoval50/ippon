@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/menu.xsd"
+>
+    <entries>
+        <entry>
+            <name>NetiFoundationIntegrity</name>
+            <label lang="en">Net Inventors Plugins</label>
+            <label lang="de">Net Inventors Plugins</label>
+            <controller>NetiFoundationIntegrity</controller>
+            <action>index</action>
+            <class>sprite-foundation</class>
+            <parent identifiedBy="controller">ConfigurationMenu</parent>
+            <onclick>
+                <![CDATA[Shopware.ModuleManager.createSimplifiedModule("NetiFoundationIntegrity", { "title": "Net Inventors Plugins" })]]>
+            </onclick>
+        </entry>
+    </entries>
+</menu>

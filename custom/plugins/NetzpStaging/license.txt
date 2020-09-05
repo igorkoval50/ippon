@@ -1,0 +1,54 @@
+netzperfekt Endnutzer-Lizenzvereinbarung – EULA
+
+1. Vertragsbestimmungen
+Diese EULA betrifft die Einräumung einer Lizenz für Plugins und jede zugehörige Dokumentation durch netzperfekt an Sie. Diese EULA gilt auch für alle Updates, soweit netzperfekt Ihnen nach der Installation des Plugins Updates zur Verfügung stellt.
+
+2. Eigentumsrechte
+Das Plugin ist durch internationale Urheberrechtsgesetze, -verträge und andere Gesetze geschützt. netzperfekt und ihre Lizenzgeber besitzen und behalten alle Rechte, das Eigentum und alle Ansprüche am Plugin, einschließlich aller Urheberrechte und sonstiger geistiger Eigentumsrechte. Diese EULA überträgt Ihnen kein Eigentum am Plugin. Mit Ausnahme der unter 3. und 6. bezeichneten Rechte erwerben Sie keinerlei Rechte am Plugin.
+
+3. Lizenzerteilung
+Hiermit erteilt netzperfekt Ihnen eine nicht-ausschließliche, nicht übertragbare Lizenz zur Nutzung des Plugins vorbehaltlich etwaiger Beschränkungen, die in dieser EULA oder in den Geschäftsbedingungen enthalten sind.
+Weiterhin gilt:
+Wie bereits erwähnt gelten die Geschäftsbedingungen für diese EULA. Im Falle eines Widerspruchs zwischen dieser EULA und den Geschäftsbedingungen gehen die Geschäftsbedingungen vor.
+Bei Plugins, für die von netzperfekt Updates zur Verfügung gestellt werden, umfasst Ihre Lizenz das Recht auf Erhalt und Nutzung von Updates während der Lizenzdauer. Bei Plugins, für die keine Updates von netzperfekt erhältlich sind, dürfen Sie nur diejenige Version des Plugins benutzen, die Sie für die Lizenzdauer bezahlt haben.
+
+4. Nutzungsbestimmungen
+Die Nutzung des Plugins ist auf genau ein Shopsystem beschränkt. Zu diesem Zweck können Sie jeden verfügbaren Computer bzw. Server nutzen, der die Systemanforderungen erfüllt und für den die Lizenz erteilt wurde. Sollten Sie den Computer/Server wechseln, muss das Plugin vor der Neuinstallation auf einem anderen Computer von dem Computer/Server, auf dem es zuvor installiert war, entfernt werden. 
+Das Plugin wird quelloffen geliefert, d.h. der Quellcode ist im Klartext einsehbar und nicht verschlüsselt oder anderweitig unlesbar gemacht. Dies dient jedoch nur dazu, damit Sie die Funktionsweise des Plugins einsehen können und ggf. Fehler schnell selbst beheben zu können. Derartige Änderungen sind gestattet, wenn Sie diese netzperfekt zeitnah mitteilen. netzperfekt wird diese Änderungen prüfen und unter Umständen in ein Update des Plugins einfliessen lassen.
+
+Es ist Ihnen nicht erlaubt, und Sie dürfen keiner anderen Person gestatten:
+- Irgendeinen Teil des Plugins zu kopieren (außer zu Sicherungszwecken), zu verkaufen, unter zu lizenzieren, zu vermieten oder zu verleihen. Wenn Sie das Plugin auf einem anderen Computer/Server verwenden wollen, müssen Sie das Plugin von Ihrem derzeitigen Computer/Server löschen, bevor Sie es auf dem anderen Computer/Server installieren;
+- Das Plugin ganz oder teilweise zu verändern oder abgeleitete Werke zu schaffen, die ganz oder in wesentlichen Teilen auf dem Plugin basieren.
+
+HINWEIS: Durch einen Verstoss gegen die oben genannten Bestimmungen werden sämtliche geltenden Gewährleistungen nichtig.
+
+netzperfekt behält sich alle Rechte vor, um eine unbefugte Nutzung des Plugins Ihrerseits zu untersagen oder zu stoppen, insbesondere Ansprüche auf Unterlassung und Schadensersatz. Eine unbefugte Nutzung Ihrerseits kann zu strafrechtlicher Verfolgung gemäß den einschlägigen Gesetzen führen. Diese Bestimmungen über die Vervielfältigung und Offenlegung gelten ebenso für die Benutzerhandbücher und andere Unterlagen, die die von netzperfekt zur Verfügung gestellten Plugins betreffen.
+
+5. Ihre Pflichten
+Die Einrichtung einer funktionsfähigen Hardware- und Softwareumgebung für das Plugin liegt allein in Ihrer Verantwortung. Das gleiche gilt für regelmäßige und vollständige Datensicherungen in Ihrem Online-Shop.
+
+6. Testlizenz und Entwicklungslizenz
+Eine Testlizenz und eine Lizenz für Entwicklungszwecke werden Ihnen kostenlos und ohne Gewähr zur Verfügung gestellt und folglich übernimmt netzperfekt Ihnen gegenüber keine Gewährleistung im Hinblick auf das Plugin. netzperfekt leistet für diese Lizenzen keinen Support, und Sie dürfen diese nicht in einer Produktionsumgebung verwenden.
+
+7. Technischer Support
+netzperfekt bietet technischen Support an, sofern das Plugin kostenpflichtig ist und Sie eine gültige Plugin-Subskription erworben haben. Es gelten die Support-Bedingungen, die unter https://netzperfekt.de/assets/Uploads/netzperfektAGBSupport.pdf einsehbar sind.
+
+8. Gewährleistungsausschluss
+Das von netzperfekt bereitgestellte Plugin entspricht dem aktuellen Stand der Technik und stimmt mit den von netzperfekt zur Verfügung gestellten Produktinformationen überein. netzperfekt gewährleistet nicht, dass das Plugin nach diesem Vertrag für Zwecke geeignet ist, die über die Erfüllung der Vertragspflichten von netzperfekt hinausgehen. Insbesondere gewährleistet netzperfekt nicht, dass das Plugin mit weiteren Plugins Dritter kompatibel ist.
+Sie werden darauf hingewiesen, dass sich nach dem aktuellen Stand der Technik trotz größter Gewissenhaftigkeit und Sorgfalt Programmfehler nicht 100% ausschließen lassen.
+netzperfekt wird etwaige Mängel am Plugin wie folgt beseitigen, sofern Sie netzperfekt den jeweiligen Mangel gemäß § 377 des deutschen Handelsgesetzbuches (HGB) angezeigt haben:
+Angezeigte Mängel werden nach Wahl von netzperfekt durch Behebung des Mangels (Nachbesserung) oder Bereitstellung eines mangelfreien Plugins (Ersatzlieferung) beseitigt. Die Kosten dieser Mängelbeseitigung trägt netzperfekt.
+Können die Mängel des Plugins nicht innerhalb einer angemessenen Frist beseitigt werden, oder können Nachbesserung oder Ersatzlieferung aus anderen Gründen als fehlgeschlagen gelten, so können Sie nach Ihrer Wahl das Entgelt mindern oder vom Vertrag zurücktreten.
+Schadensersatzansprüche oder Ansprüche auf Ersatz vergeblicher Aufwendungen, die Ihnen aufgrund derartiger Mängel zustehen, werden ausschließlich durch Abschnitt 9 geregelt.
+Die Nachbesserung oder Ersatzlieferung gilt nur dann als fehlgeschlagen, wenn netzperfekt ausreichend Gelegenheit zur Durchführung einer Nachbesserung oder Ersatzlieferung gegeben wurde, ohne dass diese das gewünschte Ergebnis erzielt hat oder wenn die Nachbesserung/Ersatzlieferung ungerechtfertigterweise von netzperfekt verweigert wurde. Ist die Mängelbeseitigung durch Nachbesserung/Ersatzlieferung für netzperfekt mit nicht vertretbaren Kosten verbunden, kann netzperfekt die Mängelbeseitigung verweigern und Sie auf Ihr Recht zum Rücktritt vom Vertrag verweisen.
+
+9. Haftungsbeschränkung
+Ungeachtet der rechtlichen Natur des betreffenden Anspruchs gelten für Ihre Schadensersatzansprüche und Ansprüche auf Ersatz vergeblicher Aufwendungen folgende Regelungen:
+netzperfekt haftet für alle Schäden, die Ihnen aufgrund grob fahrlässigen oder vorsätzlichen Verhaltens von netzperfekt oder durch eine schuldhafte Verletzung von Leben, Körper oder Gesundheit entstehen, für die netzperfekt eine Garantie übernommen hat oder für die netzperfekt nach dem Produkthaftungsgesetz haftet. In allen anderen Fällen ist die Schadenersatzpflicht von netzperfekt auf die Verletzung wesentlicher Vertragspflichten beschränkt. Wesentliche Pflichten sind nur solche Pflichten, deren Erfüllung die ordnungsgemäße Ausführung des Vertrags erst ermöglicht und auf deren Erfüllung Sie vertrauen dürfen. Die Haftung von netzperfekt für Datenverlust ist auf die typischen, für die Wiederherstellung erforderlichen Aufwendungen beschränkt, die normal und üblich sind, wenn Sicherungskopien erstellt wurden. Es wird auf Ihre Pflicht zur regelmäßigen und vollständigen Datensicherung hingewiesen. Im Falle einer fahrlässigen Verletzung wesentlicher Vertragspflichten durch netzperfekt ist die Haftung von netzperfekt auf vorhersehbare, vertragstypische Schäden beschränkt. Eine verschuldensunabhängige Haftung von netzperfekt für bei Abschluss dieser EULA bestehende Mängel gemäß § 536a Abs. 1 BGB wird hiermit ausdrücklich ausgeschlossen.
+Die vorstehenden Haftungsbeschränkungen gelten auch in Bezug auf alle Vertreter von netzperfekt, insbesondere in Bezug auf ihre Geschäftsführer, gesetzlichen Vertreter, Mitarbeiter und sonstigen Erfüllungsgehilfen.
+
+10. Gerichtsstand
+Gerichtsstand ist Schleswig, Deutschland.
+
+netzperfekt Nils Ehnert, Parkstr. 113, 24399 Arnis
+info@netzperfekt.de, 04642. 99 99 000

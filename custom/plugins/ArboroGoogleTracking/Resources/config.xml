@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="text" required="true" scope="shop">
+            <name>trackingID</name>
+            <label lang="de">Container- oder Tracking-ID</label>
+            <label lang="en">Container- or Tracking-ID</label>
+            <value/>
+            <description lang="de">Google Tag Manager (GTM) Container-ID (GTM-XXXX) oder Analytics Tracking-ID (UA-000000-01).</description>
+            <description lang="en">Google Tag Manager (GTM) Container ID (GTM-XXXX) or Analytics Tracking ID (UA-000000-01).</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>loadAsync</name>
+            <label lang="de">Tracking asynchron laden</label>
+            <label lang="en">Loading tracking asynchronously</label>
+            <value>1</value>
+            <description lang="de">Ermöglicht das Vorausladen des Tracking Codes, dies führt zu kleinen Performance Steigerungen auf modernen Browsern, kann aber zu Fehlern im Internet Explorer 9 und älteren Browsern führen. Nur aktivieren, wenn Ihre Besucher hauptsächlich moderne Browser nutzen um Ihre Seite aufzurufen.</description>
+            <description lang="en">Allows for preloading of the tracking code, this leads to small performance improvements on modern browsers, but can lead to errors in Internet Explorer 9 and older browsers. Enable only if your visitors mainly use modern browsers to access your site.</description>
+        </element>
+        <element type="select" required="true" scope="shop">
+            <name>trackingPosition</name>
+            <label lang="de">Tracking-Skript Position</label>
+            <label lang="en">Tracking-script position</label>
+            <value>head-top</value>
+            <description lang="de">Wo sollen die Tracking Skripte im Code der Seite eingebunden werden.</description>
+            <description lang="en">Where should the tracking scripts be included in the code of the page.</description>
+            <store>
+                <option>
+                    <value>head-top</value>
+                    <label lang="de">Nach dem Öffnen des 'head' HTML tags (Standard für UA)</label>
+                    <label lang="en">After opening the 'head' HTML tag (default for UA)</label>
+                </option>
+                <option>
+                    <value>head-bottom</value>
+                    <label lang="de">Vor dem Schließen des 'head' HTML tags</label>
+                    <label lang="en">Before closing the 'head' HTML tag</label>
+                </option>
+                <option>
+                    <value>body-top</value>
+                    <label lang="de">Nach dem Öffnen des 'body' HTML tags (Standard für GTM)</label>
+                    <label lang="en">After opening the 'body' HTML tag (default for GTM)</label>
+                </option>
+                <option>
+                    <value>body-bottom</value>
+                    <label lang="de">Vor dem Schließen des 'body' HTML tags</label>
+                    <label lang="en">Before closing the 'body' HTML tag</label>
+                </option>
+            </store>
+        </element>
+        <element type="text" scope="shop">
+            <name>siteVerification</name>
+            <label lang="de">Google Seiten Verifizierungscode</label>
+            <label lang="en">Google site verification code</label>
+            <value/>
+            <description lang="de">Bestätigung der Inhaberschaft mittels HTML-Tag / Meta-Tag.</description>
+            <description lang="en">Confirmation of ownership via HTML tag / meta tag.</description>
+        </element>
+        <element type="number" scope="shop">
+            <name>fallbackQuantity</name>
+            <label lang="de">Fallback-Menge</label>
+            <label lang="en">Fallback-Quantity</label>
+            <value>1</value>
+            <description lang="de">Wenn im Frontend keine Mengenauswahl verfügbar ist, wird stattdessen diese Menge übertragen.</description>
+            <description lang="en">If no quantity select is available in the frontend, this quantity will be transfered instead.</description>
+            <options>
+                <minValue>1</minValue>
+            </options>
+        </element>
+
+        <element type="button">
+            <name>googleAnalyticsButton</name>
+            <label lang="de">Google Analytics / Universal Analytics</label>
+            <label lang="en">Google Analytics / Universal Analytics</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>enhancedEcommerce</name>
+            <label lang="de">Erweitertes eCommerce Tracking aktivieren</label>
+            <label lang="en">Enable enhanced eCommerce tracking</label>
+            <value>1</value>
+            <description lang="de">Erweitertes eCommerce Tracking in Google Analytics aktivieren.</description>
+            <description lang="en">Enable enhanced eCommerce tracking in Google Analytics.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>anonymizeIp</name>
+            <label lang="de">Anonymisierung der IP-Adressen</label>
+            <label lang="en">Anonymization of IP addresses</label>
+            <value>1</value>
+            <description lang="de">Die IP Adresse Ihrer Besucher wird nicht vollständig sondern anonymisiert an Google übertragen.</description>
+            <description lang="en">The IP address of your visitors will not be transmitted completely but anonymously to Google.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>forceSSL</name>
+            <label lang="de">SSL Verbindung erzwingen</label>
+            <label lang="en">Force SSL connection</label>
+            <value>1</value>
+            <description lang="de">Es wird eine verschlüsselte Verbindung zu Google erzwungen.</description>
+            <description lang="en">An encrypted connection to Google is forced.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>displayfeatures</name>
+            <label lang="de">Daten zur Displaywerbung erfassen</label>
+            <label lang="en">Recording data for display advertising</label>
+            <value>1</value>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>cleanURL</name>
+            <label lang="de">URL Bereinigung</label>
+            <label lang="en">URL cleanup</label>
+            <value>1</value>
+            <description lang="de">Stellt die Konsistenz in den URL Pfaden, die an Google Analytics übergeben werden sicher; vermeidet das Problem das mehrere Zeilen in Ihrem Seiten Report auf die gleiche Seite verweisen.</description>
+            <description lang="en">Ensures consistency in the URL paths passed to Google Analytics; avoids the problem of multiple lines in your page report referring to the same page.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>outboundForm</name>
+            <label lang="de">Messen von outbound Formularen</label>
+            <label lang="en">Tracking of outbound forms</label>
+            <value>0</value>
+            <description lang="de">Misst automatisch das Absenden von Formularen zu externen Domains.</description>
+            <description lang="en">Automatically tracks the sending of forms to external domains.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>outboundLink</name>
+            <label lang="de">Messen von outbound Links</label>
+            <label lang="en">Tracking of outbound links</label>
+            <value>1</value>
+            <description lang="de">Misst automatisch Link Klicks zu externen Domains.</description>
+            <description lang="en">Automatically tracks link clicks to external domains.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>pageVisibility</name>
+            <label lang="de">Page Visibility Events statt pageload</label>
+            <label lang="en">Page visibility events instead of pageload</label>
+            <value>0</value>
+            <description lang="de">Wenn ein Benutzer Ihre Seite besucht und mit dieser interagiert, zu einem anderen Browser-Tab wechselt, und erst nach Stunden oder Tagen zu Ihrem Seiten-Tab zurückkommt. Egal ob dieser die Seite neu läd oder nicht, mit dieser aktivierten Einstellung wird dies als neuer Pageview und neue Session gemessen.</description>
+            <description lang="en">When a user visits and interacts with your page, switches to a different browser tab and returns to your page tab after hours or days. No matter whether or not the user loads the page again, this setting will be measured as a new pageview and new session.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>socialWidget</name>
+            <label lang="de"><![CDATA[Messen der Facebook & Twitter Widgets]]></label>
+            <label lang="en"><![CDATA[Tracking of Facebook & Twitter widgets]]></label>
+            <value>0</value>
+            <description lang="de">Wenn Sie die offiziellen Widgets von Twitter (tweet/follow) oder Facebook (like) auf Ihrer Seite aktiviert haben werden Benutzer Interaktionen mit diesen automatisch gemessen.</description>
+            <description lang="en">If you have the official Twitter (tweet/follow) or Facebook (like) widgets enabled on your site, users' interactions with them will be measured automatically.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>urlChange</name>
+            <label lang="de">Messen von Browser zurück Klicks</label>
+            <label lang="en">Tracking of Browser history back clicks</label>
+            <value>0</value>
+            <description lang="de">Wenn der Benutzer über den Zurück-Button des Browsers eine Seite zurück navigiert wird ein neuer Pageview gemessen.</description>
+            <description lang="en">If the user navigates back one page using the browser's Back button, a new page view is measured.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>trackBounce</name>
+            <label lang="de">Absprungrate messen</label>
+            <label lang="en">Tracking of bounce rate</label>
+            <value>1</value>
+            <description lang="de">Soll die Absprungsrate gemessen werden</description>
+            <description lang="en">If you want to measure the bounce rate</description>
+        </element>
+        <element type="number" required="true" scope="shop">
+            <name>bounceTime</name>
+            <label lang="de">Sekunden für die Absprungrate</label>
+            <label lang="en">Seconds for the bounce rate</label>
+            <value>20</value>
+            <description lang="de">Wie viel Sekunden muss der Besucher auf der Seite verbleiben.</description>
+            <description lang="en">How many seconds must the visitor remain on the page.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>brandTracking</name>
+            <label lang="de">Markennamen / Hersteller im Tracking ausgeben</label>
+            <label lang="en">Output brand names / manufacturer in tracking</label>
+            <value>1</value>
+            <description lang="de">Sollen die Artikel Herstellernamen / Markennamen mit im Tracking enthalten sein.</description>
+            <description lang="en">Should the articles manufacturer names / brand names be included in the tracking.</description>
+        </element>
+
+        <element type="button">
+            <name>googleTagManagerButton</name>
+            <label lang="de">Google Tag Manager</label>
+            <label lang="en">Google Tag Manager</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>dataLayerName</name>
+            <label lang="de">dataLayer Name</label>
+            <label lang="en">dataLayer name</label>
+            <value>dataLayer</value>
+            <description lang="de">Wie lautet der Name des vom Google Tag Manager angefragten dataLayers.</description>
+            <description lang="en">What is the name of the dataLayer requested by Google Tag Manager.</description>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>userIdName</name>
+            <label lang="de">Benutzer ID Name</label>
+            <label lang="en">User ID name</label>
+            <value>userId</value>
+            <description lang="de">Wie lautet der definierte Name der Variable für die Benutzer ID. Wenn nicht definiert, legen Sie userId als Name an.</description>
+            <description lang="en">What is the defined name of the variable for the user ID. If not defined, create userId as the name.</description>
+        </element>
+
+        <element type="button">
+            <name>googleOptimizeButton</name>
+            <label lang="de">Google Optimize</label>
+            <label lang="en">Google Optimize</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="text" scope="shop">
+            <name>optimizeUAID</name>
+            <label lang="de">Tracking-ID</label>
+            <label lang="en">Tracking-ID</label>
+            <value></value>
+            <description lang="de">Nutzen Sie Google Tag Manager, tragen Sie hier Ihre Analytics Tracking-ID (UA-000000-01) ein.</description>
+            <description lang="en">If you use Google Tag Manager, enter your Analytics Tracking ID (UA-000000-01) here.</description>
+        </element>
+        <element type="text" scope="shop">
+            <name>optimizeCID</name>
+            <label lang="de">Optimize Container-ID</label>
+            <label lang="en">Optimize Container-ID</label>
+            <value></value>
+            <description lang="de">Tragen Sie hier Ihre Optimize Container-ID (GTM-XXXXXX) ein.</description>
+            <description lang="en">Enter your Optimize Container-ID (GTM-XXXXXX) here.</description>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>optimizeDataLayerName</name>
+            <label lang="de">Optimize dataLayer Name</label>
+            <label lang="en">Optimize dataLayer name</label>
+            <value>dataLayer</value>
+            <description lang="de">Wie lautet der Name des vom Google Optimize angefragten dataLayers.</description>
+            <description lang="en">What is the name of the dataLayer requested by Google Optimize.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>optimizeAntiFlickerSnippet</name>
+            <label lang="de">Bindet das Anti-Flackern Snippet ein</label>
+            <label lang="en">Includes the Anti-Flicker Snippet</label>
+            <value>0</value>
+        </element>
+        <element type="number" required="true" scope="shop">
+            <name>optimizeTimeout</name>
+            <label lang="de">Millisekunden für Timeout</label>
+            <label lang="en">Milliseconds for timeout</label>
+            <value>2000</value>
+            <description lang="de">Nach wieviel Millisekunden soll Google Optimize abgebrochen und die Seite normal geladen werden.</description>
+            <description lang="en">After how many milliseconds should Google Optimize be canceled and the page be loaded normally.</description>
+        </element>
+        <element type="combo" scope="shop">
+            <name>optimizeDisplayConfig</name>
+            <label lang="de">Anzeige von Google Optimize</label>
+            <label lang="en">Display of Google Optimize</label>
+            <value></value>
+            <description lang="de">Auf welchen Seiten soll Google Optimize angezeigt werden.</description>
+            <description lang="en">On which pages should Google Optimize be displayed.</description>
+            <store>
+                <option>
+                    <value>home</value>
+                    <label lang="de">Startseite</label>
+                    <label lang="en">Home</label>
+                </option>
+                <option>
+                    <value>listing</value>
+                    <label lang="de">Kategorien</label>
+                    <label lang="en">Categories</label>
+                </option>
+                <option>
+                    <value>detail</value>
+                    <label lang="de">Artikeldetail</label>
+                    <label lang="en">Article detail</label>
+                </option>
+                <option>
+                    <value>checkout_cart</value>
+                    <label lang="de">Checkout (Warenkorb)</label>
+                    <label lang="en">Checkout (cart)</label>
+                </option>
+                <option>
+                    <value>checkout_reg</value>
+                    <label lang="de">Checkout (Registrierung)</label>
+                    <label lang="en">Checkout (registration)</label>
+                </option>
+                <option>
+                    <value>checkout_payment_shipping</value>
+                    <label lang="de">Checkout (Zahlung und Versand)</label>
+                    <label lang="en">Checkout (payment and shipping)</label>
+                </option>
+                <option>
+                    <value>checkout_confirm</value>
+                    <label lang="de">Checkout (Kasse)</label>
+                    <label lang="en">Checkout (confirm)</label>
+                </option>
+                <option>
+                    <value>checkout_finish</value>
+                    <label lang="de">Checkout (Abschluss)</label>
+                    <label lang="en">Checkout (finish)</label>
+                </option>
+            </store>
+            <options>
+                <multiSelect>true</multiSelect>
+            </options>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>optimizeEnhancedEcommerce</name>
+            <label lang="de">Erweitertes eCommerce Tracking für GTM aktivieren</label>
+            <label lang="en">Enable enhanced eCommerce tracking for GTM</label>
+            <value>1</value>
+            <description lang="de">Erweitertes eCommerce Tracking in Google Optimize zusammen mit Google Tag Manager aktivieren.</description>
+            <description lang="en">Enable enhanced eCommerce tracking in Google Optimize together with Google Tag Manager.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>optimizeAnonymizeIp</name>
+            <label lang="de">Anonymisierung der IP-Adressen für GTM</label>
+            <label lang="en">Anonymization of IP addresses for GTM</label>
+            <value>1</value>
+            <description lang="de">Die IP Adresse Ihrer Besucher wird nicht vollständig sondern anonymisiert an Google übertragen.</description>
+            <description lang="en">The IP address of your visitors will not be transmitted completely but anonymously to Google.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>optimizeDisplayfeatures</name>
+            <label lang="de">Daten zur Displaywerbung mit GTM erfassen</label>
+            <label lang="en">Recording data for display advertising with GTM</label>
+            <value>1</value>
+        </element>
+
+        <element type="button">
+            <name>googleConversionButton</name>
+            <label lang="de">Google Conversions</label>
+            <label lang="en">Google Conversions</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="text" scope="shop">
+            <name>conversionID</name>
+            <label lang="de">Google Conversion-ID</label>
+            <label lang="en">Google Conversion-ID</label>
+            <value/>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>conversionLabel</name>
+            <label lang="de">Google Conversion Bezeichnung</label>
+            <label lang="en">Google Conversion Label</label>
+            <value>purchase</value>
+        </element>
+        <element type="color" required="true" scope="shop">
+            <name>conversionColor</name>
+            <label lang="de">Google Conversion Farbe</label>
+            <label lang="en">Google Conversion Color</label>
+            <value>#FFFFFF</value>
+        </element>
+        <element type="select" required="true" scope="shop">
+            <name>conversionFormat</name>
+            <label lang="de">Google Conversion Format</label>
+            <label lang="en">Google Conversion format</label>
+            <value>1</value>
+            <store>
+                <option>
+                    <value>1</value>
+                    <label lang="de">Einzeilige Google Site Stats Info</label>
+                    <label lang="en">Google Site Stats Info in a single line</label>
+                </option>
+                <option>
+                    <value>2</value>
+                    <label lang="de">Zweizeilige Google Site Stats Info</label>
+                    <label lang="en">Two-line Google Site Stats Info</label>
+                </option>
+                <option>
+                    <value>3</value>
+                    <label lang="de">Keine Google Site Stats Info</label>
+                    <label lang="en">No Google Site Stats Info</label>
+                </option>
+            </store>
+        </element>
+        <element type="select" required="true" scope="shop">
+            <name>stornoStatus</name>
+            <label lang="de">Shopware Status einer Stornierung</label>
+            <label lang="en">Shopware status of a cancellation</label>
+            <value>4</value>
+            <store>Shopware.apps.Base.store.OrderStatus</store>
+        </element>
+        <!--<element type="boolean" required="true" scope="shop">-->
+            <!--<name>conversionStandAlone</name>-->
+            <!--<label lang="de">Google Conversion Tracking unabhängig einbinden</label>-->
+            <!--<label lang="en">Enable Google conversion tracking stand alone</label>-->
+            <!--<value>0</value>-->
+            <!--<description lang="de">Google Conversion Tracking unabhängig von Google Analytics oder dem Google Tag Manager einbinden.</description>-->
+            <!--<description lang="en">Google Conversion Tracking can be integrated independently of Google Analytics or the Google Tag Manager.</description>-->
+        <!--</element>-->
+
+        <element type="button">
+            <name>googleRemarketingButton</name>
+            <label lang="de">Google Remarketing</label>
+            <label lang="en">Google Remarketing</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>enableRemarketing</name>
+            <label lang="de">Google Remarketing aktivieren</label>
+            <label lang="en">Enable Google Remarketing</label>
+            <value>1</value>
+            <description lang="de">Sollen Remarketing Tags (auf den Seiten: Listing, Produktdetail, Suche) gesetzt werden.</description>
+            <description lang="en">Should Remarketing Tags be set (pages: Listing, Product detail, Search).</description>
+        </element>
+
+        <element type="button">
+            <name>adWordsButton</name>
+            <label lang="de">Google AdWords Tracking</label>
+            <label lang="en">Google AdWords Tracking</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>adWordsTracking</name>
+            <label lang="de">AdWords Tracking aktivieren</label>
+            <label lang="en">Enable AdWords tracking</label>
+            <value>0</value>
+            <description lang="de">Gesondertes Tracking des AdWords gclid Parameters mit Google Analytics.</description>
+            <description lang="en">Separate tracking of the AdWords gclid parameter with Google Analytics.</description>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>adWordsDimension</name>
+            <label lang="de">AdWords Tracking Dimension</label>
+            <label lang="en">AdWords Tracking dimension</label>
+            <value>dimension1</value>
+            <description lang="de">Google Analytics Dimension zum tracken des AdWords gclid Parameters.</description>
+            <description lang="en">Google Analytics dimension to track the AdWords gclid parameter.</description>
+        </element>
+
+        <element type="button">
+            <name>cookieBannerButton</name>
+            <label lang="de">EU Cookie Banner / Hinweis</label>
+            <label lang="en">EU Cookie Banner / Notice</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="button">
+            <name>cookieBannerTextButton</name>
+            <label lang="de">Die Texte des Cookie Hinweises (Text und Link Text) können Sie mittels Textbausteinen ändern und übersetzen.</label>
+            <label lang="en">You can change and translate the text of the cookie notice (text and link text) using snippets.</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: none;</style>
+            </options>
+        </element>
+        <element type="select" scope="shop">
+            <name>enableCookieConsent</name>
+            <label lang="de">Cookie Consent aktivieren</label>
+            <label lang="en">Enable cookie consent</label>
+            <value>no</value>
+            <store>
+                <option>
+                    <value>no</value>
+                    <label lang="de">Nein</label>
+                    <label lang="en">No</label>
+                </option>
+                <option>
+                    <value>agt</value>
+                    <label lang="de">Über den Cookie Banner des Plugins</label>
+                    <label lang="en">By the cookie banner of the plugin</label>
+                </option>
+                <option>
+                    <value>swcct</value>
+                    <label lang="de">Über das Shopware Cookie Consent Tool</label>
+                    <label lang="en">By the Shopware cookie consent tool</label>
+                </option>
+            </store>
+        </element>
+        <element type="select" scope="shop">
+            <name>cookieBannerPosition</name>
+            <label lang="de">Position des Cookie Banners</label>
+            <label lang="en">Position of the cookie banner</label>
+            <value>bottom</value>
+            <store>
+                <option>
+                    <value>top</value>
+                    <label lang="de">Oben</label>
+                    <label lang="en">Top</label>
+                </option>
+                <option>
+                    <value>bottom</value>
+                    <label lang="de">Unten</label>
+                    <label lang="en">Bottom</label>
+                </option>
+            </store>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>cookieBgColor</name>
+            <label lang="de">Hintergrundfarbe des Cookie Banners</label>
+            <label lang="en">Background color of the cookie notice</label>
+            <value>#000</value>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>cookieBtnColor</name>
+            <label lang="de">Button-Farbe des Cookie Banners</label>
+            <label lang="en">Button color of the cookie notice</label>
+            <value>#FFF</value>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>cookieBtnInText</name>
+            <label lang="de">Button für "Nur technisch notwendige akzeptieren" in Text verschieben</label>
+            <label lang="en">Move button for the "accept just technical required cookies" to the text</label>
+            <value>0</value>
+            <description lang="de">Wenn aktiv wird der Button, um nur die technisch notwendigen Cookies zu akzeptieren im Text statt als ein Button dargestellt.</description>
+            <description lang="en">If active, the button for accepting just the technical required cookies will be displayed in the text instead of as a button.</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>cookieSwOptimizeView</name>
+            <label lang="de">Optimierte Darstellung des Shopware Cookie Banners</label>
+            <label lang="en">Optimized view for the Shopware cookie banner</label>
+            <value>0</value>
+            <description lang="de">Wenn aktiv die Darstellung des Shopware Cookie Banners optimiert (Ablehnen Button im Text, Anpassung der Buttonfarbe).</description>
+            <description lang="en">If active, the view of the Shopware cookie banner will be optimized (Deny button in text, adjustment of button color).</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>cookieBannerMore</name>
+            <label lang="de">Mehr Link aktivieren</label>
+            <label lang="en">Enable more link</label>
+            <value>1</value>
+            <description lang="de">Hinweis Banner beinhaltet einen Link auf weitere Informationen.</description>
+            <description lang="en">Note Banner contains a link to further information.</description>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>cookieBannerLink</name>
+            <label lang="de">Mehr Link Zielseite</label>
+            <label lang="en">More link target</label>
+            <value>/datenschutz</value>
+            <description lang="de">Auf welche Seite des Shops soll für weitere Informationen verlinkt werden? Meistens: "/datenschutz"</description>
+            <description lang="en">Which page of the shop should be linked to for further information? Mostly:"/privacy"</description>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>cookieBannerLinkText</name>
+            <label lang="de">Mehr Link Text</label>
+            <label lang="en">More link text</label>
+            <value>Details ansehen</value>
+            <description lang="de">Welcher Text soll für den Link angezeigt werden</description>
+            <description lang="en">Which text should be displayed for the link</description>
+        </element>
+        <element type="boolean" required="true" scope="shop">
+            <name>cookieMenu</name>
+            <label lang="de">Cookie Einstellungsmenü im Frontend anzeigen</label>
+            <label lang="en">Show cookie settings menu in frontend</label>
+            <value>0</value>
+            <description lang="de">Falls aktiv, wird im Frontend ein Einstellungsmenü bereit gestellt, über das der Nutzer die Cookie Einstellungen nachträglich ändern kann.</description>
+            <description lang="en">If active, there will be displayed a cookie settings menu in the frontend, where the user is able to change the cookie settings later.</description>
+        </element>
+        <element type="text" required="true" scope="shop">
+            <name>cookieMenuId</name>
+            <label lang="de">Cookie Einstellungmenü-ID</label>
+            <label lang="en">Cookie settings menu ID</label>
+            <value>arboro-cookie-menu</value>
+            <description lang="de">Falls das Cookie Einstellungsmenü aktiviert ist, wird das Menü über die hier eingetragene ID eingebunden. Standardmäßig wird hierfür die ID arboro-cookie-menu verwendet und dadurch im Footer eingebunden.</description>
+            <description lang="en">If the cookie settings menu is active, the menu will be included by this ID. With the default ID arboro-cookie-menu the menu will be included in the footer.</description>
+        </element>
+        <!--<element type="boolean" required="true" scope="shop">-->
+            <!--<name>cookieBannerUseCDN</name>-->
+            <!--<label lang="de">Cookie Hinweis JavaScript via CDN</label>-->
+            <!--<label lang="en">Cookie notice JavaScript via CDN</label>-->
+            <!--<value>1</value>-->
+            <!--<description lang="de">Das benötigte JavaScript für den Cookie Hinweis wird von einem externen Content Delivery Network (CDN) eingebunden. Bei Nein, wird eine lokale Instanz des Plugins verwendet.</description>-->
+            <!--<description lang="en">The JavaScript required for the cookie hint is integrated by an external Content Delivery Network (CDN). If no is selected, a local instance within the plugin is used.</description>-->
+        <!--</element>-->
+
+        <element type="button">
+            <name>pluginSupportHeadlineButton</name>
+            <label lang="de">Support</label>
+            <label lang="en">Support</label>
+            <options>
+                <style>width:820px; max-width:820px; min-width: 820px; background: none; border: 1px #000000 dashed; margin:20px 0 20px 0;</style>
+            </options>
+        </element>
+        <element type="text" scope="shop">
+            <name>pluginSupportID</name>
+            <label lang="de">Support ID</label>
+            <label lang="en">Support ID</label>
+            <value/>
+            <description lang="de">Bitte geben Sie bei Support Anfragen diese individuelle und eindeutige Support ID an.</description>
+            <description lang="en">Please provide this individual and unique support ID for support requests.</description>
+            <options>
+                <readOnly>true</readOnly>
+            </options>
+        </element>
+        <element type="button">
+            <name>pluginSupportButton</name>
+            <label lang="de">Jetzt Support anfordern</label>
+            <label lang="en">Request support now</label>
+            <options>
+                <style>margin: 7px 0 0 0; background: #8dbf4c; border: 1px solid #000000; height: 30px; line-height: 30px; padding-top: 4px;</style>
+                <handler>
+                    <![CDATA[
+                        function(button) {
+                            var a=document.getElementsByTagName("head")[0],j=document.createElement("script");j.type="text/javascript",j.onload=function(){var e=document.getElementsByTagName("head")[0],t=document.createElement("script");t.type="text/javascript",t.onload=function(){var e=[];$(".store-plugin-detail-configuration-container").find("input").each(function(t,n){"Support ID:"==n.labels[0].textContent&&e.push("*Support ID:* "+n.value)}),e.push("*Shop:* "+document.domain),e.push("*Shopware Version:* "+$(document).find("title").text().split(" - ")[0]),e.push("*Plugin Version:* "+$($($(".store-plugin-detail-meta-data").children()[0]).children(".value")[0]).text()),window.ATL_JQ_PAGE_PROPS={triggerFunction:function(e){e()},fieldValues:{environment:e.join(",\n"),fullname:window.userName}}},t.src="https://arboro.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/-svmya3/b/c/3d70dff4c40bd20e976d5936642e2171/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector-embededjs.js?locale=de-DE&collectorId=204fd252",e.appendChild(t)},j.src="https://code.jquery.com/jquery-3.2.1.min.js",j.integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=",j.setAttribute("crossorigin","anonymous"),a.appendChild(j);
+                        }
+                    ]]>
+                </handler>
+            </options>
+        </element>
+    </elements>
+</config>

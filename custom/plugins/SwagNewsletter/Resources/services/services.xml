@@ -1,0 +1,35 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="swag_newsletter.dependendency_provider"
+                 class="SwagNewsletter\Components\DependencyProvider">
+            <argument type="service" id="service_container"/>
+        </service>
+
+        <service id="swag_newsletter.components.newsletter_helper" class="SwagNewsletter\Components\NewsletterHelper">
+            <argument type="service" id="models" />
+            <argument type="service" id="shopware_media.media_service" />
+        </service>
+
+        <service id="swag_newsletter.components.newsletter_component_helper" class="SwagNewsletter\Components\NewsletterComponentHelper">
+            <argument type="service" id="models" />
+        </service>
+
+        <service id="swag_newsletter.components.suggest_service" class="SwagNewsletter\Components\SuggestService">
+            <argument type="service" id="swag_newsletter.dependendency_provider" />
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="config" />
+
+        </service>
+
+        <service id="swag_newsletter.components.live_shopping_repository" class="SwagNewsletter\Components\LiveShopping\LiveShoppingRepository">
+            <argument type="service" id="models" />
+            <argument type="service" id="swag_newsletter.dependendency_provider" />
+            <argument type="service" id="swag_liveshopping.live_shopping" on-invalid="null"/>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,27 @@
+.product--box {
+    .has--variants {
+        .product--variants--info--wrapper {
+            .product--variants--info {
+                .image-slider--slide {
+                    .image-slider--item {
+                        img {
+                            position: static;
+                            left: auto;
+                            top: auto;
+                            transform: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: @tabletLandscapeViewportWidth) and (-webkit-min-device-pixel-ratio: 2) {
+    .product--box {
+        .has--variants, .has--no-variants {
+            .product--variants--info--wrapper {
+                position: absolute !important;
+            }
+        }
+    }
+}

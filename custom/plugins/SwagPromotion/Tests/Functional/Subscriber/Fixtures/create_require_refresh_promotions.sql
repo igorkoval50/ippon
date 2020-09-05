@@ -1,0 +1,5 @@
+INSERT INTO `s_plugin_promotion` (`id`, `name`, `rules`, `apply_rules`, `type`, `number`, `description`, `detail_description`, `max_usage`, `voucher_id`, `no_vouchers`, `valid_from`, `valid_to`, `stack_mode`, `amount`, `step`, `max_quantity`, `active`, `exclusive`, `shipping_free`, `priority`, `stop_processing`, `show_badge`, `badge_text`, `free_goods_badge_text`, `apply_rules_first`, `show_hint_in_basket`, `discount_display`, `buy_button_mode`) VALUES
+(1, 'My new promotion FOO', '{\"and\":{\"basketCompareRule0.42918353652784536\":[\"numberOfProducts\",\">=\",\"5\"]}}', '{\"and\":{\"productCompareRule0.2547383721208456\":[\"detail::ordernumber\",\"=\",\"SW10178\"]}}', 'product.absolute', '08154711', '', '', 0, NULL, 1, NULL, NULL, 'global', 5, NULL, NULL, 0, 0, 0, 0, 0, 1, 'BT', '', 0, 1, 'single', 'details'),
+(2, 'My new promotion BAR', '{\"and\":{\"true1\":[]}}', '{\"and\":{\"true1\":[]}}', 'basket.shippingfree', '08154712', '', '', 0, NULL, 0, NULL, NULL, 'global', 0, NULL, NULL, 0, 0, 1, 0, 0, 1, '', '', 0, 1, 'single', 'details');
+
+

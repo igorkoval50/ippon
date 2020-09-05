@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.3/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">zendesk chat</label>
+    <label lang="en">zendesk chat</label>
+
+    <version>2.0.5</version>
+    <copyright>(c) by magnolia4</copyright>
+    <license>Proprietär</license>
+    <link>http://www.magnolia4.de</link>
+    <author>magnolia4</author>
+    <compatibility minVersion="5.2.0"/>
+
+    <changelog version="1.0.0">
+        <changes lang="de">Erstveröffentlichung</changes>
+        <changes lang="en">First release</changes>
+    </changelog>
+    <changelog version="2.0.0">
+        <changes lang="de">Update für Shopware 5</changes>
+        <changes lang="en">Update for shopware 5</changes>
+    </changelog>
+    <changelog version="2.0.1">
+        <changes lang="de">Neues Feature (ab SW 5.x): Im Chat-Fenster des Kunden können automatisch der Name und E-Mail-Adresse ausgegeben werden, sobald der Kunde angemeldet ist.</changes>
+        <changes lang="en">New feature (from SW 5.x): In the chat window of the customer, the name and the e-mail address can be entered automatically, so the customer is informed.</changes>
+    </changelog>
+    <changelog version="2.0.2">
+        <changes lang="de">
+			- Neue Features wurden hinzugefügt
+			- Kompatibilität für Emotion-Template wurde entfernt
+		</changes>
+        <changes lang="en">
+			- New features have been added
+			- Emotion template compatibility has been removed
+		</changes>
+    </changelog>
+    <changelog version="2.0.3">
+        <changes lang="de">
+			- Anpassung auf neue Plugin-Struktur (Bitte deinstallieren und löschen Sie vor dem Update das bestehende Plugin)
+			- Neu: Opensource
+		</changes>
+        <changes lang="en">
+			- Adaptation to new plugin structure (Please uninstall and delete the existing plugin before the update)
+			- New: Opensource
+		</changes>
+    </changelog>
+    <changelog version="2.0.4">
+        <changes lang="de">
+			- Neu: Kompatibilität für Subshops
+		</changes>
+        <changes lang="en">
+			- New: Compatibility for subshops
+		</changes>
+    </changelog>
+    <changelog version="2.0.5">
+        <changes lang="de">
+			- Verbesserung: {$smarty.block.parent} statt append
+		</changes>
+        <changes lang="en">
+			- Improvement: {$smarty.block.parent} instead of append
+		</changes>
+    </changelog>
+</plugin>

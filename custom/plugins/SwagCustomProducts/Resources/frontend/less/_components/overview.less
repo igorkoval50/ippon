@@ -1,0 +1,45 @@
+.custom-products--overview-list {
+    .unitize-margin(0, 10);
+
+    &.custom-products--list-once {
+        .unitize(margin-right, 10);
+    }
+}
+.custom-products--overview-list li {
+    .unitize(margin-left, 10);
+    position: relative;
+    list-style: none;
+
+    &.custom-products--overview-base,
+    &.custom-products--overview-total,
+    &.custom-products--overview-once {
+        margin-left: 0;
+    }
+
+    &.custom-products--overview-total {
+        font-weight: bold;
+    }
+
+    .custom-products--overview-price {
+        .unitize-width(150);
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: block;
+        text-align: right;
+    }
+
+    .custom-products--overview-name {
+        display: block;
+        max-width: 70%;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .custom-products--overview-plus {
+        .unitize-width(15);
+        float: left;
+        display: block;
+    }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">Individuelle Promotion Banner für Angebote, Nachrichten oder Hinweise</label>
+    <label lang="en">Individual promotion banners for offers, news or hints</label>
+
+    <version>2.0.4</version>
+    <link>http://www.digitalwert.de</link>
+    <author>Sebastian Schreier</author>
+    <supplier>digitalwert</supplier>
+    <copyright>digitalwert</copyright>
+    <license>Proprietär</license>
+    <description lang="de">Dieses Plugin ermöglicht individuelle Promotion Banner für Angebote, Nachrichten, Hinweise und vieles mehr. Beim Promotion Banner kann beispielsweise die Position, die Seite und der Shop, bei dem der Promotion Banner angezeigt werden soll, ausgewählt werden. Des Weiteren kann festgelegt werden, ob der Promotion Banner zuklapp- bzw. ausblendbar sein soll sowie die dazugehörige Cookie - Lebensdauer in Tagen definiert werden. Insofern der Promotion Banner in einer Modalbox angezeigt werden soll, kann bei dieser auch eine Zeitverzögerung festgelegt werden. Des Weiteren kann auch ein Hintergrund, also ein Hintergrundbild oder eine Hintergrundfarbe, definiert werden. Der Promotion Banner selbst kann beispielsweise aus drei Bereichen bestehen, einer Prozentzahl, einem Inhaltsbereich (mit Überschrift und Text) und einem Linkbereich. Bei allen drei Bereichen kann jeweils die Hintergrundfarbe, die Schriftfarbe, die Inhaltsausrichtung, die Inhaltsbreite, der Innenabstand und der jeweilige Text festgelegt werden. Der Link kann auch unterhalb des Inhaltsbereich platziert werden sowie sich um den ganzen Promotion Banner erstrecken. Des Weiteren kann auch das Anzeigedatum festgelegt werden, also in welchem Zeitraum der jeweilige Promotion Banner angezeigt werden soll sowie die Auflösungen ausgewählt werden, in denen der Promotion Banner ausgeblendet werden soll.</description>
+    <description lang="en">This plugin provides individual promotion banners for offers, news, hints and much more. For example, by the promotion banner you can select the position, the page and the shop where the promotion banner is to be displayed. Furthermore, it can be determined whether the promotion banner should be collapsible or hideable and the corresponding cookie lifetime in days. If the promotion banner is to be displayed in a modal box, it can also be set a time delay for it. Furthermore, a background, ie a background image or a background color, can also be defined. For example, the promotion banner itself can consist of three areas, a percentage, a content area (with headline and text) and a link area. For each of the three areas, the background color, the font color, the content orientation, the content width, the padding and the text can be specified. The link can also be placed below the content area and extend around the entire promotion banner. In addition, the display date can also be specified, ie the period in which the respective promotion banner should be displayed and the resolutions in which the promotion banner is to be hidden.</description>
+
+    <compatibility minVersion="5.2.11" />
+
+    <changelog version="2.0.0">
+        <changes lang="de">Erstveröffentlichung des Plugins.</changes>
+        <changes lang="en">Initial release of the plugin.</changes>
+    </changelog>
+</plugin>

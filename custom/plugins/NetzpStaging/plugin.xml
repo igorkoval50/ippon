@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <version>2.0.10</version>
+    <compatibility minVersion="5.3.0" />
+
+    <label lang="de">Testumgebungen</label>
+    <label lang="en">Staging environments</label>
+    <description lang="de">Einfache Erstellung von Testservern und Staging-Umgebungen</description>
+    <description lang="de">Easy creation of test servers and staging environments</description>
+
+    <link>http://netzperfekt.de</link>
+    <copyright>netzperfekt.de</copyright>
+    <license>proprietary</license>
+    <author>netzperfekt</author>
+    <support>http://shopwareplugins.de/support</support>
+
+    <changelog version="2.0.10">
+        <changes lang="de">Change: Datenbank-Tabellen ausschließen (plugin settings)</changes>
+        <changes lang="en">Change: Exclude database tables (plugin settings)</changes>
+    </changelog>
+
+    <changelog version="2.0.9">
+        <changes lang="de">Version: Unterstützung für SW 5.6</changes>
+        <changes lang="en">Version: support for SW 5.6</changes>
+    </changelog>
+
+    <changelog version="2.0.8">
+        <changes lang="de">Fix: Verbessertes Datenbank-Handling beim Löschen von Tabellen mit Sonderzeichen.</changes>
+        <changes lang="en">Fix: Improved database handling when deleting tables with special characters.</changes>
+    </changelog>
+
+    <changelog version="2.0.7">
+        <changes lang="de">Fix: Erstellen von Backend-Nutzern in bestimmten Datenbank-Konstellationen.</changes>
+        <changes lang="en">Fix: Creating backend users in certain database constellations.</changes>
+    </changelog>
+
+    <changelog version="2.0.6">
+        <changes lang="de">Fix: Download Backups: korrekter Content-Type gesetzt.</changes>
+        <changes lang="en">Fix: Download backups: set correct Content-Type.</changes>
+    </changelog>
+
+    <changelog version="2.0.5">
+        <changes lang="de">Fix: Die Nummernkreise werden nicht mehr anonymisiert.</changes>
+        <changes lang="en">Fix: The number ranges are no longer anonymized.</changes>
+    </changelog>
+
+    <changelog version="2.0.4">
+        <changes lang="de">Fix: auf manchen Servern wurde der Testserver nicht korrekt erzeugt.</changes>
+        <changes lang="en">Fix: on some servers the test server was not created correctly.</changes>
+    </changelog>
+
+    <changelog version="2.0.3">
+        <changes lang="de">Fix: korrekte Behandlung von virtuellen Shop-Pfaden</changes>
+        <changes lang="en">Fix: correct handling of virtual shop paths</changes>
+    </changelog>
+
+    <changelog version="2.0.2">
+        <changes lang="de">Change: Filter-Event (NetzpStaging_Component_Helper_WriteConfigFile_FilterResult)</changes>
+        <changes lang="en">Change: Filter-Event (NetzpStaging_Component_Helper_WriteConfigFile_FilterResult)</changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes lang="de">Fix: korrekte Behandlung von ausgeschlossenen Verzeichnissen</changes>
+        <changes lang="en">Fix: correct handling of excluded directories</changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes lang="de">Initiale Version</changes>
+        <changes lang="en">Initial version</changes>
+    </changelog>
+</plugin>

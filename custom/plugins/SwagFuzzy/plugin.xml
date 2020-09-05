@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">Intelligente Suche</label>
+    <label lang="en">Intelligent Search</label>
+
+    <version>3.4.0</version>
+    <copyright>(c) by shopware AG</copyright>
+    <license>proprietary</license>
+    <link>http://store.shopware.com</link>
+    <author>shopware AG</author>
+    <compatibility minVersion="5.6.0" maxVersion="5.99.99"/>
+
+    <changelog version="3.4.0">
+        <changes lang="de">
+            PT-10352 - Template der Ajax-Suche dem Standard angepasst;
+            PT-10894 - "Statistik für Suchbegriffe ohne Ergebnis" lässt sich nun auf Datumsintervalle einschränken;
+        </changes>
+        <changes lang="en">
+            PT-10352 - Adapt template of the Ajax search to the standard;
+            PT-10894 - "Statistics for search terms without results" can now be limited to date intervals;
+        </changes>
+    </changelog>
+
+    <changelog version="3.3.1">
+        <changes lang="de">PT-11095 - Vorschaufunktion im Backend verbessert;</changes>
+        <changes lang="en">PT-11095 - Improve preview feature in the backend;</changes>
+    </changelog>
+
+    <changelog version="3.3.0">
+        <changes lang="de">PT-10427 - Shopware 5.6 Kompatibilität;</changes>
+        <changes lang="en">PT-10427 - Shopware 5.6 compatibility;</changes>
+    </changelog>
+
+    <changelog version="3.2.2">
+        <changes lang="de">PT-10095 - Keywords werden in der Vorschau jetzt wieder angezeigt;</changes>
+        <changes lang="en">PT-10095 - Solves an issue with keyword display in backend;</changes>
+    </changelog>
+
+    <changelog version="3.2.1">
+        <changes lang="de">PT-9658 - Behebt ein Problem mit der Klassenvererbung in ExtJs;</changes>
+        <changes lang="en">PT-9658 - Solves an issue regarding class inheritance in ExtJs;</changes>
+    </changelog>
+
+    <changelog version="3.2.0">
+        <changes lang="de">PT-9179 - Shopware 5.5 Kompatibilität;</changes>
+        <changes lang="en">PT-9179 - Shopware 5.5 compatibility;</changes>
+    </changelog>
+
+    <changelog version="3.1.3">
+        <changes lang="de">PT-8906 - Überschreiben einer Listing-Variable erfolgt nur noch in der Suche;</changes>
+        <changes lang="en">PT-8906 - Overwrite listing variable only on search page;</changes>
+    </changelog>
+
+    <changelog version="3.1.2">
+        <changes lang="de">PT-8813 - Fehler beim Laden der ProductStream Vorschau behoben;</changes>
+        <changes lang="en">PT-8813 - Fix loading of the product stream preview;</changes>
+    </changelog>
+
+    <changelog version="3.1.1">
+        <changes lang="de">
+            PT-7239 - Zusätzliche Felder für die MediaGarbageCollection hinzugefügt;
+            PT-8962 - Link aus dem Statistikmodul korrigiert;
+        </changes>
+        <changes lang="en">
+            PT-7239 - Add additional fields to MediaGarbageCollection;
+            PT-8962 - Fixed link in statistics module;
+        </changes>
+    </changelog>
+
+    <changelog version="3.1.0">
+        <changes lang="de">
+            PT-7239 - MediaGarbageCollector Kompatibilität;
+            PT-8126 - Shopware 5.4 Kompatibilität;
+        </changes>
+        <changes lang="en">
+            PT-7239 - MediaGarbageCollector compatibility;
+            PT-8126 - Shopware 5.4 compatibility;
+        </changes>
+    </changelog>
+
+    <changelog version="3.0.1">
+        <changes lang="de">PT-8783 - Kompatibilität mit Product Streams verbessert</changes>
+        <changes lang="en">PT-8783 - Improve compatibility with Product Streams</changes>
+    </changelog>
+
+    <changelog version="3.0.0">
+        <changes lang="de">PT-8120 - Migration auf das Shopware 5.2 Plugin System;</changes>
+        <changes lang="en">PT-8120 - Migration to the Shopware 5.2 plugin system;</changes>
+    </changelog>
+
+    <changelog version="2.4.1">
+        <changes lang="de">PT-8518 - Kompatibilität zu anderen Plugins verbessert;</changes>
+        <changes lang="en">PT-8518 - Improve compatibility with other plugins;</changes>
+    </changelog>
+
+    <changelog version="2.4.0">
+        <changes lang="de">PT-8393 - Konfiguration um Werte eines Suchfeldes unverändert in den Suchindex aufzunehmen;</changes>
+        <changes lang="en">PT-8393 - Config option to store values of a search field as given into the search index;</changes>
+    </changelog>
+
+    <changelog version="2.3.0">
+        <changes lang="de">
+            PT-7647, SW-16691 - Shopware 5.3 Kompatibilität;
+            PT-7372 - Behebt Fehler falls der MediaService dekoriert wurde;
+        </changes>
+        <changes lang="en">
+            PT-7647, SW-16691 - Shopware 5.3 compatibility;
+            PT-7372 - Fix issue if the MediaService was decorated;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.1">
+        <changes lang="de">
+            PT-5731 - Bugfix: Falscher Link für das Aktionsbanner;
+            PT-5812 - Bugfix: Navigieren mit Pfeiltasten in der Schnellsuche;
+            PT-6065 - Bugfix: Erneutes Laden der Relevanzen;
+            PT-6070 - Bugfix: Duplizieren von Synonymgruppen;
+            PT-6475 - Bugfix: Paging für Einkaufswelten;
+            PT-6477 - Bugfix: Probleme mit der Erweiterbarkeit;
+        </changes>
+        <changes lang="en">
+            PT-5731 - Bugfix: Wrong link for campaign banner;
+            PT-5812 - Bugfix: Navigation with arrow keys in ajax search;
+            PT-6065 - Bugfix: Reload of relevances;
+            PT-6070 - Bugfix: Cloning of synonym groups;
+            PT-6475 - Bugfix: Paging for shopping worlds;
+            PT-6477 - Bugfix: Problem with extensibility;
+        </changes>
+    </changelog>
+
+    <changelog version="2.2.0">
+        <changes lang="de">PT-5415, PT-5751 - Feature: Shopware 5.2 Kompatibilität;</changes>
+        <changes lang="en">PT-5415, PT-5751 - Feature: Shopware 5.2 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.1.0">
+        <changes lang="de">
+            PT-4456 - Feature: Sicheres Deinstallieren implementiert;
+            PT-4545 - Feature: Vorschau für Relevanz Werte der Suche im Backend Modul;
+            PT-5472 - Bugfix: Verbesserung der Suche nach Nummern. Relevantere Keywords werden für die Suche verwendet. Synonyme werden besser berücksichtigt;
+            PT-5461 - Bugfix: Performanceverbesserungen bei der Relevanzberechnung;
+            PT-5553 - Bugfix: Styling des Einstellungsfensters;
+        </changes>
+        <changes lang="en">
+            PT-4456 - Feature: Implement safe deinstallation;
+            PT-4545 - Feature: Preview for ranking values in the backend module;
+            PT-5472 - Bugfix: Improve searching for numbers. More relevant keywords are used for the search. Synonyms are considered better;
+            PT-5461 - Bugfix: Improve performance of relevance calculation;
+            PT-5553 - Bugfix: Styling of settings window;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.8">
+        <changes lang="de">PT-5122 - Bugfix: Kompatibilität mit Shopware 5.1.4;</changes>
+        <changes lang="en">PT-5122 - Bugfix: Compatibility with Shopware 5.1.4;</changes>
+    </changelog>
+
+    <changelog version="2.0.7">
+        <changes lang="de">
+            PT-4722 - Bugfix: Ein leerer Such-Begriff führt nicht mehr zu einem Fehler;
+            PT-4822 - Bugfix: Unterscheidung zwischen Umlauten und Vokalen;
+        </changes>
+        <changes lang="en">
+            PT-4722 - Bugfix: Fixed an error when entering an empty search-value;
+            PT-4822 - Bugfix: Differentiation of umlauts and vowals;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.6">
+        <changes lang="de">PT-4413 - Bugfix: Konfiguration Suchtabellen;</changes>
+        <changes lang="en">PT-4413 - Bugfix: Configuration search tables;</changes>
+    </changelog>
+
+    <changelog version="2.0.5">
+        <changes lang="de">
+            PT-3844 - Bugfix: Suchvorschläge in Subshops;
+            PT-4060 - Bugfix: Performance Verbesserungen bei nummerischen Suchanfragen;
+            PT-4289 - Bugfix: Abfrage der Plugineinstellungen;
+            PT-4347 - Bugfix: Snippets Update;
+        </changes>
+        <changes lang="en">
+            PT-3844 - Bugfix: Search suggestion in subshops;
+            PT-4060 - Bugfix: Performance improvements for numeric search requests;
+            PT-4289 - Bugfix: Request of plugin settings;
+            PT-4347 - Bugfix: Snippets Update;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.4">
+        <changes lang="de">
+            PT-3487, PT-3536 - Bugfix: Shopware 5.1 Kompatibilität;
+            PT-3535 - Bugfix: Darstellung der Banner von Synonymgruppen;
+            PT-3457 - Bugfix: Template Blöcke hinzugefügt;
+            PT-3559 - Bugfix: Filter auf der Suchseite;
+        </changes>
+        <changes lang="en">
+            PT-3487, PT-3536 - Bugfix: Shopware 5.1 compatibility;
+            PT-3535 - Bugfix: Banner displaying of synonym groups;
+            PT-3457 - Bugfix: Added template blocks;
+            PT-3559 - Bugfix: Filter on search page;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.3">
+        <changes lang="de">PT-3195 - Bugfix: Dekorierung der Core-Services geändert;</changes>
+        <changes lang="en">PT-3195 - Bugfix: Changed decorating of core services;</changes>
+    </changelog>
+
+    <changelog version="2.0.2">
+        <changes lang="de">PT-3149 - Bugfix: Voraussetzungen für PT-2971 angepasst;</changes>
+        <changes lang="en">PT-3149 - Bugfix: Changed requirements for PT-2971;</changes>
+    </changelog>
+
+    <changelog version="2.0.1">
+        <changes lang="de">
+            PT-2900 - Fix: SearchTerm-Links verbessert;
+            PT-2901 - Fix: Probleme beim Fenster-Resize;
+            PT-2971 - Feature: Ähnliche Suchbegriffe in der Vorschlagssuche;
+            PT-3080 - Fix: Anzeige vormals versteckter Konfigurationswerte in den Grundeinstellungen;
+            PT-3081 - Fix: Fehlermeldung beim Update;
+        </changes>
+        <changes lang="en">
+            PT-2900 - Fix: SearchTerm links improved;
+            PT-2901 - Fix: Issues with window resizing;
+            PT-2971 - Feature: Similar search terms in suggested searched;
+            PT-3080 - Fix: Show formerly hidden config options in base settings;
+            PT-3081 - Fix: Error messaged during updates;
+        </changes>
+    </changelog>
+
+    <changelog version="2.0.0">
+        <changes lang="de">PT-2339 - Feature: Refaktorierung und Shopware 5 Kompatibilität;</changes>
+        <changes lang="en">PT-2339 - Feature: Refactoring and Shopware 5 compatibility;</changes>
+    </changelog>
+</plugin>

@@ -1,0 +1,1 @@
+UPDATE `s_plugin_custom_products_template` SET active=0 WHERE id=9999;

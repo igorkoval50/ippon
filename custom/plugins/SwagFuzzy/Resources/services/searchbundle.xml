@@ -1,0 +1,91 @@
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults public="true"/>
+
+        <service id="swag_fuzzy.search_bundle_dbal.criteria_request_handler"
+                 class="SwagFuzzy\Bundle\SearchBundle\CriteriaRequestHandler\CriteriaRequestHandler">
+            <tag name="criteria_request_handler"/>
+        </service>
+
+        <service id="swag_fuzzy.search_bundle_dbal.keyword_facet_handler_dbal"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\FacetHandler\KeywordFacetHandler">
+            <argument type="service" id="shopware_searchdbal.keyword_finder_dbal"/>
+            <argument type="service" id="shopware_searchdbal.search_term_helper"/>
+            <argument type="service" id="swag_fuzzy.similar_results_service"/>
+            <argument type="service" id="swag_fuzzy.synonym_service"/>
+            <argument type="service" id="snippets"/>
+            <tag name="facet_handler_dbal"/>
+        </service>
+
+        <service id="swag_fuzzy.bundle_search.debug_search_term_condition_handler"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\ConditionHandler\DebugSearchTermConditionHandler">
+            <argument type="service" id="swag_fuzzy.debug_search_query_builder_dbal"/>
+            <tag name="condition_handler_dbal" priority="99"/>
+        </service>
+
+        <!--decorator-->
+        <service id="swag_fuzzy.search_indexer"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\SearchTerm\FuzzySearchIndexer"
+                 decorates="shopware_searchdbal.search_indexer"
+                 public="false">
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="swag_fuzzy.cologne_phonetic"/>
+            <argument type="service" id="swag_fuzzy.metaphone"/>
+            <argument type="service" id="swag_fuzzy.search_indexer.inner"/>
+        </service>
+
+        <service id="swag_fuzzy.search_term_helper_decorator"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\SearchTerm\FuzzyTermHelper"
+                 decorates="shopware_searchdbal.search_term_helper"
+                 public="false">
+            <argument type="service" id="swag_fuzzy.search_term_helper_decorator.inner"/>
+        </service>
+
+        <service id="swag_fuzzy.keyword_finder_dbal_decorator"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\SearchTerm\FuzzyKeywordFinder"
+                 decorates="shopware_searchdbal.keyword_finder_dbal"
+                 public="false">
+            <argument id="swag_fuzzy.settings_service" type="service"/>
+            <argument id="shopware_searchdbal.search_term_helper" type="service"/>
+            <argument id="dbal_connection" type="service"/>
+            <argument id="swag_fuzzy.algorithm_service" type="service"/>
+            <argument id="swag_fuzzy.synonym_service" type="service"/>
+            <argument id="shopware_storefront.context_service" type="service"/>
+        </service>
+
+        <service id="swag_fuzzy.search_query_builder_dbal_decorator"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\SearchTerm\FuzzySearchTermQueryBuilder"
+                 decorates="shopware_searchdbal.search_query_builder_dbal"
+                 public="false">
+            <argument type="service" id="swag_fuzzy.search_query_builder_dbal_decorator.inner"/>
+            <argument type="service" id="swag_fuzzy.settings_service"/>
+            <argument type="service" id="config"/>
+            <argument type="service" id="shopware_searchdbal.search_term_helper"/>
+        </service>
+
+        <service id="swag_fuzzy.search_term_logger_decorator"
+                 class="SwagFuzzy\Bundle\SearchBundleDBAL\SearchTerm\FuzzySearchTermLogger"
+                 decorates="shopware_searchdbal.search_term_logger"
+                 public="false">
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="swag_fuzzy.search_term_logger_decorator.inner"/>
+        </service>
+
+        <service id="swag_fuzzy.bundle_search.store_front_criteria_factory_decorator"
+                 class="SwagFuzzy\Bundle\SearchBundle\FuzzyStoreFrontCriteriaFactory"
+                 decorates="shopware_search.store_front_criteria_factory"
+                 public="false">
+            <argument id="swag_fuzzy.bundle_search.store_front_criteria_factory_decorator.inner" type="service"/>
+        </service>
+
+        <service id="swag_fuzzy.bundle_search.product_search_decorator"
+                 class="SwagFuzzy\Bundle\SearchBundle\FuzzyProductSearch"
+                 decorates="shopware_search.product_search"
+                 public="false">
+            <argument id="swag_fuzzy.bundle_search.product_search_decorator.inner" type="service"/>
+        </service>
+    </services>
+</container>

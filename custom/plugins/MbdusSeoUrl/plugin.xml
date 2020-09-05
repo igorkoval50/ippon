@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">Mbdus SEO-URL</label>
+    <label lang="en">Mbdus SEO-URL</label>
+
+    <version>1.5.0</version>
+    <author>mbdus - Softwareentwicklung</author>
+    <compatibility minVersion="5.4.0" />
+
+	<changelog version="1.5.0">
+    	<changes lang="de">Umlaute umschreiben (ä->ae)</changes>
+        <changes lang="en">Rewrite german vowels (ä->ae)</changes>
+    </changelog>
+	<changelog version="1.4.9">
+    	<changes lang="de">Uninstaller - um Attribute zu entfernen</changes>
+        <changes lang="en">add an uninstaller to remove attributes</changes>
+    </changelog>
+	<changelog version="1.4.8">
+    	<changes lang="de">Memory Limit entfernt</changes>
+        <changes lang="en">removed memory limit</changes>
+    </changelog>
+	<changelog version="1.4.7">
+    	<changes lang="de">Kompatibilität für Shopware 5.6</changes>
+        <changes lang="en">add compatibility for Shopware 5.6</changes>
+    </changelog>
+	<changelog version="1.4.6">
+    	<changes lang="de">Anpassung des Seo-Url-Exports bei Subshops</changes>
+        <changes lang="en">Modified the seo url export for subshops</changes>
+    </changelog>
+	<changelog version="1.4.5">
+    	<changes lang="de">BugFix: Pfad bei Import von Seo-Urls</changes>
+        <changes lang="en">BugFix: path at import of seo urls</changes>
+    </changelog>
+	<changelog version="1.4.4">
+    	<changes lang="de">BugFix: Rechteverwaltung bei der Installation und Update</changes>
+        <changes lang="en">BugFix: installation and update of user priviliges</changes>
+    </changelog>
+	<changelog version="1.4.3">
+    	<changes lang="de">Umstellung auf neues Pluginsystem</changes>
+        <changes lang="en">changed to new plugin system</changes>
+    </changelog>
+</plugin>

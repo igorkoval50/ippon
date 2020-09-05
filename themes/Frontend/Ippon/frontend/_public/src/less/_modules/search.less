@@ -1,0 +1,225 @@
+.header-main {
+	/*==================================
+	=            Search Bar            =
+	==================================*/
+	.transition(all .5s ease-in-out);
+
+    &.is--active-searchfield {
+		.unitize(padding-bottom, @main-navigation--height);
+
+		@media screen and(min-width: @desktopViewportWidth) {
+			padding: 0;
+		}
+	}
+
+    .shop--navigation {
+		.entry--search {
+			@media screen and(min-width: @phoneLandscapeViewportWidth) {
+				position: static;
+				width: auto;
+				background: transparent;
+			}
+
+			.entry--trigger {
+				display: block;
+				margin: 0;
+
+				@media screen and(min-width: @desktopViewportWidth) {
+					display: none;
+				}
+			}
+
+			.main-search--form,
+			.main-search--field,
+			.main-search--button {
+				display: block;
+				visibility: hidden;
+				opacity: 0;
+                height: 0;
+				.transition(all .5s ease-in-out);
+
+				@media screen and(min-width: @desktopViewportWidth) {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+
+			.main-search--form {
+                position: absolute;
+                left: 0;
+                .content-padding();
+                padding-top: 0;
+                padding-bottom: 0;
+                .unitize(top, @shop-navigation--height);
+                height: 0;
+
+                @media screen and(min-width: @desktopViewportWidth) {
+                    .unitize(top, @shop-navigation--height * .5);
+                    left: 20%;
+                    width: 80%;
+                }
+
+                @media screen and(min-width: @desktopViewportWidth) {
+                    left: 15%;
+                    width: 85%;
+                }
+
+				@media screen and(min-width: @desktopViewportWidth) {
+                    position: absolute;
+                    width: 15%;
+                    .unitize(height, @main-navigation--height);
+                    .unitize(top, @shop-navigation--height + @main-navigation--height * .5);
+                    .transform(translateY(-50%));
+                    .unitize(right, 0);
+                    left: auto;
+                    .unitize(padding-left, @content-padding);
+                    .unitize(padding-right, 0);
+				}
+
+				.main-search--field {
+					background: #ffffff;
+					visibility: visible;
+                    border-color: @border-color;
+					color: @text-color;
+					.reset-box-shadow();
+					.border-radius(0);
+                    .unitize-margin(0, 0);
+                    .unitize-padding(0, 0);
+                    .unitize(line-height, @main-navigation--height * .5);
+                    .unitize(font-size, @font-size-base - 3);
+                    font-weight: @font-bold-weight;
+					.placeholder(@text-color, false, uppercase);
+                    line-height: 1;
+
+
+                    @media screen and(min-width: @desktopViewportWidth) {
+                        .unitize(height, @main-navigation--height * .5);
+                        .unitize-padding(9, 38, 9, 9);
+                        .unitize-margin(@main-navigation--height * .25, 0);
+                    }
+
+					&:focus,
+					&:active {
+                        background: @brand-secondary;
+                        border-color: @brand-secondary-light;
+                        color: contrast(@brand-secondary);
+                        .placeholder(contrast(@brand-secondary-light), false, uppercase);
+
+                        ~ .main-search--button {
+
+                            .icon--search {
+                                color: contrast(@brand-secondary);
+                            }
+                        }
+					}
+				}
+
+				.main-search--button {
+					color: @text-color;
+                    .unitize(top, @main-navigation--height * .25);
+                    .unitize(right, @content-padding);
+
+                    .unitize(line-height, @main-navigation--height * .5);
+
+                    @media screen and(min-width: @desktopViewportWidth) {
+                        .unitize(right, 0);
+                        .unitize(height, @main-navigation--height * .5);
+                    }
+
+					i {
+                        .unitize(height, @main-navigation--height * .5);
+                        .unitize(line-height, @main-navigation--height * .5);
+						.unitize(font-size, 20);
+					}
+
+					.icon--search {
+						color: @text-color;
+					}
+				}
+			}
+
+			/*----------  is active  states----------*/
+			&.is--active {
+				.main-search--form,
+				.main-search--field,
+				.main-search--button {
+					visibility: visible;
+					opacity: 1;
+					background: @body-bg;
+				}
+
+				.main-search--form {
+					.unitize(height, @main-navigation--height);
+                }
+
+                .main-search--field {
+                    .unitize(height, @main-navigation--height * .5);
+                    .unitize-padding(9, 38, 9, 9);
+                    .unitize-margin(@main-navigation--height * .25, 0);
+                }
+
+                .main-search--button {
+                    .unitize(height, @main-navigation--height * .5);
+                    background: transparent;
+                }
+			}
+
+			/*----------  search results  ----------*/
+			.main-search--results {
+				.unitize(top, @main-navigation--height + @search-height);
+
+                @media screen and(min-width: @phoneLandscapeViewportWidth) {
+                    left: 50%;
+                    margin-left: 0;
+                    .transform(translateX(-50%));
+                }
+                .unitize(top, 135);
+                @media screen and(min-width: @desktopViewportWidth) {
+                    .unitize(top, @shop-navigation--height + @main-navigation--height * .5);
+                }
+
+				@media screen and(min-width: @desktopViewportWidth) {
+					.unitize(top, @shop-navigation--height + @main-navigation--height * .5 + @main-navigation--margin);
+                    left: auto;
+                    right: 0;
+                    .transform(translateX(0));
+				}
+			}
+
+			.results--list {
+                .reset-border-radius();
+
+				&:after {
+					@media screen and(min-width: @desktopViewportWidth) {
+                        left: auto;
+                        right: 15%;
+					}
+				}
+
+				.list--entry {
+					border-color: @gray;
+
+				}
+			}
+		}
+	}
+}
+
+/*===============================
+=            Trigger            =
+===============================*/
+.has--csstransforms {
+    .entry--search {
+        .entry--trigger {
+            &.is--active::after {
+                display: none;
+            }
+        }
+    }
+}
+
+.has--cssanimations {
+	.form--ajax-loader {
+		.unitize(top, @main-navigation--height * .375);
+	}
+}

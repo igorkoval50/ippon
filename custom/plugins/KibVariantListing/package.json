@@ -1,0 +1,7 @@
+{
+    "private": true,
+    "devDependencies": {
+        "grunt": "^0.4.0",
+        "js-obfuscator": "^0.1.1"
+    }
+}

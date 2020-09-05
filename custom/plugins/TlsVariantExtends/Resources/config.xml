@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="boolean" scope="shop">
+            <name>hideNotValid</name>
+            <label lang="de">Nicht existierende Varianten ausblenden</label>
+            <label lang="en">Hide non-existent variants</label>
+            <value>false</value>
+            <description lang="de">Wenn es in dem Feld „ja“ steht, werden nicht existierende Varianten ausgeblendet. Wenn es in dem Feld „nein“ steht, werden die Parameter bei der Auswahl der nicht existierenden Varianten zurückgesetzt</description>
+            <description lang="en">If it is in the field "yes", nonexistent variants are hidden. If it is in the field "no", the parameters are reset when selecting the non-existent variants</description>
+            <description lang="ru">Если в поле «да», несуществующие опции скрыты. Если оно находится в поле «нет», опции других груп сбрасываются при выборе несуществующих вариантов</description>
+        </element>
+
+        <element type="boolean" scope="shop">
+            <name>noSaleMessage</name>
+            <label lang="de">Das Info anzeigen, wenn der Artikel nicht mehr verfügbar ist</label>
+            <label lang="en">Show the info if the article is no longer available</label>
+            <value>true</value>
+            <description lang="de">Wenn die Varianten nicht mehr verfügbar sind, wird das Info angezeigt (Email-Benachrichtigung ist inaktiv, das Häckchen bei Abverkauf gesetzt, der Lagerbestand 0)</description>
+            <description lang="en">If the variants are no longer available, the info will be displayed (e-mail notification is inactive, tick on sale, stock 0)</description>
+            <description lang="ru">Если вариант больше не доступен, показывать сообщение (уведомление по электронной почте выключены, "On sale" включено, на складе 0)</description>
+        </element>
+
+        <element type="boolean" scope="shop">
+            <name>opacityNotification</name>
+            <label lang="de">Die nicht verfügbaren Kombinationen werden ausgegraut</label>
+            <label lang="en">The unavailable combinations are greyed out</label>
+            <value>true</value>
+            <description lang="de">Wenn die Variantenkombinationen nicht existieren oder nicht verfügbar sind, werden diese ausgegraut (die E-Mail-Benachrichtigung ist aktiviert)</description>
+            <description lang="en">If the variant combinations do not exist or are not available, they are greyed out (the e-mail notification is activated)</description>
+            <description lang="en">Если вариант не существует либо не активный, они отображаются серым цветом (уведомление по электронной почте активировано)</description>
+        </element>
+
+        <element type="boolean" scope="shop">
+            <name>defaultSelection</name>
+            <label lang="de">Vaterartikel anzeigen, wenn keine Variante ausgewählt ist</label>
+            <label lang="en">Show parent items if no variant is selected</label>
+            <value>true</value>
+            <description lang="de">Wenn der Artikel ohne Parameter ausgewählt wird, wird der Vaterartikel geöffnet</description>
+            <description lang="en">If the article is selected without parameters, the parent article opens</description>
+            <description lang="en">Если открывать товар без опций, буду выбраны опции дефолтного варианта (для конфигурации типа картинки)</description>
+        </element>
+    </elements>
+</config>

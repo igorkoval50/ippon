@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/menu.xsd">
+    <entries>
+        <entry>
+            <name>Business Essentials</name>
+            <label lang="en">Business Essentials</label>
+            <label lang="de">Business Essentials</label>
+            <controller>SwagBusinessEssentials</controller>
+            <action>index</action>
+            <class>sprite-briefcase--blue</class>
+            <parent identifiedBy="controller">ConfigurationMenu</parent>
+        </entry>
+    </entries>
+</menu>

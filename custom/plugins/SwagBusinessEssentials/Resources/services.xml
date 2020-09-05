@@ -1,0 +1,107 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Subscriber -->
+        <service id="swag_business_essentials.subscriber.backend_dispatch" class="SwagBusinessEssentials\Subscriber\BackendDispatch">
+            <argument>%swag_business_essentials.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="swag_business_essentials.subscriber.controller" class="SwagBusinessEssentials\Subscriber\Controller">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="swag_business_essentials.subscriber.frontend_dispatch" class="SwagBusinessEssentials\Subscriber\FrontendDispatch">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="swag_business_essentials.subscriber.register" class="SwagBusinessEssentials\Subscriber\Register">
+            <argument type="service" id="swag_business_essentials.registration_helper" />
+            <argument type="service" id="swag_business_essentials.dependency_provider" />
+            <argument type="service" id="swag_business_essentials.login_helper" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="swag_business_essentials.subscriber.cache" class="SwagBusinessEssentials\Subscriber\Cache">
+            <argument type="service" id="swag_business_essentials.dependency_provider"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <!-- Services -->
+        <service id="swag_business_essentials.request_manager" class="SwagBusinessEssentials\Components\RequestManager\RequestManager">
+            <argument type="service" id="models" />
+            <argument type="service" id="swag_business_essentials.mail_helper" />
+        </service>
+
+        <service id="swag_business_essentials.mail_helper" class="SwagBusinessEssentials\Components\Mail\MailHelper">
+            <argument type="service" id="config" />
+            <argument type="service" id="templatemail" />
+            <argument type="service" id="models" />
+            <argument type="service" id="snippets" />
+            <argument type="service" id="shopware.components.shop_registration_service"/>
+        </service>
+
+        <service id="swag_business_essentials.assign_helper" class="SwagBusinessEssentials\Components\TemplateVariables\AssignHelper">
+            <argument type="service" id="dbal_connection" />
+        </service>
+
+        <service id="swag_business_essentials.whitelist_helper" class="SwagBusinessEssentials\Components\PrivateShopping\WhiteListHelper">
+            <argument type="service" id="snippets" />
+            <argument type="service" id="events" />
+            <argument type="service" id="swag_business_essentials.config_helper" />
+        </service>
+
+        <service id="swag_business_essentials.registration_helper" class="SwagBusinessEssentials\Components\PrivateRegister\RegistrationHelper">
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="swag_business_essentials.config_helper" />
+            <argument type="service" id="template" />
+            <argument type="service" id="models" />
+            <argument type="service" id="router" />
+            <argument type="service" id="swag_business_essentials.redirect_param_helper" />
+        </service>
+
+        <service id="swag_business_essentials.config_helper" class="SwagBusinessEssentials\Components\ConfigHelper">
+            <argument type="service" id="dbal_connection" />
+        </service>
+
+        <service id="swag_business_essentials.dependency_provider" class="SwagBusinessEssentials\Components\DependencyProvider">
+            <argument type="service" id="service_container" />
+        </service>
+
+        <service id="swag_business_essentials.shop_access_helper" class="SwagBusinessEssentials\Components\PrivateShopping\ShopAccessHelper">
+            <argument type="service" id="swag_business_essentials.config_helper" />
+            <argument type="service" id="swag_business_essentials.dependency_provider" />
+            <argument type="service" id="swag_business_essentials.whitelist_helper" />
+        </service>
+
+        <service id="swag_business_essentials.login_helper" class="SwagBusinessEssentials\Components\PrivateShopping\LoginHelper">
+            <argument type="service" id="swag_business_essentials.config_helper" />
+            <argument type="service" id="shopware_storefront.context_service" />
+            <argument type="service" id="router" />
+            <argument type="service" id="template" />
+            <argument type="service" id="dbal_connection" />
+            <argument type="service" id="swag_business_essentials.redirect_param_helper" />
+        </service>
+
+        <service id="swag_business_essentials.redirect_param_helper" class="SwagBusinessEssentials\Components\PrivateShopping\RedirectParamHelper">
+            <argument type="service" id="router" />
+        </service>
+
+        <!-- Decorated Services -->
+        <service id="swag_business_essentials.register_service"
+                 class="SwagBusinessEssentials\Components\PrivateRegister\RegisterService"
+                 decorates="shopware_account.register_service"
+                 public="false">
+
+            <argument type="service" id="swag_business_essentials.register_service.inner"/>
+            <argument type="service" id="swag_business_essentials.config_helper"/>
+            <argument type="service" id="models"/>
+        </service>
+    </services>
+</container>

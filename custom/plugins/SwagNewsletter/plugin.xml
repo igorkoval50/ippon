@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.5/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+
+    <label lang="de">Intelligenter Newsletter</label>
+    <label lang="en">Intelligent Newsletter</label>
+
+    <version>3.3.0</version>
+    <copyright>(c) by shopware AG</copyright>
+    <license>proprietary</license>
+    <link>http://store.shopware.com</link>
+    <author>shopware AG</author>
+    <compatibility minVersion="5.6.0" maxVersion="5.99.99"/>
+
+    <description lang="en">
+        <![CDATA[<div style="padding-bottom:30px;color:999;font-style:italic;">
+        What shop operator wouldn't like to be sending out mail with product recommendations specific to individual tastes? The Shopware Smart Newsletter allows you to never again need to worry about sending your customers advertising that does not appeal to them. This is one of the main features and highlights of this Shopware Premium Plugin. <br>
+        <br>
+        <h1>Supported function in Shopware standard</h1>
+        <ul style="list-style-type:circle"">
+            <li>Newsletter in corporate design</li>
+            <li>HTML text</li>
+            <li>Multiple recipient groups definable</li>
+        </ul>
+        <br>
+        <h1>Additional function in Smart Newsletter</h1>
+
+        <ul style="list-style-type:circle">
+            <li>Via drag & drop, multiple elements can be combined including: HTML widgets, banner widgets, product widgets (fixed products, random products or news), suggest widgets (automatic, customer-oriented product recommendations, surfing and ordering behavior of each visitor is evaluated and analyzed) - Widgets can be stacked without restriction.</li>
+            <li>Smarty variable support for HTML widgets (enables, e.g., personalized newsletter)</li>
+            <li>>Using customer-specific voucher codes in newsletters</li>
+        </ul>
+
+        Use customer-specific newsletter – the customer is king.
+        </div>]]>
+    </description>
+
+    <description lang="de">
+        <![CDATA[<div style="padding-bottom:30px;color:999;font-style:italic;">
+        Wer ärgert sich nicht regelmäßig über Werbemails, die einem meistens Produkte empfehlen, die völlig am eigenen Geschmack vorbeigehen. Mit dem „Intelligenten Newsletter“ von Shopware werden Sie als Shopbetreiber nie wieder in die Verlegenheit kommen, Newsletter mit völlig unzutreffender Werbung an Ihre Kunden zu verschicken, denn Personalisierung steht bei diesem hochfunktionalen Premium Plugin großgeschrieben.<br>
+        <br>
+        <h1>Unterstützte Funktionen im Shopware-Standard</h1>
+        <ul style="list-style-type:circle"">
+            <li>Newsletter im Corporate-Design</li>
+            <li>HTML-Text</li>
+            <li>Unterschiedliche Empfängergruppen definierbar</li>
+        </ul>
+        <br>
+        <h1>Zusätzliche Funktionen im Intelligenten Newsletter</h1>
+
+        <ul style="list-style-type:circle">
+            <li>Newsletter kann per Drag & Drop aus verschiedenen Elementen zusammengestellt werden, dazu zählen: HTML-Widgets, Banner-Widgets, Artikel-Widgets (feste Artikel, Zufallsartikel oder Neuheiten), Suggest-Widget (Automatische, Kunden-orientierte Produktvorschläge, Surf- und Bestellverhalten des jeweiligen Kunden wird ausgewertet und berücksichtigt) - Widgets können beliebig verschachtelt werden</li>
+            <li>Unterstützung von Smarty-Variablen für HTML-Widgets (ermöglicht z.B. personalisierte Newsletter)</li>
+            <li>Kundenindividuelle Gutscheincodes im Newsletter verwendbar</li>
+        </ul>
+
+        Versenden Sie kundenindividuelle Newsletter – damit Ihr Kunde zum König wird.
+
+        </div>]]>
+    </description>
+
+    <changelog version="3.3.0">
+        <changes lang="de">PT-10426 - Shopware 5.6 Kompatibilität;</changes>
+        <changes lang="en">PT-10426 - Shopware 5.6 compatibility;</changes>
+    </changelog>
+
+    <changelog version="3.2.0">
+        <changes lang="de">PT-9178 - Shopware 5.5 Kompatibilität;</changes>
+        <changes lang="en">PT-9178 - Shopware 5.5 compatibility;</changes>
+    </changelog>
+
+    <changelog version="3.1.1">
+        <changes lang="de">
+            PT-7239 - MediaGarbageCollector Kompatibilität;
+            PT-8896, PT-8898, PT-8899 - Verbesserung der UI des Backend-Moduls;
+        </changes>
+        <changes lang="en">
+            PT-7239 - MediaGarbageCollector compatibility;
+            PT-8896, PT-8898, PT-8899 - Improve UI of administration module;
+        </changes>
+    </changelog>
+
+    <changelog version="3.1.0">
+        <changes lang="de">PT-8810 - Bugfix: Shopware 5.4 Kompatibilität;</changes>
+        <changes lang="en">PT-8810 - Bugfix: Shopware 5.4 compatibility;</changes>
+    </changelog>
+
+    <changelog version="3.0.0">
+        <changes lang="de">PT-8121 - Migration auf das Shopware 5.2 Pluginsystem;</changes>
+        <changes lang="en">PT-8121 - Migrate to the Shopware 5.2 plugin system;</changes>
+    </changelog>
+
+    <changelog version="2.2.2">
+        <changes lang="de">PT-7360 - Umsatz und andere zusätzliche Daten werden wieder korrekt angezeigt;</changes>
+        <changes lang="en">PT-7360 - Turnover and other additional data are shown correctly again;</changes>
+    </changelog>
+
+    <changelog version="2.2.1">
+        <changes lang="de">PT-8008, PT-8175 - Update der Snippets; PT-8340 - Fehler bei der Auswahl von Customer-Streams;</changes>
+        <changes lang="en">PT-8008, PT-8175 - Update snippets; PT-8340 - Error on Customer-Streams selection;</changes>
+    </changelog>
+
+    <changelog version="2.2.0">
+        <changes lang="de">SW-18398 - Customer Streams als Newsletter-Empfänger auswählbar (Shopware 5.3)</changes>
+        <changes lang="en">SW-18398 - Select Customer Streams as newsletter recipient (Shopware 5.3)</changes>
+    </changelog>
+
+    <changelog version="2.1.7">
+        <changes lang="de">PT-7710 - Bugfix: Kompatibilität mit LiveShopping verbessert (Achtung: Benötigt zwingend SwagLiveShopping 2.8.1);</changes>
+        <changes lang="en">PT-7710 - Bugfix: Improve compatibility with LiveShopping (Attention: Mandatory needs SwagLiveShopping 2.8.1);</changes>
+    </changelog>
+
+    <changelog version="2.1.6">
+        <changes lang="de">PT-6403 - Feature: Performance Steigerung bei vielen Newslettern;</changes>
+        <changes lang="en">PT-6403 - Feature: Improved performance with many newsletters;</changes>
+    </changelog>
+
+    <changelog version="2.1.5">
+        <changes lang="de">PT-6864 - Bugfix: Fehlende Übersetzungen LiveShopping Element;</changes>
+        <changes lang="en">PT-6864 - Bugfix: Missing translations LiveShopping element;</changes>
+    </changelog>
+
+    <changelog version="2.1.4">
+        <changes lang="de">PT-5819 - Bugfix: Fehlende Übersetzungen; PT-5934 - Bugfix: Anzeigefehler bei Invalidierung; PT-6139, PT-6867 - Bugfix: Kundengruppenspezifische Preise berücksichtigen;</changes>
+        <changes lang="en">PT-5819 - Bugfix: Missing translations; PT-5934 - Bugfix: Wrong displaying on invalidation; PT-6139, PT-6867 - Bugfix: Consider customer group specific prices;</changes>
+    </changelog>
+
+    <changelog version="2.1.3">
+        <changes lang="de">PT-6496 - Bugfix: LiveShopping Artikel;</changes>
+        <changes lang="en">PT-6496 - Bugfix: LiveShopping products;</changes>
+    </changelog>
+
+    <changelog version="2.1.2">
+        <changes lang="de">PT-5417 - Bugfix: Shopware 5.2 Kompatibilität;</changes>
+        <changes lang="en">PT-5417 - Bugfix: Shopware 5.2 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.1.1">
+        <changes lang="de">PT-5417 - Bugfix: Shopware 5.2 Kompatibilität;</changes>
+        <changes lang="en">PT-5417 - Bugfix: Shopware 5.2 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.1.0">
+        <changes lang="de">PT-5417 - Feature: Shopware 5.2 Kompatibilität;</changes>
+        <changes lang="en">PT-5417 - Feature: Shopware 5.2 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.0.17">
+        <changes lang="de">PT-4459, PT-5839 - Bugfix: Refaktorierung der Code Basis;</changes>
+        <changes lang="en">PT-4459, PT-5839 - Bugfix: Refactoring of code base;</changes>
+    </changelog>
+
+    <changelog version="2.0.16">
+        <changes lang="de">PT-4968 - Bugfix: Banner werden nun korrekt per Newsletter versendet;</changes>
+        <changes lang="en">PT-4968 - Bugfix: Banners are now properly sent;</changes>
+    </changelog>
+
+    <changelog version="2.0.15">
+        <changes lang="de">PT-4934 - Bugfix: Fehler Combobox in Emotion Komponente;</changes>
+        <changes lang="en">PT-4934 - Bugfix: Issue combo box in emotion component;</changes>
+    </changelog>
+
+    <changelog version="2.0.14">
+        <changes lang="de">PT-4441 - Bugfix: Artikelbild wird nun im Liveshopping-Newsletter-Element für SW5 angezeigt; PT-4483 - Bugfix: Artikelbild Anzeige; PT-4544 - Bugfix: Suggest-Element gibt keine doppelten Artikel mehr;</changes>
+        <changes lang="en">PT-4441 - Bugfix: Product image will now work in sw5 in the liveshopping-element for a newsletter; PT-4483 - Bugfix: Displaying of product image; PT-4544 - Bugfix: Suggest-element won't show an article twice anymore;</changes>
+    </changelog>
+
+    <changelog version="2.0.13">
+        <changes lang="de">PT-4396 - Bugfix: Doctrine Model;</changes>
+        <changes lang="en">PT-4396 - Bugfix: Doctrine models;</changes>
+    </changelog>
+
+    <changelog version="2.0.12">
+        <changes lang="de">PT-4387 - Bugfix: Ioncube Verschlüsselung;</changes>
+        <changes lang="en">PT-4387 - Bugfix: Ioncube encryption;</changes>
+    </changelog>
+
+    <changelog version="2.0.11">
+        <changes lang="de">SW-10468 - Feature: Terminierter Versand (benötigt Shopware 5.1.2);</changes>
+        <changes lang="en">SW-10468 - Feature: Timed delivery (needs Shopware 5.1.2);</changes>
+    </changelog>
+
+    <changelog version="2.0.10">
+        <changes lang="de">PT-4177 - Bugfix: Shopware 5.1 Kompatibilität;</changes>
+        <changes lang="en">PT-4177 - Bugfix: Shopware 5.1 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.0.9">
+        <changes lang="de">PT-3794 - Bugfix: Problem mit älteren PHP Versionen;</changes>
+        <changes lang="en">PT-3794 - Bugfix: Problem with older PHP versions;</changes>
+    </changelog>
+
+    <changelog version="2.0.8">
+        <changes lang="de">PT-3441 - Bugfix: Kompatibilität mit LiveShopping; PT-3710 - Bugfix: Shopware 5.1 Kompatibilität;</changes>
+        <changes lang="en">PT-3441 - Bugfix: compatibility with LiveShopping; PT-3710 - Bugfix: Shopware 5.1 compatibility;</changes>
+    </changelog>
+
+    <changelog version="2.0.7">
+        <changes lang="de">PT-3411, PT-3420 - Bugfix: Snippets korrigiert;</changes>
+        <changes lang="en">PT-3411, PT-3420 - Bugfix: fixed snippets;</changes>
+    </changelog>
+
+    <changelog version="2.0.6">
+        <changes lang="de">Es wurde ein Fehler behoben, der durch Elemente von Drittanbietern entstand; Feature: Zeige nur verfügbare Artikel der Gruppen: Topseller, Neuheiten und Zufällig; PT-2499: Vorschläge nur noch von der zugewiesenen Hauptkategorie; PT-2543 Feature: Erlaubt alternative Mailer für den Newsletter-Versand</changes>
+        <changes lang="en">Fixed an issue that was caused by 3rd party elements; Feature: show only available products part of the groups: top seller, new arrival and random; PT-2499: Uses suggestions only from the assigned main category; PT-2543 Feature: Allow different mail transports for newsletters</changes>
+    </changelog>
+
+    <changelog version="2.0.5">
+        <changes lang="de">Es wurde eine neue Spalte hinzugefügt, die anzeigt, wann das Senden des Newsletters abgeschlossen wurde</changes>
+        <changes lang="en">Added a new column, which displays the date and time when the sending process of a newsletter was completed</changes>
+    </changelog>
+
+    <changelog version="2.0.4">
+        <changes lang="de">Newsletter können nun dupliziert werden; Es wurde ein Helfer hinzugefügt, der den Newsletter erweiterbar macht</changes>
+        <changes lang="en">Allow duplication of newsletters; Adds helper to make the newsletter extensible</changes>
+    </changelog>
+</plugin>

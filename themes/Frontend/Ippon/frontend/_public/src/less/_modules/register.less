@@ -1,0 +1,30 @@
+.steps--content {
+    border-top: 1px solid @border-color;
+
+	.steps--entry {
+		color: @brand-secondary;
+
+		.text {
+			font-weight: @font-base-weight;
+		}
+
+		.icon {
+			background: @brand-secondary;
+		}
+
+		&.is--active {
+            .text {
+                color: @brand-primary;
+            }
+
+			.icon {
+                background: @brand-primary;
+                color: contrast(@brand-primary, black, white, 63%);
+			}
+		}
+	}
+
+    .steps--spacer {
+        width: 10%;
+    }
+}

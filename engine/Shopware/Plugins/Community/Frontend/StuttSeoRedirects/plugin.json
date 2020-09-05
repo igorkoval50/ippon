@@ -1,0 +1,45 @@
+{
+  "label": {
+    "de": "SEO-Weiterleitungen (301 und 302 Redirects)",
+    "en": "SEO 301 and 302 Redirects"
+  },
+  "copyright": "(c) 2015-2016 STUTTGART MEDIA GmbH",
+  "license": "commercial",
+  "author": "STUTTGART MEDIA GmbH",
+  "link": "https://stuttgartmedia.de/",
+  "website": "https://stuttgartmedia.de/",
+
+  "currentVersion": "1.2.0",
+
+  "changelog": {
+    "de": {
+      "1.3.1": "Feature: Interne Lizenzprüfung entfernt und unverschlüsselte Veröffentlichung, kompatibel mit PHP 7",
+      "1.3.0": "Features: Umfangreichere Bereinigung beim CSV-Import, Toleranz bei Eingabe von Protokoll und Domain",
+      "1.2.0": "Feature: Verhindert, dass fehlerhafte Weiterleitungen ausgewertet werden",
+      "1.1.0": "Feature: Weiterleitung von alten URLs mit GET-Parametern möglich",
+      "1.0.4": "Feature: CSV-Import für Weiterleitungen aus Excel etc.",
+      "1.0.3": "Feature: Ermöglicht ebenfalls temporäre Weiterleitungen mit 302-Code",
+      "1.0.2": "Bugfix: Stellt 301-Code beim Überschreiben von Shop-URLs sicher",
+      "1.0.1": "Feature: Möglichkeit zum Überschreiben bestehender Shop-URLs",
+      "1.0.0": "Erstveröffentlichung"
+    },
+    "en": {
+      "1.3.1": "Feature: Removed internal license check and published unencrypted, compatible with PHP 7",
+      "1.3.0": "Features: Better cleanup of imported URLs, tolerates domain and protocol in URLs",
+      "1.2.0": "Feature: Avoid malformed redirects from being processed",
+      "1.1.0": "Feature: Enables redirection of URLs with GET parameters",
+      "1.0.4": "Feature: Import CSV files with redirects from Excel and other applications",
+      "1.0.3": "Feature: Also enables temporary redirects with 302 status code",
+      "1.0.2": "Bugfix: Assures 301 code in override redirects",
+      "1.0.1": "Feature: Possibility to override existing shop URLs",
+      "1.0.0": "First release"
+    }
+  },
+
+  "compatibility": {
+    "minimumVersion": "5.0.0",
+    "maximumVersion": null,
+    "blacklist": [
+    ]
+  }
+}

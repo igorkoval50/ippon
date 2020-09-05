@@ -1,0 +1,367 @@
+.sidebar-main {
+    .unitize(margin-top, 0);
+}
+
+@media screen and (min-width: @desktopViewportWidth) {
+    .sidebar--navigation {
+        .reset-border-radius();
+        background: #fff;
+        border: none;
+
+        // Indent sub-categories 10 pixels
+        ul.sidebar--navigation {
+            .navigation--entry {
+                .unitize-margin(0, 0, 0, 20);
+            }
+        }
+
+        .navigation--entry {
+            margin: 0;
+            border-bottom: none;
+
+            .navigation--link {
+                .unitize-margin(0, 0);
+                .unitize-padding(5, 0);
+                .unitize(font-size, @font-size-base + 2);
+                font-weight: @font-base-weight;
+                font-family: @font-base-stack;
+                color: @text-color;
+                .transition();
+                width: auto;
+                position: relative;
+                display: inline;
+                .unitize(line-height, 32);
+                box-shadow: inset 0 0px 0 0px transparent;
+
+                &:hover,
+                &:focus {
+                    color: @text-color-dark;
+                    box-shadow: inset 0 -2px 0 0px @brand-primary;
+                }
+
+                &.is--active {
+                    font-weight: @font-bold-weight;
+                }
+            }
+        }
+
+        // level 1
+        ul.sidebar--navigation {
+            &.is--level1 {
+                .navigation--link {
+                    &:hover,
+                    &:focus,
+                    &.is--active {
+                        color: @text-color-dark;
+
+                        &::after {
+                            .transform(scaleX(1));
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .shop-sites--container {
+        .shop-sites--navigation,
+        .navigation--entry {
+            .navigation--link {
+                .unitize-padding(5, 10);
+            }
+        }
+
+        .shop-sites--navigation {
+            .unitize(padding-bottom, 5);
+        }
+    }
+
+    // remove Top rounded corners of the first active category in the sidebar
+    .categories--navigation.is--level0 {
+        .navigation--entry:first-child {
+            .navigation--link.is--active {
+                .reset-border-radius();
+            }
+        }
+    }
+}
+
+// Off Canvas
+.sidebar-main {
+    padding: 0;
+
+    &.off-canvas {
+        background: @body-bg;
+    }
+}
+
+.offcanvas--overlay {
+    .unitize-width(300);
+    background: @body-bg;
+
+    .overlay--category {
+        .category--headline {
+            text-align: center;
+        }
+    }
+
+    .is--display-button {
+        background: @brand-secondary;
+        color: contrast(@brand-secondary);
+    }
+}
+
+// Shop Sites
+@media screen and(min-width: @tabletViewportWidth) {
+    .shop-sites--container {
+        padding: 0;
+        background: #fff;
+
+        .shop-sites--headline {
+            text-align: center;
+        }
+    }
+    
+}
+
+.sidebar--box {
+    background: @brand-primary;
+    color: contrast(@brand-primary);
+    .unitize-padding(20, 20);
+    .unitize(margin-top, 20);
+
+    .box--text {
+        p {
+            .unitize(font-size, @font-size-h2);
+            .unitize(line-height, 30);
+            font-weight: @font-bold-weight;
+            letter-spacing: 1px;
+
+        }
+    }
+
+    .box--button {
+        text-align: center;
+
+        .btn {
+            color: @brand-primary;
+            .unitize(font-size, @font-size-base);
+            border-color: transparent;
+            .unitize(margin-top, 10);
+            font-weight: @font-bold-weight;
+        }
+    }
+
+}
+
+// sidebar filter
+.listing--sidebar {
+    .sidebar-filter {
+        .action--filter-options {
+            .reset-border-radius();
+            border: none;
+        }
+
+        .filter--container {
+            padding: 0;
+        }
+    }
+}
+
+.sidebar--categories-navigation {
+    > .sidebar--navigation {
+        @media screen and(min-width: @tabletViewportWidth) {
+            border: none;
+            padding: 0;
+        }
+        @media screen and(min-width: @desktopViewportWidth) {
+            border: 1px solid @border-color;
+            .unitize-padding(20);
+        }
+    }
+}
+
+.off-canvas .sidebar--navigation,
+.sidebar--navigation {
+    .navigation--link {
+        position: relative;
+
+        .icon--arrow-right {
+            @media screen and(min-width: @tabletViewportWidth) {
+                display: block;
+            }
+        }
+    }
+}
+
+.categories--navigation {
+    &.is--level1 {
+        .navigation--entry {
+            .navigation--link {
+                .is--icon-right {
+                    @media screen and(min-width: @tabletViewportWidth) {
+                        .unitize(left, 20);
+                    }
+                }
+            }
+        }
+    }
+
+    &.is--level2 {
+        .navigation--entry {
+            .navigation--link {
+                .is--icon-right {
+                    @media screen and(min-width: @tabletViewportWidth) {
+                        .unitize(left, 30);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: @tabletViewportWidth) {
+    .is--ctl-search {
+        .listing--sidebar {
+            display: none;
+
+            & + .search--results {
+                margin-left: 0;
+            }
+        }
+    }
+
+    .categories--headline {
+        display: block;
+    }
+
+    .sidebar-main {
+        .shop-sites--container {
+            display: block;
+        }
+    }
+
+    .sidebar--categories-navigation {
+        margin-bottom: 0;
+    }
+
+    .is--ctl-forms,
+    .is--ctl-custom {
+        .sidebar-main {
+            .sidebar--categories-navigation {
+                display: block;
+            }
+        }
+    }
+
+    .sidebar-main {
+        .unitize-width(300);
+
+        .is--ctl-listing &,
+        .is--ctl-forms &,
+        .is--ctl-tellafriend &,
+        .is--ctl-newsletter &,
+        .is--ctl-sitemap &,
+        .is--ctl-custom &,
+        .is--ctl-note.is--user &,
+        .is--ctl-address &,
+        .is--ctl-account.is--user & {
+            & + .content--wrapper {
+                .unitize(margin-left, 0);
+            }
+        }
+
+        .is--ctl-note &,
+        .is--ctl-address &,
+        .is--ctl-account & {
+            .categories--headline,
+            .categories--navigation,
+            .shop-sites--container {
+                display: block;
+            }
+        }
+
+        .sidebar-main {
+            .shop-sites--container {
+                display: block;
+            }
+        }
+    }
+
+}
+
+@media screen and(min-width: @desktopViewportWidth) {
+    .listing--sidebar {
+        .unitize-width(300);
+
+        & + .content--wrapper {
+            .unitize(margin-left, 300 + @content-padding);
+        }
+    }
+
+    .categories--headline {
+        display: none;
+    }
+
+    .listing--sidebar + .search--results {
+        .unitize(margin-left, 300 + @content-padding);
+    }
+
+    .is--ctl-forms,
+    .is--ctl-custom {
+        .sidebar-main {
+            .sidebar--categories-navigation {
+                display: none;
+            }
+        }
+    }
+
+    .sidebar-main {
+        .unitize-width(300);
+
+        .is--ctl-listing &,
+        .is--ctl-forms &,
+        .is--ctl-tellafriend &,
+        .is--ctl-newsletter &,
+        .is--ctl-sitemap &,
+        .is--ctl-custom &,
+        .is--ctl-note.is--user &,
+        .is--ctl-address &,
+        .is--ctl-account.is--user & {
+            & + .content--wrapper {
+                .unitize(margin-left, 300 + @content-padding);
+            }
+        }
+
+        .shop-sites--container {
+            display: none;
+        }
+
+        .is--ctl-note &,
+        .is--ctl-address &,
+        .is--ctl-account & {
+            .categories--headline,
+            .categories--navigation,
+            .shop-sites--container {
+                display: none;
+            }
+        }
+    }
+
+    .sidebar--categories-navigation {
+        .unitize(margin-bottom, 20);
+    }
+}
+
+// Seo Text in Sidebar
+.listing--sidebar,
+.sidebar-main {
+    .category--teaser {
+        border: none;
+        .unitize(margin-top, @content-padding);
+
+        .hero--text {
+            text-align: justify;
+        }
+    }
+}

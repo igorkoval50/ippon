@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+        <element type="boolean" scope="shop">
+            <name>lhIsActive</name>
+            <label lang="de">Aktiv</label>
+            <label lang="en">Active</label>
+            <value>1</value>
+        </element>
+
+        <element type="boolean" scope="shop">
+            <name>lhFadeImage</name>
+            <label lang="de">Fade image</label>
+            <label lang="en">Fade image</label>
+            <value>0</value>
+        </element>
+
+        <element type="boolean" scope="shop">
+            <name>lhNoLoadImage</name>
+            <label lang="de">Ajax image</label>
+            <label lang="en">Ajax image</label>
+            <value>1</value>
+        </element>
+
+        <element required="true" type="number" scope="shop">
+            <name>lhProductBoxImgSource</name>
+            <label lang="de">Thumbnailgröße (Medienmanager)</label>
+            <label lang="en">Thumbnailsize (Mediamanager)</label>
+            <value>0</value>
+        </element>
+
+        <element required="true" type="number" scope="shop">
+            <name>lhProductBoxBigImgSource</name>
+            <label lang="de">Thumbnailgröße Layout "Großes Bild" (Medienmanager)</label>
+            <label lang="en">Thumbnailsize Layout Big Image (Mediamanager)</label>
+            <value>1</value>
+        </element>
+    </elements>
+</config>

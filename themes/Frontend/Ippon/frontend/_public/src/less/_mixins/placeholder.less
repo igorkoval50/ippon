@@ -1,0 +1,33 @@
+/*=========================================
+=            Placeholder Mixin            =
+=========================================*/
+.colormixin(@color:false) when not (@color=false){color: @color;}
+.stylemixin(@style:false) when not (@style=false){
+    .style(@style) when (@style=italic) {font-style: @style;}
+    .style(@style) when (@style=bold) {font-weight: @style;}
+    .style(@style);
+}
+.transformmixin(@transform:false) when not (@transform=false){text-transform:@transform}
+
+.placeholder(@color: false, @style: false, @transform: false){
+    &::-webkit-input-placeholder {
+        .colormixin(@color);
+        .stylemixin(@style);
+        .transformmixin(@transform);
+    }
+    &:-moz-placeholder {
+        .colormixin(@color);
+        .stylemixin(@style);
+        .transformmixin(@transform);
+    }
+    &::-moz-placeholder {
+        .colormixin(@color);
+        .stylemixin(@style);
+        .transformmixin(@transform);
+    }
+    &:-ms-input-placeholder {
+        .colormixin(@color);
+        .stylemixin(@style);
+        .transformmixin(@transform);
+    }
+}

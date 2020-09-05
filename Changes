@@ -1,0 +1,114 @@
+1.0.25  2020-09-03 08:03:36 GMT
+    * FEA #84651 : додати в слайдерах батон в корзину і вибір варіантів  (Oleksandr Stepanov)
+
+1.0.24  2020-08-27 08:53:48 GMT
+    * BUG #84570 : сторінку стартову можна посувати вправо і вліво  (Sergii Fomin)
+
+1.0.23  2020-08-20 06:58:20 GMT
+    * BUG #84505 : на мобільних банер не на всю ширину (Sergii Fomin)
+
+1.0.22  2020-08-13 14:51:36 GMT
+    * BUG #84448 : поправити для моб. версії і планшету (Sergii Fomin)
+
+1.0.21  2020-08-13 13:25:13 GMT
+    * BUG #84448 : поправити для моб. версії і планшету (Sergii Fomin)
+
+1.0.20  2020-08-10 11:40:47 GMT
+    * UST #84345 : Darstellung von Einkaufswelten Banner über der Kategorie. (Sergii Fomin)
+
+1.0.19  2020-07-09 13:13:23 GMT
+    * FEA #83882 : правки 2 (Eugene  Gavryliuk)
+
+1.0.18  2020-06-23 12:18:49 GMT
+    * FEA #83748 : правки (Eugene  Gavryliuk)
+
+1.0.17  2020-06-19 14:05:12 GMT
+    * UST #83407 : Icons/Flags für Sonderinformationen anpassen (Eugene  Gavryliuk)
+    * UST #83505 : Merkzettel anpassen (Eugene  Gavryliuk)
+
+1.0.16  2020-06-12 08:22:49 GMT
+    * UST #83511 : in der Kategorieansicht mehr Bilder anzeigen (Oleksandr Stepanov)
+
+1.0.15  2020-06-11 14:25:36 GMT
+    * BUG #83394 :  Fehler sind mir im Magazin  (Eugene  Gavryliuk)
+
+1.0.14  2020-06-04 08:57:25 GMT
+    * BUG #83394 :  Fehler sind mir im Magazin  (Eugene  Gavryliuk)
+
+1.0.13  2020-05-05 13:03:33 GMT
+    * BUG #82991 : в хедере, на страницах В2В, на странице товара не работает линк Cookie-Einstellungen (Eugene  Gavryliuk)
+
+1.0.12  2020-04-29 05:59:06 GMT
+    * BUG #82957 : Логотип сайта перекрывает название страницы (Eugene  Gavryliuk)
+
+1.0.11  2020-04-28 11:17:09 GMT
+    * ADD #82954 : В разделе ZULETZT ANGESEHEN на карточке товара не везде есть рамка (Eugene  Gavryliuk)
+    * BUG #82814 : в момент загрузки страницы регистрации в хедере в углу слева отображается лишний текст  (Eugene  Gavryliuk)
+    * ADD #82810 : в личном кабинете на странице Adressen дроп даун выбора страны расположен вплотную к полю Ort. (Eugene  Gavryliuk)
+
+1.0.10  2020-04-28 06:13:00 GMT
+    * BUG #82955 : баги після заливіки на живий (Eugene  Gavryliuk)
+
+1.0.9  2020-04-24 14:12:22 GMT
+    * FEA #82949 : правки (Eugene  Gavryliuk)
+
+1.0.7  2020-04-24 11:24:41 GMT
+1.0.6  2020-04-24 10:11:06 GMT
+    * FEA #82927 : правки (Eugene  Gavryliuk)
+    * ADD #82878 : змінити вигляд навігації на планшеті  (Eugene  Gavryliuk)
+
+1.0.5  2020-04-22 14:14:46 GMT
+    * UST #82812 : оптимізація мобільної версії і планшета  (Eugene  Gavryliuk)
+    * ADD #82802 : варіанти в лістингу після апдейту відображаються неправильно  (Eugene  Gavryliuk)
+
+1.0.4  2020-04-17 09:51:26 GMT
+    * BUG #82799 : на странице товара отображается 2 блока GÜRTELSTICK (Eugene  Gavryliuk)
+    * ADD #82802 : варіанти в лістингу після апдейту відображаються неправильно  (Eugene  Gavryliuk)
+    * BUG #82850 : при відкритті сторінки категорій на моб. і планшеті сторінка автоматично збільшується (Eugene  Gavryliuk)
+
+1.0.3  2020-04-16 08:42:13 GMT
+    * ADD #82779 : правки (Eugene  Gavryliuk)
+
+1.0.2  2020-04-15 14:20:37 GMT
+    * ADD #82779 : правки (Eugene  Gavryliuk)
+    * BUG #82781 :  на странице MARKEN расположение названий меню дроп дауна Categories неправильное,  не закрывается дропдаун Categories (Eugene  Gavryliuk)
+
+1.0.1  2020-04-13 14:22:51 GMT
+    * UST #82752 :  beim Scrollen zittert das Bild (Eugene  Gavryliuk)
+
+1.0.0  2020-04-13 06:26:38 GMT
+    * UST #82751 : Ansicht Kategorien - Desktop und mobile Version (Eugene  Gavryliuk)
+    * UST #82574 : апдей шопваре до версії 5.6.4 (Oleksandr Stepanov)
+    * UST #82745 : den Schnelleinkauf bei Anfrage Produkten  ausblenden (Eugene  Gavryliuk)
+
+0.0.11  2020-03-20 09:59:05 GMT
+    * BUG #82545 : баги  (Eugene  Gavryliuk)
+
+0.0.10  2020-03-16 08:32:28 GMT
+    * BUG #82487 : неправильне відображення мінікорзини (Eugene  Gavryliuk)
+
+0.0.9  2020-03-12 10:12:15 GMT
+    * BUG #82462 : для  варіантів товарів в плагіні QUICK ORDER  тягнуться ціни батьківського товару (Oleksandr Stepanov)
+
+0.0.8  2020-03-04 15:04:47 GMT
+    * UST #82348 : оптимізація перформенсу/ Lazy Load einrichten (Eugene  Gavryliuk)
+
+0.0.7  2020-03-02 12:06:40 GMT
+    * UST #82347 : правки верстки (Eugene  Gavryliuk)
+    * BUG #82352 : правки (Oleksandr Stepanov)
+    * FEA #82291 : верстка плагіну (Eugene  Gavryliuk)
+
+0.0.5  2020-02-24 12:46:30 GMT
+    * FEA #82291 : верстка плагіну (Eugene  Gavryliuk)
+    * UST #81293 : Schnelleinkauf Plugin anpassen (Pavlo Portyanko)
+
+0.0.4  2020-02-10 19:00:09 Europe/Kiev
+    * UST #81582 : дати можливість вже зареєстрованим користувачам, вибирати групи у попапі (Pavlo Portyanko)
+
+0.0.3  2020-02-06 12:19:46 Europe/Kiev
+    * FEA #81461 : доробки (Eugene  Gavryliuk)
+
+0.0.2  2020-01-31 14:07:14 Europe/Kiev
+    * UST #81244 : Newsletter: der User soll die Möglichkeit haben den Bereich wählen, für den er sich interessiert (Eugene  Gavryliuk, Pavlo Portyanko)
+    * UST #81244 : Newsletter: der User soll die Möglichkeit haben den Bereich wählen, für den er sich interessiert (Pavlo Portyanko)
+    * UST #79872 : зробити плагін варіантів товарів (Pavlo Portyanko (Vac. 12.12-18.12))

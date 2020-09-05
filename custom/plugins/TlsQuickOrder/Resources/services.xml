@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service class="TlsQuickOrder\Subscriber\Frontend" id="tls_quick_order.subscriber.frontend">
+            <argument>%tls_quick_order.plugin_dir%</argument>
+            <argument id="tls_quick_order.components.plugin_config" type="service"/>
+            <argument id="tls_quick_order.components.article_service" type="service"/>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service class="TlsQuickOrder\Subscriber\ControllerPath" id="tls_quick_order.subscriber.controller_path">
+            <argument>%tls_quick_order.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service class="TlsQuickOrder\Components\PluginConfig" id="tls_quick_order.components.plugin_config">
+            <argument>%tls_quick_order.plugin_name%</argument>
+            <argument id="shopware.plugin.cached_config_reader" type="service"/>
+            <argument id="models" type="service"/>
+            <argument id="service_container" type="service"/>
+        </service>
+
+        <service class="TlsQuickOrder\Components\ArticleService" id="tls_quick_order.components.article_service">
+            <argument id="tls_quick_order.components.plugin_config" type="service"/>
+            <argument id="dbal_connection" type="service"/>
+            <argument id="shopware_storefront.list_product_service" type="service"/>
+            <argument id="shopware_storefront.context_service" type="service"/>
+            <argument id="legacy_struct_converter" type="service"/>
+            <argument id="shopware_storefront.configurator_service" type="service"/>
+        </service>
+    </services>
+</container>

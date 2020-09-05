@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.4/engine/Shopware/Components/Plugin/schema/menu.xsd">
+
+    <entries>
+        <entry>
+            <name>Mbdus SEO-URLs</name>
+            <label lang="en">Mbdus SEO-URLs</label>
+            <label lang="de">Mbdus SEO-URLs</label>
+            <controller>MbdusSeoUrlImportExport</controller>
+            <action>index</action>
+            <class>sprite-arrow-circle-double-135 contents--import-export</class>
+            <parent identifiedBy="controller">Content</parent>
+        </entry>
+    </entries>
+</menu>

@@ -1,0 +1,198 @@
+// XS
+// S
+.custom-products--wizard-container {
+    .clearfix();
+
+    .wizard-container--header {
+        margin-top: 0;
+    }
+
+    .wizard-container--content {
+        .clearfix();
+        .unitize-padding(10, 20, 20, 20);
+        height: 85%;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        .wizard-container--surcharges {
+            width: 100%;
+        }
+
+        .custom-products--global-calculation-overview {
+            .unitize(padding-top, 20);
+            display: none;
+        }
+    }
+
+    .wizard-container--take-configuration {
+        .unitize(margin-top, 10);
+        float: none;
+        width: 100%;
+
+        .take-configuration {
+            width: 100%;
+        }
+    }
+
+    .wizard-container--navigation {
+        .unitize-padding(10, 20);
+        .clearfix();
+        width: 100%;
+        float: none;
+        text-align: center;
+        border-top: 1px solid @customizing-border-color;
+
+        .navigation--container {
+            .clearfix();
+            float: none;
+            width: 100%;
+        }
+
+        button {
+            .unitize(padding-top, 4);
+            .unitize(padding-bottom, 4);
+        }
+
+        .custom-products-navigation--btn-left {
+            float: left;
+        }
+
+        .custom-products-navigation--btn-right {
+            .unitize(margin-left, 10);
+            float: right;
+        }
+
+        .wizard--select-container {
+            .unitize-margin(10, 0, 0, 0);
+            width: 100%;
+            float: left;
+        }
+
+        .navigation--select {
+            width: 100%;
+        }
+    }
+}
+
+.wizard-container--required-label {
+    .unitize-padding(0, 20);
+}
+
+.custom-products--wizard-container .wizard-container--content .wizard-container--options {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    .wizard--input {
+        .unitize(margin-right, 20);
+    }
+
+    textarea.wizard--input {
+        .unitize(min-height, 100);
+    }
+
+    h5 {
+        margin-top: 0;
+    }
+
+    h5, .option--description {
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        -moz-hyphens: auto;
+        hyphens: auto;
+    }
+
+    .is--wizard {
+        .unitize(padding-right, 20);
+        z-index: -1;
+        background: #fff;
+        border: none;
+
+        &.is--last {
+            border-bottom: 0;
+        }
+    }
+
+    .is--wizard.is--active {
+        z-index: 999;
+    }
+}
+
+//S
+@media screen and (min-width: @phoneLandscapeViewportWidth) {
+    .custom-products--wizard-container .wizard-container--navigation {
+        .custom-products-navigation--btn-left {
+            .unitize(max-width, 120);
+
+            // Sums up to 25%
+            width: 23%;
+            margin-right: 2%;
+        }
+
+        .custom-products-navigation--btn-right {
+            .unitize(max-width, 120);
+
+            // Sums up to 25%
+            width: 23%;
+            margin-left: 2%;
+        }
+
+        .wizard--select-container {
+            margin: 0 auto;
+            width: 50%;
+            float: none;
+        }
+    }
+}
+
+// M
+@media screen and (min-width: @tabletViewportWidth) {
+
+    .custom-products--wizard-container {
+
+        .wizard-container--take-configuration {
+            margin-top: 0;
+            float: right;
+            width: auto;
+        }
+
+        .wizard-container--content {
+
+            .wizard-container--surcharges {
+                float: right;
+                width: 40%;
+            }
+
+            .custom-products--global-calculation-overview {
+                display: block;
+                overflow-x: hidden;
+                overflow-y: auto;
+            }
+        }
+
+        .wizard-container--navigation {
+            .unitize-padding(10, 20, 0, 20);
+            position: relative;
+            width: 100%;
+
+            .custom-products-navigation--btn-right {
+                float: right;
+            }
+
+            .navigation--container {
+                float: left;
+                width: 60%;
+            }
+        }
+    }
+
+    .custom-products--wizard-container .wizard-container--content .wizard-container--options {
+        height: 100%;
+        border: none;
+        float: left;
+        width: 60%;
+    }
+}

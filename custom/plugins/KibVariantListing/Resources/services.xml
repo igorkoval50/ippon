@@ -1,0 +1,82 @@
+<?xml version="1.0" ?>
+<!--
+  ~ Copyright (c) Kickbyte GmbH - All Rights Reserved
+  ~ Unauthorized copying of this file, via any medium is strictly prohibited
+  -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="kib_variant_listing.subscriber.frontend" class="KibVariantListing\Subscriber\Frontend"
+                 decoration-priority="99">
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="shopware_storefront.category_service"/>
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+            <argument type="service" id="service_container"/>
+            <argument>%kib_variant_listing.plugin_dir%</argument>
+            <argument>%kib_variant_listing.plugin_name%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="kib_variant_listing.subscriber.backend" class="KibVariantListing\Subscriber\Backend"
+                 decoration-priority="99">
+            <argument>%kib_variant_listing.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="kib_variant_listing.subscriber.resources" class="KibVariantListing\Subscriber\Resources">
+            <argument type="service" id="shopware.plugin.cached_config_reader"/>
+            <argument type="service" id="service_container"/>
+            <argument>%kib_variant_listing.plugin_dir%</argument>
+            <tag name="shopware.event_subscriber"/>
+        </service>
+
+        <service id="kib_variant_listing.list_product_service"
+                 class="KibVariantListing\Bundle\StoreFrontBundle\Service\ListProductService"
+                 decorates="shopware_storefront.list_product_service"
+                 public="false">
+            <argument type="service" id="shopware_storefront.product_number_service"/>
+            <argument type="service" id="kib_variant_listing.list_product_service.inner"/>
+            <argument type="service" id="shopware_storefront.configurator_service"/>
+            <argument type="service" id="shopware_storefront.media_service"/>
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="front"/>
+        </service>
+
+        <service id="kib_variant_listing.property_option_reader"
+                 class="KibVariantListing\Bundle\AttributeBundle\Repository\Reader\PropertyOptionReader"
+                 decorates="shopware_attribute.property_option_reader"
+                 public="false">
+            <argument type="service" id="kib_variant_listing.property_option_reader.inner"/>
+            <argument type="string">Shopware\Models\Property\Value</argument>
+            <argument type="service" id="models"/>
+        </service>
+
+        <service id="kib_variant_listing.property_option_searcher"
+                 class="KibVariantListing\Bundle\AttributeBundle\Repository\Searcher\PropertyOptionSearcher"
+                 decorates="shopware_attribute.property_option_searcher"
+                 public="false">
+            <argument type="service" id="kib_variant_listing.property_option_searcher.inner"/>
+            <argument type="string">Shopware\Models\Property\Value</argument>
+            <argument type="service" id="models"/>
+            <argument type="service" id="shopware.model.search_builder"/>
+        </service>
+
+        <service id="kib_variant_listing.legacy_struct_converter"
+                 class="KibVariantListing\Components\Compatibility\LegacyStructConverter"
+                 decorates="legacy_struct_converter"
+                 public="false">
+            <argument type="service" id="kib_variant_listing.legacy_struct_converter.inner"/>
+            <argument type="service" id="config"/>
+            <argument type="service" id="shopware_storefront.context_service"/>
+            <argument type="service" id="events"/>
+            <argument type="service" id="shopware_media.media_service"/>
+            <argument type="service" id="dbal_connection"/>
+            <argument type="service" id="models"/>
+            <argument type="service" id="shopware_storefront.category_service"/>
+            <argument type="service" id="service_container"/>
+        </service>
+    </services>
+</container>

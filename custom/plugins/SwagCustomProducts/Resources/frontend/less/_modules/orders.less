@@ -1,0 +1,28 @@
+.order--details {
+    .custom-product--action-open-config {
+        margin-bottom: 0;
+    }
+
+    .custom-product-panel--tr {
+        border-bottom: 0 none;
+        margin-top: 0;
+
+        .panel--td {
+            .unitize-padding(0, 30);
+            float: none;
+            width: 100%;
+        }
+
+        &.custom-product-mode--2 {
+            .unitize(margin-top, 10);
+        }
+        &.custom-product-mode--2 + .custom-product-mode--2 {
+            margin-top: 0;
+        }
+    }
+
+    .custom-product-panel--tr + .panel--tr, .custom-product-panel--tr  + .panel--tr {
+        .unitize(margin-top, 30);
+        border-top: 1px solid @customizing-border-color;
+    }
+}

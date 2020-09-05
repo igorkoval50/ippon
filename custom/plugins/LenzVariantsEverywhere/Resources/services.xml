@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+		   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		   xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+<services>
+	<!-- VariantHelper -->
+	<service id="lenz_variants_everywhere.search_bundle_dbal.variant_helper"
+			 class="LenzVariantsEverywhere\SearchBundleDBAL\VariantHelper">
+
+	</service>
+
+	<!-- HasPseudoPriceConditionHandler -->
+	<service id="lenz_variants_everywhere.search_bundle_dbal.condition_handler.has_pseudo_price_condition_handler"
+			 class="LenzVariantsEverywhere\SearchBundleDBAL\ConditionHandler\HasPseudoPriceConditionHandler"
+			 decorates="shopware_searchdbal.has_pseudo_price_condition_handler_dbal"
+			 public="false"
+			 shared="false"
+	>
+		<argument type="service" id="lenz_variants_everywhere.search_bundle_dbal.condition_handler.has_pseudo_price_condition_handler.inner" />
+		<argument type="service" id="lenz_variants_everywhere.search_bundle_dbal.variant_helper" />
+	</service>
+
+	<!-- PriceSortingHandler -->
+	<service id="lenz_variants_everywhere.search_bundle_dbal.sorting_handler.price_sorting_handler"
+			 class="LenzVariantsEverywhere\SearchBundleDBAL\SortingHandler\PriceSortingHandler"
+			 decorates="shopware_searchdbal.price_sorting_handler_sorting_handler_dbal"
+			 public="false"
+			 shared="false"
+	>
+		<argument type="service" id="lenz_variants_everywhere.search_bundle_dbal.sorting_handler.price_sorting_handler.inner" />
+		<argument type="service" id="lenz_variants_everywhere.search_bundle_dbal.variant_helper" />
+	</service>
+</services>
+</container>

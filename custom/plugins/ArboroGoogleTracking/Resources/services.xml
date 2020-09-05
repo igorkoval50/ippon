@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="arboro_google_tracking.subscriber.controller_arboro_google_tracking" class="ArboroGoogleTracking\Subscriber\ArboroGoogleTrackingController">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.compiler_collect_javascript" class="ArboroGoogleTracking\Subscriber\CompilerCollectJavaScript">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.backend" class="ArboroGoogleTracking\Subscriber\Backend">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend" class="ArboroGoogleTracking\Subscriber\Frontend">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend_account" class="ArboroGoogleTracking\Subscriber\FrontendAccount">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend_ajax_search" class="ArboroGoogleTracking\Subscriber\FrontendAjaxSearch">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend_checkout" class="ArboroGoogleTracking\Subscriber\FrontendCheckout">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend_detail" class="ArboroGoogleTracking\Subscriber\FrontendDetail">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend_listing" class="ArboroGoogleTracking\Subscriber\FrontendListing">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend_Register" class="ArboroGoogleTracking\Subscriber\FrontendRegister">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.frontend_search" class="ArboroGoogleTracking\Subscriber\FrontendSearch">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.widgets_listing" class="ArboroGoogleTracking\Subscriber\WidgetsListing">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+        <service id="arboro_google_tracking.subscriber.widgets_recommendation" class="ArboroGoogleTracking\Subscriber\WidgetsRecommendation">
+            <argument type="service" id="service_container" />
+            <tag name="shopware.event_subscriber" />
+        </service>
+    </services>
+</container>
